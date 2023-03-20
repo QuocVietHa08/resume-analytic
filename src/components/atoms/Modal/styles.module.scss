@@ -1,0 +1,35 @@
+.contentModal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: -20px;
+  
+  .iconModalReject {
+    svg {
+      font-size: 65px;
+      color: #ff4d4f !important;
+    }
+  }
+
+  .iconModal {
+    svg {
+      font-size: 100px;
+      color: #1890ff;
+    }
+  }
+
+  .titleModal {
+    font-size: 14px;
+    margin: 30px 0 10px 0;
+    text-align: center;
+  }
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 100px;
+  margin-bottom: 20px;
+}
