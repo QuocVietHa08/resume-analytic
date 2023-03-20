@@ -1,0 +1,10 @@
+{
+  "extends": "./jsconfig.json",
+  "include": [
+    "src/**/*.js",
+    "src/**/*.jsx",
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

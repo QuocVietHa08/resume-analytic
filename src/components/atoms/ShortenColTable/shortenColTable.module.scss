@@ -1,0 +1,13 @@
+.colDescription {
+  display: -webkit-box;
+  overflow: hidden;
+  white-space: normal;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
+
+.fullContent {
+  display: block;
+  max-width: 1000px;
+  white-space: normal;
+}
