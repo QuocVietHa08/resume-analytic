@@ -15,6 +15,7 @@ module.exports = {
 
   },
   sassOptions: {
+    fiber: false,
     includePaths: [path.join(__dirname, 'src')],
   },
   eslint: {
