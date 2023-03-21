@@ -49,20 +49,20 @@ const Footer = () => {
                 <Input className={styles.inputStyle} placeholder="Email" />
                 <Button className={styles.buttonSubs}>Subscribe</Button>
               </div>
-              <img src="/img/footer/logo.svg" alt="" />
+              <img src="/img/footer/logo.svg" className="w-114 h-81" alt="" />
             </div>
           </div>
         ) : (
           <div className={styles.footerLinkInfo}>
-            <div>
-              <div className="flex flex-column">
+            <div className={styles.spLinkInfo}>
+              <div className="flex flex-column gap-20">
                 <div className={styles.quickLinks}>
                   <div className={styles.headerText}>Quick Links</div>
-                  <div>Home</div>
-                  <div>About</div>
-                  <div>Testimonials</div>
-                  <div>FAQ</div>
-                  <div>Contact Us</div>
+                  <p>Home</p>
+                  <p>About</p>
+                  <p>Testimonials</p>
+                  <p>FAQ</p>
+                  <p>Contact Us</p>
                 </div>
                 <div>
                   <div className={styles.headerText}>Follow Us</div>
@@ -84,25 +84,23 @@ const Footer = () => {
                 </div>
                 <div className="flex item-flex-start">
                   <img src="/img/footer/address.svg" alt="" />
-                  <div className="ml-15">
+                  <span className="ml-15">
                     31 Woodlands Close <br /> #03-10 Woodlands Horizon <br /> Singapore 737855{' '}
-                  </div>
+                  </span>
                 </div>
-                <img src="/img/footer/logo.svg" alt="" />
+                <img src="/img/footer/logo.svg" className="w-75 h-55" alt="" />
               </div>
             </div>
             <div>
-              <div>
-                <div className={styles.headerText}>Subscribe to our Newsletter</div>
-                <div className={styles.inputWrapper}>
-                  <Input className={styles.inputStyle} placeholder="Email" />
-                  <Button className={styles.buttonSubs}>Subscribe</Button>
-                </div>
+              <div className={styles.headerText}>Subscribe to our Newsletter</div>
+              <div className={styles.inputWrapper}>
+                <Input className={styles.inputStyle} placeholder="Email" />
+                <Button className={styles.buttonSubs}>Subscribe</Button>
               </div>
             </div>
           </div>
         )}
-        <Divider />
+        <Divider className={styles.dividerStyle} />
         {width > 779 ? (
           <div className={styles.footerCopyRight}>
             <div className="flex item-center justify-evenly gap-25">
@@ -119,9 +117,9 @@ const Footer = () => {
             </div>
           </div>
         ) : (
-          <div>
+          <div className={styles.footerCopyRight}>
             <div className="flex flex-column item-center justify-center gap-10">
-              <div>© 2022 KungFu Helper Pte Ltd. All rights reserved.</div>
+              <p>© 2022 KungFu Helper Pte Ltd. All rights reserved.</p>
               <div className="flex gap-10 font-size-12">
                 <p className="text-bold">Privacy Policy</p>
                 <div>|</div>
@@ -131,7 +129,7 @@ const Footer = () => {
 
             <div className="flex item-center justify-center">
               <img src="/img/footer/cyber-save.svg" alt="" />
-              <span>ENTERPRISE ON ASSET-BASED CYBER DEFENSE AN INITIATIVE BY CSA</span>
+              <p>ENTERPRISE ON ASSET-BASED CYBER DEFENSE AN INITIATIVE BY CSA</p>
             </div>
           </div>
         )}

@@ -1,16 +1,52 @@
+@import 'styles/responsive.scss';
+
 .footerWrapper {
   background-color: #B2D8C8;
-  padding: 60px 100px;
+  padding: 50px 50px;
   color: #36625a;
+  font-size: 16px;
+
+  @include mobile {
+    padding: 20px 30px; 
+  }
 
   .footerLinkInfo {
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
+
+    @include mobile {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .spLinkInfo {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+
+    }
   }
 
   .footerCopyRight {
     display: flex;
     justify-content: space-between;
+
+    @include mobile {
+      flex-direction: column;
+      gap: 10px;
+
+      p {
+        font-size: 12px;
+        margin-bottom: 0px;
+      }
+    }
+  }
+
+  .dividerStyle {
+    
   }
 }
 
@@ -21,38 +57,69 @@
   font-size: 20px;
   line-height: 23px;
   color: #0E8778;
+
+  @include mobile {
+    font-size: 12px;
+  }
 }
 
 .quickLinks {
   display: flex;
   flex-direction: column;
   gap: 15px;
+
+  p {
+    font-size: 16px;
+  }
+
+  @include mobile {
+    gap: 10px;
+    p {
+      font-size: 12px;
+    }
+  }
 }
 
 .info {
   display: flex;
   flex-direction: column;
   gap: 15px;
+  span {
+    font-size: 16px;
+  }
+
+  @include mobile {
+    span {
+      font-size: 12px;
+    }
+  }
 }
 
 .buttonSubs {
-  color: white;
-  background-color: #0E8778;
-  border-radius: 10px;
+  color: white !important;
+  background-color: #0E8778 !important;
+  border-radius: 10px !important;
+  border: none !important;
+  height: 40px !important;
 }
 
 .inputWrapper {
-  // border-top-right-radius: 10px;
-  // border-bottom-right-radius: 10px;
   display: flex;
   margin-top: 20px;
   margin-bottom: 20px;
   background-color: white;
-  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.25);
+
+  @include mobile {
+    margin-top: 10px;
+    margin-bottom: 0px;
+  }
 }
 
 .inputStyle {
-  border-top-left-radius: 10px;
-  border-bottom-left-radius: 10px;
+  height: 40px !important;
+  border-top-left-radius: 10px !important;
+  border-bottom-left-radius: 10px !important;
+  border: none !important;
 }
