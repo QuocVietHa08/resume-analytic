@@ -3,7 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@400;500;700&display=swap');
 
 :root {
-  --primary-color: #1890ff;
+  --primary-color: #3E9F93;
   --color-border-table: rgb(238, 238, 238);
 }
 
@@ -152,9 +152,19 @@ th {
   .line-height-#{$i} {
     line-height: #{$i}px;
   }
+
+  @include mobile {
+    .gap-sp-#{$i} {
+      gap:#{$i}px !important;
+    }
+
+    .font-size-sp-#{$i} {
+      font-size: #{$i}px !important;
+    }
+  }
 }
 .none {
-  display: none;
+  display: none !important;
 }
 
 .flex {
@@ -197,6 +207,10 @@ th {
   justify-content: center;
 }
 
+.bg-primary {
+  background-color: var(--primary-color);
+}
+
 .bg-red {
   background-color: #dc3545;
 }
@@ -225,6 +239,10 @@ th {
   text-transform: uppercase;
 }
 
+.text-capitalize {
+  text-transform: capitalize;
+}
+
 .color-primary {
   color: var(--primary-color);
 }
@@ -239,6 +257,10 @@ th {
 
 .color-white {
   color: white;
+}
+
+.color-white-i {
+  color: white !important;
 }
 
 .color-red {
@@ -350,5 +372,7 @@ th {
   object-fit: cover;
 }
 
-
+.transition-height {
+  transition: height 2s;
+}
 
