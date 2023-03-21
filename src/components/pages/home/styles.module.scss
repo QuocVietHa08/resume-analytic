@@ -8,7 +8,6 @@
   justify-content: center;
   margin-bottom: 50px;
 
-
   .introWrapper {
     width: 100%;
     display: flex;
@@ -27,21 +26,21 @@
     left: 0;
     top: 0;
   }
-
 }
 
 .introDes {
   display: flex;
   flex-direction: column;
-  gap: 50px; 
+  gap: 50px;
   @include mobile {
     gap: 20px;
   }
 }
 
 .cleanerAvatarWrapper {
-  height: 734px;  
-  width: 728px;
+  height: 734px;
+  width: auto;
+  max-width: 728px;
 
   img {
     width: 100%;
@@ -50,6 +49,182 @@
 
   @include mobile {
     height: 142px;
-    width: 142px;  
+    width: 142px;
+  }
+}
+
+// service
+.serviceContainer {
+  width: 100vw;
+  padding: 0 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  h2 {
+    font-weight: 700;
+    font-size: 50px;
+    color: #333333;
+    margin-bottom: 10px;
+
+    @include mobile {
+      font-size: 20px;
+    }
+
+    span {
+      font-weight: 700;
+      font-size: 50px;
+      color: #333333;
+      margin: 0 10px;
+      text-decoration: underline;
+      text-decoration-color: #fddc3a;
+
+      @include mobile {
+        font-size: 20px;
+      }
+    }
+  }
+
+  .serviceDes {
+    font-size: 24px;
+    line-height: 26px;
+    color: #393e46;
+    width: 70%;
+    text-align: center;
+    margin: 0 auto;
+
+    @include mobile {
+      font-size: 12px;
+      line-height: 16px;
+    }
+  }
+}
+
+.serviceItemContainer {
+  display: flex;
+  align-items: flex-start;
+  gap: 50px;
+  width: 70%;
+  border: 1px solid #3e9f93;
+  border-radius: 20px;
+  margin: 30px auto;
+  padding: 28px 35px;
+  cursor: pointer;
+
+  @include mobile {
+    width: 90%;
+    gap: 20px;
+    padding: 15px 25px;
+
+    img {
+      width: 50px;
+      height: 50px;
+    }
+  }
+
+  span {
+    font-weight: 700;
+    color: #333;
+    font-size: 24px;
+
+    @include mobile {
+      font-size: 12px;
+    }
+  }
+
+  p {
+    color: #3e9f93;
+    font-weight: 700;
+    font-size: 20px;
+    text-transform: capitalize;
+    margin-bottom: 0px;
+
+    @include mobile {
+      font-size: 12px;
+    }
+  }
+}
+
+.serviceItemContainerActive {
+  @extend .serviceItemContainer;
+  background-color: #0e8778;
+}
+
+.serviceItemContactContainer {
+  @extend .serviceItemContainer;
+  flex-direction: column;
+  background-color: #3e9f93;
+  align-items: flex-start;
+  gap: 20px;
+
+  span {
+    color: white;
+  }
+}
+
+.contactButton {
+  background: #ffffff;
+  border-radius: 10px;
+  border: none;
+  padding: 5px 5px;
+
+  @include mobile {
+    border-radius: 5px;
+  }
+
+  span {
+    font-size: 20px;
+    color: #0e8778;
+    padding: 10px 5px;
+
+    @include mobile {
+      font-size: 12px;
+    }
+  }
+}
+
+.dropdownStyle {
+  @include mobile {
+    img {
+      width: 9px;
+      height: 12px;
+    }
+  }
+}
+// Work
+.workContainer {
+  width: 80%;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 0 auto;
+  margin-top: 30px;
+  margin-bottom: 70px;
+}
+
+.workItemWrapper {
+  display: flex;
+  p {
+    font-weight: 700;
+    top: 0;
+    left: 0;
+    font-size: 64px;
+    color: #e6e6e6;
+    opacity: 0.5;
+    margin-bottom: 0;
+
+    @include mobile {
+      font-size: 16px;
+    }
+  }
+
+  .imageWrapper {
+    margin-top: 60px;
+
+    @include mobile{
+      margin-top: 20px;
+    }
   }
 }

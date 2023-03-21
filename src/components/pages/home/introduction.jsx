@@ -4,6 +4,7 @@ import useDetectWindowSize from '@/hooks/useDetectWindowSize';
 
 const Introduction = () => {
   const width = useDetectWindowSize();
+  
   return (
     <>
       {width > 779 ? (
