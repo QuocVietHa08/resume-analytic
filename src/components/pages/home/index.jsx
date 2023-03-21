@@ -1,5 +1,5 @@
 import React from 'react'
-import Introduction from './introduction';
+import Introduction from './Introduction';
 
 const Home = () => {
   return <div>
