@@ -204,6 +204,20 @@
   margin-bottom: 70px;
 }
 
+.workTitle {
+  font-weight: 700;
+  font-size: 50px;
+  text-align: center;
+  text-transform: capitalize;
+  color: #333333;
+  text-decoration: underline;
+  text-decoration-color: #fddc3a;
+
+  @include mobile {
+    font-size: 20px;
+  }
+}
+
 .workItemWrapper {
   display: flex;
   p {
@@ -223,8 +237,318 @@
   .imageWrapper {
     margin-top: 60px;
 
-    @include mobile{
+    @include mobile {
       margin-top: 20px;
     }
+  }
+}
+
+// Helper
+.helperContainer {
+  margin-bottom: 50px;
+}
+
+.helperTitle {
+  font-weight: 700;
+  font-size: 50px;
+  text-align: center;
+  text-transform: capitalize;
+  color: #333333;
+  text-decoration: underline;
+  text-decoration-color: #fddc3a;
+  margin-bottom: 50px;
+
+  @include mobile {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+}
+
+.helperStatisticWrapper {
+  background: #0e8778;
+  color: white;
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+
+  section {
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+    margin-top: 50px;
+
+    @include mobile {
+      margin-bottom: 20px;
+      margin-top: 20px;
+    }
+  }
+
+  .helperItem {
+    padding: 15px 0px;
+    text-align: center;
+
+    p {
+      font-size: 50px;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 0;
+
+      @include mobile {
+        font-size: 16px;
+      }
+    }
+
+    span {
+      font-weight: 700;
+      font-size: 36px;
+      color: #ffffff;
+
+      @include mobile {
+        font-size: 10px;
+      }
+    }
+  }
+}
+
+.helperInfoValue {
+  section {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    width: 70%;
+    margin: 50px auto;
+
+    @include mobile {
+      flex-direction: column;
+      gap: 50px;
+      align-items: center;
+      width: 80%;
+    }
+
+    .helperInfoItem {
+      display: flex;
+      width: auto;
+      max-width: 415px;
+      flex-direction: column;
+      align-items: center;
+      gap: 30px;
+      background: #ffffff;
+      box-shadow: 0px 0px 20px 5px rgba(178, 216, 200, 0.35);
+      border-radius: 20px;
+      padding: 15px;
+      text-align: center;
+
+      @include mobile {
+        max-width: 100%;
+        gap: 15px;
+        padding: 20px 10px 10px 10px;
+      }
+
+      p {
+        font-weight: 700;
+        font-size: 24px;
+        text-align: center;
+        color: #333333;
+        padding: 0 20px;
+
+        @include mobile {
+          font-size: 12px;
+          margin-bottom: 0px;
+          padding: 0 15px;
+        }
+      }
+
+      span {
+        font-size: 24px;
+        text-align: center;
+        color: #333333;
+        margin-bottom: 50px;
+        padding: 0 25px;
+
+        @include mobile {
+          font-size: 12px;
+          margin-bottom: 10px;
+          padding: 0 15px;
+        }
+      }
+    }
+  }
+}
+
+// certification
+.certificationContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  align-items: center;
+  width: 70%;
+  margin: 30px auto;
+
+  @include mobile {
+    gap: 5px;
+  }
+
+  section {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    @include mobile {
+      justify-content: center;
+      gap: 20px;
+    }
+  }
+}
+
+.certificationTitle {
+  font-weight: 700;
+  font-size: 50px;
+  text-transform: capitalize;
+  color: #333333;
+  margin-bottom: 50px;
+
+  @include mobile {
+    text-decoration: underline;
+    text-decoration-color: #fddc3a;
+    font-size: 12px;
+    margin-bottom: 10px;
+  }
+
+  span {
+    margin-left: 10px;
+    font-weight: 700;
+    font-size: 50px;
+    text-decoration: underline;
+    text-decoration-color: #fddc3a;
+
+    @include mobile {
+      font-size: 12px;
+      margin-left: 3px;
+    }
+  }
+}
+
+.certificationItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @include mobile {
+  }
+
+  span {
+    font-size: 24px;
+    color: #333333;
+    white-space: pre;
+    text-align: center;
+    margin-top: 10px;
+    @include mobile {
+      font-size: 12px;
+    }
+  }
+}
+
+// Test
+.testContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 30px;
+  margin-bottom: 50px;
+}
+
+.testTitle {
+  display: flex;
+  gap: 10px;
+
+  p,
+  span {
+    font-weight: 700;
+    font-size: 50px;
+    text-transform: capitalize;
+    color: #333333;
+  }
+
+  span {
+    text-decoration: underline;
+    text-decoration-color: #fddc3a;
+  }
+
+  @include mobile {
+    gap: 5px;
+    p,
+    span {
+      font-size: 12px;
+    }
+  }
+}
+
+.testSlider {
+  width: 35%;
+  position: relative;
+
+  @include mobile {
+    width: 60%;
+  }
+
+  .testSliderArrowRight {
+    position: absolute;
+    right: -30px;
+    top: 50%;
+    transform: translateY(-70%);
+  }
+
+  .testSliderArrowLeft {
+    position: absolute;
+    left: -30px;
+    top: 50%;
+    transform: translateY(-70%);
+  }
+
+}
+
+.testSliderItem {
+  background: #ffffff;
+  border: 1px solid #86c3bb;
+  border-radius: 20px;
+  position: relative;
+  display: flex;
+  text-align: center;
+  justify-content: space-between;
+  padding-bottom: 20px;
+  padding-top: 20px;
+
+  p {
+    width: 70%;
+    margin: 20px auto;
+    font-size: 24px;
+    color: #393e46;
+
+    @include mobile {
+      font-size: 12px;
+    }
+  }
+
+  span {
+    font-size: 24px;
+    color: #0f1123;
+
+    @include mobile {
+      font-size: 12px;
+      padding: 0px 30px;
+    }
+  }
+
+  .testQuoteLeft {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+  }
+
+  .testQuotRight {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
   }
 }
