@@ -28,6 +28,8 @@ const WORK = [
 
 const Work = () => {
   return (
+    <>
+    <h2 className={styles.workTitle}>How It Work</h2>
     <div className={styles.workContainer}>
       {WORK.map((item) => (
         <div key={item.number}>
@@ -35,6 +37,7 @@ const Work = () => {
         </div>
       ))}
     </div>
+    </>
   );
 };
 
