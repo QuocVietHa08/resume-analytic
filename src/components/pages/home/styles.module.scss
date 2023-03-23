@@ -494,18 +494,25 @@
 
   .testSliderArrowRight {
     position: absolute;
-    right: -30px;
+    right: -50px;
     top: 50%;
     transform: translateY(-70%);
+
+    @include mobile {
+      right: -30px;
+    }
   }
 
   .testSliderArrowLeft {
     position: absolute;
-    left: -30px;
+    left: -50px;
     top: 50%;
     transform: translateY(-70%);
-  }
 
+    @include mobile {
+      left: -30px;
+    }
+  }
 }
 
 .testSliderItem {
@@ -552,3 +559,163 @@
     right: 10px;
   }
 }
+
+// Enguiry
+.enquiryContainer {
+  width: 100%;
+  position: relative;
+
+  .circleLeft {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+  }
+  .circleRight {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+}
+
+.enquiryWrapper {
+  width: 70%;
+  margin: 30px auto;
+  text-align: center;
+
+  @include mobile {
+    width: 80%;
+  }
+
+  .enquiryTitle {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+
+    p,
+    span {
+      font-weight: 700;
+      font-size: 50px;
+      text-transform: capitalize;
+      color: #333333;
+    }
+
+    span {
+      text-decoration: underline;
+      text-decoration-color: #fddc3a;
+    }
+
+    @include mobile {
+      gap: 5px;
+      p,
+      span {
+        font-size: 12px;
+      }
+    }
+  }
+
+  .enquiryDes {
+    width: 80%;
+    text-align: center;
+    margin: 0 auto;
+    font-size: 24px;
+    margin-bottom: 30px;
+
+    @include mobile {
+      font-size: 12px;
+      margin-bottom: 10px;
+    }
+  }
+
+  .enquiryForm {
+    width: 70%;
+    margin: 0 auto;
+
+    @include mobile {
+      width: 80%;
+    }
+  }
+}
+
+.formInputStyle {
+  background: #ffffff;
+  border: 1px solid #b3b3b3;
+  border-radius: 10px;
+
+  @include mobile {
+    border-radius: 5px;
+  }
+}
+
+.buttonFormStyle {
+  color: white;
+  background: #0e8778;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  padding: 0px 50px !important;
+  margin-top: 30px !important;
+
+  @include mobile {
+    border-radius: 5px;
+    margin-top: 20px !important;
+  }
+}
+
+// download
+.downloadContainer {
+  display: flex;
+  gap: 30px;
+  margin-top: 150px;
+  margin-bottom: 50px;
+
+  @include mobile {
+    gap: 0px;
+    justify-content: space-between;
+    margin-top: 80px;
+    margin-bottom: 100px;
+  }
+
+  .downloadInfo {
+    width: 40%;
+
+    @include mobile {
+      width: 50%;
+    }
+
+    p {
+      font-weight: 700;
+      font-size: 50px;
+      text-transform: capitalize;
+      color: #333333;
+      margin-bottom: 20px;
+
+      @include mobile {
+        font-size: 20px;
+        margin-bottom: 10px;
+      }
+
+      span {
+        font-size: 50px;
+        font-weight: 700;
+        text-decoration: underline;
+        text-decoration-color: #fddc3a;
+
+        @include mobile {
+          font-size: 20px;
+        }
+      }
+    }
+  }
+
+  .downloadImageWrapper {
+    margin-top: 30px;
+    display: flex;
+    gap: 30px;
+
+    @include mobile {
+      margin-top: 10px;
+      gap: 10px
+    }
+  }
+}
+
