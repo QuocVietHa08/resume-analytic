@@ -32,6 +32,7 @@ html *::-webkit-scrollbar-track {
   font-size: 14px;
   font-weight: 300;
   // font-family: 'Baloo Da 2';
+  scroll-behavior: smooth;
 }
 
 th {
