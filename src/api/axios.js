@@ -37,32 +37,6 @@ api.interceptors.response.use(
       return Promise.reject(error.response);
     }
     return logout();
-    // localStorage.removeItem('accessToken');
-    // localStorage.removeItem('userInfo');
-    // store.dispatch({ type: 'auth/authUserByAccessToken', payload: null });
-    
-    // const refreshToken = Cookies.get('refreshToken');
-    // if (!refreshToken) {
-    //   logout();
-    //   return Promise.reject(error.response);
-    // }
-    // return Axios.post(`${configs.API_DOMAIN}/v1/app/auth/request-access-token`, {
-    //   refreshToken,
-    // })
-    //   .then((res) => {
-    //     if (res.status === 200) {
-    //       const { data } = res.data;
-    //       Cookies.set('token', data.token);
-    //       originalConfig.headers.Authorization = `Bearer ${data.token}`;
-    //       return Axios(originalConfig);
-    //     }
-    //     logout();
-    //     return Promise.reject(error.response);
-    //   })
-    //   .catch(() => {
-    //     logout();
-    //     return Promise.reject(error.response);
-    //   });
   },
 );
 

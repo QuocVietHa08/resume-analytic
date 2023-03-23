@@ -1,32 +1,36 @@
-#components-back-top-demo-custom .ant-back-top {
-  bottom: 100px;
-}
-#components-back-top-demo-custom .ant-back-top-inner {
-  height: 40px;
-  width: 40px;
-  line-height: 40px;
-  border-radius: 4px;
-  background-color: #1088e9;
-  color: #fff;
-  text-align: center;
-  font-size: 20px;
-}
+
+@import 'styles/responsive.scss';
 
 .faqCollapseContainer {
   margin-top: 40px;
+  margin-bottom: 40px;
+
+  @include mobile {
+    margin-top: 10px;
+    margin-bottom: 40px;
+  }
+
   .ant-collapse-item {
-    border-bottom: 1px solid #aaaaaa !important;
+    border-bottom: 1px solid #aaaaaa !important; 
   }
   .ant-collapse-arrow {
     background-color: #3c8477;
     border-radius: 5px;
     padding: 5px;
+
+    @include mobile {
+      padding: 3px;
+    }
   }
 
   .ant-collapse-header-text {
     font-weight: 700;
     font-size: 20px;
-
     color: #393e46;
+
+    @include mobile {
+
+      font-size: 12px;
+    }
   }
 }

@@ -4,10 +4,10 @@ import useDetectWindowSize from '@/hooks/useDetectWindowSize';
 
 const Download = () => {
   const width = useDetectWindowSize();
-
+  
   return (
     <div className={styles.downloadContainer}>
-      <div>
+      <div className={styles.downloadImagePhone}>
         <img src={`${width > 780 ? `/img/home/download/phone.svg` : `/img/home/download/phone_sp.svg`}`} alt="item" />
       </div>
       <div className={styles.downloadInfo}>
