@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Drawer, Space } from 'antd';
+import Link from 'next/link';
 
 import styles from './styles.module.scss';
 import useDetectWindowSize from '@/hooks/useDetectWindowSize';
@@ -11,7 +12,6 @@ const Header = () => {
     setOpen(false);
   };
 
-  
   const showDrawer = () => {
     setOpen(true);
   };
@@ -24,10 +24,12 @@ const Header = () => {
       <div>
         {width > 780 ? (
           <ul className="flex gap-10">
-            <li>Home</li>
-            <li>Services</li>
-            <li>FAQ</li>
-            <li>Contact Us</li>
+            <li><Link href="/">Home</Link></li>
+            <li>
+              <Link href="/service">Services</Link>{' '}
+            </li>
+            <li><Link href="/faq">FAQ</Link></li>
+            <li><Link href="/contact">Contact Us</Link></li>
           </ul>
         ) : (
           <div role="button" tabIndex={0} onKeyPress={showDrawer} onClick={showDrawer}>
@@ -50,10 +52,10 @@ const Header = () => {
         }
       >
         <div className={styles.drawerWrapper}>
-          <p>Home</p>
-          <p>Service</p>
-          <p>FAQ</p>
-          <p>Contact Us</p>
+          <p><Link href="/">Home</Link></p>
+          <p><Link href="/service">Service</Link></p>
+          <p><Link href="/faq">FAQ</Link></p>
+          <p><Link href="/contact">Contact Us</Link></p>
         </div>
       </Drawer>
     </div>

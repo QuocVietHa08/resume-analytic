@@ -1,0 +1,18 @@
+@import 'styles/responsive.scss';
+
+.breadcumbsContainer {
+  display: flex;
+  gap: 5px;
+  span {
+    font-size: 24px;
+    color: #0f1123;
+    font-weight: 700;
+  }
+
+  @include mobile {
+    span {
+      font-size: 12px;
+      font-weight: 700;
+    }
+  }
+}
