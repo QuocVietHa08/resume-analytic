@@ -1,0 +1,15 @@
+@import 'styles/responsive.scss';
+
+.policyContainer {
+  margin: 0 auto;
+}
+
+.policyContent {
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 20px;
+
+  p {
+    line-height: 35px;
+  }
+}

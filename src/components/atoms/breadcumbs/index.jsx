@@ -5,7 +5,7 @@ const BreadCumbs = ({ pages }) => {
   return (
     <div className={styles.breadcumbsContainer}>
       {pages.map((page, index) => (
-        <span key={page}>{page} {index !== (pages?.length-1) ?  '>': ''}</span>
+        <span key={page} className={index === (pages?.length - 1) ? 'color-primary-i' : ''}>{page} {index !== (pages?.length-1) ?  '>': ''}</span>
       ))}
     </div>
   );

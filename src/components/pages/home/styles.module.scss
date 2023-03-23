@@ -202,6 +202,10 @@
   margin: 0 auto;
   margin-top: 30px;
   margin-bottom: 70px;
+
+  .line {
+
+  }
 }
 
 .workTitle {
@@ -220,6 +224,8 @@
 
 .workItemWrapper {
   display: flex;
+  position: relative;
+
   p {
     font-weight: 700;
     top: 0;
@@ -240,6 +246,16 @@
     @include mobile {
       margin-top: 20px;
     }
+  }
+
+  .workItemLine {
+    width: 80px;
+    height: 0;
+    border: 3px dashed #E6E6E6;
+    position: absolute;
+    top: 50%;
+    right: -35%;
+    z-index: 99;
   }
 }
 
@@ -505,7 +521,7 @@
 
   .testSliderArrowLeft {
     position: absolute;
-    left: -50px;
+    left: -60px;
     top: 50%;
     transform: translateY(-70%);
 
@@ -517,7 +533,7 @@
 
 .testSliderItem {
   background: #ffffff;
-  border: 1px solid #86c3bb;
+  border: 2px solid #86c3bb;
   border-radius: 20px;
   position: relative;
   display: flex;
@@ -525,6 +541,11 @@
   justify-content: space-between;
   padding-bottom: 20px;
   padding-top: 20px;
+  height: 430px;
+
+  @include mobile {
+    height: 235px;
+  }
 
   p {
     width: 70%;
@@ -667,6 +688,7 @@
   gap: 30px;
   margin-top: 150px;
   margin-bottom: 50px;
+  position: relative;
 
   @include mobile {
     gap: 0px;
@@ -715,6 +737,31 @@
     @include mobile {
       margin-top: 10px;
       gap: 10px
+    }
+  }
+}
+
+.downloadImagePhone {
+  @media (max-width: 1500px) and (min-width: 780px) {
+    width: 40%;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+
+.downloadDots {
+  position: absolute;
+  right: 0;
+
+  @media (max-width: 1500px) and (min-width: 780px) {
+    width: 20%;
+
+    img {
+      width: 100%;
+      height: auto;
     }
   }
 }

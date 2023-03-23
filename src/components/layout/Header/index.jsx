@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/no-noninteractive-element-to-interactive-role */
 import { useState } from 'react';
 import { Drawer, Space } from 'antd';
 import Link from 'next/link';
@@ -52,10 +53,10 @@ const Header = () => {
         }
       >
         <div className={styles.drawerWrapper}>
-          <p><Link href="/">Home</Link></p>
-          <p><Link href="/service">Service</Link></p>
-          <p><Link href="/faq">FAQ</Link></p>
-          <p><Link href="/contact">Contact Us</Link></p>
+          <p onClick={onClose} role="button" tabIndex={0} onKeyDown={onClose}><Link href="/">Home</Link></p>
+          <p onClick={onClose} role="button" tabIndex={0} onKeyDown={onClose}><Link href="/service">Service</Link></p>
+          <p onClick={onClose} role="button" tabIndex={0} onKeyDown={onClose}><Link href="/faq">FAQ</Link></p>
+          <p onClick={onClose} role="button" tabIndex={0} onKeyDown={onClose}><Link href="/contact">Contact Us</Link></p>
         </div>
       </Drawer>
     </div>
