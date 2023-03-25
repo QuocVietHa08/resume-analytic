@@ -513,6 +513,7 @@
     right: -50px;
     top: 50%;
     transform: translateY(-70%);
+    cursor: pointer;
 
     @include mobile {
       right: -30px;
@@ -524,6 +525,7 @@
     left: -60px;
     top: 50%;
     transform: translateY(-70%);
+    cursor: pointer;
 
     @include mobile {
       left: -30px;
@@ -544,7 +546,7 @@
   height: 430px;
 
   @include mobile {
-    height: 235px;
+    height: 325px;
   }
 
   p {
@@ -682,6 +684,37 @@
   }
 }
 
+.enquiryImageContainer {
+  display: flex;
+  gap: 50;
+  align-items: center;
+
+  @include mobile {
+    gap: 10px
+  }
+
+  .captchaWrapper {
+    margin-right: 20px;
+    @media (max-width: 900px) and (min-width: 780px){
+      width: 60%;
+      margin-right: 10px;
+
+      img {
+        width: 100%;
+        height: auto;
+      } 
+    }    
+  }
+
+  .enquiryInfra {
+    display: flex;
+    align-items: center;
+    width: auto;
+    max-width: 50%;
+    gap: 20px;
+  }
+}
+
 // download
 .downloadContainer {
   display: flex;
@@ -691,8 +724,10 @@
   position: relative;
 
   @include mobile {
-    gap: 0px;
-    justify-content: space-between;
+    gap: 10px;
+    @media (min-width: 400px) {
+      justify-content: space-between;
+    }
     margin-top: 80px;
     margin-bottom: 100px;
   }
@@ -734,6 +769,12 @@
     display: flex;
     gap: 30px;
 
+    img {
+      @media (max-width: 950px) and (min-width: 780px) {
+        width: 45%;
+      }
+    }
+
     @include mobile {
       margin-top: 10px;
       gap: 10px
@@ -755,12 +796,15 @@
 .downloadDots {
   position: absolute;
   right: 0;
+  top: -15%;
 
   @media (max-width: 1500px) and (min-width: 780px) {
     width: 20%;
+    display: flex;
+    justify-content: flex-end;
 
     img {
-      width: 100%;
+      width: 20%;
       height: auto;
     }
   }

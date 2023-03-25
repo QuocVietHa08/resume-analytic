@@ -1,0 +1,341 @@
+@import 'styles/responsive.scss';
+
+.cleaningDetailContainer {
+  width: 80%;
+  margin: 0 auto;
+  margin-bottom: 50px;
+  margin-top: 100px;
+  display: flex;
+  gap: 100px;
+
+  @include mobile {
+    flex-direction: column;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    gap: 50px;
+  }
+}
+
+.cleaningItem {
+  display: flex;
+  gap: 30px;
+
+  @include mobile {
+    gap: 10px;
+  }
+}
+
+.cleaningDesc {
+  font-size: 24px;
+  line-height: 40px;
+  color: #333333;
+
+  @include mobile {
+    font-size: 12px;
+    line-height: 18px;
+  }
+}
+
+.cleaningTitle {
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 34px;
+  color: #0e8778;
+  margin-bottom: 30px;
+
+  @include mobile {
+    font-size: 14px;
+    line-height: 14px;
+    margin-bottom: 20px;
+  }
+}
+
+.cleaningItem {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+
+  @include mobile {
+    gap: 20px;
+  }
+
+  span {
+    font-size: 24px;
+    color: #333;
+
+    @include mobile {
+      font-size: 12px;
+    }
+  }
+}
+
+.disclaimerContainer {
+  width: 100vw;
+  background: #e7f3f2;
+  padding: 25px 0px;
+
+  .disclaimerContent {
+    width: 80%;
+    margin: 0 auto;
+
+    p {
+      color: #0e8778;
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 10px;
+
+      @include mobile {
+        font-size: 12px;
+      }
+    }
+
+    div {
+      color: #333;
+      font-size: 16px;
+
+      @include mobile {
+        font-size: 12px;
+      }
+    }
+  }
+}
+
+// Cleaning Varity
+.cleaningVarityContainer {
+  width: 100vw;
+  margin-top: 150px;
+  margin-bottom: 150px;
+
+  @include mobile {
+    margin-top: 70px;
+    margin-bottom: 70px;
+  }
+  .cleaningVarityWrapper {
+    width: 80%;
+    margin: 0 auto;
+
+    .cleaningVarityTitle {
+      font-weight: 700;
+      font-size: 50px;
+      text-align: center;
+      color: #0f1123;
+      width: 50%;
+      margin: 0 auto;
+
+      @include mobile {
+        font-size: 12px;
+        width: 90%;
+      }
+
+      span {
+        font-weight: 700;
+        font-size: 50px;
+        text-decoration: underline;
+        text-decoration-color: #fddc3a;
+
+        @include mobile {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+}
+
+.cleaningVarityItems {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 60%;
+  margin: 50px auto;
+
+  @include mobile {
+    width: 100%;
+    margin: 0px auto;
+  }
+}
+
+.cleaningVarityItemContainer {
+  display: flex;
+  width: 30%;
+  background: #ffffff;
+  border: 1px solid #3e9f93;
+  border-radius: 20px;
+  gap: 20px;
+  height: 344px;
+
+  @include mobile {
+    width: 48%;
+    margin-top: 20px;
+    height: 160px;
+  }
+
+  .itemContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+
+    @include mobile {
+      padding: 10px;
+    }
+  }
+
+  .itemContentContact {
+    background: #0e8778;
+    border-radius: 20px;
+    padding: 20px;
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: space-between;
+
+    @include mobile {
+      padding: 10px;
+    }
+
+    p {
+      font-weight: 700;
+      font-size: 24px;
+      color: #ffffff;
+
+      @include mobile {
+        font-size: 12px;
+      }
+    }
+
+    .contactButton {
+      background: #ffffff;
+      border-radius: 10px;
+      border: none;
+      margin-top: 130px;
+      padding: 5px 5px;
+
+      @include mobile {
+        border-radius: 5px;
+        margin-top: 35px;
+      }
+
+      span {
+        font-size: 20px;
+        color: #0e8778;
+        padding: 10px 5px;
+
+        @include mobile {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+
+  p {
+    font-weight: 700;
+    font-size: 24px;
+    color: #3e9f93;
+
+    @include mobile {
+      font-size: 12px;
+    }
+  }
+
+  span {
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: capitalize;
+    color: #3e9f93;
+
+    @include mobile {
+      font-size: 12px;
+    }
+  }
+}
+
+// cleaning service
+.cleaningServiceContainer {
+  margin-top: 100px;
+  margin-bottom: 170px;
+  position: relative;
+  
+  @include mobile {
+    margin-bottom: 80px;
+  }
+  .cleaningServiceWrapper {
+    width: 80%;
+    margin: 0 auto;
+
+    @include mobile {
+      width: 90%;
+    }
+
+    p {
+      font-weight: 700;
+      font-size: 50px;
+      text-align: center;
+      color: #0f1123;
+      margin: 0 auto;
+      width: 60%;
+
+      @include mobile {
+        font-size: 12px;
+        width: 90%;
+      }
+    }
+    span {
+      font-size: 50px;
+      font-weight: 700;
+      text-decoration: underline;
+      text-decoration-color: #fddc3a;
+
+      @include mobile {
+        font-size: 12px;
+      }
+    }
+  }
+
+  .itemImageLeft {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .itemImageRight {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+}
+
+.servicesContainer {
+  display: flex;
+  flex-wrap: wrap; 
+  justify-content: space-evenly;
+  margin-top: 70px;
+  
+  @include mobile {
+    margin-top: 40px;
+  }
+
+  .serviceItem {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    width: 24%;
+  
+
+    @include mobile {
+      gap: 10px;
+      margin-top: 20px;
+      width: 32%;
+    }
+
+    p {
+      font-size: 24px;
+      white-space: pre-wrap;
+
+      @include mobile {
+        font-size: 12px;
+      }
+    }
+  }
+}

@@ -3,16 +3,18 @@ import React from 'react';
 import styles from './styles.module.scss';
 import useDetectWindowSize from '@/hooks/useDetectWindowSize';
 
-const Enquiry = () => {
+const Enquiry = ({ isShowBgImage = true }) => {
   const width = useDetectWindowSize();
 
   return (
     <div className={styles.enquiryContainer}>
-      <img
-        className={styles.circleLeft}
-        src={`${width > 780 ? `/img/home/enquiry/circleLeft.svg` : `/img/home/enquiry/circleLeft_sp.svg`}`}
-        alt="arrow"
-      />
+      {isShowBgImage && (
+        <img
+          className={styles.circleLeft}
+          src={`${width > 780 ? `/img/home/enquiry/circleLeft.svg` : `/img/home/enquiry/circleLeft_sp.svg`}`}
+          alt="arrow"
+        />
+      )}
       <div className={styles.enquiryWrapper}>
         <div className={styles.enquiryTitle}>
           <p>
@@ -59,14 +61,16 @@ const Enquiry = () => {
                 <Input.TextArea rows={6} className={styles.formInputStyle} />
               </div>
             </Form.Item>
-            <div className="flex gap-50 gap-sp-10 item-center">
-              <img src={`${width > 780 ? `/img/home/enquiry/captcha.svg` : `/img/home/enquiry/captcha_sp.svg`}`} alt="arrow" />
+            <div className={styles.enquiryImageContainer}>
+              <div className={styles.captchaWrapper}>
+                <img src={`${width > 780 ? `/img/home/enquiry/captcha.svg` : `/img/home/enquiry/captcha_sp.svg`}`} alt="arrow" />
+              </div>
               {width > 780 ? (
-                <>
+                <div className={styles.enquiryInfra}>
                   <img src="/img/home/enquiry/aws.svg" alt="logo" />
                   <img src="/img/home/enquiry/cloudflare.svg" alt="logo" />
                   <img src="/img/home/enquiry/logo.svg" alt="logo" />
-                </>
+                </div>
               ) : (
                 <img src="/img/home/enquiry/service.svg" alt="service" />
               )}
@@ -77,11 +81,13 @@ const Enquiry = () => {
           </Form>
         </div>
       </div>
-      <img
-        className={styles.circleRight}
-        src={`${width > 780 ? `/img/home/enquiry/circleRight.svg` : `/img/home/enquiry/circleRight_sp.svg`}`}
-        alt="arrow"
-      />
+      {isShowBgImage && (
+        <img
+          className={styles.circleRight}
+          src={`${width > 780 ? `/img/home/enquiry/circleRight.svg` : `/img/home/enquiry/circleRight_sp.svg`}`}
+          alt="arrow"
+        />
+      )}
     </div>
   );
 };
