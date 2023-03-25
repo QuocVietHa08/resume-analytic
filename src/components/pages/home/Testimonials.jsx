@@ -41,7 +41,7 @@ const Testimonials = () => {
               alt="test"
               className={styles.testQuoteLeft}
             />
-            <div className="flex flex-column justify-between h-full">
+            <div className="flex flex-column h-full justify-between">
               <p>
                 I am glad to have found my Kungfu Helper to handle all my home needs. With my cleaning needs outsourced, I save an average
                 of 5 hours each week.
@@ -60,7 +60,7 @@ const Testimonials = () => {
               alt="test"
               className={styles.testQuoteLeft}
             />
-            <div className="flex flex-column justify-between">
+            <div className="flex flex-column h-full justify-between">
               <p>
               Kungfu Helper has made my life easier with efficient customer service and experienced helpers. My wife and I can now spend more time with our daughters on the weekends. Anytime I need a cleaning, they are always ready to help. Big thank you to Kungfu!
               </p>
@@ -78,7 +78,7 @@ const Testimonials = () => {
               alt="test"
               className={styles.testQuoteLeft}
             />
-            <div className="flex flex-column justify-between">
+            <div className="flex flex-column h-full justify-between">
               <p>
               We have been looking for trusted cleaning service recommendations for the longest time ever since we relocated to Singapore 6 months ago. Really appreciate Kungfu Helper’s focus on consistent cleaning quality instead of marketing gimmicks. Book Kungfu for a fuss-free experience!
               </p>

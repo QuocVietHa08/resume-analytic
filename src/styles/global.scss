@@ -155,8 +155,12 @@ th {
   }
 
   @include mobile {
-    .mb-sp-#{$i} {
-      padding-top:#{$i}px !important;
+    .mr-sp-#{$i} {
+      margin-right:#{$i}px !important;
+    }
+
+    .pb-sp-#{$i} {
+      padding-bottom:#{$i}px !important;
     }
     
     .pt-sp-#{$i} {
@@ -178,6 +182,10 @@ th {
 
 .flex {
   display: flex;
+}
+
+.flex-reverse {
+  flex-direction: row-reverse;
 }
 
 .flex-i {
@@ -265,6 +273,10 @@ th {
 
 .color-primary-i {
   color: var(--primary-color) !important;
+}
+
+.color-primary-dark {
+  color: #36625A;
 }
 
 .color-gray {

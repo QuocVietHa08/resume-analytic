@@ -17,11 +17,9 @@ const Download = () => {
         <div className="font-size-24 font-size-sp-12">Book your desired cleaning services with just a few clicks.</div>
 
         <div className="font-size-24 font-size-sp-12 mt-10">Enjoy free wallet credits when you sign up on our app today! </div>
-        <div className={styles.downloadImageWrapper}>
-          
-        <img src={`${width > 780 ? `/img/home/intro/apple_download.svg` : `/img/home/intro/apple_download_sp.svg`}`} alt="item" />
-
-        <img src={`${width > 780 ? `/img/home/intro/google_download.svg` : `/img/home/intro/google_download_sp.svg`}`} alt="item" />
+        <div className={styles.downloadImageWrapper}>          
+          <img src={`${width > 780 ? `/img/home/intro/apple_download.svg` : `/img/home/intro/apple_download_sp.svg`}`} alt="item" />
+          <img src={`${width > 780 ? `/img/home/intro/google_download.svg` : `/img/home/intro/google_download_sp.svg`}`} alt="item" />
         </div>
       </div>
 

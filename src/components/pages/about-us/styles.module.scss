@@ -1,0 +1,75 @@
+@import 'styles/responsive.scss';
+
+.aboutUsDetailContainer {
+  margin-top: 50px;
+  margin-bottom: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: calc((100% - 80%) / 2);
+
+  @include mobile {
+    flex-direction: column;
+    justify-content: unset;
+    align-items: unset;
+    margin-top: 20px;
+  }
+
+  .descWrapper {
+    width: 45%;
+
+    @include mobile {
+      width: 90%;
+    }
+  }
+
+  .imageWrapper {
+    @include mobile {
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+
+  .imageWrapperLeft {
+    @include mobile {
+      display: flex;
+    }
+  }
+
+  span,
+  h3 {
+    font-size: 50px;
+    display: flex;
+    gap: 15px;
+    color: #0f1123;
+    font-weight: 700;
+
+    @include mobile {
+      font-size: 18px;
+      gap: 10px;
+    }
+  }
+
+  h3 {
+    text-decoration: underline;
+    text-decoration-color: #fddc3a;
+  }
+
+  p {
+    font-size: 16px;
+
+    @include mobile {
+      font-size: 12px;
+    }
+  }
+}
+
+.aboutUsDetailContainerLeft {
+  @extend .aboutUsDetailContainer;
+  margin-right: calc((100% - 80%) / 2);
+  margin-left: 0px;
+
+  .descWrapper {
+    text-align: right;
+  }
+}

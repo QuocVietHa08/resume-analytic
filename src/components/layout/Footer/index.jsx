@@ -1,11 +1,11 @@
 import { Button, Divider, Input } from 'antd';
-import useDetectWindowSize from '@/hooks/useDetectWindowSize';
+import Link from 'next/link';
 
+import useDetectWindowSize from '@/hooks/useDetectWindowSize';
 import styles from './styles.module.scss';
 
 const Footer = () => {
   const width = useDetectWindowSize();
-  // const viewPort = useViewport();
 
   return (
     <>
@@ -14,11 +14,11 @@ const Footer = () => {
           <div className={styles.footerLinkInfo}>
             <div className={styles.quickLinks}>
               <div className={styles.headerText}>Quick Links</div>
-              <div>Home</div>
-              <div>About</div>
-              <div>Testimonials</div>
-              <div>FAQ</div>
-              <div>Contact Us</div>
+              <div><Link className="color-primary" href="/">Home</Link></div>
+              <div><Link className="color-primary" href="/about-us">About</Link></div>
+              <div><Link className="color-primary" href="/testimonials">Testimonials</Link></div>
+              <div><Link className="color-primary" href="faq">FAQ</Link></div>
+              <div><Link className="color-primary" href="contact">Contact Us</Link></div>
             </div>
             <div className={styles.info}>
               <div>
@@ -106,9 +106,9 @@ const Footer = () => {
             <div className="flex item-center justify-evenly gap-25">
               <div>© 2022 KungFu Helper Pte Ltd. All rights reserved.</div>
               <div>|</div>
-              <div>Privacy Policy</div>
+              <div><Link href="/policy" className="color-primary-dark">Privacy Policy</Link></div>
               <div>|</div>
-              <div>Terms & Conditions</div>
+              <div><Link href="/term" className="color-primary-dark">Terms & Conditions</Link></div>
             </div>
 
             <div>
@@ -121,9 +121,9 @@ const Footer = () => {
             <div className="flex flex-column item-center justify-center gap-10">
               <p>© 2022 KungFu Helper Pte Ltd. All rights reserved.</p>
               <div className="flex gap-10 font-size-12">
-                <p className="text-bold">Privacy Policy</p>
+                <p className="text-bold"><Link href="/policy" className="color-primary-dark text-bold">Privacy Policy</Link></p>
                 <div>|</div>
-                <div className="text-bold">Terms & Conditions</div>
+                <div className="text-bold"><Link href="/term" className="color-primary-dark text-bold">Terms & Conditions</Link></div>
               </div>
             </div>
 

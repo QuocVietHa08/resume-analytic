@@ -31,7 +31,7 @@ const Content = () => {
         >
           <Panel header="How does KungFu Helper work?" key="6">
             <>
-              <div className="mb-sp-10 ">You can make a booking via our mobile app. It takes just five simple steps to make a booking as illustrated below:</div>
+              <div className="pt-sp-10 ">You can make a booking via our mobile app. It takes just five simple steps to make a booking as illustrated below:</div>
               <Work />
             </>
           </Panel>

@@ -4,16 +4,26 @@
   display: flex;
   gap: 10px;
 
-  span {
-    font-size: 24px;
-    color: #0f1123;
-    font-weight: 700;
-  }
+  .breadcumbsWrapper {
+    width: 80%;
+    margin: 0 auto;
 
-  @include mobile {
+    @include mobile {
+      width: 80%;
+    }
+    
     span {
-      font-size: 12px;
+      font-size: 24px;
+      color: #0f1123;
       font-weight: 700;
     }
+  
+    @include mobile {
+      span {
+        font-size: 12px;
+        font-weight: 700;
+      }
+    }
+
   }
 }
