@@ -1,0 +1,48 @@
+@import 'styles/responsive.scss';
+
+.poolCleaningDetailContainer {
+  margin-top: 100px;
+  margin-bottom: 100px;
+  display: flex;
+  align-items: center;
+  gap: 150px;
+
+  @include mobile {
+    flex-direction: column;
+    align-items: start;
+    gap: 0px;
+    margin: 50px auto;
+  }
+
+  .poolingDes {
+    font-size: 24px;
+
+    @include mobile {
+      width: 80%;
+      font-size: 12px;
+      margin: 20px auto;
+    }
+  }
+
+  .poolingDetailContent {
+    width: 45%;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    span {
+      font-size: 24px;
+      color: #333333;
+
+      @include mobile {
+        font-size: 12px;
+      }
+    }
+
+    @include mobile {
+      width: 80%;
+      margin: 10px auto;
+    }
+  }
+}

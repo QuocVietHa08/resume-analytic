@@ -1,15 +1,12 @@
 import React from 'react';
 import { Collapse } from 'antd';
-
 import styles from './styles.module.scss';
-import BreadCumbs from '@/components/atoms/breadcumbs';
 import Work from '../home/Work';
 
 const { Panel } = Collapse;
 const Content = () => {
   return (
-    <div className={`${styles.contentContainer} pt-40 pt-sp-20`}>
-      <BreadCumbs pages={['Home', 'FAQ']} />
+    <div className={`${styles.contentContainer}`}>
       <div className="faqCollapseContainer">
         <Collapse
           ghost
