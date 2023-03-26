@@ -1,0 +1,48 @@
+@import 'styles/responsive.scss';
+
+.handymanServiceContainer {
+  // background-color: red;
+}
+
+.handymanServiceDetail {
+  .introText {
+    font-weight: 700;
+    font-size: 32px;
+    text-align: center;
+    color: #0e8778;
+
+    @include mobile {
+      font-size: 14px;
+    }
+  }
+
+  .serviceDetail {
+    display: flex;
+    align-items: center;
+    gap: 150px;
+
+    @include mobile {
+      flex-direction: column;
+      align-items: start;
+      gap: 0px;
+    }
+  }
+
+  .serviceDetailContent {
+    width: 45%;
+    text-align: left;
+    p {
+      font-size: 24px;
+      color: #333333;
+
+      @include mobile {
+        font-size: 12px;
+      }
+    }
+
+    @include mobile {
+      width: 90%;
+      margin: 30px auto;
+    }
+  }
+}

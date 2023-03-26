@@ -155,6 +155,14 @@ th {
   }
 
   @include mobile {
+    .mt-sp-#{$i} {
+      margin-top:#{$i}px !important;
+    }
+
+    .mb-sp-#{$i} {
+      margin-bottom:#{$i}px !important;
+    }
+
     .mr-sp-#{$i} {
       margin-right:#{$i}px !important;
     }
@@ -252,7 +260,11 @@ th {
   background-color: #e9e9e9;
 }
 .text-center {
-  text-align: center;
+  text-align: center !important;
+}
+
+.text-left {
+  text-align: left;
 }
 
 .text-uppercase {
@@ -320,6 +332,10 @@ th {
 
 .mH-100vh {
   min-height: 100vh;
+}
+
+.w-full {
+  width: 100%;
 }
 
 .h-full {

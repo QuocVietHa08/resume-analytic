@@ -17,11 +17,13 @@ const CLEANING_VARITY = [
   {
     text: 'General Office Cleaning',
     img: '/img/office-cleaning/cleaing-variety/office-cleaning',
+    link: '/office-cleaning',
     type: 'info'
   },
   {
     text: 'Office Dsinfection',
     img: '/img/office-cleaning/cleaing-variety/office-dsinfection',
+    link: '/office-disinfection',
     type: 'info'
   }, {
     text: 'Unable to find the service you are looking for?',
