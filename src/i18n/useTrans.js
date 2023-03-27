@@ -1,7 +1,7 @@
 import jp from './locales/jp';
 
 const useTrans = () => {
-  let trans = jp;
+  const trans = jp;
   return trans;
 };
 
