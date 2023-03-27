@@ -252,7 +252,7 @@
   margin-top: 100px;
   margin-bottom: 170px;
   position: relative;
-  
+
   @include mobile {
     margin-bottom: 80px;
   }
@@ -304,10 +304,10 @@
 
 .servicesContainer {
   display: flex;
-  flex-wrap: wrap; 
+  flex-wrap: wrap;
   justify-content: space-evenly;
   margin-top: 70px;
-  
+
   @include mobile {
     margin-top: 40px;
   }
@@ -320,7 +320,7 @@
     align-items: center;
     gap: 30px;
     width: 24%;
-  
+
 
     @include mobile {
       gap: 10px;

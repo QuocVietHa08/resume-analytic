@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Link from 'next/link';
 
 import ServiceItem from './ServiceItem';
 import styles from './styles.module.scss';
@@ -59,22 +60,25 @@ const Service = () => {
           provide in detail!
         </p>
         <div>
-          <div className={`${styles.serviceItemContainer}`}>
-            <div>
-              <img src="/img/home/service/part_time.svg" alt="img" />
+          <Link href="/part-time-helper">
+            <div className={`${styles.serviceItemContainer}`}>
+              <div>
+                <img src="/img/home/service/part_time.svg" alt="img" />
+              </div>
+              <div className="flex flex-column gap-20 gap-sp-0">
+                <span className="text-bold color-primary">Part-time Helper </span>
+                <>
+                  <div className="flex gap-10 item-center">
+                    <p>Find Out More</p>
+                    <span className={styles.dropdownStyle}>
+                      <img src="/img/home/service/arrow.svg" alt="arrow" />
+                    </span>
+                  </div>
+                </>
+              </div>
             </div>
-            <div className="flex flex-column gap-20 gap-sp-0">
-              <span className="text-bold color-primary">Part-time Helper </span>
-              <>
-                <div className="flex gap-10 item-center">
-                  <p>Find Out More</p>
-                  <span className={styles.dropdownStyle}>
-                    <img src="/img/home/service/arrow.svg" alt="arrow" />
-                  </span>
-                </div>
-              </>
-            </div>
-          </div>
+          </Link>
+
           {SERVICE_DETAIL.map((item) => (
             <div key={item.name}>
               <ServiceItem
