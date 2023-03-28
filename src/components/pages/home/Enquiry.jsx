@@ -38,7 +38,7 @@ const Enquiry = ({ isShowBgImage = true }) => {
             <Form.Item>
               <div className="flex flex-column item-flex-start">
                 <div>
-                  Phone No<span className="color-red">*</span>
+                  Phone No.<span className="color-red">*</span>
                 </div>
                 <Input className={styles.formInputStyle} />
               </div>
@@ -76,7 +76,7 @@ const Enquiry = ({ isShowBgImage = true }) => {
               )}
             </div>
             <Form.Item className="flex">
-              <Button className={styles.buttonFormStyle}>Submit</Button>
+              <Button size="large" className={styles.buttonFormStyle}>Submit</Button>
             </Form.Item>
           </Form>
         </div>

@@ -70,7 +70,9 @@ const HandymanService = () => {
   return (
     <div className={styles.handymanServiceContainer}>
       <IntroService title="General Handyman Services" />
-      <BreadCumbs pages={['Home', 'Service', 'General Handyman Service']} />
+      <div className="mt-sp-30 mt-50">
+        <BreadCumbs pages={['Home', 'Service', 'General Handyman Service']} />
+      </div>
       <HandymanServiceDetail />
       <div className="mt-150 mt-sp-20 mb-170 mb-sp-100">
         <Disclaimer />
@@ -78,7 +80,7 @@ const HandymanService = () => {
       <CleaningVarity arrayList={HANDYMAN_VARITY} />
       <Work />
       <Testimonials />
-      <CleaningService />
+      <CleaningService title="General Handyman Services" />
       <Enquiry isShowBgImage={false} />
       <Download />
     </div>

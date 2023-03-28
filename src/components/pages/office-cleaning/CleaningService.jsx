@@ -41,7 +41,7 @@ const CLEANING_SERVIES = [
     img: '/img/office-cleaning/cleaning-service/healthcare',
   },
 ];
-const CleaningService = () => {
+const CleaningService = ({ title }) => {
   const width = useDetectWindowSize();
   return (
     <div className={styles.cleaningServiceContainer}>
@@ -54,7 +54,7 @@ const CleaningService = () => {
       />
       <div className={styles.cleaningServiceWrapper}>
         <p>
-          Our General Office Cleaning Services <br /> <span>Can Be Applied To</span>
+          Our {title} <br /> <span>Can Be Applied To</span>
         </p>
         <div className={styles.servicesContainer}>
           {CLEANING_SERVIES.map((item) => (

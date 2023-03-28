@@ -36,14 +36,16 @@ const OfficeDisinfection = () => {
   return (
     <div className={styles.officeCleaningContainer}>
       <IntroService title="Office Disinfection" />
-      <BreadCumbs pages={['Home', 'Services', 'Office Disinfection']} />
+      <div className="mt-sp-30 mt-90">
+        <BreadCumbs pages={['Home', 'Services', 'Office Disinfection']} />
+      </div>
       <DisinfectionDetail />
       <DisinfectionCleaningContent />
       <Disclaimer />
       <CleaningVarity arrayList={CLEANING_VARITY} />
       <Work />
       <Testimonials />
-      <CleaningService />
+      <CleaningService title="Office Disinfection Services" />
       <Enquiry isShowBgImage={false} />
       <Download /> 
     </div>

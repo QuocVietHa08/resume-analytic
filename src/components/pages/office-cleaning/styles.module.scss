@@ -78,6 +78,10 @@
     width: 80%;
     margin: 0 auto;
 
+    @include mobile {
+      width: 85%;
+    }
+
     p {
       color: #0e8778;
       font-size: 24px;
@@ -114,6 +118,10 @@
     width: 80%;
     margin: 0 auto;
 
+    @include mobile {
+      width: 85%;
+    }
+
     .cleaningVarityTitle {
       font-weight: 700;
       font-size: 50px;
@@ -123,7 +131,7 @@
       margin: 0 auto;
 
       @include mobile {
-        font-size: 12px;
+        font-size: 20px;
         width: 90%;
       }
 
@@ -134,7 +142,7 @@
         text-decoration-color: #fddc3a;
 
         @include mobile {
-          font-size: 12px;
+          font-size: 20px;
         }
       }
     }
@@ -261,7 +269,7 @@
     margin: 0 auto;
 
     @include mobile {
-      width: 90%;
+      width: 85%;
     }
 
     p {
@@ -273,7 +281,7 @@
       width: 60%;
 
       @include mobile {
-        font-size: 12px;
+        font-size: 20px;
         width: 90%;
       }
     }
@@ -284,7 +292,7 @@
       text-decoration-color: #fddc3a;
 
       @include mobile {
-        font-size: 12px;
+        font-size: 20px;
       }
     }
   }

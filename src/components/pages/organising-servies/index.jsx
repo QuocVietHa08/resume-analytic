@@ -75,7 +75,7 @@ const OrganisingService = () => {
       <CleaningVarity arrayList={VARITYS}/>
       <Work />
       <Testimonials />
-      <CleaningService />
+      <CleaningService title="Organisation Services" />
       <Enquiry isShowBgImage={false} />
       <Download />
     </>
