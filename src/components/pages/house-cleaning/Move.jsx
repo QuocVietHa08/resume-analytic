@@ -10,11 +10,11 @@ import HouseHelper from './HouseHelper';
 import Apply from './Apply';
 import HouseCleaningService from './HouseCleaningService';
 
-const PostRenovation = () => {
+const Move = () => {
   return (
     <>
-      <IntroService title="Post-Renovation Cleaning" />
-      <BreadCumbs pages={['Home', 'Services', 'Post-Renovation cleaning']} />
+      <IntroService title="Move In / Move Out Cleaning" />
+      <BreadCumbs pages={['Home', 'Services', 'Move In / Move Out Cleaning']} />
       <HouseHelper />
       <Disclaimer />
       <HouseCleaningService />
@@ -27,4 +27,4 @@ const PostRenovation = () => {
   );
 };
 
-export default PostRenovation;
+export default Move;

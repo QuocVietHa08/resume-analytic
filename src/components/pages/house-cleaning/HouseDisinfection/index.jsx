@@ -6,16 +6,16 @@ import Work from '@/components/pages/home/Work';
 import Testimonials from '@/components/pages/home/Testimonials';
 import Enquiry from '@/components/pages/home/Enquiry';
 import Download from '@/components/pages/home/Download';
-import HouseHelper from './HouseHelper';
-import Apply from './Apply';
-import HouseCleaningService from './HouseCleaningService';
+import HouseDisinfectionSection from './HouseDisinfectionSection';
+import Apply from '../Apply';
+import HouseCleaningService from '../HouseCleaningService';
 
-const PostRenovation = () => {
+const HouseDisinfection = () => {
   return (
     <>
-      <IntroService title="Post-Renovation Cleaning" />
-      <BreadCumbs pages={['Home', 'Services', 'Post-Renovation cleaning']} />
-      <HouseHelper />
+      <IntroService title="House Disinfection" />
+      <BreadCumbs pages={['Home', 'Services', 'House Disinfection']} />
+      <HouseDisinfectionSection />
       <Disclaimer />
       <HouseCleaningService />
       <Work />
@@ -27,4 +27,4 @@ const PostRenovation = () => {
   );
 };
 
-export default PostRenovation;
+export default HouseDisinfection;
