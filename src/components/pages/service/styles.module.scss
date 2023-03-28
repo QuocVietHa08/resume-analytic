@@ -24,9 +24,9 @@
   transform: translate(-50%, -50%) !important;
   font-weight: 700;
   font-size: 80px;
-  text-align: center;
   color: #ffffff;
   transform: matrix(1, 0.01, 0.01, 1, 0, 0);
+  width: 100%;
 
   @include mobile {
     font-size: 20px;

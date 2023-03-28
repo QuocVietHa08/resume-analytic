@@ -1,6 +1,6 @@
 import styles from '@/components/pages/part-time/styles.module.scss';
 
-const PartTimeItem = ({ title, imgSrc, content }) => {
+const HelperItem = ({ title, imgSrc, content }) => {
   return (
     <div className={styles.partimeItem}>
       <img src={imgSrc} alt={title} />
@@ -9,4 +9,4 @@ const PartTimeItem = ({ title, imgSrc, content }) => {
     </div>
   );
 };
-export default PartTimeItem;
+export default HelperItem;
