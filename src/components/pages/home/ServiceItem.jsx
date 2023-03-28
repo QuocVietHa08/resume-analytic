@@ -1,17 +1,18 @@
 import React, { useEffect, useState } from 'react';
+import Link from 'next/link';
 import styles from './styles.module.scss';
 
-const ServiceItem = ({ activeService, title, imgSrc, services, handleOnClick }) => {
+const ServiceItem = ({ activeService, title, imgSrc, services, handleOnClick, links = [] }) => {
   const [isActive, setIsActive] = useState(false);
-  
+
   useEffect(() => {
-    setIsActive(activeService === title)
-  }, [activeService, title])
+    setIsActive(activeService === title);
+  }, [activeService, title]);
 
   const handleClickItem = () => {
-    if (activeService === title) return handleOnClick('') 
-    return handleOnClick(title)
-  }
+    if (activeService === title) return handleOnClick('');
+    return handleOnClick(title);
+  };
   return (
     <div
       onClick={handleClickItem}
@@ -31,15 +32,15 @@ const ServiceItem = ({ activeService, title, imgSrc, services, handleOnClick }) 
                 <img src="/img/home/service/dropdown.svg" alt="dropdown" />
               </span>
             </div>
-              {/* {activeService === title && ( */}
-                <div className={`${ !isActive ? 'none' : ''} transition-height flex flex-column gap-10`}>
-                  {services?.map((service) => (
-                    <div key={service} className="font-size-18 font-size-sp-12 text-capitalize color-white text-bold">
-                      {service}
-                    </div>
-                  ))}
-                </div>
-              {/* )} */}
+            {/* {activeService === title && ( */}
+            <div className={`${!isActive ? 'none' : ''} transition-height flex flex-column gap-10`}>
+              {services?.map((service, index) => (
+                <Link key={service} href={links?.[index] || '/service'}>
+                  <div className="font-size-18 font-size-sp-12 text-capitalize color-white text-bold">{service}</div>
+                </Link>
+              ))}
+            </div>
+            {/* )} */}
           </div>
         </>
       </div>

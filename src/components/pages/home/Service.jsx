@@ -16,6 +16,7 @@ const SERVICE_DETAIL = [
     type: 'service',
     imgSrc: '/img/home/service/house_cleaning',
     services: ['Post-Renovation Cleaning', 'Move In / Move out cleaning', 'Spring Cleaning', 'house disinfection'],
+    links: ['/house-service/post-renovation', '/house-service/move', '/house-service/spring', '/house-service/house-disinfection'],
   },
   {
     name: 'Handy Home Services',
@@ -86,6 +87,7 @@ const Service = () => {
                 handleOnClick={handlSetActiveService}
                 imgSrc={item.imgSrc}
                 services={item.services}
+                links={item.links}
                 title={item.name}
                 type={item.type}
               />
