@@ -70,13 +70,15 @@ const AirconService = () => {
   return (
     <div className={styles.airconServiceContainer}>
       <IntroService title="Aircon Service" />
-      <BreadCumbs pages={['Home', 'Services', 'Aircon Servicing']} />
+      <div className="mt-sp-30 mt-50">
+        <BreadCumbs pages={['Home', 'Services', 'Aircon Servicing']} />
+      </div>
       <AirconDetail />
       <Disclaimer />
       <CleaningVarity arrayList={HANDYMAN_VARITY} />
       <Work />
       <Testimonials />
-      <CleaningService />
+      <CleaningService title="Aircon Servicing"/>
       <Enquiry isShowBgImage={false} />
       <Download />
     </div>

@@ -10,7 +10,7 @@ const ServiceItem = ({ activeService, title, imgSrc, services, handleOnClick, li
   }, [activeService, title]);
 
   const handleClickItem = () => {
-    if (activeService === title) return handleOnClick('');
+    // if (activeService === title) return handleOnClick('');
     return handleOnClick(title);
   };
   return (
@@ -36,7 +36,7 @@ const ServiceItem = ({ activeService, title, imgSrc, services, handleOnClick, li
             <div className={`${!isActive ? 'none' : ''} transition-height flex flex-column gap-10`}>
               {services?.map((service, index) => (
                 <Link key={service} href={links?.[index] || '/service'}>
-                  <div className="font-size-18 font-size-sp-12 text-capitalize color-white text-bold">{service}</div>
+                  <div className="font-size-18 font-size-sp-12 hover-underline text-capitalize color-white text-bold">{service}</div>
                 </Link>
               ))}
             </div>

@@ -77,7 +77,7 @@ const PestControl = () => {
       <CleaningVarity arrayList={HANDYMAN_VARITY} />
       <Work />
       <Testimonials />
-      <CleaningService />
+      <CleaningService title="Pest Control Services" />
       <Enquiry isShowBgImage={false} />
       <Download />
     </div>

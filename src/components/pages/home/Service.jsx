@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 import ServiceItem from './ServiceItem';
 import styles from './styles.module.scss';
@@ -32,18 +33,29 @@ const SERVICE_DETAIL = [
       'organising',
       'moving',
     ],
+    links: [
+      'handyman-service',
+      'aircon-service',
+      'pool-cleaning',
+      'pest-control',
+      'landscaping-service',
+      'flooring-services',
+      'organising-services',
+      'moving-services',
+    ],
   },
   {
     name: 'Office Cleaning',
     type: 'service',
     imgSrc: '/img/home/service/office_cleaning',
     services: ['General office cleaning', 'Office Disinfection'],
+    links: ['office-cleaning', 'office-disinfection'],
   },
 ];
 
 const Service = () => {
   const [activeService, setActiveService] = useState('');
-
+  const router = useRouter();
   const handlSetActiveService = (id) => {
     setActiveService(id);
   };
@@ -96,7 +108,7 @@ const Service = () => {
           <div className={`${styles.serviceItemContactContainer}`}>
             <span className="text-bold color-white ">Unable to find the service you are looking for?</span>
             <>
-              <button type="button" className={styles.contactButton}>
+              <button type="button" onClick={() => router.push('/contact')} className={styles.contactButton}>
                 <span>Contact Us</span>
               </button>
             </>
