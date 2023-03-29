@@ -1,16 +1,16 @@
 @import './antd.scss';
 @import './responsive.scss';
-@import url('https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@400;500;700&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@400;500;700&display=swap');
 
 :root {
   --primary-color: #3E9F93;
   --color-border-table: rgb(238, 238, 238);
 }
 
-@font-face {
-  font-family: 'BalooDa';
-  src: url('/public/fonts/BalooDa-Regular.ttf');
-}
+// @font-face {
+//   font-family: 'BalooDa';
+//   src: url('/public/fonts/BalooDa.ttf') format("truetype");
+// }
 
 html *::-webkit-scrollbar {
   border-radius: 0 !important;
@@ -31,8 +31,15 @@ html *::-webkit-scrollbar-track {
 * {
   font-size: 14px;
   font-weight: 300;
-  // font-family: 'Baloo Da 2';
+  // font-family: 'baloo-da-regular', sans-serif;
+  // font-family: 'BalooDa';
+  // font-family: 'Baloo Da';
+  font-family: 'Helvetica', 'Arial', sans-serif;
   scroll-behavior: smooth;
+}
+
+.text-font-family {
+    font-family: 'Baloo Da';
 }
 
 th {
@@ -77,7 +84,7 @@ th {
   }
 
   .mt-#{$i} {
-    margin-top: #{$i}px;
+    margin-top: #{$i}px !important;
   }
 
   .ml-#{$i} {
@@ -326,6 +333,10 @@ th {
 
 .text-bold {
   font-weight: 700;
+}
+
+.text-normal {
+  font-weight: normal;
 }
 
 .mgr-at {

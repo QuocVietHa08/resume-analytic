@@ -1,13 +1,19 @@
 @import 'styles/responsive.scss';
+.footerContainer {
+  background-color: #B2D8C8;
+  width: 100vw;
+}
 
 .footerWrapper {
-  background-color: #B2D8C8;
-  padding: 50px 50px;
+  width: 80%;
+  padding: 50px 0px;
   color: #36625a;
   font-size: 16px;
+  margin: 0 auto;
 
   @include mobile {
-    padding: 20px 30px; 
+    padding: 20px 0px; 
+    width: 85%;  
   }
 
   .footerLinkInfo {
