@@ -8,7 +8,7 @@ const Footer = () => {
   const width = useDetectWindowSize();
 
   return (
-    <>
+    <div className={styles.footerContainer}>
       <div className={styles.footerWrapper}>
         {width > 779 ? (
           <div className={styles.footerLinkInfo}>
@@ -134,7 +134,7 @@ const Footer = () => {
           </div>
         )}
       </div>
-    </>
+    </div>
   );
 };
 

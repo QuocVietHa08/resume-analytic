@@ -8,7 +8,9 @@ const Contact = () => {
   return (
     <div className={styles.contactContainer}>
       <IntroService title="Contact Us" />
-      <Content />
+      <div className="mb-100 pb-100 pb-sp-0">
+        <Content />
+      </div>
       <Enquiry />
     </div>
   )
