@@ -37,11 +37,12 @@
 }
 
 .cleaningTitle {
-  font-weight: 700;
   font-size: 32px;
   line-height: 34px;
   color: #0e8778;
   margin-bottom: 30px;
+  font-family: 'Baloo Da';
+
 
   @include mobile {
     font-size: 14px;
@@ -123,12 +124,12 @@
     }
 
     .cleaningVarityTitle {
-      font-weight: 700;
       font-size: 50px;
       text-align: center;
       color: #0f1123;
       width: 50%;
       margin: 0 auto;
+      font-family: 'Baloo Da';
 
       @include mobile {
         font-size: 20px;
@@ -136,10 +137,10 @@
       }
 
       span {
-        font-weight: 700;
         font-size: 50px;
         text-decoration: underline;
         text-decoration-color: #fddc3a;
+        font-family: 'Baloo Da';
 
         @include mobile {
           font-size: 20px;

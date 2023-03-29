@@ -53,8 +53,8 @@ const CleaningService = ({ title }) => {
         alt="cleaning"
       />
       <div className={styles.cleaningServiceWrapper}>
-        <p>
-          Our {title} <br /> <span>Can Be Applied To</span>
+        <p className="text-font-family text-normal">
+          Our {title} <br /> <span className="text-font-family text-normal">Can Be Applied To</span>
         </p>
         <div className={styles.servicesContainer}>
           {CLEANING_SERVIES.map((item) => (

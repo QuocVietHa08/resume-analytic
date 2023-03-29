@@ -27,7 +27,8 @@
   color: #ffffff;
   transform: matrix(1, 0.01, 0.01, 1, 0, 0);
   width: 100%;
-
+  font-family: 'Baloo Da';
+  
   @include mobile {
     font-size: 20px;
   }

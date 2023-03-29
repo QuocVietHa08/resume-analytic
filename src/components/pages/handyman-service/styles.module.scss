@@ -6,10 +6,10 @@
 
 .handymanServiceDetail {
   .introText {
-    font-weight: 700;
     font-size: 32px;
     text-align: center;
     color: #0e8778;
+    font-family: 'Baloo Da';
 
     @include mobile {
       font-size: 14px;

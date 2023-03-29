@@ -36,7 +36,6 @@ const OfficeCleaning = () => {
       <div className="mt-sp-30 mt-90">
         <BreadCumbs pages={['Home', 'Service', 'General Office Cleaning']} />
       </div>
-
       <CleaningDetail />
       <Disclaimer />
       <CleaningVarity arrayList={CLEANING_VARITY} />

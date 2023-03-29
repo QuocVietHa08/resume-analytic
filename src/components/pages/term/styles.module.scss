@@ -7,9 +7,13 @@
 }
 
 .termConditonContent{
-  width: 80%;
+  width: 70%;
   margin: 0 auto;
   margin-top: 20px;
+
+  @include mobile {
+    width: 85%;
+  }
 
   p, ul, li {
     white-space: pre-wrap;
@@ -26,11 +30,11 @@
   font-weight: 700;
   font-size: 24px;
   color: #000000;
-  margin: 50px 0px;
+  margin: 30px 0px;
 
   @include mobile {
     font-size: 12px;
-    margin-top: 30px;
-    margin-bottom: 30px;
+    margin-top: 15px;
+    margin-bottom: 15px;
   }
 }

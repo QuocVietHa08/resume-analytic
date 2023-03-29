@@ -30,6 +30,7 @@
   line-height: 40px;
   color: #333333;
 
+
   @include mobile {
     font-size: 12px;
     line-height: 18px;
@@ -42,6 +43,7 @@
   line-height: 34px;
   color: #0e8778;
   margin-bottom: 30px;
+  font-family: 'Baloo Da';
 
   @include mobile {
     font-size: 14px;
