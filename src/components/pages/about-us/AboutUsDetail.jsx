@@ -9,7 +9,7 @@ const AboutUsDetail = () => {
     <div className="pb-100 pb-sp-0">
       <div className={styles.aboutUsDetailContainer}>
         <div className={styles.descWrapper}>
-          <h3>Out Story</h3>
+          <h3 className="text-font-family">Out Story</h3>
           <p>
             Established in late 2017, KungFu Helper consists of an experienced work force that is committed to provide unmatched values and
             services to support its business partners.
@@ -30,8 +30,8 @@ const AboutUsDetail = () => {
           <img src={`${width > 779 ? '/img/about-us/detail/cleaning2.svg' : `/img/about-us/detail/cleaning2_sp.svg`}`} alt="img" />
         </div>
         <div className={`${styles.descWrapper} mt-20`}>
-          <span>
-            Your <h3>Satisfaction</h3>, Our <h3>Promise</h3>
+          <span className="text-font-family">
+            Your <h3 className="text-font-family">Satisfaction</h3>, Our <h3 className="text-font-family">Promise</h3>
           </span>
           <p>
             We take pride in your satisfaction. If you are unsatisfied, we will always try make it right. Our friendly customer service

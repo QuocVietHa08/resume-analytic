@@ -489,6 +489,7 @@
     font-size: 50px;
     text-transform: capitalize;
     color: #333333;
+    font-family: 'Baloo Da';
   }
 
   span {
@@ -626,6 +627,7 @@
       font-size: 50px;
       text-transform: capitalize;
       color: #333333;
+      font-family: 'Baloo Da';
     }
 
     span {
@@ -752,6 +754,7 @@
       text-transform: capitalize;
       color: #333333;
       margin-bottom: 20px;
+      font-family: 'Baloo Da';
 
       @include mobile {
         font-size: 20px;
@@ -763,6 +766,7 @@
         font-weight: 700;
         text-decoration: underline;
         text-decoration-color: #fddc3a;
+        font-family: 'Baloo Da';
 
         @include mobile {
           font-size: 20px;

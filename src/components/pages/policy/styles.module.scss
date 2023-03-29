@@ -7,9 +7,13 @@
 }
 
 .policyContent {
-  width: 80%;
+  width: 70%;
   margin: 0 auto;
   margin-top: 20px;
+
+  @include mobile {
+    width: 85%;
+  }
 
   p, ul, li {
     font-size: 16px;
@@ -22,10 +26,10 @@
 }
 
 .policySection {
-  font-weight: 700;
   font-size: 24px;
   color: #000000;
   margin: 50px 0px;
+  font-family: 'Baloo Da';
 
   @include mobile {
     font-size: 12px;

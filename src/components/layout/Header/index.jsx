@@ -24,13 +24,13 @@ const Header = () => {
       </div>
       <div>
         {width > 780 ? (
-          <ul className="flex gap-10">
-            <li><Link href="/">Home</Link></li>
+          <ul className="flex gap-10 text-font-family">
+            <li><Link href="/" className="text-font-family text-normal">Home</Link></li>
             <li>
-              <Link href="/service">Services</Link>
+              <Link href="/service" className="text-font-family text-normal">Services</Link>
             </li>
-            <li><Link href="/faq">FAQ</Link></li>
-            <li><Link href="/contact">Contact Us</Link></li>
+            <li><Link href="/faq" className="text-font-family text-normal">FAQ</Link></li>
+            <li><Link href="/contact" className="text-font-family text-normal">Contact Us</Link></li>
           </ul>
         ) : (
           <div role="button" tabIndex={0} onKeyPress={showDrawer} onClick={showDrawer}>

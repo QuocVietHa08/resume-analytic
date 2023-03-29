@@ -9,7 +9,13 @@
     margin-top: 10px;
     margin-bottom: 40px;
   }
+  .ant-collapse-header {
+    padding: 19px 16px;
 
+    @include mobile {
+      padding: 12px 16px;
+    }
+  }
   .ant-collapse-item {
     border-bottom: 1px solid #aaaaaa !important; 
   }

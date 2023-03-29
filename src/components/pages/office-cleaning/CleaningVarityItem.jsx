@@ -13,7 +13,7 @@ const CleaningVarityItem = ({ item }) => {
         <div className={styles.itemContentContact}>
           <p>{itemInfo.text}</p>
           <button onClick={() => router.push('/contact')} type="button" className={styles.contactButton}>
-            <span>Contact Us</span>
+            <span className="text-bold">Contact Us</span>
           </button>
         </div>
       );
@@ -28,7 +28,7 @@ const CleaningVarityItem = ({ item }) => {
           <div className="h-50pr flex flex-column justify-between">
           <p>{item.text}</p>
           <span>
-            <div className="color-primary font-size-sp-12 flex gap-10">
+            <div className="color-primary font-size-sp-12 text-bold flex gap-10">
               Find out more
               <span>
                 <img src="/img/home/service/arrow.svg" alt="arrow" />

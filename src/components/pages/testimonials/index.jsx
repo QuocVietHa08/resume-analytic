@@ -11,7 +11,7 @@ const TestimonialsPageComponent = () => {
     <div className={styles.testimonialsPageContainer}>
       <IntroService title="Testimonials" />
       <BreadCumbs pages={['Home', 'Testimonials']} />
-      <Testimonials />
+      <Testimonials isTestimonialPage/>
       <Download />
     </div>
   )

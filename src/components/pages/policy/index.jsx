@@ -17,7 +17,7 @@ const Policy = () => {
           information in accordance with this Privacy Policy.{' '}
         </p>
 
-        <div className={styles.policySection}>Interpretation and Definitions</div>
+        <div className={`${styles.policySection} text-font-family`}>Interpretation and Definitions</div>
         <div className={styles.policyTitle}>Interpretations</div>
         <p>
           The words of which the initial letter is capitalized have meanings defined under the following conditions. The following
@@ -194,15 +194,15 @@ The Company will take all steps reasonably necessary to ensure that Your data is
       </ul>
       <div className={styles.policyTitle}>Security of Your Personal Data</div>
       <p>The security of Your Personal Data is important to Us, but remember that no method of transmission over the Internet, or method of electronic storage is 100% secure. While We strive to use commercially acceptable means to protect Your Personal Data, We cannot guarantee its absolute security.</p>
-      <div className={styles.policyTitle}>Children’s Privacy</div>
+      <div className={`${styles.policySection} text-font-family`}>Children’s Privacy</div>
       <p>Our Service does not address anyone under the age of 13. We do not knowingly collect personally identifiable information from anyone under the age of 13. If You are a parent or guardian and You are aware that Your child has provided Us with Personal Data, please contact Us. If We become aware that We have collected Personal Data from anyone under the age of 13 without verification of parental consent, We take steps to remove that information from Our servers.
 
 If We need to rely on consent as a legal basis for processing Your information and Your country requires consent from a parent, We may require Your parent’s consent before We collect and use that information.</p>
-    <div className={styles.policyTitle}>Links to Other Websites</div>
+    <div className={styles.policySection}>Links to Other Websites</div>
     <p>Our Service may contain links to other websites that are not operated by Us. If You click on a third party link, You will be directed to that third party’s site. We strongly advise You to review the Privacy Policy of every site You visit.
 
 We have no control over and assume no responsibility for the content, privacy policies or practices of any third party sites or services.</p>
-    <div className={styles.policyTitle}>Changes to this Privacy Policy</div>
+    <div className={styles.policySection}>Changes to this Privacy Policy</div>
     <p>
     We may update Our Privacy Policy from time to time. We will notify You of any changes by posting the new Privacy Policy on this page.
 
@@ -210,7 +210,7 @@ We will let You know via email and/or a prominent notice on Our Service, prior t
 
 You are advised to review this Privacy Policy periodically for any changes. Changes to this Privacy Policy are effective when they are posted on this page.
     </p>
-    <div className={styles.policyTitle}>Contact us</div>
+    <div className={styles.policySection}>Contact us</div>
     <p>If you have any questions about this Privacy Policy, You can contact us:</p>
     <ul>
       <li>By email: info@kungfuhelper.com.sg</li>

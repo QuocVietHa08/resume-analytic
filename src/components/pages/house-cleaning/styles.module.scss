@@ -9,11 +9,11 @@
   }
 
   .applyTitle {
-    font-weight: 700;
     font-size: 50px;
     text-align: center;
     color: #0f1123;
     text-transform: capitalize;
+    font-family: 'Baloo Da';
 
     @include mobile {
       font-size: 12px;
@@ -21,7 +21,7 @@
 
     span {
       display: inline;
-      font-weight: 700;
+      font-family: 'Baloo Da';
       font-size: 50px;
       text-decoration: underline;
       text-decoration-color: #fddc3a;
