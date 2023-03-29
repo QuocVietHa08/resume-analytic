@@ -62,11 +62,11 @@ const Service = () => {
 
   return (
     <div className={styles.serviceContainer}>
-      <h2>
+      <h4>
         What
         <span>Service</span>
         Do We Provice
-      </h2>
+      </h4>
       <div>
         <p className={styles.serviceDes}>
           We offer a wide range of services at Kungfu Helper, click on each of our main service category below to find out more on what we

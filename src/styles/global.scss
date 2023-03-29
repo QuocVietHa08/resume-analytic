@@ -33,8 +33,13 @@ html *::-webkit-scrollbar-track {
   font-weight: 300;
   // font-family: 'baloo-da-regular', sans-serif;
   // font-family: 'BalooDa';
-  font-family: 'Baloo Da';
+  // font-family: 'Baloo Da';
+  font-family: 'Helvetica', 'Arial', sans-serif;
   scroll-behavior: smooth;
+}
+
+.text-font-family {
+    font-family: 'Baloo Da';
 }
 
 th {
@@ -328,6 +333,10 @@ th {
 
 .text-bold {
   font-weight: 700;
+}
+
+.text-normal {
+  font-weight: normal;
 }
 
 .mgr-at {

@@ -12,10 +12,10 @@ const Introduction = () => {
           <div className={styles.introWrapper}>
             <div className={styles.introDes}>
               <div>
-                <div className="font-size-88 line-height-88 text-bold">
+                <div className="font-size-88 line-height-88 text-normal text-font-family">
                   Best Cleaning <br /> Service Company
                 </div>
-                <div className="font-size-24 mt-20">
+                <div className="font-size-24 mt-20 text-normal">
                   We provide top notch cleaning services to our customers, ensuring consistency and quality.
                   <br /> Download our app today to book a cleaning service with our expert cleaners!
                 </div>
@@ -42,7 +42,7 @@ const Introduction = () => {
           <div className={styles.introWrapper}>
             <div className={styles.introDes}>
               <div>
-                <div className="font-size-20 line-height-30 text-bold">
+                <div className="font-size-20 line-height-30 text-nornal">
                   Best Cleaning <br /> Service Company
                 </div>
                 <div className="font-size-12 mt-10">
