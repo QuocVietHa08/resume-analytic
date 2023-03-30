@@ -34,7 +34,7 @@ const HOUSE_SERVICE = [
 ];
 
 const HouseCleaningService = () => {
-  return <CleaningVarity arrayList={HOUSE_SERVICE} title="House cleaning services" />;
+  return <CleaningVarity arrayList={HOUSE_SERVICE} title="House Cleaning Services" />;
 };
 
 export default HouseCleaningService;
