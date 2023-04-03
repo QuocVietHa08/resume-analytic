@@ -130,6 +130,7 @@
       width: 50%;
       margin: 0 auto;
       font-family: 'Baloo Da';
+      font-weight: 700;
 
       @include mobile {
         font-size: 20px;
@@ -141,6 +142,7 @@
         text-decoration: underline;
         text-decoration-color: #fddc3a;
         font-family: 'Baloo Da';
+        font-weight: 700;
 
         @include mobile {
           font-size: 20px;

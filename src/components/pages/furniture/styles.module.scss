@@ -1,0 +1,142 @@
+@import 'styles/responsive.scss';
+
+.airconServiceDetailContainer {
+
+  .introText {
+    font-size: 32px;
+    text-align: left;
+    color: #0e8778;
+    font-family: 'Baloo Da';
+    width: 80%;
+    margin: 0 auto;
+    font-weight: 700;
+
+    @include mobile {
+      font-size: 14px;
+      width: 100%;
+      padding-left: 20px;
+    }
+  }
+
+  .serviceDetail {
+    display: flex;
+    align-items: center;
+    gap: 150px;
+    margin-top: 150px;
+
+    .introTextDetail {
+      font-size: 32px;
+      font-weight: 700;
+      text-align: left;
+      color: #0e8778;
+      font-family: 'Baloo Da';
+
+      @include mobile {
+        font-size: 14px;
+      }
+    }
+
+
+    @include mobile {
+      flex-direction: column;
+      align-items: start;
+      gap: 0px;
+      margin-top: 50px;
+
+    }
+  }
+
+  .serviceDetailAignRight {
+    @extend .serviceDetail;
+
+    @include mobile {
+      align-items: end;
+    }
+  }
+
+  .serviceDetailContent {
+    width: 45%;
+    text-align: left;
+
+    p {
+      font-size: 24px;
+      color: #333333;
+
+      @include mobile {
+        font-size: 12px;
+      }
+    }
+
+    @include mobile {
+      width: 90%;
+      margin: 30px auto;
+    }
+  }
+
+  .poolingDetailContent {
+    width: 100%;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    img {
+      margin-right: 40px;
+    }
+
+    .poolingDetailTitle {
+      font-weight: 700;
+      color: #0e8778;
+      font-size: 24px;
+
+      @include mobile {
+        font-size: 12px;
+      }
+    }
+
+    span {
+      font-size: 24px;
+      color: #333333;
+
+      @include mobile {
+        font-size: 12px;
+      }
+    }
+
+    @include mobile {
+      width: 80%;
+      margin: 10px auto;
+    }
+  }
+
+  .serviceBottom {
+    height: 150px;
+    width: 100%;
+  }
+}
+
+.airconItem {
+  display: flex;
+  gap: 30px;
+
+  span {
+    font-size: 24px;
+    color: #333;
+
+    @include mobile {
+      font-size: 12px;
+    }
+  }
+
+  @include mobile {
+    gap: 10px;
+  }
+}
+
+.marginLeftBaseOnWidth {
+  margin-left: calc((100% - 80%)/2);
+
+  @include mobile {
+    margin: 0 auto;
+  }
+}

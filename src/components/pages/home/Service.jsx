@@ -11,6 +11,13 @@ const SERVICE_DETAIL = [
     type: 'service',
     imgSrc: '/img/home/service/furniture',
     services: ['Curtain Cleaning', 'Carpet Cleaning', 'Sofa Cleaning', 'Mattress Cleaning', 'Upholstery Cleaning'],
+    links: [
+      '/furniture/curtain-cleaning',
+      '/furniture/carpet-cleaning',
+      '/furniture/sofa-cleaning',
+      '/furniture/mattress-cleaning',
+      '/furniture/upholstery-cleaning',
+    ],
   },
   {
     name: 'House Cleaning',
