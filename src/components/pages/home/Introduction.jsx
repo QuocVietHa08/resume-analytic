@@ -42,7 +42,7 @@ const Introduction = () => {
           <div className={styles.introWrapper}>
             <div className={styles.introDes}>
               <div>
-                <div className="font-size-20 line-height-30 text-nornal">
+                <div className="font-size-20 line-height-30 text-nornal text-font-family">
                   Best Cleaning <br /> Service Company
                 </div>
                 <div className="font-size-12 mt-10">

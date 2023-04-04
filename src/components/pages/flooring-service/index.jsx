@@ -65,15 +65,28 @@ const VARITYS = [
   },
 ];
 
-
+const BREADCUMBS = [
+  {
+    text: 'Home',
+    link: '/'
+  },
+  {
+    text: 'Services',
+    link: '/service'
+  },
+  {
+    text: 'Flooring Services',
+    link: ''
+  }
+]
 const FlooringService = () => {
   return (
     <div>
       <IntroService title="Flooring Services" />
-      <BreadCumbs pages={['Home', 'Services', 'Flooring Services']} links={['/', '/service']} />
+      <BreadCumbs pages={BREADCUMBS} />
       <Detail />
       <Disclaimer />
-      <CleaningVarity arrayList={VARITYS}/>
+      <CleaningVarity title="Handy Home Services" arrayList={VARITYS}/>
       <Work />
       <Testimonials />
       <CleaningService title="Flooring Services" />

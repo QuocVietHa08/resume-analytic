@@ -10,11 +10,26 @@ import Apply from '@/components/pages/house-cleaning/Apply';
 import FurnitureUpholsteryService from '@/components/pages/furniture/FurnitureUpholsteryService';
 import Detail from './Dedail';
 
+const BREADCUMBS = [
+  {
+    text: 'Home',
+    link: '/'
+  },
+  {
+    text: 'Services',
+    link: '/service'
+  },
+  {
+    text: 'Sofa Cleaning',
+    link: ''
+  }
+]
+
 const SofaCleaning = () => {
   return (
     <>
       <IntroService title="Sofa Cleaning" />
-      <BreadCumbs pages={['Home', 'Services', 'Sofa Cleaning']} links={['/', '/service']} />
+      <BreadCumbs pages={BREADCUMBS} />
       <Detail />
       <Disclaimer />
       <FurnitureUpholsteryService />

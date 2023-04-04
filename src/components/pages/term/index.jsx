@@ -3,11 +3,21 @@ import BreadCumbs from '@/components/atoms/breadcumbs';
 import IntroService from '../service/IntroService';
 import styles from './styles.module.scss';
 
+const BREADCUMBS = [
+  {
+    text: 'Home',
+    link: '/'
+  },
+  {
+    text: 'Term & Condition',
+    link: ''
+  }
+]
 const Term = () => {
   return (
     <div className={styles.termConditionContainer}>
-      <IntroService title="Term & Conditions" />
-      <BreadCumbs pages={['Home', 'Term & Condtion']} links={['/']} />
+      <IntroService title="Terms & Conditions" />
+      <BreadCumbs pages={BREADCUMBS} />
       <div className={styles.termConditonContent}>
         <div>
           <p>Welcome to kungfuhelper.com!</p>

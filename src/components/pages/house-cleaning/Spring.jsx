@@ -10,11 +10,25 @@ import HouseHelper from './HouseHelper';
 import Apply from './Apply';
 import HouseCleaningService from './HouseCleaningService';
 
+const BREADCUMBS = [
+  {
+    text: 'Home',
+    link: '/'
+  },
+  {
+    text: 'Services',
+    link: '/service'
+  },
+  {
+    text: 'Spring Cleaning',
+    link: ''
+  }
+]
 const Spring = () => {
   return (
     <>
       <IntroService title="Spring Cleaning" />
-      <BreadCumbs pages={['Home', 'Services', 'Spring Cleaning']} links={['/', '/service']} />
+      <BreadCumbs pages={BREADCUMBS} />
       <HouseHelper />
       <Disclaimer />
       <HouseCleaningService />

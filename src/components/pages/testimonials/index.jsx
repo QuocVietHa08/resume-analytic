@@ -6,12 +6,21 @@ import Download from '../home/Download';
 import IntroService from '../service/IntroService';
 import styles from './styles.module.scss';
 
+const BREADCUMBS = [
+  {
+    text: 'Home',
+    link: '/'
+  }, {
+    text: 'Testimonials',
+    link: ''
+  }
+]
 const TestimonialsPageComponent = () => {
   return (
     <div className={styles.testimonialsPageContainer}>
       <IntroService title="Testimonials" />
-      <BreadCumbs pages={['Home', 'Testimonials']} links={['/']} />
-      <Testimonials isTestimonialPage />
+      <BreadCumbs pages={BREADCUMBS} />
+      <Testimonials isTestimonialPage/>
       <Download />
     </div>
   );

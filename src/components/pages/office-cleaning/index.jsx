@@ -29,12 +29,27 @@ const CLEANING_VARITY = [
   },
 ];
 
+const BREADCUMBS = [
+  {
+    text: 'Home',
+    link: '/'
+  },
+  {
+    text: 'Services',
+    link: '/service'
+  },
+  {
+    text: 'General Office Cleaning',
+    link: ''
+  }
+]
+
 const OfficeCleaning = () => {
   return (
     <div className={styles.officeCleaningContainer}>
       <IntroService title="General Office Cleaning" />
       <div className="mt-sp-30 mt-90">
-        <BreadCumbs pages={['Home', 'Service', 'General Office Cleaning']} links={['/', '/service']} />
+        <BreadCumbs pages={BREADCUMBS} />
       </div>
       <CleaningDetail />
       <Disclaimer />

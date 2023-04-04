@@ -45,7 +45,7 @@ const SERVICE_DETAIL = [
       'aircon-service',
       'pool-cleaning',
       'pest-control',
-      'landscaping-service',
+      'landscaping-services',
       'flooring-services',
       'organising-services',
       'moving-services',
@@ -71,7 +71,7 @@ const Service = () => {
     <div className={styles.serviceContainer}>
       <h4>
         What
-        <span>Service</span>
+        <span>Services</span>
         Do We Provice
       </h4>
       <div>

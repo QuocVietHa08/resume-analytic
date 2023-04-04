@@ -66,16 +66,30 @@ const HANDYMAN_VARITY = [
   },
 ];
 
+const BREADCUMBS = [
+  {
+    text: 'Home',
+    link: '/'
+  },
+  {
+    text: 'Services',
+    link: '/service',
+  },
+  {
+    text: 'Aircon Servicing',
+    link: ''
+  }
+]
 const AirconService = () => {
   return (
     <div className={styles.airconServiceContainer}>
-      <IntroService title="Aircon Service" />
+      <IntroService title="Aircon Servicing" />
       <div className="mt-sp-30 mt-50">
-        <BreadCumbs pages={['Home', 'Services', 'Aircon Servicing']} links={['/', '/service']} />
+        <BreadCumbs pages={BREADCUMBS} />
       </div>
       <AirconDetail />
       <Disclaimer />
-      <CleaningVarity arrayList={HANDYMAN_VARITY} />
+      <CleaningVarity title="Handy Home Services" arrayList={HANDYMAN_VARITY} />
       <Work />
       <Testimonials />
       <CleaningService title="Aircon Servicing"/>

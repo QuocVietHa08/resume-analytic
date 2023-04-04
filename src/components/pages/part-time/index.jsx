@@ -103,11 +103,25 @@ These tasks are typically applicable to indoor areas of the home and are focused
   },
 ];
 
+const BREADCUMBS = [
+  {
+    text: 'Home',
+    link: '/'
+  },
+  {
+    text: 'Services',
+    link: '/service'
+  },
+  {
+    text: 'Part-Time Helper',
+    link: ''
+  }
+]
 const Service = () => {
   return (
     <>
       <IntroService title="Part-Time Helper" />
-      <BreadCumbs pages={['Home', 'Services', 'Part-Time Helper']} links={['/', '/service']} />
+      <BreadCumbs pages={BREADCUMBS} />
       <CleaningHelper data={PARTTIME_DATA} />
       <Disclaimer />
       <CleaningVarity arrayList={PARTTIME_SERVICE} title="Cleaning Services" />

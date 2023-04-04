@@ -7,32 +7,27 @@ const WORK = [
   {
     number: '01',
     imgSrc: '/img/home/work/account_signup',
-    text: `Sign up for
-    an account`
+    text: `Sign up for\nan account`
   },
   {
     number: '02',
     imgSrc: '/img/home/work/select_device',
-    text: `select your 
-    desired service`
+    text: `select your\ndesired service`
   },
   {
     number: '03',
     imgSrc: '/img/home/work/select_date',
-    text: `select appointment 
-    date & time`
+    text: `select appointment\ndate & time`
   },
   {
     number: '04',
     imgSrc: '/img/home/work/make_payment',
-    text: `make 
-    payment`
+    text: `make\npayment`
   },
   {
     number: '05',
     imgSrc: '/img/home/work/booking_complete',
-    text: `booking 
-    completed!`
+    text: `booking\ncompleted!`
   },
 ];
 
@@ -41,7 +36,7 @@ const Work = () => {
   return (
     <>
     {!router.pathname.includes('faq') && (
-      <h2 className={styles.workTitle}>How It Work</h2>
+      <h2 className={styles.workTitle}>How It Works</h2>
     )} 
     <div className={styles.workContainer}>
       {WORK.map((item, index) => (

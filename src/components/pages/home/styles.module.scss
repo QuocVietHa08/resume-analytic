@@ -432,7 +432,7 @@
   @include mobile {
     text-decoration: underline;
     text-decoration-color: #fddc3a;
-    font-size: 12px;
+    font-size: 20px;
     margin-bottom: 10px;
   }
 
@@ -445,7 +445,7 @@
     font-family: 'Baloo Da';
 
     @include mobile {
-      font-size: 12px;
+      font-size: 20px;
       margin-left: 3px;
     }
   }
