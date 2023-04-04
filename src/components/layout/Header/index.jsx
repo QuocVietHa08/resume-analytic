@@ -70,16 +70,16 @@ const Header = () => {
       >
         <div className={styles.drawerWrapper}>
           <p onClick={onClose} role="button" tabIndex={0} onKeyDown={onClose}>
-            <Link href="/">Home</Link>
+            <Link href="/" className="text-font-family">Home</Link>
           </p>
           <p onClick={onClose} role="button" tabIndex={0} onKeyDown={onClose}>
-            <Link href="/service">Service</Link>
+            <Link href="/service" className="text-font-family">Service</Link>
           </p>
           <p onClick={onClose} role="button" tabIndex={0} onKeyDown={onClose}>
-            <Link href="/faq">FAQ</Link>
+            <Link href="/faq" className="text-font-family">FAQ</Link>
           </p>
           <p onClick={onClose} role="button" tabIndex={0} onKeyDown={onClose}>
-            <Link href="/contact">Contact Us</Link>
+            <Link href="/contact" className="text-font-family">Contact Us</Link>
           </p>
         </div>
       </Drawer>

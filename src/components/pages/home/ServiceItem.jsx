@@ -10,7 +10,6 @@ const ServiceItem = ({ activeService, title, imgSrc, services, handleOnClick, li
   }, [activeService, title]);
 
   const handleClickItem = () => {
-    // if (activeService === title) return handleOnClick('');
     return handleOnClick(title);
   };
   return (
@@ -32,7 +31,6 @@ const ServiceItem = ({ activeService, title, imgSrc, services, handleOnClick, li
                 <img src="/img/home/service/dropdown.svg" alt="dropdown" />
               </span>
             </div>
-            {/* {activeService === title && ( */}
             <div className={`${!isActive ? 'none' : ''} transition-height flex flex-column gap-10`}>
               {services?.map((service, index) => (
                 <Link key={service} href={links?.[index] || '/service'}>
@@ -40,7 +38,6 @@ const ServiceItem = ({ activeService, title, imgSrc, services, handleOnClick, li
                 </Link>
               ))}
             </div>
-            {/* )} */}
           </div>
         </>
       </div>

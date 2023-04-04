@@ -29,7 +29,7 @@ const Enquiry = ({ isShowBgImage = true }) => {
           <Form>
             <Form.Item>
               <div className="flex flex-column item-flex-start">
-                <div>
+                <div className="text-bold">
                   Name <span className="color-red">*</span>
                 </div>
                 <Input className={styles.formInputStyle} />
@@ -38,7 +38,7 @@ const Enquiry = ({ isShowBgImage = true }) => {
 
             <Form.Item>
               <div className="flex flex-column item-flex-start">
-                <div>
+                <div className="text-bold">
                   Phone No.<span className="color-red">*</span>
                 </div>
                 <Input className={styles.formInputStyle} />
@@ -47,7 +47,7 @@ const Enquiry = ({ isShowBgImage = true }) => {
 
             <Form.Item>
               <div className="flex flex-column item-flex-start">
-                <div>
+                <div className="text-bold">
                   Email <span className="color-red">*</span>
                 </div>
                 <Input className={styles.formInputStyle} />
@@ -56,7 +56,7 @@ const Enquiry = ({ isShowBgImage = true }) => {
 
             <Form.Item>
               <div className="flex flex-column item-flex-start">
-                <div>
+                <div className="text-bold">
                   Message <span className="color-red">*</span>
                 </div>
                 <Input.TextArea rows={6} className={styles.formInputStyle} />
@@ -78,7 +78,9 @@ const Enquiry = ({ isShowBgImage = true }) => {
             </div>
             <Form.Item className="flex">
               <Button size="large" className={styles.buttonFormStyle}>
+                <span className="text-bold">
                 Submit
+                  </span>
               </Button>
             </Form.Item>
           </Form>

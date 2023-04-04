@@ -13,9 +13,12 @@ const Testimonials = ({ isTestimonialPage = false }) => {
   const width = useDetectWindowSize();
   const carouselRef = React.createRef();
 
-  const handleSlideGo = (type = 'left') => {
-    if (type === 'left') return carouselRef.current.prev();
-    return carouselRef.current.next();
+  const handleSlideGo = (type) => {
+    if (type === 'left') {
+      carouselRef.current.prev(); 
+    } else {
+      carouselRef.current.next();
+    }
   };
 
   return (
@@ -40,7 +43,7 @@ const Testimonials = ({ isTestimonialPage = false }) => {
           className={styles.testSliderArrowRight}
           alt="arrow"
         />
-        <Carousel ref={carouselRef}>
+        <Carousel dots ref={carouselRef}>
           <div className={styles.testSliderItem}>
             <img
               src={`${width > 780 ? `${imgSrcQouteLeft}.svg` : `${imgSrcQouteLeft}_sp.svg`}`}

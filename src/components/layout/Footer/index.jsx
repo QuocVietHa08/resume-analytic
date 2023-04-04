@@ -15,32 +15,32 @@ const Footer = () => {
             <div className={styles.quickLinks}>
               <div className={styles.headerText}>Quick Links</div>
               <div>
-                <Link className="color-primary" href="/">
+                <Link className="color-primary text-weight-400" href="/">
                   Home
                 </Link>
               </div>
               <div>
-                <Link className="color-primary" href="/service">
+                <Link className="color-primary text-weight-400" href="/service">
                   Services
                 </Link>
               </div>
               <div>
-                <Link className="color-primary" href="/about-us">
+                <Link className="color-primary text-weight-400" href="/about-us">
                   About
                 </Link>
               </div>
               <div>
-                <Link className="color-primary" href="/testimonials">
+                <Link className="color-primary text-weight-400" href="/testimonials">
                   Testimonials
                 </Link>
               </div>
               <div>
-                <Link className="color-primary" href="/faq">
+                <Link className="color-primary text-weight-400" href="/faq">
                   FAQ
                 </Link>
               </div>
               <div>
-                <Link className="color-primary" href="/contact">
+                <Link className="color-primary text-weight-400" href="/contact">
                   Contact Us
                 </Link>
               </div>
@@ -84,32 +84,32 @@ const Footer = () => {
                 <div className={styles.quickLinks}>
                   <div className={styles.headerText}>Quick Links</div>
                   <p>
-                    <Link className="color-primary" href="/">
+                    <Link className="color-primary text-weight-400" href="/">
                       Home
                     </Link>
                   </p>
                   <p>
-                    <Link className="color-primary" href="/service">
+                    <Link className="color-primary text-weight-400" href="/service">
                       Services
                     </Link>
                   </p>
                   <p>
-                    <Link className="color-primary" href="/about-us">
+                    <Link className="color-primary text-weight-400" href="/about-us">
                       About
                     </Link>
                   </p>
                   <p>
-                    <Link className="color-primary" href="/testimonials">
+                    <Link className="color-primary text-weight-400" href="/testimonials">
                       Testimonials
                     </Link>
                   </p>
                   <p>
-                    <Link className="color-primary" href="/faq">
+                    <Link className="color-primary text-weight-400" href="/faq">
                       FAQ
                     </Link>
                   </p>
                   <p>
-                    <Link className="color-primary" href="/contact">
+                    <Link className="color-primary text-weight-400" href="/contact">
                       Contact Us
                     </Link>
                   </p>
@@ -126,31 +126,35 @@ const Footer = () => {
               <div className={styles.info}>
                 <div>
                   <img src="/img/footer/email.svg" alt="" />
-                  <span className="ml-15">info@kungfuhelper.com.sg</span>
+                  <span className="ml-15 text-weight-400">info@kungfuhelper.com.sg</span>
                 </div>
                 <div>
                   <img src="/img/footer/phone.svg" alt="" />
-                  <span className="ml-15">+6588380909</span>
+                  <span className="ml-15 text-weight-400">+6588380909</span>
                 </div>
                 <div className="flex item-flex-start">
                   <img src="/img/footer/address.svg" alt="" />
-                  <span className="ml-15">
+                  <span className="ml-15 text-weight-400">
                     31 Woodlands Close <br /> #03-10 Woodlands Horizon <br /> Singapore 737855{' '}
                   </span>
                 </div>
                 <img src="/img/footer/logo.svg" className="w-75 h-55" alt="" />
               </div>
             </div>
-            <div>
+            <div className="w-full">
               <div className={styles.headerText}>Subscribe to our Newsletter</div>
               <div className={styles.inputWrapper}>
                 <Input className={styles.inputStyle} placeholder="Email" />
-                <Button className={styles.buttonSubs}>Subscribe</Button>
+                <Button className={styles.buttonSubs}>
+                  <span className="text-bold">Subscribe</span>
+                </Button>
               </div>
             </div>
           </div>
         )}
-        <Divider className={styles.dividerStyle} />
+        <div className={styles.dividerWrapper}>
+          <Divider className={styles.dividerStyle} />
+        </div>
         {width > 779 ? (
           <div className={styles.footerCopyRight}>
             <div className="flex item-center justify-evenly gap-25">
@@ -176,17 +180,17 @@ const Footer = () => {
           </div>
         ) : (
           <div className={styles.footerCopyRight}>
-            <div className="flex flex-column item-center justify-center gap-10">
-              <p>© 2022 KungFu Helper Pte Ltd. All rights reserved.</p>
+            <div className="flex flex-column item-center mb-15 justify-center gap-10">
+              <p>© 2022 T9 Facilities Pte Ltd. All rights reserved.</p>
               <div className="flex gap-10 font-size-12">
                 <p className="text-bold">
-                  <Link href="/policy" className="color-primary-dark text-bold">
+                  <Link href="/policy" className="color-primary-dark font-size-12 text-bold">
                     Privacy Policy
                   </Link>
                 </p>
                 <div>|</div>
                 <div className="text-bold">
-                  <Link href="/term" className="color-primary-dark text-bold">
+                  <Link href="/term" className="color-primary-dark font-size-12 text-bold">
                     Terms & Conditions
                   </Link>
                 </div>
@@ -195,7 +199,7 @@ const Footer = () => {
 
             <div className="flex item-center justify-center">
               <img src="/img/footer/cyber-save.svg" alt="" />
-              <p>ENTERPRISE ON ASSET-BASED CYBER DEFENSE AN INITIATIVE BY CSA</p>
+              <p className="text-weight-400">ENTERPRISE ON ASSET-BASED CYBER <br /> DEFENSE AN INITIATIVE BY CSA</p>
             </div>
           </div>
         )}
