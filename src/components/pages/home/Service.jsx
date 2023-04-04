@@ -4,6 +4,7 @@ import { useRouter } from 'next/router';
 
 import ServiceItem from './ServiceItem';
 import styles from './styles.module.scss';
+import useDetectWindowSize from '@/hooks/useDetectWindowSize';
 
 const SERVICE_DETAIL = [
   {
@@ -62,6 +63,7 @@ const SERVICE_DETAIL = [
 
 const Service = () => {
   const [activeService, setActiveService] = useState('');
+  const width = useDetectWindowSize();
   const router = useRouter();
   const handlSetActiveService = (id) => {
     setActiveService(id);
@@ -72,7 +74,7 @@ const Service = () => {
       <h4>
         What
         <span>Services</span>
-        Do We Provice
+        Do {width < 768 && <br />} We Provice ?
       </h4>
       <div>
         <p className={styles.serviceDes}>
@@ -85,7 +87,7 @@ const Service = () => {
               <div>
                 <img src="/img/home/service/part_time.svg" alt="img" />
               </div>
-              <div className="flex flex-column gap-20 gap-sp-0">
+              <div className="flex flex-column gap-20 gap-sp-5">
                 <span className="text-bold color-primary">Part-time Helper </span>
                 <>
                   <div className="flex gap-10 item-center">

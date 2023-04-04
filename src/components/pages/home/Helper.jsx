@@ -17,6 +17,21 @@ const HELPER_NUMBERS = [
   },
 ];
 
+const HELPER_NUMERS_SP = [
+  {
+    value: '100%',
+    text: 'Satisfaction',
+  },
+  {
+    value: '100',
+    text: 'Services Completed',
+  },
+  {
+    value: '21',
+    text: 'Award winner',
+  },
+];
+
 const HELPER_INFO_VALUES = [
   {
     imgSrc: '/img/home/helper/cost',
@@ -34,6 +49,24 @@ const HELPER_INFO_VALUES = [
     des: 'As a professional cleaning company, we supply state-of-the-art technology and premium cleaning resources which are safe for children, pets and improve indoor air quality.',
   },
 ];
+
+const HELPER_INFO_VALUES_SP = [
+  {
+    imgSrc: '/img/home/helper/cost',
+    title: `Cost-Effective \n One-stop solutions`,
+    des: `We Provide One-Stop Service Solutions To \n Your Home Or Business Needs At \n Affordable Rates`,
+  },
+  {
+    imgSrc: '/img/home/helper/team',
+    title: 'Expert Team',
+    des: `Our cleaners go through rigorous \n training and selection to ensure that \n we provide our customers with hotel \n exceptional quality services`,
+  },
+  {
+    imgSrc: '/img/home/helper/enviroment',
+    title: `Environmental Protection Agency \n(EPA) Approved Chemicals`,
+    des: 'As a professional cleaning company, we \n supply state-of-the-art technology and \n premium cleaning resources which are safe for \n children, pets and improve indoor air quality.',
+  },
+];
 const Helper = () => {
   const width = useDetectWindowSize();
 
@@ -42,26 +75,51 @@ const Helper = () => {
       <div className={styles.helperTitle}>Why Choose Kung Fu Helper? </div>
       <div className={styles.helperStatisticWrapper}>
         <section>
-          {HELPER_NUMBERS.map((item) => (
-            <div key={item.text} className={styles.helperItem}>
-              <p>{item.value}</p>
-              <span>{item.text}</span>
-            </div>
-          ))}
+          {width > 769 ? (
+            HELPER_NUMBERS.map((item) => (
+              <div key={item.text} className={styles.helperItem}>
+                <p>{item.value}</p>
+                <span>{item.text}</span>
+              </div>
+            ))
+          ) : (
+            <>
+              {HELPER_NUMERS_SP.map((item) => (
+                <div key={item.text} className={styles.helperItem}>
+                  <p>{item.value}</p>
+                  <span>{item.text}</span>
+                </div>
+              ))}
+            </>
+          )}
         </section>
       </div>
 
       <div className={styles.helperInfoValue}>
         <section>
-          {HELPER_INFO_VALUES.map((item) => (
-            <div key={item.title} className={styles.helperInfoItem}>
-              <div className={styles.helperInfoItemImageWrapper}>
-                <img src={`${width > 780 ? `${item.imgSrc}.svg` : `${item.imgSrc}_sp.svg`}`} alt="item" />
+          {width > 768 ? (
+            HELPER_INFO_VALUES.map((item) => (
+              <div key={item.title} className={styles.helperInfoItem}>
+                <div className={styles.helperInfoItemImageWrapper}>
+                  <img src={`${width > 780 ? `${item.imgSrc}.svg` : `${item.imgSrc}_sp.svg`}`} alt="item" />
+                </div>
+                <p>{item.title}</p>
+                <span>{item.des}</span>
               </div>
-              <p>{item.title}</p>
-              <span>{item.des}</span>
-            </div>
-          ))}
+            ))
+          ) : (
+            <>
+              {HELPER_INFO_VALUES_SP.map((item) => (
+                <div key={item.title} className={styles.helperInfoItem}>
+                  <div className={styles.helperInfoItemImageWrapper}>
+                    <img src={`${width > 780 ? `${item.imgSrc}.svg` : `${item.imgSrc}_sp.svg`}`} alt="item" />
+                  </div>
+                  <p>{item.title}</p>
+                  <span>{item.des}</span>
+                </div>
+              ))}
+            </>
+          )}
         </section>
       </div>
     </div>

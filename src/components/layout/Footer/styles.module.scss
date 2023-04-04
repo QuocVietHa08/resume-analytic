@@ -52,7 +52,14 @@
   }
 
   .dividerStyle {
-    
+
+    @include mobile {
+      background-color: #0E8778;
+      width: 50%;
+      margin: 0 auto;
+      margin-top: 23px;
+      margin-bottom: 15px;
+    }
   }
 }
 
@@ -128,4 +135,11 @@
   border-top-left-radius: 10px !important;
   border-bottom-left-radius: 10px !important;
   border: none !important;
+}
+
+.dividerWrapper {
+  @include mobile {
+    width: 80%;
+    margin: 0 auto;
+  }
 }

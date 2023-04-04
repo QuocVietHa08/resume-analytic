@@ -14,9 +14,7 @@ const WorkItem = ({ number, imgSrc, index, length, text }) => {
         <img src={`${width > 779 ? imgSrc : `${imgSrc}_sp`}.svg`} alt="img" />
         <div className="mt-20 text-bold text-capitalize font-size-20 font-size-sp-10 pre-wrap text-center">{text}</div>
       </div>
-      {!router.pathname.includes("faq") && width >= 1876 && index !== length - 1 && (
-        <div className={styles.workItemLine}></div> 
-      )}
+      {!router.pathname.includes('faq') && width >= 1876 && index !== length - 1 && <div className={styles.workItemLine}></div>}
     </div>
   );
 };
