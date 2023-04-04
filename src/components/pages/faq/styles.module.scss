@@ -4,3 +4,67 @@
   width: 80%;
   margin: 0 auto;
 }
+
+// Work
+.workContainer {
+  width: 80%;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 0 auto;
+  margin-top: 30px;
+  margin-bottom: 70px;
+}
+
+.workTitle {
+  font-weight: 700;
+  font-size: 50px;
+  text-align: center;
+  text-transform: capitalize;
+  color: #333333;
+  text-decoration: underline;
+  text-decoration-color: #fddc3a;
+  font-family: 'Baloo Da';
+
+  @include mobile {
+    font-size: 20px;
+  }
+}
+
+.workItemWrapper {
+  display: flex;
+  position: relative;
+
+  p {
+    font-weight: 700;
+    top: 0;
+    left: 0;
+    font-size: 64px;
+    color: #e6e6e6;
+    opacity: 0.5;
+    margin-bottom: 0;
+
+    @include mobile {
+      font-size: 16px;
+    }
+  }
+
+  .imageWrapper {
+    margin-top: 60px;
+
+    @include mobile {
+      margin-top: 20px;
+    }
+  }
+
+  .workItemLine {
+    width: 80px;
+    height: 0;
+    border: 3px dashed #9FCFC9;
+    position: absolute;
+    top: 50%;
+    right: -20%;
+    z-index: 99;
+  }
+}

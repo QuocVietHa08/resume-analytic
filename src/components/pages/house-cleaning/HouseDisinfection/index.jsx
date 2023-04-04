@@ -10,11 +10,25 @@ import HouseDisinfectionSection from './HouseDisinfectionSection';
 import Apply from '../Apply';
 import HouseCleaningService from '../HouseCleaningService';
 
+const BREADCUMBS = [
+  {
+    text: 'Home',
+    link: '/'
+  },
+  {
+    text: 'Services',
+    link: '/service'
+  },
+  {
+    text: 'House Disinfection',
+    link: ''
+  }
+]
 const HouseDisinfection = () => {
   return (
     <>
       <IntroService title="House Disinfection" />
-      <BreadCumbs pages={['Home', 'Services', 'House Disinfection']} />
+      <BreadCumbs pages={BREADCUMBS} />
       <HouseDisinfectionSection />
       <Disclaimer />
       <HouseCleaningService />

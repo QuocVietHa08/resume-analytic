@@ -22,7 +22,8 @@ const Enquiry = ({ isShowBgImage = true }) => {
           </p>
         </div>
         <div className={styles.enquiryDes}>
-          Please fill in the form below and we will get back to you in 3 business days. For a faster response, WhatsApp us at +65 8838 0909.
+          Please fill in the form below and we will get back to you in 3 business days. For a faster response, WhatsApp us at +
+          <a className="font-size-24 font-size-sp-12 color-black text-underline" href="https://api.whatsapp.com/send/?phone=6588380909">65 8838 0909</a> .
         </div>
         <div className={styles.enquiryForm}>
           <Form>
@@ -76,7 +77,9 @@ const Enquiry = ({ isShowBgImage = true }) => {
               )}
             </div>
             <Form.Item className="flex">
-              <Button size="large" className={styles.buttonFormStyle}>Submit</Button>
+              <Button size="large" className={styles.buttonFormStyle}>
+                Submit
+              </Button>
             </Form.Item>
           </Form>
         </div>

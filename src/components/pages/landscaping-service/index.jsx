@@ -66,14 +66,29 @@ const VARITYS = [
   },
 ];
 
+const BREADCUMBS = [
+  {
+    text: 'Home',
+    link: '/'
+  },
+  {
+    text: 'Services',
+    link: '/service'
+  },
+  {
+    text: 'Landscaping Services',
+    link: '' 
+  }
+]
+
 const LandscapingService = () => {
   return (
     <div className={styles.landscapingServiceDetail}>
       <IntroService title="Landscaping Services" />
-      <BreadCumbs pages={['Home', 'Services', 'Landscaping Services']} />
+      <BreadCumbs pages={BREADCUMBS} />
       <LandscapingServiceDetail />
       <Disclaimer />
-      <CleaningVarity arrayList={VARITYS} />
+      <CleaningVarity title="Handy Home Services" arrayList={VARITYS} />
       <Work />
       <Testimonials />
       <CleaningService title="Landscaping Services" />

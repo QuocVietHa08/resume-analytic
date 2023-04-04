@@ -4,8 +4,7 @@ import useDetectWindowSize from '@/hooks/useDetectWindowSize';
 
 const CLEANING_SERVIES = [
   {
-    name: `Child Care 
-    Centre`,
+    name: `Child Care\nCentre`,
     img: '/img/office-cleaning/cleaning-service/bag',
   },
   {
@@ -13,8 +12,7 @@ const CLEANING_SERVIES = [
     img: '/img/office-cleaning/cleaning-service/office',
   },
   {
-    name: `Workout 
-    Facilities`,
+    name: `Workout\nFacilities`,
     img: '/img/office-cleaning/cleaning-service/workout',
   },
 
@@ -27,8 +25,7 @@ const CLEANING_SERVIES = [
     img: '/img/office-cleaning/cleaning-service/apartment',
   },
   {
-    name: `Food 
-    Manufacturing`,
+    name: `Food\nManufacturing`,
     img: '/img/office-cleaning/cleaning-service/food',
   },
   {
@@ -36,8 +33,7 @@ const CLEANING_SERVIES = [
     img: '/img/office-cleaning/cleaning-service/laboratory',
   },
   {
-    name: `Healthcare
-    Facilities`,
+    name: `Healthcare\nFacilities`,
     img: '/img/office-cleaning/cleaning-service/healthcare',
   },
 ];

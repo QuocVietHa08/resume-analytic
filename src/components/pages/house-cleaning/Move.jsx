@@ -10,11 +10,25 @@ import HouseHelper from './HouseHelper';
 import Apply from './Apply';
 import HouseCleaningService from './HouseCleaningService';
 
+const BREADCUMBS = [
+  {
+    text: 'Home',
+    link: '/'
+  },
+  {
+    text: 'Services',
+    link: '/service'
+  },
+  {
+    text: 'Move In / Move Out Cleaning',
+    link: ''
+  }
+]
 const Move = () => {
   return (
     <>
       <IntroService title="Move In / Move Out Cleaning" />
-      <BreadCumbs pages={['Home', 'Services', 'Move In / Move Out Cleaning']} />
+      <BreadCumbs pages={BREADCUMBS} />
       <HouseHelper />
       <Disclaimer />
       <HouseCleaningService />

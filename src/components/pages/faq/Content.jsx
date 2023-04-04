@@ -2,6 +2,7 @@ import React from 'react';
 import { Collapse } from 'antd';
 import styles from './styles.module.scss';
 import Work from '../home/Work';
+import ReFerralWork from './ReFerralWork';
 
 const { Panel } = Collapse;
 const Content = () => {
@@ -57,7 +58,7 @@ const Content = () => {
           <Panel header="How does the referral system work?" key="5">
             <div>
               <div>The referral system works as illustrated below:</div>
-              <Work />
+              <ReFerralWork />
             </div>
           </Panel>
           <Panel header="Do I have to be present when the cleaner arrives?" key="7">

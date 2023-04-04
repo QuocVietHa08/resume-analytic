@@ -3,11 +3,21 @@ import BreadCumbs from '@/components/atoms/breadcumbs';
 import IntroService from '../service/IntroService';
 import styles from './styles.module.scss';
 
+const BREADCUMBS = [
+  {
+    text: 'Home',
+    link: '/'
+  },
+  {
+    text: 'Term & Condition',
+    link: ''
+  }
+]
 const Term = () => {
   return (
     <div className={styles.termConditionContainer}>
-      <IntroService title="Term & Conditions" />
-      <BreadCumbs pages={['Home', 'Term & Condtion']} />
+      <IntroService title="Terms & Conditions" />
+      <BreadCumbs pages={BREADCUMBS} />
       <div className={styles.termConditonContent}>
         <div>
           <p>Welcome to kungfuhelper.com!</p>
@@ -89,7 +99,6 @@ const Term = () => {
           </li>
         </ul>
 
-
         <div className={styles.termSection}>Hyperlinking to our Content</div>
         <p>The following organizations may link to our Website without prior written approval:</p>
         <ul>
@@ -152,36 +161,43 @@ const Term = () => {
 
         <div className={styles.termSection}>iFrames</div>
         <p>
-        Without prior approval and written permission, you may not create frames around our Webpages that alter in any way the visual presentation or appearance of our Website.
+          Without prior approval and written permission, you may not create frames around our Webpages that alter in any way the visual
+          presentation or appearance of our Website.
         </p>
 
         <div className={styles.termSection}>Content Liability</div>
         <p>
-          We shall not be hold responsible for any content that appears on your Website. You agree to protect and defend us against all claims that is rising on your Website. No link(s) should appear on any Website that may be interpreted as libelous, obscene or criminal, or which infringes, otherwise violates, or advocates the infringement or other violation of, any third party rights.
+          We shall not be hold responsible for any content that appears on your Website. You agree to protect and defend us against all
+          claims that is rising on your Website. No link(s) should appear on any Website that may be interpreted as libelous, obscene or
+          criminal, or which infringes, otherwise violates, or advocates the infringement or other violation of, any third party rights.
         </p>
 
         <div className={styles.termSection}>Your Privacy</div>
-        <p>
-          Please read Privacy Policy
-        </p>
+        <p>Please read Privacy Policy</p>
 
         <div className={styles.termSection}>Reservation of Rights</div>
         <p>
-        We reserve the right to request that you remove all links or any particular link to our Website. You approve to immediately remove all links to our Website upon request. We also reserve the right to amen these terms and conditions and it’s linking policy at any time. By continuously linking to our Website, you agree to be bound to and follow these linking terms and conditions.
+          We reserve the right to request that you remove all links or any particular link to our Website. You approve to immediately remove
+          all links to our Website upon request. We also reserve the right to amen these terms and conditions and it’s linking policy at any
+          time. By continuously linking to our Website, you agree to be bound to and follow these linking terms and conditions.
         </p>
 
         <div className={styles.termSection}>Removal of links from our website</div>
         <p>
-          If you find any link on our Website that is offensive for any reason, you are free to contact and inform us any moment. We will consider requests to remove links but we are not obligated to or so or to respond to you directly.
+          If you find any link on our Website that is offensive for any reason, you are free to contact and inform us any moment. We will
+          consider requests to remove links but we are not obligated to or so or to respond to you directly.
         </p>
 
         <p>
-          We do not ensure that the information on this website is correct, we do not warrant its completeness or accuracy; nor do we promise to ensure that the website remains available or that the material on the website is kept up to date.
+          We do not ensure that the information on this website is correct, we do not warrant its completeness or accuracy; nor do we
+          promise to ensure that the website remains available or that the material on the website is kept up to date.
         </p>
 
         <div className={styles.termSection}>Disclaimer</div>
         <p>
-        To the maximum extent permitted by applicable law, we exclude all representations, warranties and conditions relating to our website and the use of this website.<br /> Nothing in this disclaimer will:
+          To the maximum extent permitted by applicable law, we exclude all representations, warranties and conditions relating to our
+          website and the use of this website.
+          <br /> Nothing in this disclaimer will:
         </p>
 
         <ul>
@@ -189,14 +205,17 @@ const Term = () => {
           <li>limit or exclude our or your liability for fraud or fraudulent misrepresentation;</li>
           <li>limit any of our or your liabilities in any way that is not permitted under applicable law; or</li>
           <li>exclude any of our or your liabilities that may not be excluded under applicable law.</li>
-          <li>The limitations and prohibitions of liability set in this Section and elsewhere in this disclaimer: (a) are subject to the preceding paragraph; and (b) govern all - liabilities arising under the disclaimer, including liabilities arising in contract, in tort and for breach of statutory duty.</li>
+          <li>
+            The limitations and prohibitions of liability set in this Section and elsewhere in this disclaimer: (a) are subject to the
+            preceding paragraph; and (b) govern all - liabilities arising under the disclaimer, including liabilities arising in contract,
+            in tort and for breach of statutory duty.
+          </li>
         </ul>
 
         <p>
-          As long as the website and the information and services on the website are provided free of charge, we will not be liable for any loss or damage of any nature.
+          As long as the website and the information and services on the website are provided free of charge, we will not be liable for any
+          loss or damage of any nature.
         </p>
-
-
       </div>
     </div>
   );

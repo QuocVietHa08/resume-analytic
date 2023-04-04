@@ -67,14 +67,28 @@ const HANDYMAN_VARITY = [
   },
 ];
 
+const BREADCUMBS = [
+  {
+    text: 'Home',
+    link: '/'
+  },
+  {
+    text: 'Services',
+    link: '/service' 
+  },
+  {
+    text: 'Pest Control',
+    link: ''
+  }
+]
 const PestControl = () => {
   return (
     <div className={styles.pestControlContainer}>
       <IntroService title="Pest Control" />
-      <BreadCumbs pages={['Home', 'Service', 'Pest Control']} />
+      <BreadCumbs pages={BREADCUMBS} />
       <PestControlDetail />
       <Disclaimer />
-      <CleaningVarity arrayList={HANDYMAN_VARITY} />
+      <CleaningVarity title="Handy Home Services" arrayList={HANDYMAN_VARITY} />
       <Work />
       <Testimonials />
       <CleaningService title="Pest Control Services" />

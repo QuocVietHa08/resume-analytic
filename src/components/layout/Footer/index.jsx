@@ -14,11 +14,36 @@ const Footer = () => {
           <div className={styles.footerLinkInfo}>
             <div className={styles.quickLinks}>
               <div className={styles.headerText}>Quick Links</div>
-              <div><Link className="color-primary" href="/">Home</Link></div>
-              <div><Link className="color-primary" href="/about-us">About</Link></div>
-              <div><Link className="color-primary" href="/testimonials">Testimonials</Link></div>
-              <div><Link className="color-primary" href="faq">FAQ</Link></div>
-              <div><Link className="color-primary" href="contact">Contact Us</Link></div>
+              <div>
+                <Link className="color-primary" href="/">
+                  Home
+                </Link>
+              </div>
+              <div>
+                <Link className="color-primary" href="/service">
+                  Services
+                </Link>
+              </div>
+              <div>
+                <Link className="color-primary" href="/about-us">
+                  About
+                </Link>
+              </div>
+              <div>
+                <Link className="color-primary" href="/testimonials">
+                  Testimonials
+                </Link>
+              </div>
+              <div>
+                <Link className="color-primary" href="/faq">
+                  FAQ
+                </Link>
+              </div>
+              <div>
+                <Link className="color-primary" href="/contact">
+                  Contact Us
+                </Link>
+              </div>
             </div>
             <div className={styles.info}>
               <div>
@@ -58,11 +83,36 @@ const Footer = () => {
               <div className="flex flex-column gap-20">
                 <div className={styles.quickLinks}>
                   <div className={styles.headerText}>Quick Links</div>
-                  <p>Home</p>
-                  <p>About</p>
-                  <p>Testimonials</p>
-                  <p>FAQ</p>
-                  <p>Contact Us</p>
+                  <p>
+                    <Link className="color-primary" href="/">
+                      Home
+                    </Link>
+                  </p>
+                  <p>
+                    <Link className="color-primary" href="/service">
+                      Services
+                    </Link>
+                  </p>
+                  <p>
+                    <Link className="color-primary" href="/about-us">
+                      About
+                    </Link>
+                  </p>
+                  <p>
+                    <Link className="color-primary" href="/testimonials">
+                      Testimonials
+                    </Link>
+                  </p>
+                  <p>
+                    <Link className="color-primary" href="/faq">
+                      FAQ
+                    </Link>
+                  </p>
+                  <p>
+                    <Link className="color-primary" href="/contact">
+                      Contact Us
+                    </Link>
+                  </p>
                 </div>
                 <div>
                   <div className={styles.headerText}>Follow Us</div>
@@ -106,9 +156,17 @@ const Footer = () => {
             <div className="flex item-center justify-evenly gap-25">
               <div>© 2022 KungFu Helper Pte Ltd. All rights reserved.</div>
               <div>|</div>
-              <div><Link href="/policy" className="color-primary-dark">Privacy Policy</Link></div>
+              <div>
+                <Link href="/policy" className="color-primary-dark">
+                  Privacy Policy
+                </Link>
+              </div>
               <div>|</div>
-              <div><Link href="/term" className="color-primary-dark">Terms & Conditions</Link></div>
+              <div>
+                <Link href="/term" className="color-primary-dark">
+                  Terms & Conditions
+                </Link>
+              </div>
             </div>
 
             <div>
@@ -121,9 +179,17 @@ const Footer = () => {
             <div className="flex flex-column item-center justify-center gap-10">
               <p>© 2022 KungFu Helper Pte Ltd. All rights reserved.</p>
               <div className="flex gap-10 font-size-12">
-                <p className="text-bold"><Link href="/policy" className="color-primary-dark text-bold">Privacy Policy</Link></p>
+                <p className="text-bold">
+                  <Link href="/policy" className="color-primary-dark text-bold">
+                    Privacy Policy
+                  </Link>
+                </p>
                 <div>|</div>
-                <div className="text-bold"><Link href="/term" className="color-primary-dark text-bold">Terms & Conditions</Link></div>
+                <div className="text-bold">
+                  <Link href="/term" className="color-primary-dark text-bold">
+                    Terms & Conditions
+                  </Link>
+                </div>
               </div>
             </div>
 

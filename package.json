@@ -2,11 +2,11 @@
   "name": "kungfu_helper",
   "version": "1.0.0",
   "private": true,
-  "description": "CMS Frontend",
+  "description": "KungFu Helper LandingPage",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start -p 7000",
+    "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
