@@ -107,7 +107,7 @@ const Service = () => {
   return (
     <>
       <IntroService title="Part-Time Helper" />
-      <BreadCumbs pages={['Home', 'Services', 'Part-Time Helper']} />
+      <BreadCumbs pages={['Home', 'Services', 'Part-Time Helper']} links={['/', '/service']} />
       <CleaningHelper data={PARTTIME_DATA} />
       <Disclaimer />
       <CleaningVarity arrayList={PARTTIME_SERVICE} title="Cleaning Services" />

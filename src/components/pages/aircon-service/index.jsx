@@ -71,7 +71,7 @@ const AirconService = () => {
     <div className={styles.airconServiceContainer}>
       <IntroService title="Aircon Service" />
       <div className="mt-sp-30 mt-50">
-        <BreadCumbs pages={['Home', 'Services', 'Aircon Servicing']} />
+        <BreadCumbs pages={['Home', 'Services', 'Aircon Servicing']} links={['/', '/service']} />
       </div>
       <AirconDetail />
       <Disclaimer />

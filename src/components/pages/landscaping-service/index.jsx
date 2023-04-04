@@ -70,7 +70,7 @@ const LandscapingService = () => {
   return (
     <div className={styles.landscapingServiceDetail}>
       <IntroService title="Landscaping Services" />
-      <BreadCumbs pages={['Home', 'Services', 'Landscaping Services']} />
+      <BreadCumbs pages={['Home', 'Services', 'Landscaping Services']} links={['/', '/service']} />
       <LandscapingServiceDetail />
       <Disclaimer />
       <CleaningVarity arrayList={VARITYS} />

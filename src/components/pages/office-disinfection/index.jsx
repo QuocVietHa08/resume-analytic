@@ -37,7 +37,7 @@ const OfficeDisinfection = () => {
     <div className={styles.officeCleaningContainer}>
       <IntroService title="Office Disinfection" />
       <div className="mt-sp-30 mt-90">
-        <BreadCumbs pages={['Home', 'Services', 'Office Disinfection']} />
+        <BreadCumbs pages={['Home', 'Services', 'Office Disinfection']} links={['/', '/service']} />
       </div>
       <DisinfectionDetail />
       <DisinfectionCleaningContent />
@@ -47,7 +47,7 @@ const OfficeDisinfection = () => {
       <Testimonials />
       <CleaningService title="Office Disinfection Services" />
       <Enquiry isShowBgImage={false} />
-      <Download /> 
+      <Download />
     </div>
   )
 }

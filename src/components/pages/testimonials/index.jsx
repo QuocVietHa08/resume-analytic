@@ -10,11 +10,11 @@ const TestimonialsPageComponent = () => {
   return (
     <div className={styles.testimonialsPageContainer}>
       <IntroService title="Testimonials" />
-      <BreadCumbs pages={['Home', 'Testimonials']} />
-      <Testimonials isTestimonialPage/>
+      <BreadCumbs pages={['Home', 'Testimonials']} links={['/']} />
+      <Testimonials isTestimonialPage />
       <Download />
     </div>
-  )
-}
+  );
+};
 
 export default TestimonialsPageComponent;

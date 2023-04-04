@@ -10,7 +10,7 @@ const Service = () => {
     <>
       <IntroService title="Our Services" />
       <div className="pt-50 pt-sp-20 pb-40 pb-sp-20">
-        <BreadCumbs pages={['Home', 'Services']} />
+        <BreadCumbs pages={['Home', 'Services']} links={['/']}/>
       </div>
       <ServiceProvider />
       <div className="mt-150 mt-sp-50">

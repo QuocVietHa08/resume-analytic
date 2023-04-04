@@ -34,7 +34,7 @@ const OfficeCleaning = () => {
     <div className={styles.officeCleaningContainer}>
       <IntroService title="General Office Cleaning" />
       <div className="mt-sp-30 mt-90">
-        <BreadCumbs pages={['Home', 'Service', 'General Office Cleaning']} />
+        <BreadCumbs pages={['Home', 'Service', 'General Office Cleaning']} links={['/', '/service']} />
       </div>
       <CleaningDetail />
       <Disclaimer />

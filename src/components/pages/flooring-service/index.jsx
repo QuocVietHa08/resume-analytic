@@ -70,7 +70,7 @@ const FlooringService = () => {
   return (
     <div>
       <IntroService title="Flooring Services" />
-      <BreadCumbs pages={['Home', 'Services', 'Flooring Services']} />
+      <BreadCumbs pages={['Home', 'Services', 'Flooring Services']} links={['/', '/service']} />
       <Detail />
       <Disclaimer />
       <CleaningVarity arrayList={VARITYS}/>

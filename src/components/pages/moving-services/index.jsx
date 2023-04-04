@@ -71,7 +71,7 @@ const MovingService = () => {
   return (
     <div>
       <IntroService title="Moving Services" />
-      <BreadCumbs pages={['Home', 'Servies', 'Moving Services']} />
+      <BreadCumbs pages={['Home', 'Servies', 'Moving Services']} links={['/', '/service']} />
       <MovingDetailService />
       <Disclaimer />
       <CleaningVarity arrayList={VARITYS}/>

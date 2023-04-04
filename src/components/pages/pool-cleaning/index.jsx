@@ -70,7 +70,7 @@ const PoolCleaning = () => {
   return (
     <div className={styles.poolCleaningContainer}>
       <IntroService title="Pool Cleaning" />
-      <BreadCumbs pages={['Home', 'Services', 'Pool Cleaning']} />
+      <BreadCumbs pages={['Home', 'Services', 'Pool Cleaning']} links={['/', '/service']} />
       <PoolCleaningDetail />
       <Disclaimer />
       <CleaningVarity arrayList={VARITYS} />

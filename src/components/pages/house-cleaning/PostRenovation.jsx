@@ -14,7 +14,7 @@ const PostRenovation = () => {
   return (
     <>
       <IntroService title="Post-Renovation Cleaning" />
-      <BreadCumbs pages={['Home', 'Services', 'Post-Renovation cleaning']} />
+      <BreadCumbs pages={['Home', 'Services', 'Post-Renovation cleaning']} links={['/', '/service']} />
       <HouseHelper />
       <Disclaimer />
       <HouseCleaningService />

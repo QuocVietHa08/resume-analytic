@@ -9,11 +9,11 @@ const AboutUs = () => {
   return (
     <div className={styles.aboutUsContainer}>
       <IntroService title="About KungFu Helper" />
-      <BreadCumbs pages={['Home', 'About']} />
+      <BreadCumbs pages={['Home', 'About']} links={['/']} />
       <AboutUsDetail />
       <Download />
     </div>
-  )
-}
+  );
+};
 
 export default AboutUs;

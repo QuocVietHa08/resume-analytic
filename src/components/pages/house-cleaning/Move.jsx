@@ -14,7 +14,7 @@ const Move = () => {
   return (
     <>
       <IntroService title="Move In / Move Out Cleaning" />
-      <BreadCumbs pages={['Home', 'Services', 'Move In / Move Out Cleaning']} />
+      <BreadCumbs pages={['Home', 'Services', 'Move In / Move Out Cleaning']} links={['/', '/service']} />
       <HouseHelper />
       <Disclaimer />
       <HouseCleaningService />

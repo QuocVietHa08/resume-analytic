@@ -14,7 +14,7 @@ const MattressCleaning = () => {
   return (
     <>
       <IntroService title="Mattress Cleaning" />
-      <BreadCumbs pages={['Home', 'Services', 'Mattress Cleaning']} />
+      <BreadCumbs pages={['Home', 'Services', 'Mattress Cleaning']} links={['/', '/service']} />
       <Detail />
       <Disclaimer />
       <FurnitureUpholsteryService />

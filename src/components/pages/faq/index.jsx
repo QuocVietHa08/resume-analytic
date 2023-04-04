@@ -8,10 +8,10 @@ const FAQ = () => {
     <div>
       <IntroService title="Frequently asked questions" />
       <div className="mt-40 mt-sp-20"></div>
-      <BreadCumbs pages={['Home', 'FAQ']} />
+      <BreadCumbs pages={['Home', 'FAQ']} links={['/']} />
       <Content />
     </div>
-  )
-}
+  );
+};
 
-export default FAQ
+export default FAQ;

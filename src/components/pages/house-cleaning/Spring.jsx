@@ -14,7 +14,7 @@ const Spring = () => {
   return (
     <>
       <IntroService title="Spring Cleaning" />
-      <BreadCumbs pages={['Home', 'Services', 'Spring Cleaning']} />
+      <BreadCumbs pages={['Home', 'Services', 'Spring Cleaning']} links={['/', '/service']} />
       <HouseHelper />
       <Disclaimer />
       <HouseCleaningService />

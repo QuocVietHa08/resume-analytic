@@ -71,7 +71,7 @@ const PestControl = () => {
   return (
     <div className={styles.pestControlContainer}>
       <IntroService title="Pest Control" />
-      <BreadCumbs pages={['Home', 'Service', 'Pest Control']} />
+      <BreadCumbs pages={['Home', 'Service', 'Pest Control']} links={['/', '/service']} />
       <PestControlDetail />
       <Disclaimer />
       <CleaningVarity arrayList={HANDYMAN_VARITY} />
