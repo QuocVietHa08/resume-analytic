@@ -28,7 +28,7 @@ const ServiceItem = ({ activeService, title, imgSrc, services, handleOnClick, li
             <div className="flex item-center gap-20 gap-sp-10">
               <p className={`${isActive ? 'color-white-i' : ''}`}>View Services</p>
               <span className={styles.dropdownStyle}>
-                <img src="/img/home/service/dropdown.svg" alt="dropdown" />
+                <img src={`/img/home/service/${isActive ? 'dropup' : 'dropdown'}.svg`} alt="dropdown" />
               </span>
             </div>
             <div className={`${!isActive ? 'none' : ''} transition-height flex flex-column gap-10`}>

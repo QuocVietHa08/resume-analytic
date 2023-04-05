@@ -35,6 +35,34 @@
   @include mobile {
     gap: 20px;
   }
+
+  .whatAppButton {
+    display: flex;
+    align-items: center;
+    padding: 13px 30px;
+    background: #3C8477;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    max-width: 290px;
+    cursor: pointer;
+    gap: 35px;
+
+    @include mobile {
+      padding: 8px 20px;
+      max-width: 150px;
+      gap: 10px
+    }
+
+    span {
+      font-size: 20px;
+      color: white;
+      font-weight: 700;
+
+      @include mobile {
+        font-size: 12px;
+      }
+    }
+  }
 }
 
 .cleanerAvatarWrapper {
@@ -103,24 +131,48 @@
       line-height: 16px;
     }
   }
+
+  .serviceItemsWrapper {
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0 auto;
+
+    @include mobile {
+      flex-direction: column;
+      justify-content: center;
+      flex-wrap: nowrap;
+      width: 100%;
+    }
+  }
+  .serviceItemsWrapperPC {
+    width: 80%;
+    display: flex;
+    margin: 0 auto;
+    justify-content: space-between;
+  }
+
 }
 
 .serviceItemContainer {
   display: flex;
   align-items: flex-start;
   gap: 50px;
-  width: 70%;
+  width: 100%;
   border: 1px solid #3e9f93;
   border-radius: 20px;
-  margin: 30px auto;
-  padding: 28px 35px;
+  margin: 20px auto;
+  padding: 20px 40px;
   cursor: pointer;
 
+  align-items: center;
+
   @include mobile {
-    align-items: center;
     width: 100%;
     gap: 20px;
     padding: 15px 25px;
+    margin: 15px auto;
 
     img {
       width: 50px;
@@ -154,6 +206,7 @@
 .serviceItemContainerActive {
   @extend .serviceItemContainer;
   background-color: #0e8778;
+  align-items: unset
 }
 
 .serviceItemContactContainer {
@@ -348,7 +401,7 @@
     display: flex;
     justify-content: space-between;
     flex-direction: row;
-    width: 70%;
+    width: 75%;
     margin: 50px auto;
 
     @include mobile {
@@ -368,7 +421,7 @@
       background: #ffffff;
       box-shadow: 0px 0px 20px 5px rgba(178, 216, 200, 0.35);
       border-radius: 20px;
-      padding: 15px;
+      padding: 30px 15px;
       text-align: center;
 
       @include mobile {
@@ -396,8 +449,8 @@
         font-size: 24px;
         text-align: center;
         color: #333333;
-        margin-bottom: 50px;
-        padding: 0 25px;
+        margin-bottom: 10px;
+        padding: 0 15px;
 
         @include mobile {
           font-size: 12px;
