@@ -138,7 +138,7 @@ const Footer = () => {
                     31 Woodlands Close <br /> #03-10 Woodlands Horizon <br /> Singapore 737855{' '}
                   </span>
                 </div>
-                <img src="/img/footer/logo.svg" className="w-75 h-55" alt="" />
+                <img src="/img/footer/logo.svg" className="w-75 h-55 mt-sp-30" alt="" />
               </div>
             </div>
             <div className="w-full">

@@ -90,6 +90,10 @@
   justify-content: center;
   align-items: center;
 
+  @include mobile {
+    padding: 0 20px;
+  }
+
   h4 {
     font-family: 'Baloo Da';
     font-size: 50px;
@@ -263,7 +267,7 @@
   margin-bottom: 70px;
 
   @include mobile {
-    width: 85%;
+    width: 90%;
   } 
 }
 
