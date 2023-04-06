@@ -1,4 +1,3 @@
-
 @import 'styles/responsive.scss';
 
 .faqCollapseContainer {
@@ -17,7 +16,7 @@
     }
   }
   .ant-collapse-item {
-    border-bottom: 1px solid #aaaaaa !important; 
+    border-bottom: 1px solid #aaaaaa !important;
   }
   .ant-collapse-arrow {
     background-color: #3c8477;
@@ -35,8 +34,52 @@
     color: #393e46;
 
     @include mobile {
-
       font-size: 12px;
     }
   }
+}
+
+.carousel-testimonials-style {
+  position: absolute;
+  height: 5px;
+  bottom: -20px !important;
+
+  @include mobile {
+    bottom: -15px !important;
+  }
+
+  li {
+    width: 11px !important;
+    height: 11px !important;
+
+    @include mobile {
+      width: 6px !important;
+      height: 6px !important;
+    }
+
+    button {
+      width: 100%;
+      height: 100%;
+      background: #d8d8d8 !important;
+      border-radius: 10px !important;
+    }
+  }
+
+  .slick-active {
+    width: 26px !important;
+    height: 11px !important;
+
+    @include mobile {
+      width: 14.18px !important;
+      height: 6px !important;
+    }
+
+    button {
+      width: 100%;
+      height: 100%;
+      background: #3c8477 !important;
+      border-radius: 10px !important;
+    }
+  }
+  // width: 100px;
 }

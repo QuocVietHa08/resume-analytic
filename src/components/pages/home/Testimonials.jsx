@@ -43,7 +43,7 @@ const Testimonials = ({ isTestimonialPage = false }) => {
           className={styles.testSliderArrowRight}
           alt="arrow"
         />
-        <Carousel dots ref={carouselRef}>
+        <Carousel dots={{ className: 'carousel-testimonials-style' }} ref={carouselRef}>
           <div className={styles.testSliderItem}>
             <img
               src={`${width > 780 ? `${imgSrcQouteLeft}.svg` : `${imgSrcQouteLeft}_sp.svg`}`}
