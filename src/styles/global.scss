@@ -22,6 +22,11 @@ html *::-webkit-scrollbar-track {
   background-color: rgba(255, 255, 255, 0) !important;
 }
 
+@font-face {
+  font-family: 'Baloo Da';
+  src: url('/public/fonts/Baloo-Regular.ttf');
+}
+
 * {
   font-size: 14px;
   font-weight: 300;
