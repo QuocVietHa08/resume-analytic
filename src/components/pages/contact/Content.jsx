@@ -2,6 +2,7 @@ import React from 'react';
 import styles from './styles.module.scss';
 import BreadCumbs from '@/components/atoms/breadcumbs';
 import useDetectWindowSize from '@/hooks/useDetectWindowSize';
+import GoogleMapComponent from "./Map"
 
 const BREADCUMBS = [
   {
@@ -20,7 +21,8 @@ const Content = () => {
     <div className={styles.contactContentContainer}>
       <BreadCumbs pages={BREADCUMBS} />
       <div className={styles.contactAddress}>
-        <img src={`${width > 780 ? `/img/contact/map.svg` : `/img/contact/map_sp.svg`}`} alt="item" />
+        <GoogleMapComponent />
+        {/* <img src={`${width > 780 ? `/img/contact/map.svg` : `/img/contact/map_sp.svg`}`} alt="item" /> */}
         <div className={styles.contactInfoCard}>
           <section>
             <img src={`${width > 780 ? `/img/contact/phone.svg` : `/img/contact/phone_sp.svg`}`} alt="item" />

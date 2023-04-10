@@ -39,14 +39,14 @@ const Testimonials = ({ isTestimonialPage = false }) => {
           tabIndex={0}
           role="button"
           onKeyDown={() => handleSlideGo('left')}
-          src={`${width > 780 ? `${imgSrcArrowRight}.svg` : `${imgSrcArrowRight}_sp.svg`}`}
+          src={`${width > 1600 ? `${imgSrcArrowRight}.svg` : `${imgSrcArrowRight}_sp.svg`}`}
           className={styles.testSliderArrowRight}
           alt="arrow"
         />
         <Carousel dots={{ className: 'carousel-testimonials-style' }} ref={carouselRef}>
           <div className={styles.testSliderItem}>
             <img
-              src={`${width > 780 ? `${imgSrcQouteLeft}.svg` : `${imgSrcQouteLeft}_sp.svg`}`}
+              src={`${width > 1600 ? `${imgSrcQouteLeft}.svg` : `${imgSrcQouteLeft}_sp.svg`}`}
               alt="test"
               className={styles.testQuoteLeft}
             />
@@ -58,14 +58,14 @@ const Testimonials = ({ isTestimonialPage = false }) => {
               <span className="text-bold">Abigail Chia, Information Systems Specialist</span>
             </div>
             <img
-              src={`${width > 780 ? `${imgSrcQouteRight}.svg` : `${imgSrcQouteRight}_sp.svg`}`}
+              src={`${width > 1600 ? `${imgSrcQouteRight}.svg` : `${imgSrcQouteRight}_sp.svg`}`}
               alt="test"
               className={styles.testQuotRight}
             />
           </div>
           <div className={styles.testSliderItem}>
             <img
-              src={`${width > 780 ? `${imgSrcQouteLeft}.svg` : `${imgSrcQouteLeft}_sp.svg`}`}
+              src={`${width > 1600 ? `${imgSrcQouteLeft}.svg` : `${imgSrcQouteLeft}_sp.svg`}`}
               alt="test"
               className={styles.testQuoteLeft}
             />
@@ -78,14 +78,14 @@ const Testimonials = ({ isTestimonialPage = false }) => {
               <span className="text-bold">Jerome Tan, Civil Servant</span>
             </div>
             <img
-              src={`${width > 780 ? `${imgSrcQouteRight}.svg` : `${imgSrcQouteRight}_sp.svg`}`}
+              src={`${width > 1600 ? `${imgSrcQouteRight}.svg` : `${imgSrcQouteRight}_sp.svg`}`}
               alt="test"
               className={styles.testQuotRight}
             />
           </div>
           <div className={styles.testSliderItem}>
             <img
-              src={`${width > 780 ? `${imgSrcQouteLeft}.svg` : `${imgSrcQouteLeft}_sp.svg`}`}
+              src={`${width > 1600 ? `${imgSrcQouteLeft}.svg` : `${imgSrcQouteLeft}_sp.svg`}`}
               alt="test"
               className={styles.testQuoteLeft}
             />
@@ -98,7 +98,7 @@ const Testimonials = ({ isTestimonialPage = false }) => {
               <span className="text-bold">Natalie Sims, Teacher</span>
             </div>
             <img
-              src={`${width > 780 ? `${imgSrcQouteRight}.svg` : `${imgSrcQouteRight}_sp.svg`}`}
+              src={`${width > 1600 ? `${imgSrcQouteRight}.svg` : `${imgSrcQouteRight}_sp.svg`}`}
               alt="test"
               className={styles.testQuotRight}
             />
@@ -109,7 +109,7 @@ const Testimonials = ({ isTestimonialPage = false }) => {
           tabIndex={0}
           role="button"
           onKeyDown={() => handleSlideGo('right')}
-          src={`${width > 780 ? `${imgSrcArrowLeft}.svg` : `${imgSrcArrowLeft}_sp.svg`}`}
+          src={`${width > 1600 ? `${imgSrcArrowLeft}.svg` : `${imgSrcArrowLeft}_sp.svg`}`}
           className={styles.testSliderArrowLeft}
           alt="arrow"
         />

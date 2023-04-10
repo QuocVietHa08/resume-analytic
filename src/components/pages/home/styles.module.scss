@@ -1,4 +1,7 @@
 @import 'styles/responsive.scss';
+// pc: title 88 - text - 24
+// tablet title 35 text 16
+// mobile title 20 text 12
 
 .introContainer {
   color: #333;
@@ -25,6 +28,16 @@
     position: absolute;
     left: 0;
     top: 0;
+
+    @include tablet {
+      width: 50px;
+      height: 50px;
+
+      img {
+        width: auto;
+        height: 100%;
+      }
+    }
   }
 }
 
@@ -47,6 +60,11 @@
     cursor: pointer;
     gap: 35px;
 
+    @include tablet {
+      max-width: 240px;
+      padding: 10px 25px;
+    }
+
     @include mobile {
       padding: 8px 20px;
       max-width: 150px;
@@ -58,8 +76,20 @@
       color: white;
       font-weight: 700;
 
+      @include tablet {
+        font-size: 16px;
+      }
+
       @include mobile {
         font-size: 12px;
+      }
+    }
+
+    img {
+
+      @include tablet {
+        width: 20px;
+        height: auto;
       }
     }
   }
@@ -75,10 +105,16 @@
     height: 100%;
   }
 
-  @include mobile {
+  @include tablet{
+    height: 300px;
+    width: 300px;
+  }
+
+  @include mobile{
     height: 142px;
     width: 142px;
   }
+
 }
 
 // service
@@ -99,6 +135,9 @@
     font-size: 50px;
     color: #333333;
     margin-bottom: 10px;
+    @include tablet {
+      font-size: 35px;
+    }
 
     @include mobile {
       text-align: center;
@@ -113,6 +152,10 @@
       margin: 0 10px;
       text-decoration: underline;
       text-decoration-color: #fddc3a;
+      
+      @include tablet {
+        font-size: 35px;
+      }
 
       @include mobile {
         font-size: 20px;
@@ -128,6 +171,10 @@
     width: 70%;
     text-align: center;
     margin: 0 auto;
+
+    @include tablet {
+      font-size: 16px;
+    }
 
     @include mobile {
       width: 85%;
@@ -172,6 +219,12 @@
 
   align-items: center;
 
+  @include tablet {
+    img {
+      width: 70px;
+      height: 70px;
+    }
+  }
   @include mobile {
     width: 100%;
     gap: 20px;
@@ -189,6 +242,10 @@
     color: #333;
     font-size: 24px;
 
+    @include tablet {
+      font-size: 16px;
+    }
+
     @include mobile {
       font-size: 12px;
     }
@@ -201,8 +258,24 @@
     text-transform: capitalize;
     margin-bottom: 0px;
 
+    @include tablet {
+      font-size: 16px;
+    }
+
     @include mobile {
       font-size: 12px;
+    }
+  }
+
+  .serviceItemImageWrapper {
+    @include tablet {
+      width: 70px;
+      height: 70px; 
+
+      img {
+        width: 100%;
+        height: auto;
+      }
     }
   }
 }
@@ -248,6 +321,13 @@
 }
 
 .dropdownStyle {
+  @include tablet {
+    img {
+      width: 12px;
+      height: 10px;
+    }
+  }
+
   @include mobile {
     img {
       width: 9px;
@@ -281,6 +361,10 @@
   text-decoration-color: #fddc3a;
   font-family: 'Baloo Da';
 
+  @include tablet {
+    font-size: 35px;
+  }
+
   @include mobile {
     font-size: 20px;
   }
@@ -289,7 +373,7 @@
 .workItemWrapper {
   display: flex;
   position: relative;
-
+  height: 100%;
   @include mobile {
     height: 100%;
   }
@@ -303,6 +387,10 @@
     opacity: 0.5;
     margin-bottom: 0;
 
+    @include tablet {
+      font-size: 25px;
+    }
+
     @include mobile {
       font-size: 16px;
     }
@@ -310,6 +398,14 @@
 
   .imageWrapper {
     margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    @include tablet {
+      img {
+        width: 180px;
+      }
+    }
 
     @include mobile {
       margin-top: 20px;
@@ -345,6 +441,10 @@
   text-decoration-color: #fddc3a;
   font-family: 'Baloo Da';
   margin-bottom: 50px;
+
+  @include tablet{
+    font-size: 35px;
+  }
 
   @include mobile {
     font-size: 20px;
@@ -383,6 +483,10 @@
       color: #ffffff;
       margin-bottom: 0;
 
+      @include tablet {
+        font-size: 24px
+      }
+
       @include mobile {
         font-size: 16px;
       }
@@ -392,6 +496,10 @@
       font-weight: 700;
       font-size: 36px;
       color: #ffffff;
+
+      @include tablet {
+        font-size: 24px;
+      }
 
       @include mobile {
         font-size: 10px;
@@ -407,6 +515,11 @@
     flex-direction: row;
     width: 75%;
     margin: 50px auto;
+
+    @media (min-width: 769px) and (max-width: 1680px) {
+      flex-direction: column;
+      align-items: center;
+    }
 
     @include mobile {
       flex-direction: column;
@@ -428,6 +541,13 @@
       padding: 30px 15px;
       text-align: center;
 
+      @media (min-width: 769px) and (max-width: 1680px) {
+        width: 100%;
+        max-width: 90%;
+        margin: 20px 0;
+        gap: 20px;
+      }
+
       @include mobile {
         width: 100%;
         gap: 12px;
@@ -440,6 +560,10 @@
         text-align: center;
         color: #333333;
         padding: 0 20px;
+
+        @media (min-width: 769px) and (max-width: 1680px) {
+          margin-bottom: 10px;
+        }
 
         @include mobile {
           font-size: 12px;
@@ -478,6 +602,7 @@
   width: 70%;
   margin: 30px auto;
 
+  
   @include mobile {
     gap: 5px;
     width: 85%;
@@ -489,6 +614,11 @@
     flex-wrap: wrap;
     justify-content: space-between;
 
+    @media (min-width: 1615px) and (max-width: 1650px) {
+      justify-content: center;
+      gap: 50px;
+    }
+ 
     @include mobile {
       justify-content: center;
       gap: 30px 50px;
@@ -503,6 +633,11 @@
   color: #333333;
   margin-bottom: 50px;
   font-family: 'Baloo Da';
+
+  @include tablet {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
 
   @include mobile {
     text-decoration: underline;
@@ -519,6 +654,10 @@
     text-decoration-color: #fddc3a;
     font-family: 'Baloo Da';
 
+    @include tablet {
+      font-size: 35px;
+    }
+
     @include mobile {
       font-size: 20px;
       margin-left: 3px;
@@ -530,6 +669,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-around;
+
+  @include tablet {
+    justify-content: space-around;
+  }
 
   @include mobile {
     justify-content: space-between;
@@ -541,9 +685,24 @@
     white-space: pre;
     text-align: center;
     margin-top: 10px;
+    @include tablet {
+      font-size: 12px;
+      font-weight: 400;
+    }
+
     @include mobile {
       font-size: 12px;
       font-weight: 400;
+    }
+  }
+
+  .certificationImageWrapper {
+    @include tablet {
+      height: 80px;
+      width: auto;
+      img {
+        height: 100%;
+      }
     }
   }
 }
@@ -575,6 +734,12 @@
     text-decoration-color: #fddc3a;
   }
 
+  @include tablet {
+    p, span {
+      font-size: 35px;
+    }
+  }
+
   @include mobile {
     gap: 5px;
     p,
@@ -588,6 +753,9 @@
   width: 35%;
   position: relative;
 
+  @include tablet {
+    width: 55%;
+  }
   @include mobile {
     width: 75%;
   }
@@ -598,6 +766,10 @@
     top: 50%;
     transform: translateY(-70%);
     cursor: pointer;
+    
+    @include tablet {
+      right: -30px;
+    }
 
     @include mobile {
       right: -30px;
@@ -611,6 +783,9 @@
     transform: translateY(-70%);
     cursor: pointer;
 
+    @include tablet {
+      left: -30px;
+    }
     @include mobile {
       left: -30px;
     }
@@ -629,6 +804,10 @@
   padding-top: 20px;
   height: 430px;
 
+  @include tablet {
+    height: 270px;
+  }
+
   @include mobile {
     height: 255px;
   }
@@ -639,6 +818,10 @@
     font-size: 24px;
     color: #393e46;
 
+    @include tablet {
+      font-size: 16px;
+    }
+
     @include mobile {
       font-size: 12px;
     }
@@ -647,6 +830,10 @@
   span {
     font-size: 24px;
     color: #0f1123;
+
+    @include tablet {
+      font-size: 16px;
+    }
 
     @include mobile {
       font-size: 12px;
@@ -689,7 +876,7 @@
   width: 80%;
   margin: 30px auto;
   text-align: center;
-
+ 
   @include mobile {
     width: 85%;
   }
@@ -713,6 +900,16 @@
       text-decoration-color: #fddc3a;
     }
 
+    @include tablet {
+      p, span {
+        font-size: 35px;
+      }
+
+      p {
+        margin-bottom: 20px;
+      }
+    }
+
     @include mobile {
       text-decoration: underline;
       text-decoration-color: #fddc3a;
@@ -734,6 +931,10 @@
     margin: 0 auto;
     font-size: 24px;
     margin-bottom: 30px;
+
+    @include tablet {
+      font-size: 16px;
+    }
 
     @include mobile {
       font-size: 12px;
@@ -861,7 +1062,7 @@
     margin-top: 30px;
     display: flex;
     gap: 30px;
-
+    
     img {
       @media (max-width: 950px) and (min-width: 780px) {
         width: 45%;

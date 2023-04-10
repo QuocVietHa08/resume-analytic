@@ -75,7 +75,7 @@ const Helper = () => {
       <div className={styles.helperTitle}>Why Choose Kung Fu Helper? </div>
       <div className={styles.helperStatisticWrapper}>
         <section>
-          {width > 769 ? (
+          {width > 1600 ? (
             HELPER_NUMBERS.map((item) => (
               <div key={item.text} className={styles.helperItem}>
                 <p>{item.value}</p>
@@ -97,7 +97,7 @@ const Helper = () => {
 
       <div className={styles.helperInfoValue}>
         <section>
-          {width > 768 ? (
+          {width > 1600 ? (
             HELPER_INFO_VALUES.map((item) => (
               <div key={item.title} className={styles.helperInfoItem}>
                 <div className={styles.helperInfoItemImageWrapper}>

@@ -100,6 +100,7 @@ These tasks are typically applicable to indoor areas of the home and are focused
     imgSrc: '/img/parttime-helper/things-to-note.svg',
     content: `• Service duration depends on the quantity and complexity of tasks. Not sure how long to book your Part time Helper for? WhatsApp us at +65 8838 0909.
 • Cleaning materials are to be provided for a smooth cleaning experience. See list of cleaning equipment`,
+    isPartTimeHelper: true,
   },
 ];
 
@@ -124,7 +125,7 @@ const Service = () => {
       <BreadCumbs pages={BREADCUMBS} />
       <CleaningHelper data={PARTTIME_DATA} />
       <Disclaimer />
-      <CleaningVarity arrayList={PARTTIME_SERVICE} title="Cleaning Services" />
+      <CleaningVarity arrayList={PARTTIME_SERVICE} title="Cleaning Services" isPartTimeHelper />
       <Work />
       <Testimonials />
       <FAQ />

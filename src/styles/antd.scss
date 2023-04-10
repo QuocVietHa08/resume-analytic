@@ -83,3 +83,39 @@
   }
   // width: 100px;
 }
+
+.modal-parttime-helper-wrapper {
+  width: 90%; 
+  margin: 0 auto;
+}
+
+.parttime-helper-table-wrapper {
+  margin-top: 30px;
+
+  .ant-table {
+    border: 1px solid #0e8778;
+    border-radius: 20px; 
+    margin-bottom: 20px;
+  }
+
+  .ant-table-cell {
+    border: 1px solid #0e8778;
+  }
+
+  .ant-table-thead .ant-table-cell {
+    background-color: #0e8778 !important;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  .ant-table-thead .ant-table-cell:first-child {
+    border-top-left-radius: 20px;
+  }
+
+  .ant-table-thead .ant-table-cell:nth-child(2){
+    border-top-right-radius: 20px;
+  }
+
+  
+}

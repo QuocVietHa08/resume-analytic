@@ -17,7 +17,7 @@
   }
 
   .partimeItem {
-    border: 1px solid #0E8778;
+    border: 1px solid #0e8778;
     border-radius: 10px;
     padding: 22px 44px;
 
@@ -25,7 +25,7 @@
       font-weight: 700;
       font-size: 24px;
       line-height: 30px;
-      color: #0E8778;
+      color: #0e8778;
       margin-top: 25px;
 
       @include mobile {
@@ -41,10 +41,34 @@
       line-height: 40px;
       color: #333333;
 
+      span {
+        font-size: 20px;
+        font-weight: 700;
+        text-decoration-line: underline;
+        color: #0e8778;
+        margin-left: 5px;
+
+        @include mobile {
+          font-size: 12px;
+        }
+      }
+
       @include mobile {
         font-size: 12px;
         line-height: 20px;
       }
+    }
+  }
+}
+
+.noteSection {
+  span {
+    color: #0e8778;
+    font-weight: 700;
+    font-size: 20px;
+
+    @include mobile {
+      font-size: 12px;
     }
   }
 }

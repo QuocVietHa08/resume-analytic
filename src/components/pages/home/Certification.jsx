@@ -49,21 +49,21 @@ const Certification = () => {
   return (
     <div className={styles.certificationContainer}>
       <div className={styles.certificationTitle}>
-        {width > 768 ? (
+        {width > 1600 ? (
           <>
             Our
-            <span>Certification</span>
+            <span>Certifications</span>
           </>
         ) : (
           <span>Our Certifications</span>
         )}
       </div>
       <section>
-        {width > 768 ? (
+        {width > 1600 ? (
           CERTIFICATIONS.map((item) => (
             <div key={item.title} className={styles.certificationItem}>
               <div className={styles.certificationImageWrapper}>
-                <img src={`${width > 780 ? `${item.imgSrc}.svg` : `${item.imgSrc}_sp.svg`}`} alt="item" />
+                <img src={`${width > 1600 ? `${item.imgSrc}.svg` : `${item.imgSrc}_sp.svg`}`} alt="item" />
               </div>
               <span>{item.title}</span>
             </div>
@@ -73,7 +73,7 @@ const Certification = () => {
             {CERTIFICATIONS_SP.map((item) => (
               <div key={item.title} className={styles.certificationItem}>
                 <div className={styles.certificationImageWrapper}>
-                  <img src={`${width > 780 ? `${item.imgSrc}.svg` : `${item.imgSrc}_sp.svg`}`} alt="item" />
+                  <img src={`${width > 1600 ? `${item.imgSrc}.svg` : `${item.imgSrc}_sp.svg`}`} alt="item" />
                 </div>
                 <span>{item.title}</span>
               </div>
