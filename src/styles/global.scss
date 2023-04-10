@@ -1,5 +1,6 @@
 @import './antd.scss';
 @import './responsive.scss';
+@import url('https://fonts.googleapis.com/css?family=Baloo Da');
 
 :root {
   --primary-color: #3E9F93;
@@ -23,7 +24,7 @@ html *::-webkit-scrollbar-track {
 }
 
 @font-face {
-  font-family: 'Baloo Da';
+  font-family: 'Baloo Da', sans-serif;
   src: url('/public/fonts/Baloo-Regular.ttf');
 }
 
@@ -155,6 +156,15 @@ th {
 
   .line-height-#{$i} {
     line-height: #{$i}px;
+  }
+  @include tablet {
+    .font-size-tb-#{$i} {
+      font-size: #{$i}px !important;
+    } 
+
+    .gap-tb-#{$i} {
+      gap:#{$i}px !important;
+    }
   }
 
   @include mobile {

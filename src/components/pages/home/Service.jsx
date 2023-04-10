@@ -140,7 +140,7 @@ const Service = () => {
           We offer a wide range of services at Kungfu Helper, click on each of our main service category below to find out more on what we
           provide in detail!
         </p>
-        {width > 768 && (
+        {width > 1600 && (
           <div className={styles.serviceItemsWrapperPC}>
             {SERVICE_DETAIL.map((serviceItems, index) => (
               <>
@@ -209,18 +209,18 @@ const Service = () => {
             ))} 
           </div>
         )}
-        {width < 768 && (
+        {width < 1600 && (
           <div className={styles.serviceItemsWrapper}>
             <div className={`${styles.serviceItemContainer}`}>
-              <div>
+              <div className={styles.serviceItemImageWrapper}>
                 <img src="/img/home/service/part_time.svg" alt="img" />
               </div>
-              <div className="flex flex-column gap-20 gap-sp-5">
-                <span className="text-bold color-primary">Part-time Helper </span>
+              <div className="flex flex-column gap-20 gap-tb-0 gap-sp-5">
+                <span className="text-bold font-size-tb-16 color-primary">Part-time Helper </span>
                 <>
                   <Link href="/part-time-helper">
                     <div className="flex gap-10 item-center">
-                      <p>Find Out More</p>
+                      <p className="font-size-tb-16">Find Out More</p>
                       <span className={styles.dropdownStyle}>
                         <img src="/img/home/service/arrow.svg" alt="arrow" />
                       </span>
@@ -244,10 +244,10 @@ const Service = () => {
               </React.Fragment>
             ))}
             <div className={`${styles.serviceItemContactContainer}`}>
-              <span className="text-bold color-white ">Unable to find the service you are looking for?</span>
+              <span className="text-bold color-white font-size-tb-16 ">Unable to find the service you are looking for?</span>
               <>
                 <button type="button" onClick={() => router.push('/contact')} className={styles.contactButton}>
-                  <span>Contact Us</span>
+                  <span className="font-size-tb-16">Contact Us</span>
                 </button>
               </>
             </div>

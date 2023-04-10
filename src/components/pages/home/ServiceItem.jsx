@@ -25,7 +25,7 @@ const ServiceItem = ({ activeService, title, imgSrc, services, handleOnClick, li
         <span className={`text-bold ${isActive ? 'color-white-i' : 'color-primary'}`}>{title} </span>
         <>
           <div className="flex flex-column gap-10">
-            <div className="flex item-center gap-20 gap-sp-10">
+            <div className="flex item-center gap-20 gap-tb-10 gap-sp-10">
               <p className={`${isActive ? 'color-white-i' : ''}`}>View Services</p>
               <span className={styles.dropdownStyle}>
                 <img src={`/img/home/service/${isActive ? 'dropup' : 'dropdown'}.svg`} alt="dropdown" />
