@@ -23,12 +23,12 @@ const CleaningVarityItem = ({ item }) => {
       <div className={styles.itemContent}>
         <Link href={item.link} className="h-full flex flex-column justify-between">
           <div>
-            <img src={`${width > 780 ? `${item.img}.svg` : `${item.img}_sp.svg`}`} className={styles.itemImage} alt="cleaning" />
+            <img src={`${width > 1600 ? `${item.img}.svg` : `${item.img}_sp.svg`}`} className={styles.itemImage} alt="cleaning" />
           </div>
-          <div className="h-50pr flex flex-column justify-between">
-          <p>{item.text}</p>
+          <div className="h-50pr font-size-tb-20 flex flex-column justify-between">
+          <p className="font-size-tb-20">{item.text}</p>
           <span>
-            <div className="color-primary font-size-sp-12 text-bold flex gap-10">
+            <div className="color-primary font-size-tb-16 font-size-sp-12 text-bold flex gap-10">
               Find out more
               <span>
                 <img src="/img/home/service/arrow.svg" alt="arrow" />

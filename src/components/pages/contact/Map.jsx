@@ -1,10 +1,16 @@
 import React from 'react';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { GoogleMap, LoadScript, Marker, InfoWindow } from '@react-google-maps/api';
+import useDetectWindowSize from '@/hooks/useDetectWindowSize';
 
 const containerStyle = {
   width: '1440px',
   height: '704px',
+};
+
+const containerStyleMobile = {
+  width: '331px',
+  height: '162px',
 };
 
 const center = {
@@ -26,13 +32,15 @@ const divStyle = {
 const GOOGLE_MAP_API_KEY = 'AIzaSyAflBj63ZrMre0SWpU_mfzXQZ6Hx3QeooY';
 
 const GoogleMapComponent = () => {
+  const width = useDetectWindowSize();
+
   const onLoad = (marker) => {
     console.log('marker: ', marker);
   };
 
   return (
     <LoadScript googleMapsApiKey={GOOGLE_MAP_API_KEY}>
-      <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={17} streetView>
+      <GoogleMap mapContainerStyle={width > 768 ? containerStyle : containerStyleMobile} center={center} zoom={17} streetView>
         <>
           <Marker
             icon={{

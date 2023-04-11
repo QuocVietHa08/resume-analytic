@@ -32,23 +32,25 @@ const dataSource = [
   },
 ];
 
-const columns = [
-  {
-    title: 'Tasks',
-    dataIndex: 'tasks',
-    key: 'tasks',
-    width: 300,
-  },
-  {
-    title: 'Cleaning Tools and Equipment',
-    dataIndex: 'tools',
-    key: 'tools',
-  },
-];
+
 
 const HelperItem = ({ title, imgSrc, content, isPartTimeHelper }) => {
   const width = useDetectWindowSize();
   const [isShowModal, setIsShowModal] = useState(false);
+
+  const columns = [
+    {
+      title: 'Tasks',
+      dataIndex: 'tasks',
+      key: 'tasks',
+      width: width > 1600 ? 300 : 100,
+    },
+    {
+      title: 'Cleaning Tools and Equipment',
+      dataIndex: 'tools',
+      key: 'tools',
+    },
+  ];
 
   const handleCloseModal = () => {
     setIsShowModal(false)
@@ -67,7 +69,7 @@ const HelperItem = ({ title, imgSrc, content, isPartTimeHelper }) => {
       </div>
 
       {isShowModal && (
-        <Modal onCancel={handleCloseModal} footer={null} width={width > 768 ? 1143 : 355} open={isShowModal}>
+        <Modal className='modal-parttime-helper' onCancel={handleCloseModal} footer={null} width={width > 768 ? 1143 : 355} open={isShowModal}>
           <div className="modal-parttime-helper-wrapper">
 
           <div className="parttime-helper-table-wrapper">
