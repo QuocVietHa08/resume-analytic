@@ -21,7 +21,9 @@ const Content = () => {
     <div className={styles.contactContentContainer}>
       <BreadCumbs pages={BREADCUMBS} />
       <div className={styles.contactAddress}>
-        <GoogleMapComponent />
+        <div className={styles.googleMapWrapper}>
+          <GoogleMapComponent />
+        </div>
         {/* <img src={`${width > 780 ? `/img/contact/map.svg` : `/img/contact/map_sp.svg`}`} alt="item" /> */}
         <div className={styles.contactInfoCard}>
           <section>

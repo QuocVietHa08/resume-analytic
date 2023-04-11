@@ -47,14 +47,14 @@
           height: 227px;
           gap: 20px;
 
+          @include tablet {
+            width: 250px;
+          }
+
           @include mobile {
             width: 160px;
             height: 105px;
             gap: 5px;
-            padding: 5px;
-          }
-
-          @include mobile {
             padding: 10px;
           }
 
@@ -78,6 +78,23 @@
           }
 
         }
+      }
+
+      .googleMapWrapper {
+        background-color: red;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        max-width: 1440px;
+        max-height: 704px;
+        filter: drop-shadow(0px 3px 6px rgba(0, 0, 0, 0.25));
+        border-radius: 10px;
+
+        @include tablet {
+          width: 90%;
+          // height: 300px;
+        }
+        
       }
     }
   }

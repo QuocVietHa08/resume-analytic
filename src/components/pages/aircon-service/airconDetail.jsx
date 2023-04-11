@@ -36,7 +36,7 @@ const AirconDetail = () => {
     <div className={styles.airconServiceDetailContainer}>
       <div className={styles.serviceDetail}>
         <div>
-          <img src={`${width > 779 ? '/img/aircon/image-detail1.svg' : `/img/aircon/image-detail1_sp.svg`}`} alt="img" />
+          <img src={`${width > 1600 ? '/img/aircon/image-detail1.svg' : `/img/aircon/image-detail1_sp.svg`}`} alt="img" />
         </div>
         <div className={styles.serviceDetailContent}>
           <div className={`${styles.introText} text-left mb-30 mb-sp-20`}>Aircon General maintainence</div>
@@ -45,12 +45,12 @@ const AirconDetail = () => {
             maintenance will prolong the lifespan of your aircon and will address issues earlier before it turns faulty.
           </p>
 
-          <div className="flex flex-column gap-30 gap-sp-20">
+          <div className="flex flex-column gap-30 gap-tb-20 gap-sp-20">
           {AIRCON_DETAIL.map((item) => (
             <div className={styles.airconItem} key={item}>
               <img
                 src={`${
-                  width > 779 ? '/img/office-cleaning/cleaning-detail/check.svg' : `/img/office-cleaning/cleaning-detail/check_sp.svg`
+                  width > 1600 ? '/img/office-cleaning/cleaning-detail/check.svg' : `/img/office-cleaning/cleaning-detail/check_sp.svg`
                 }`}
                 alt="img"
               />
@@ -61,9 +61,9 @@ const AirconDetail = () => {
         </div>
       </div>
 
-      <div className={`${styles.serviceDetailAignRight} ${styles.marginLeftBaseOnWidth} mb-100 mb-sp-50  flex-reverse`}>
+      <div className={`${styles.serviceDetailAignRight} ${styles.marginLeftBaseOnWidth} mb-100 mb-sp-50 mb  flex-reverse`}>
         <div>
-          <img src={`${width > 779 ? '/img/aircon/image-detail2.svg' : `/img/aircon/image-detail2_sp.svg`}`} alt="img" />
+          <img src={`${width > 1600 ? '/img/aircon/image-detail2.svg' : `/img/aircon/image-detail2_sp.svg`}`} alt="img" />
         </div>
         <div className={styles.serviceDetailContent}>
           <div className={`${styles.introText} text-left mb-30 mb-sp-20`}>Aircon Chemical Wash</div>
@@ -71,12 +71,12 @@ const AirconDetail = () => {
           Chemical wash is needed when your aircon causes water leakage and bad odour. Chemical wash can prevent all these from happening, and more. It is also recommended for the aircon to be chemically washed every 6 months.
           </p>
 
-          <div className="flex flex-column gap-30 gap-sp-20">
+          <div className="flex flex-column gap-30 gap-tb-20 gap-sp-20">
           {ACRCION_DETAIL2.map((item) => (
             <div className={styles.airconItem} key={item}>
               <img
                 src={`${
-                  width > 779 ? '/img/office-cleaning/cleaning-detail/check.svg' : `/img/office-cleaning/cleaning-detail/check_sp.svg`
+                  width > 1600 ? '/img/office-cleaning/cleaning-detail/check.svg' : `/img/office-cleaning/cleaning-detail/check_sp.svg`
                 }`}
                 alt="img"
               />

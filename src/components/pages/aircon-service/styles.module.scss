@@ -8,6 +8,10 @@
     color: #0e8778;
     font-family: 'Baloo Da';
 
+    @include tablet {
+      font-size: 20px;
+    }
+
     @include mobile {
       font-size: 14px;
     }
@@ -18,7 +22,6 @@
     align-items: center;
     gap: 150px;
     margin-top: 150px;
-
 
     @include mobile {
       flex-direction: column;
@@ -31,6 +34,11 @@
 
   .serviceDetailAignRight {
     @extend .serviceDetail;
+
+    @include tablet {
+      justify-content: space-between;
+    }
+
     @include mobile {
       align-items: end;
     }
@@ -42,6 +50,10 @@
     p {
       font-size: 24px;
       color: #333333;
+
+      @include tablet {
+        font-size: 16px;
+      }
 
       @include mobile {
         font-size: 12px;
@@ -63,9 +75,17 @@
     font-size: 24px;
     color: #333;
 
+    @include tablet {
+      font-size: 16px;
+    }
+
     @include mobile {
       font-size: 12px;
     }
+  }
+
+  @include tablet {
+    gap: 10px;
   }
 
   @include mobile {
@@ -75,7 +95,10 @@
 
 .marginLeftBaseOnWidth {
   margin-left: calc((100% - 80%)/2);
-
+  
+  @include tablet {
+    margin-left: calc((100% - 90%)/2);
+  }
   @include mobile {
     margin: 0 auto;
   }

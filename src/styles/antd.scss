@@ -95,6 +95,7 @@
   .ant-table {
     border: 1px solid #0e8778;
     border-radius: 20px; 
+    overflow: hidden;
     margin-bottom: 20px;
   }
 
@@ -107,6 +108,10 @@
     color: white;
     text-align: center;
     font-weight: bold;
+
+    @include mobile {
+      font-size: 12px !important
+    };
   }
 
   .ant-table-thead .ant-table-cell:first-child {
@@ -115,7 +120,24 @@
 
   .ant-table-thead .ant-table-cell:nth-child(2){
     border-top-right-radius: 20px;
+    border-left: 1px solid white !important;
+  }  
+}
+
+.modal-parttime-helper {
+  border-radius: 30px;
+
+  .ant-modal-content {
+    border-radius: 30px;
   }
 
-  
+  .ant-table-cell {
+    font-size: 14px;
+  }
+
+  @include mobile {
+    .ant-table-cell {
+      font-size: 10px;
+    }
+  }
 }
