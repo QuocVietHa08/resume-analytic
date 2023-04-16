@@ -1,14 +1,13 @@
 import React from 'react';
-import BreadCumbs from '@/components/atoms/breadcumbs';
 import Download from '../home/Download';
 import Enquiry from '../home/Enquiry';
 import Testimonials from '../home/Testimonials';
-import IntroService from '../service/IntroService';
 import styles from './styles.module.scss';
 import CleaningDetail from './CleaningDetail';
 import Disclaimer from './Disclaimer';
 import CleaningVarity from './CleaningVarity';
 import CleaningService from './CleaningService';
+import Introduction from '../home/Introduction';
 
 const CLEANING_VARITY = [
   {
@@ -29,28 +28,9 @@ const CLEANING_VARITY = [
   },
 ];
 
-const BREADCUMBS = [
-  {
-    text: 'Home',
-    link: '/'
-  },
-  {
-    text: 'Services',
-    link: '/service'
-  },
-  {
-    text: 'General Office Cleaning',
-    link: ''
-  }
-]
-
 const OfficeCleaning = () => {
   return (
     <div className={styles.officeCleaningContainer}>
-      {/* <IntroService title="General Office Cleaning" /> */}
-      {/* <div className="mt-sp-30 mt-90">
-        <BreadCumbs pages={BREADCUMBS} />
-      </div> */}
       <Introduction imgSrc="/img/office-cleaning/banner" />
       <CleaningDetail />
       <Disclaimer />
