@@ -157,6 +157,7 @@ th {
   .line-height-#{$i} {
     line-height: #{$i}px;
   }
+
   @include tablet {
     .font-size-tb-#{$i} {
       font-size: #{$i}px !important;
@@ -164,6 +165,9 @@ th {
 
     .gap-tb-#{$i} {
       gap:#{$i}px !important;
+    }
+    .line-height-tb-#{$i} {
+      line-height: #{$i}px !important;
     }
   }
 

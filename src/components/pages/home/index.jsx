@@ -1,6 +1,6 @@
 import React from 'react'
 import Introduction from './Introduction';
-import Service from './Service';
+import ServiceFix from './ServiceFix';
 import Work from './Work';
 import Helper from './Helper';
 import Certification from './Certification';
@@ -9,9 +9,10 @@ import Enquiry from './Enquiry';
 import Download from './Download';
 
 const Home = () => {
+  const imageSrc = "/img/home/intro/banner"
   return <div>
-    <Introduction />
-    <Service />
+    <Introduction imgSrc={imageSrc}/>
+    <ServiceFix />
     <Work />
     <Helper />
     <Certification />

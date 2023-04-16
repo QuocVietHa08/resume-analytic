@@ -16,10 +16,15 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin: 120px 0px 20px 80px;
+    background: #0E8778;
+
+    @include tablet {
+      flex-direction: column;
+      align-items: flex-start;
+    }
 
     @include mobile {
-      margin: 50px 0px 20px 20px;
+      flex-direction: column;
       align-items: flex-start;
     }
   }
@@ -44,16 +49,27 @@
 .introDes {
   display: flex;
   flex-direction: column;
+  color: white;
   gap: 50px;
+  margin-left: calc((100% - 90%)/2);
+
+  @include tablet {
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+
   @include mobile {
     gap: 20px;
+    margin-top: 25px;
+    margin-bottom: 25px;
   }
+
 
   .whatAppButton {
     display: flex;
     align-items: center;
     padding: 13px 30px;
-    background: #3C8477;
+    background: white;
     box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.25);
     border-radius: 5px;
     max-width: 290px;
@@ -67,13 +83,13 @@
 
     @include mobile {
       padding: 8px 20px;
-      max-width: 150px;
+      max-width: 151px;
       gap: 10px
     }
 
     span {
       font-size: 20px;
-      color: white;
+      color:#0E8778;
       font-weight: 700;
 
       @include tablet {
@@ -86,33 +102,48 @@
     }
 
     img {
+      width: 29px;
+      height: 29px;
 
       @include tablet {
         width: 20px;
         height: auto;
+      }
+
+      @include mobile {
+        width: 16px;
+        height: 16px;
       }
     }
   }
 }
 
 .cleanerAvatarWrapper {
-  height: 734px;
-  width: auto;
-  max-width: 728px;
+  height: auto;
+  width: 50vw;
+  max-width: 50vw;
 
   img {
     width: 100%;
     height: 100%;
+
+    @include tablet {
+      width: 100vw;
+    }
+
+    @include mobile {
+      width: 100vw;
+    }
   }
 
   @include tablet{
-    height: 300px;
-    width: 300px;
+    height: auto; 
+    width: 100vw;
   }
 
   @include mobile{
-    height: 142px;
-    width: 142px;
+    height: auto;
+    width: 100vw;
   }
 
 }
@@ -335,6 +366,59 @@
     }
   }
 }
+
+// service fix
+.serviceContainerFix {
+  @extend .serviceContainer;
+  margin-bottom: 200px;
+  margin-top: 150px;
+
+  .serviceDes {
+    width: 100%;
+  }
+}
+
+.serviceItemsWrapperPCFix {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 88%;
+}
+
+.serviceItemWrapperFix {
+  width: 31%;
+  margin-top: 50px;
+  padding: 35px;
+  border: 1px solid #3E9F93;
+  border-radius: 20px;
+  display: flex;
+  gap: 54px;
+}
+
+.cannotFindServiceWrapper {
+  width: 100%;
+  background: #0E8778;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  padding: 40px 0px; 
+  margin-top: 70px;
+
+  gap: 30px;
+
+  .buttonContactCannotFind {
+    color: #0E8778;
+    font-size: 20px;
+    font-weight: 700;
+    padding: 7px 10px;
+    text-align: center;
+    border-radius: 10px;
+    background-color: white;
+  }
+}
+
 // Work
 .workContainer {
   width: 80%;
@@ -599,7 +683,7 @@
   flex-direction: column;
   gap: 50px;
   align-items: center;
-  width: 70%;
+  width: 80%;
   margin: 30px auto;
 
   
@@ -750,7 +834,7 @@
 }
 
 .testSlider {
-  width: 35%;
+  width: 80%;
   position: relative;
 
   @include tablet {
@@ -803,9 +887,10 @@
   padding-bottom: 20px;
   padding-top: 20px;
   height: 430px;
+  // background-color: red;
 
   @include tablet {
-    height: 270px;
+    height: 340px;
   }
 
   @include mobile {
@@ -819,6 +904,7 @@
     color: #393e46;
 
     @include tablet {
+      width: 80%;
       font-size: 16px;
     }
 
@@ -843,14 +929,76 @@
 
   .testQuoteLeft {
     position: absolute;
-    top: 10px;
-    left: 10px;
+    top: 30px;
+    left: 30px;
+
+    @include tablet {
+      top: 10px;
+      left: 10px;
+    }
+
+    @include mobile {
+      top: 10px;
+      left: 10px;
+    }
   }
 
   .testQuotRight {
     position: absolute;
-    bottom: 10px;
-    right: 10px;
+    bottom: 30px;
+    right: 30px;
+
+    @include tablet {
+      bottom: 10px;
+      right: 10px;
+    }
+
+    @include mobile {
+      bottom: 10px;
+      right: 10px;
+    }
+  }
+}
+
+.testSliderItemWrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+
+
+  p {
+    width: 52%;
+
+    @include tablet {
+      width: 90%;
+    }
+
+    @include mobile {
+      width: 80%;
+      line-height: 12px;
+    }
+  }
+}
+
+.testSliderItemImage {
+  width: 158px;
+  height: 158px;
+  margin: 0 auto;
+
+  @include tablet {
+    width: 90px;
+    height: 90px;
+  }
+
+  @include mobile {
+    width: 70px;
+    height: 70px;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
   }
 }
 

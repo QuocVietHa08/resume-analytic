@@ -10,6 +10,7 @@ import Enquiry from '../home/Enquiry';
 import Download from '../home/Download';
 import BreadCumbs from '@/components/atoms/breadcumbs';
 import LandscapingServiceDetail from './LandscapingServiceDetail';
+import Introduction from '../home/Introduction';
 
 const VARITYS = [
   {
@@ -84,8 +85,7 @@ const BREADCUMBS = [
 const LandscapingService = () => {
   return (
     <div className={styles.landscapingServiceDetail}>
-      <IntroService title="Landscaping Services" />
-      <BreadCumbs pages={BREADCUMBS} />
+      <Introduction imgSrc="/img/handy-home/landscaping/banner" />
       <LandscapingServiceDetail />
       <Disclaimer />
       <CleaningVarity title="Handy Home Services" arrayList={VARITYS} />
