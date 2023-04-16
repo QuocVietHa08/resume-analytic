@@ -18,7 +18,9 @@ const CleaningVarity = ({ arrayList, title = 'Office Cleaning Services'}) => {
         <div className={styles.cleaningVarityTitle}>
           Check Out Our Variety Of <span>{title}</span> Below
         </div>
-        {handleRenderClearningVarity()}
+        <div className={styles.cleaningVarityWrapper}>
+          {handleRenderClearningVarity()}
+        </div>
         {/* <div className={styles.cleaningVarityItems}>
           {arrayList.map((item) => (
             <CleaningVarityItem key={item.text} item={item} />

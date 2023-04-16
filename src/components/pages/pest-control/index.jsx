@@ -1,6 +1,4 @@
 import React from 'react';
-import BreadCumbs from '@/components/atoms/breadcumbs';
-import IntroService from '../service/IntroService';
 import styles from './styles.module.scss';
 import Disclaimer from '../office-cleaning/Disclaimer';
 import CleaningVarity from '../office-cleaning/CleaningVarity';
@@ -10,6 +8,7 @@ import CleaningService from '../office-cleaning/CleaningService';
 import Enquiry from '../home/Enquiry';
 import Download from '../home/Download';
 import PestControlDetail from './PestControlDetail';
+import Introduction from '../home/Introduction';
 
 
 const HANDYMAN_VARITY = [
@@ -67,25 +66,10 @@ const HANDYMAN_VARITY = [
   },
 ];
 
-const BREADCUMBS = [
-  {
-    text: 'Home',
-    link: '/'
-  },
-  {
-    text: 'Services',
-    link: '/service' 
-  },
-  {
-    text: 'Pest Control',
-    link: ''
-  }
-]
 const PestControl = () => {
   return (
     <div className={styles.pestControlContainer}>
-      <IntroService title="Pest Control" />
-      <BreadCumbs pages={BREADCUMBS} />
+      <Introduction imgSrc="/img/handy-home/pest-control/banner" />
       <PestControlDetail />
       <Disclaimer />
       <CleaningVarity title="Handy Home Services" arrayList={HANDYMAN_VARITY} />

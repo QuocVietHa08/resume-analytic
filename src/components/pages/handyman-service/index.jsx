@@ -1,6 +1,4 @@
 import React from 'react';
-import BreadCumbs from '@/components/atoms/breadcumbs';
-import IntroService from '../service/IntroService';
 import styles from './styles.module.scss';
 import HandymanServiceDetail from './handymanDetail';
 import Disclaimer from '../office-cleaning/Disclaimer';
@@ -10,6 +8,7 @@ import Testimonials from '../home/Testimonials';
 import CleaningService from '../office-cleaning/CleaningService';
 import Enquiry from '../home/Enquiry';
 import Download from '../home/Download';
+import Introduction from '../home/Introduction';
 
 const HANDYMAN_VARITY = [
   {
@@ -18,12 +17,12 @@ const HANDYMAN_VARITY = [
     link: '/handyman-service',
     type: 'info',
   },
-  {
-    text: 'Aircon Servicing',
-    img: '/img/handyman-service/variety-service/aircon',
-    link: '/aircon-service',
-    type: 'info',
-  },
+  // {
+  //   text: 'Aircon Servicing',
+  //   img: '/img/handyman-service/variety-service/aircon',
+  //   link: '/aircon-service',
+  //   type: 'info',
+  // },
   {
     text: 'Pool Cleaning',
     img: '/img/handyman-service/variety-service/pool',
@@ -66,28 +65,14 @@ const HANDYMAN_VARITY = [
   },
 ];
 
-const BREADCUMBS = [
-  {
-    text: 'Home',
-    link: '/'
-  },
-  {
-    text: 'Services',
-    link: '/service'
-  },
-  {
-    text: 'General Handyman Services',
-    link: ''
-
-  }
-]
 const HandymanService = () => {
   return (
     <div className={styles.handymanServiceContainer}>
-      <IntroService title="General Handyman Services" />
-      <div className="mt-sp-30 mt-50">
+      {/* <IntroService title="General Handyman Services" /> */}
+      {/* <div className="mt-sp-30 mt-50">
         <BreadCumbs pages={BREADCUMBS} />
-      </div>
+      </div> */}
+      <Introduction imgSrc="/img/handy-home/general-handyman/banner" />
       <HandymanServiceDetail />
       <div className="mt-150 mt-sp-20 mb-170 mb-sp-100">
         <Disclaimer />

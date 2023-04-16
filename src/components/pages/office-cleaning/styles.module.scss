@@ -165,7 +165,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  width: 60%;
+  width: 80%;
   margin: 50px auto;
 
   @include tablet {
@@ -199,7 +199,7 @@
 
 .cleaningVarityItemContainer {
   display: flex;
-  width: 30%;
+  width: 22%;
   background: #ffffff;
   border: 1px solid #3e9f93;
   border-radius: 20px;
@@ -397,4 +397,7 @@
       }
     }
   }
+}
+
+.cleaningVarityWrapper {
 }

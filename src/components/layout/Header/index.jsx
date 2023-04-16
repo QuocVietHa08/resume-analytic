@@ -8,6 +8,7 @@ import useDetectWindowSize from '@/hooks/useDetectWindowSize';
 
 const Header = () => {
   const [open, setOpen] = useState(false);
+  
   const width = useDetectWindowSize();
   const onClose = () => {
     setOpen(false);
@@ -16,8 +17,8 @@ const Header = () => {
   const showDrawer = () => {
     setOpen(true);
   };
-
   return (
+    <div className={styles.headerContainer}>
     <div className={styles.headerWrapper}>
       <div className={styles.logoWrapper}>
         <Link href="/">
@@ -26,7 +27,7 @@ const Header = () => {
       </div>
       <div>
         {width > 780 ? (
-          <ul className="flex gap-10 text-font-family">
+          <ul className="flex mb-0 gap-10 text-font-family">
             <li>
               <Link href="/" className="text-font-family text-normal">
                 Home
@@ -83,6 +84,7 @@ const Header = () => {
           </p>
         </div>
       </Drawer>
+    </div>
     </div>
   );
 };
