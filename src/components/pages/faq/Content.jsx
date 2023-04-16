@@ -1,13 +1,18 @@
 import React from 'react';
 import { Collapse } from 'antd';
+import { useRouter } from 'next/router';
 import styles from './styles.module.scss';
 import Work from '../home/Work';
 import ReFerralWork from './ReFerralWork';
 
 const { Panel } = Collapse;
 const Content = () => {
+  const router = useRouter();
   return (
     <div className={`${styles.contentContainer}`}>
+      {router.pathname !== '/faq' && (
+        <div className={styles.titleStyle}>Frequently Asked Questions</div>
+      )}
       <div className="faqCollapseContainer">
         <Collapse
           ghost

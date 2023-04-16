@@ -39,13 +39,7 @@ const Detail = () => {
         Feel your carpet as good as new, safety checklist with kids, pets, and the environment in mind
       </div>
       <div className={styles.serviceDetail}>
-        <div>
-          <img
-            src={`${width > 779 ? '/img/furniture/carpet-cleaning-intro.png' : '/img/furniture/carpet-cleaning-intro_sp.png'}`}
-            alt="img"
-          />
-        </div>
-        <div className={styles.serviceDetailContent}>
+        <div className={`${styles.serviceDetailContent} margin-center`}>
           <div className={`${styles.introTextDetail} text-left mb-30 mb-sp-20`}>KungFu Helper carpet cleaning service</div>
           <div className="flex flex-column gap-30 gap-sp-10">
             {DETAIL_LIST.map((item) => (

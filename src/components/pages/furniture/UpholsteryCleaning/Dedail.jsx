@@ -18,21 +18,18 @@ const Detail = () => {
 
   return (
     <div className={styles.airconServiceDetailContainer}>
-      <div className={`${styles.introText} mt-100 mb-150 mt-sp-40 mb-sp-40`}>
+      <div className={`${styles.introText}`}>
         Keeping your home clean is vital, and taking care of upholstery is an important part of that
       </div>
+      <div className={`${styles.detailIntro1} mb-30 mb-sp-10 mb-tb-20`}>
+        Discover why we are different and what you can expect from KungFu Helper cleaning company as standard.
+      </div>
       <div className={styles.serviceDetail}>
-        <div>
-          <img
-            src={`${width > 779 ? '/img/furniture/upholstery-cleaning-intro.png' : '/img/furniture/upholstery-cleaning-intro_sp.png'}`}
-            alt="img"
-          />
-        </div>
         <div className={styles.serviceDetailContent}>
-          <div className={`${styles.introTextDetail} text-left mb-30 mb-sp-20`}>
-            Discover why we are different and what you can expect from KungFu Helper cleaning company as standard.
+          <div className={`${styles.introText} mb-30 mb-sp-20`}>
+          Benefits of Upholstery Cleaning
           </div>
-          <div className="flex flex-column gap-30 gap-sp-10">
+          <div className="flex flex-column gap-15 gap-sp-10">
             {DETAIL_LIST.map((item) => (
               <div className={styles.poolingDetailContent} key={item}>
                 <img

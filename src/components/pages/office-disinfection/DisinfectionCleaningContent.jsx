@@ -48,16 +48,7 @@ const DisinfectionCleaningContent = () => {
           ))}
         </div>
       </div>
-      <div className={styles.image}>
-        <img
-          src={`${
-            width > 779
-              ? '/img/office-disinfection/detail-disinfection/cleaning.svg'
-              : `/img/office-disinfection/detail-disinfection/cleaning_sp.svg`
-          }`}
-          alt="img"
-        />
-      </div>
+      
     </div>
   );
 };

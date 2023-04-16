@@ -136,11 +136,11 @@ const SERVICE_DETAIL_FIX = [
       'Ironing',
     ],
     links: [
-      '/furniture/curtain-cleaning',
-      '/furniture/carpet-cleaning',
-      '/furniture/sofa-cleaning',
-      '/furniture/mattress-cleaning',
-      '/furniture/upholstery-cleaning',
+      '/services/part-time-helper',
+      '/services/part-time-helper',
+      '/services/part-time-helper',
+      '/services/part-time-helper',
+      '/services/part-time-helper',
     ],
   },
   {
@@ -149,11 +149,11 @@ const SERVICE_DETAIL_FIX = [
     imgSrc: '/img/home/service/furniture',
     services: ['Curtain Cleaning', 'Carpet Cleaning', 'Sofa Cleaning', 'Mattress Cleaning', 'Upholstery Cleaning'],
     links: [
-      '/furniture/curtain-cleaning',
-      '/furniture/carpet-cleaning',
-      '/furniture/sofa-cleaning',
-      '/furniture/mattress-cleaning',
-      '/furniture/upholstery-cleaning',
+      '/services/curtain-cleaning',
+      '/services/carpet-cleaning',
+      '/services/sofa-cleaning',
+      '/services/mattress-cleaning',
+      '/services/upholstery-cleaning',
     ],
   },
   {
@@ -161,7 +161,7 @@ const SERVICE_DETAIL_FIX = [
     type: 'service',
     imgSrc: '/img/home/service/house_cleaning',
     services: ['Post-Renovation Cleaning', 'Move In / Move out cleaning', 'Spring Cleaning', 'house disinfection'],
-    links: ['/house-service/post-renovation', '/house-service/move', '/house-service/spring', '/house-service/house-disinfection'],
+    links: ['/services/post-rennovation-cleaning', '/services/move', '/services/spring-cleaning', '/services/house-disinfection'],
   },
   {
     name: 'Handy Home Services',
@@ -169,13 +169,13 @@ const SERVICE_DETAIL_FIX = [
     imgSrc: '/img/home/service/home_service',
     services: ['General handyman services', 'pool cleaning', 'pest control', 'landscaping', 'flooring', 'organising', 'moving'],
     links: [
-      'handyman-service',
-      'pool-cleaning',
-      'pest-control',
-      'landscaping-services',
-      'flooring-services',
-      'organising-services',
-      'moving-services',
+      '/services/general-handyman-services',
+      '/services/pool-cleaning',
+      '/services/pest-control',
+      '/services/landscaping-services',
+      '/services/flooring-services',
+      '/services/organising-services',
+      '/services/moving-services',
     ],
   },
   {
@@ -183,7 +183,7 @@ const SERVICE_DETAIL_FIX = [
     type: 'service',
     imgSrc: '/img/home/service/office_cleaning',
     services: ['General office cleaning', 'Office Disinfection'],
-    links: ['office-cleaning', 'office-disinfection'],
+    links: ['/services/general-office-cleaning', '/services/general-office-disinfection'],
   },
   {
     name: 'Aircon Services',
@@ -211,12 +211,14 @@ const ServiceFix = () => {
   };
 
   return (
-    <div className={styles.serviceContainerFix}>
-      <h4>
-        What
-        <span>Services</span>
-        Do {width < 768 && <br />} We Provice ?
-      </h4>
+    <div className={`${styles.serviceContainerFix} ${router.pathname === '/services' ? 'mt-100' : ''}`}>
+      {router.pathname !== '/services' && (
+        <h4>
+          What
+          <span>Services</span>
+          Do {width < 768 && <br />} We Provice ?
+        </h4>
+      )}
       <>
         <p className={styles.serviceDes}>
           We offer a wide range of services at Kungfu Helper, click on each of our <br /> main service category below to find out more on
@@ -224,23 +226,23 @@ const ServiceFix = () => {
         </p>
         {width > 1600 && (
           <>
-          <div className={styles.serviceItemsWrapperPCFix}>
-            {SERVICE_DETAIL_FIX.map((serviceItems, index) => (
-              <React.Fragment key={index}>
-                <ServiceItemFix
-                  imgSrc={serviceItems.imgSrc}
-                  services={serviceItems.services}
-                  links={serviceItems.links}
-                  title={serviceItems.name}
-                  type={serviceItems.type}
-                />
-              </React.Fragment>
-            ))}
-          </div>
-          <div className={styles.cannotFindServiceWrapper}>
-            <span className="text-bold font-size-36"> Unable to find the service you are looking for?</span>
-            <div className={styles.buttonContactCannotFind}>Contact Us</div>
-          </div>
+            <div className={styles.serviceItemsWrapperPCFix}>
+              {SERVICE_DETAIL_FIX.map((serviceItems, index) => (
+                <React.Fragment key={index}>
+                  <ServiceItemFix
+                    imgSrc={serviceItems.imgSrc}
+                    services={serviceItems.services}
+                    links={serviceItems.links}
+                    title={serviceItems.name}
+                    type={serviceItems.type}
+                  />
+                </React.Fragment>
+              ))}
+            </div>
+            <div className={styles.cannotFindServiceWrapper}>
+              <span className="text-bold font-size-36"> Unable to find the service you are looking for?</span>
+              <div className={styles.buttonContactCannotFind}>Contact Us</div>
+            </div>
           </>
         )}
         {width < 1600 && (

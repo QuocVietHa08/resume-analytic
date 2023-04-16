@@ -5,16 +5,16 @@
 }
 
 .handymanServiceDetail {
+  width: 90%;
+  margin: 0 auto;
+
   .introText {
     font-size: 32px;
-    text-align: center;
     color: #0e8778;
     font-family: 'Baloo Da';
 
     @include mobile {
       font-size: 14px;
-      width: 85%;
-      margin: 0 auto;
     }
   }
 
@@ -31,7 +31,7 @@
   }
 
   .serviceDetailContent {
-    width: 45%;
+    width: 100%;
     text-align: left;
     p {
       font-size: 24px;

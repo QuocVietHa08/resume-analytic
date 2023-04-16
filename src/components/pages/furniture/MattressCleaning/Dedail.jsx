@@ -40,13 +40,7 @@ const Detail = () => {
         Feel your mattress as good as new, safety checklist with kids, pets, and the environment in mind
       </div>
       <div className={styles.serviceDetail}>
-        <div>
-          <img
-            src={`${width > 779 ? '/img/furniture/mattress-cleaning-intro.png' : '/img/furniture/mattress-cleaning-intro_sp.png'}`}
-            alt="img"
-          />
-        </div>
-        <div className={styles.serviceDetailContent}>
+        <div className={`${styles.serviceDetailContent} margin-center`}>
           <div className={`${styles.introTextDetail} text-left mb-30 mb-sp-20`}>
             Top 5 reasons to trust us with your mattress cleaning needs
           </div>

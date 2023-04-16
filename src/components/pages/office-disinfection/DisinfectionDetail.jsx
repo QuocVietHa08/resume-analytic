@@ -12,16 +12,7 @@ const DisinfectionDetail = () => {
   return (
     <div className="flex flex-column">
       <div className={styles.cleaningDetailContainer}>
-        <div>
-          <img
-            src={`${
-              width > 779
-                ? '/img/office-disinfection/detail-disinfection/image.svg'
-                : `/img/office-disinfection/detail-disinfection/image_sp.svg`
-            }`}
-            alt="img"
-          />
-        </div>
+       
         <div>
           <div className={styles.cleaningTitle}>Office Disinfection services</div>
           <p className={styles.cleaningDesc}>
