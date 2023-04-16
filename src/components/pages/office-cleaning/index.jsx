@@ -47,13 +47,16 @@ const BREADCUMBS = [
 const OfficeCleaning = () => {
   return (
     <div className={styles.officeCleaningContainer}>
-      <IntroService title="General Office Cleaning" />
-      <div className="mt-sp-30 mt-90">
+      {/* <IntroService title="General Office Cleaning" /> */}
+      {/* <div className="mt-sp-30 mt-90">
         <BreadCumbs pages={BREADCUMBS} />
-      </div>
+      </div> */}
+      <Introduction imgSrc="/img/office-cleaning/banner" />
       <CleaningDetail />
       <Disclaimer />
-      <CleaningVarity arrayList={CLEANING_VARITY} />
+      <div> 
+        <CleaningVarity arrayList={CLEANING_VARITY} />
+      </div>
       <Testimonials />
       <CleaningService title="General Office Cleaning Services" />
       <Enquiry isShowBgImage={false} />

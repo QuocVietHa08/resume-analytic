@@ -8,13 +8,13 @@ const Enquiry = ({ isShowBgImage = true }) => {
 
   return (
     <div className={styles.enquiryContainer}>
-      {isShowBgImage && (
+      {/* {isShowBgImage && (
         <img
           className={styles.circleLeft}
           src={`${width > 1600 ? `/img/home/enquiry/circleLeft.svg` : `/img/home/enquiry/circleLeft_sp.svg`}`}
           alt="arrow"
         />
-      )}
+      )} */}
       <div className={styles.enquiryWrapper}>
         <div className={styles.enquiryTitle}>
           <p>
@@ -86,13 +86,13 @@ const Enquiry = ({ isShowBgImage = true }) => {
           </Form>
         </div>
       </div>
-      {isShowBgImage && (
+      {/* {isShowBgImage && (
         <img
           className={styles.circleRight}
           src={`${width > 1600 ? `/img/home/enquiry/circleRight.svg` : `/img/home/enquiry/circleRight_sp.svg`}`}
           alt="arrow"
         />
-      )}
+      )} */}
     </div>
   );
 };

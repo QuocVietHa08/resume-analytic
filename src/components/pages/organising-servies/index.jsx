@@ -1,6 +1,4 @@
 import React from 'react'
-import BreadCumbs from '@/components/atoms/breadcumbs'
-import IntroService from '../service/IntroService'
 import Disclaimer from '../office-cleaning/Disclaimer'
 import Work from '../home/Work';
 import CleaningVarity from '../office-cleaning/CleaningVarity';
@@ -9,6 +7,7 @@ import CleaningService from '../office-cleaning/CleaningService';
 import Enquiry from '../home/Enquiry';
 import Download from '../home/Download';
 import OrganisingServicesDetail from './OrganisingServicesDetail';
+import Introduction from '../home/Introduction';
 
 const VARITYS = [
   {
@@ -65,26 +64,10 @@ const VARITYS = [
   },
 ];
 
-const BREADCUMBS = [
-  {
-    text: 'Home',
-    link: '/'
-  },
-  {
-    text: 'Services',
-    link: '/service'
-  },
-  {
-    text: 'Organising Services',
-    link: ''
-  }
-]
-
 const OrganisingService = () => {
   return (
     <>
-      <IntroService title="Organising Services" />
-      <BreadCumbs pages={BREADCUMBS} />
+      <Introduction imgSrc="/img/handy-home/organising/banner" />
       <OrganisingServicesDetail />
       <Disclaimer />
       <CleaningVarity title="Handy Home Services" arrayList={VARITYS}/>

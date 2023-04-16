@@ -50,10 +50,11 @@ const BREADCUMBS = [
 const OfficeDisinfection = () => {
   return (
     <div className={styles.officeCleaningContainer}>
-      <IntroService title="Office Disinfection" />
-      <div className="mt-sp-30 mt-90">
+      {/* <IntroService title="Office Disinfection" /> */}
+      {/* <div className="mt-sp-30 mt-90">
         <BreadCumbs pages={BREADCUMBS} />
-      </div>
+      </div> */}
+      <Introduction imgSrc="/img/office-disinfection/banner" />
       <DisinfectionDetail />
       <DisinfectionCleaningContent />
       <Disclaimer />

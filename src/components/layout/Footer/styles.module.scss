@@ -52,9 +52,9 @@
   }
 
   .dividerStyle {
+    background-color: #0E8778;
 
     @include mobile {
-      background-color: #0E8778;
       width: 50%;
       margin: 0 auto;
       margin-top: 23px;

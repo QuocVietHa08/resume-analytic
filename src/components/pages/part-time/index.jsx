@@ -1,6 +1,7 @@
 import React from 'react';
-import IntroService from '../service/IntroService';
-import BreadCumbs from '@/components/atoms/breadcumbs';
+// import IntroService from '../service/IntroService';
+// import BreadCumbs from '@/components/atoms/breadcumbs';
+import Introduction from '../home/Introduction';
 import Work from '@/components/pages/home/Work';
 import Testimonials from '@/components/pages/home/Testimonials';
 import FAQ from '@/components/pages/faq/Content.jsx';
@@ -121,8 +122,9 @@ const BREADCUMBS = [
 const Service = () => {
   return (
     <>
-      <IntroService title="Part-Time Helper" />
-      <BreadCumbs pages={BREADCUMBS} />
+      {/* <IntroService title="Part-Time Helper" /> */}
+      {/* <BreadCumbs pages={BREADCUMBS} /> */}
+      <Introduction imgSrc="/img/parttime-helper/banner"/>
       <CleaningHelper data={PARTTIME_DATA} />
       <Disclaimer />
       <CleaningVarity arrayList={PARTTIME_SERVICE} title="Cleaning Services" isPartTimeHelper />

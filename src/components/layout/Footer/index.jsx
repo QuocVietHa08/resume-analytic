@@ -15,32 +15,32 @@ const Footer = () => {
             <div className={styles.quickLinks}>
               <div className={styles.headerText}>Quick Links</div>
               <div>
-                <Link className="color-primary text-weight-400" href="/">
+                <Link className="color-primary-dark font-size-16 text-weight-400" href="/">
                   Home
                 </Link>
               </div>
               <div>
-                <Link className="color-primary text-weight-400" href="/service">
+                <Link className="color-primary-dark font-size-16 text-weight-400" href="/service">
                   Services
                 </Link>
               </div>
               <div>
-                <Link className="color-primary text-weight-400" href="/about-us">
+                <Link className="color-primary-dark font-size-16 text-weight-400" href="/about-us">
                   About
                 </Link>
               </div>
               <div>
-                <Link className="color-primary text-weight-400" href="/testimonials">
+                <Link className="color-primary-dark font-size-16 text-weight-400" href="/testimonials">
                   Testimonials
                 </Link>
               </div>
               <div>
-                <Link className="color-primary text-weight-400" href="/faq">
+                <Link className="color-primary-dark font-size-16 text-weight-400" href="/faq">
                   FAQ
                 </Link>
               </div>
               <div>
-                <Link className="color-primary text-weight-400" href="/contact">
+                <Link className="color-primary-dark font-size-16 text-weight-400" href="/contact">
                   Contact Us
                 </Link>
               </div>

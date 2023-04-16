@@ -1,7 +1,6 @@
 import React from 'react';
-import BreadCumbs from '@/components/atoms/breadcumbs';
-import IntroService from '@/components/pages/service/IntroService';
 import Disclaimer from '@/components/pages/office-cleaning/Disclaimer.jsx';
+import Introduction from '../../home/Introduction';
 import Work from '@/components/pages/home/Work';
 import Testimonials from '@/components/pages/home/Testimonials';
 import Enquiry from '@/components/pages/home/Enquiry';
@@ -27,8 +26,7 @@ const BREADCUMBS = [
 const CurtainCleaning = () => {
   return (
     <>
-      <IntroService title="Curtain Cleaning" />
-      <BreadCumbs pages={BREADCUMBS} />
+      <Introduction imgSrc="/img/furniture/curtain-cleaning/banner" />
       <Detail />
       <Disclaimer />
       <FurnitureUpholsteryService />

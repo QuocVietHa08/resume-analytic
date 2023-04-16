@@ -10,6 +10,7 @@ import CleaningService from '../office-cleaning/CleaningService';
 import Enquiry from '../home/Enquiry';
 import Download from '../home/Download';
 import MovingDetailService from './MovingServiceDetail';
+import Introduction from '../home/Introduction';
 
 const VARITYS = [
   {
@@ -83,8 +84,9 @@ const BREADCUMBS = [
 const MovingService = () => {
   return (
     <div>
-      <IntroService title="Moving Services" />
-      <BreadCumbs pages={BREADCUMBS} />
+      {/* <IntroService title="Moving Services" /> */}
+      {/* <BreadCumbs pages={BREADCUMBS} /> */}
+      <Introduction imgSrc="/img/handy-home/moving/banner" />
       <MovingDetailService />
       <Disclaimer />
       <CleaningVarity title="Handy Home Services" arrayList={VARITYS}/>
