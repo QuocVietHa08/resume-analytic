@@ -6,31 +6,31 @@ const FUNITURE_SERVICE = [
   {
     text: 'Curtain Cleaning',
     img: '/img/furniture/curtain-cleaning',
-    link: '/furniture/curtain-cleaning',
+    link: '/services/curtain-cleaning',
     type: 'info',
   },
   {
     text: 'Carpet Cleaning',
     img: '/img/furniture/carpet-cleaning',
-    link: '/furniture/carpet-cleaning',
+    link: '/services/carpet-cleaning',
     type: 'info',
   },
   {
     text: 'Sofa Cleaning',
     img: '/img/furniture/sofa-cleaning',
-    link: '/furniture/sofa-cleaning',
+    link: '/services/sofa-cleaning',
     type: 'info',
   },
   {
     text: 'Mattress Cleaning',
     img: '/img/furniture/mattress-cleaning',
-    link: '/furniture/mattress-cleaning',
+    link: '/services/mattress-cleaning',
     type: 'info',
   },
   {
     text: 'Upholstery Cleaning',
     img: '/img/furniture/upholstery-cleaning',
-    link: '/furniture/upholstery-cleaning',
+    link: '/services/upholstery-cleaning',
     type: 'info',
   },
   {
@@ -40,7 +40,7 @@ const FUNITURE_SERVICE = [
 ];
 
 const FurnitureUpholsteryService = () => {
-  return <CleaningVarity arrayList={FUNITURE_SERVICE} title="Furniture & Upholstery" />;
+  return <CleaningVarity arrayList={FUNITURE_SERVICE} title="Upholstery Cleaning Services" />;
 };
 
 export default FurnitureUpholsteryService;

@@ -116,7 +116,7 @@
     margin-bottom: 70px;
   }
   .cleaningVarityWrapper {
-    width: 80%;
+    width: 85%;
     margin: 0 auto;
 
     @include mobile {
@@ -127,7 +127,7 @@
       font-size: 50px;
       text-align: center;
       color: #0f1123;
-      width: 50%;
+      width: 51%;
       margin: 0 auto;
       font-family: 'Baloo Da';
       font-weight: 700;
@@ -164,7 +164,8 @@
 .cleaningVarityItems {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 50px;
   width: 80%;
   margin: 50px auto;
 
@@ -183,7 +184,7 @@
 .cleaningVarityItemsFix {
   @extend .cleaningVarityItems;
   justify-content: center;
-  gap: 30px;
+  gap: 50px;
 
   @include tablet {
     justify-content: space-between;
@@ -199,7 +200,9 @@
 
 .cleaningVarityItemContainer {
   display: flex;
-  width: 22%;
+  width: 329px;
+  max-width: 329px;
+  height: 344px;
   background: #ffffff;
   border: 1px solid #3e9f93;
   border-radius: 20px;
@@ -208,12 +211,14 @@
   margin-top: 35px;
 
   @include tablet {
-    width: 45%;
+    width: 250px;
+    height: 200px;
     height: 250px;
   }
 
   @include mobile {
-    width: 46%;
+    width: 153px;
+    height: 160px;
     margin-top: 20px;
     height: 160px;
   }
@@ -223,7 +228,9 @@
     flex-direction: column;
     justify-content: space-between;
     padding: 20px;
-
+    width: 329px;
+    max-width: 329px;   
+  
     @include mobile {
       padding: 10px;
     }
@@ -233,7 +240,8 @@
     background: #0e8778;
     border-radius: 20px;
     padding: 20px;
-    width: 100%;
+    width: 329px;
+    max-width: 329px;
 
     @include mobile {
       padding: 10px;
@@ -397,7 +405,4 @@
       }
     }
   }
-}
-
-.cleaningVarityWrapper {
 }

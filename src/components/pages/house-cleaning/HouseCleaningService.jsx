@@ -6,25 +6,25 @@ const HOUSE_SERVICE = [
   {
     text: 'Post-Renovation Cleaning',
     img: '/img/house-cleaning/post-renovation',
-    link: '/house-service/post-renovation',
+    link: '/services/post-rennovation-cleaning',
     type: 'info',
   },
   {
     text: 'Move In/Move Out Cleaning',
     img: '/img/house-cleaning/move',
-    link: '/house-service/move',
+    link: '/services/move',
     type: 'info',
   },
   {
     text: 'Spring Cleaning',
     img: '/img/house-cleaning/spring',
-    link: '/house-service/spring',
+    link: '/services/spring-cleaning',
     type: 'info',
   },
   {
     text: 'House Disinfection',
     img: '/img/house-cleaning/house-disinfection',
-    link: '/house-service/house-disinfection',
+    link: '/services/house-disinfection',
     type: 'info',
   },
   {

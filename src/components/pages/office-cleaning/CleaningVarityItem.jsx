@@ -7,6 +7,7 @@ import useDetectWindowSize from '@/hooks/useDetectWindowSize';
 const CleaningVarityItem = ({ item }) => {
   const width = useDetectWindowSize();
   const router = useRouter();
+  
   const handleRenderContent = (itemInfo) => {
     if (itemInfo.type === 'contact') {
       return (

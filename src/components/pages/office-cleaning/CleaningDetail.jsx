@@ -20,20 +20,12 @@ const CleaningDetail = () => {
   return (
     <div className={styles.cleaningDetailContainer}>
       <div>
-        <img
-          src={`${
-            width > 779 ? '/img/office-cleaning/cleaning-detail/cleaning.svg' : `/img/office-cleaning/cleaning-detail/cleaning_sp.svg`
-          }`}
-          alt="img"
-        />
-      </div>
-      <div>
         <p className={styles.cleaningDesc}>
           A clean and hygienic office is a more productive place for your staff to work and a more pleasant place for your clients to visit.
           We provide high quality, cost-effective office cleaning solutions.
         </p>
-        <div className={styles.cleaningTitle}>KungFu Helper Ensures:</div>
-        <div className="flex flex-column gap-30 gap-sp-20">
+        <div className={`${styles.cleaningTitle} mt-80 mt-tb-6 mt-sp-50`}>KungFu Helper Ensures:</div>
+        <div className="flex flex-column gap-30 mb-100 mb-sp-50 gap-sp-20">
           {CLEANING_LIST.map((item) => (
             <div className={styles.cleaningItem} key={item}>
               <img

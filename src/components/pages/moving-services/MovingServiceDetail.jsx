@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '../aircon-service/styles.module.scss';
+import styles from './styles.module.scss'
 import useDetectWindowSize from '@/hooks/useDetectWindowSize';
 
 const AIRCON_DETAIL = [
@@ -29,9 +29,6 @@ const MovingDetailService = () => {
   return (
     <div className={styles.airconServiceDetailContainer}>
       <div className={styles.serviceDetail}>
-        <div>
-          <img src={`${width > 779 ? '/img/moving/image1.svg' : `/img/moving/image1_sp.svg`}`} alt="img" />
-        </div>
         <div className={styles.serviceDetailContent}>
           <div className={`${styles.introText} text-left mb-30 mb-sp-20`}>General moving services include:</div>
           <div className="flex flex-column gap-30 gap-sp-20">
@@ -49,11 +46,11 @@ const MovingDetailService = () => {
           </div>
         </div>
       </div>
+      <div className={styles.imageWrapper}>
+        <img src={width > 1600 ? "/img/moving/intro.svg" : "/img/moving/intro_sp.svg"} alt="intro" />
+      </div>
 
-      <div className={`${styles.serviceDetailAignRight} ${styles.marginLeftBaseOnWidth} mb-100 mb-sp-50  flex-reverse`}>
-        <div>
-          <img src={`${width > 779 ? '/img/moving/image2.svg' : `/img/moving/image2_sp.svg`}`} alt="img" />
-        </div>
+      <div className={`${styles.serviceDetailAignRight} mb-100 mb-sp-50 `}>
         <div className={styles.serviceDetailContent}>
           <div className={`${styles.introText} text-left mb-30 mb-sp-20`}>Additional Services</div>
 

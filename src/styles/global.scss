@@ -372,6 +372,14 @@ th {
   width: 100%;
 }
 
+.w-80-pc {
+  width: 80%;
+}
+
+.w-90-pc {
+  width: 90% !important;
+}
+
 .h-full {
   height: 100%;
 }
@@ -420,16 +428,17 @@ th {
   margin: auto;
 }
 
+.margin-center {
+  margin: 0 auto;
+}
+
+
 .vertical-bottom {
   vertical-align: bottom;
 }
 
 .overflow-hidden {
   overflow: hidden;
-}
-
-.margin-auto {
-  margin: auto;
 }
 
 .margin-auto {

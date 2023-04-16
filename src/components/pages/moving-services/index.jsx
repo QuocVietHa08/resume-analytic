@@ -16,25 +16,19 @@ const VARITYS = [
   {
     text: 'General Handyman Services',
     img: '/img/handyman-service/variety-service/handman',
-    link: '/handyman-service',
+    link: '/services/general-handyman-services',
     type: 'info',
-  },
-  {
-    text: 'Aircon Servicing',
-    img: '/img/handyman-service/variety-service/aircon',
-    link: '/aircon-service',
-    type: 'info',
-  },
+  }, 
   {
     text: 'Pool Cleaning',
     img: '/img/handyman-service/variety-service/pool',
-    link: '/pool-cleaning',
+    link: '/services/pool-cleaning',
     type: 'info',
   },
   {
     text: 'Pest Control',
     img: '/img/handyman-service/variety-service/pest',
-    link: '/pest-control',
+    link: '/services/pest-control',
     type: 'info',
   },
   {

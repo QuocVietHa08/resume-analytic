@@ -61,10 +61,32 @@
   .workItemLine {
     width: 80px;
     height: 0;
-    border: 3px dashed #9FCFC9;
+    border: 3px dashed #9fcfc9;
     position: absolute;
     top: 50%;
     right: -20%;
     z-index: 99;
+  }
+}
+
+.titleStyle {
+  font-family: 'Baloo Da';
+  font-weight: 700;
+  font-size: 66px;
+  text-align: center;
+  text-transform: capitalize;
+  color: #333333;
+  text-decoration: underline;
+  text-decoration-color: #fddc3a;
+  margin-top: 150px;
+
+  @include tablet {
+    font-size: 35px;
+    margin-top: 100px;
+  }
+
+  @include mobile {
+    font-size: 20px;
+    margin-top: 80px;
   }
 }

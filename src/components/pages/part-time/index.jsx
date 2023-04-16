@@ -15,7 +15,7 @@ const PARTTIME_SERVICE = [
   {
     text: 'Furniture & Upholstery Cleaning',
     img: '/img/parttime-helper/furniture-upholstery-cleaning',
-    link: '/service',
+    link: '/services/upholstery-cleaning',
     type: 'info',
   },
   {
@@ -34,6 +34,12 @@ const PARTTIME_SERVICE = [
     text: 'Office Cleaning',
     img: '/img/parttime-helper/office-cleaning',
     link: '/service',
+    type: 'info',
+  },
+  {
+    text: 'Aircon Services',
+    img: '/img/parttime-helper/aircon-services',
+    link: '/aircon-services',
     type: 'info',
   },
   {

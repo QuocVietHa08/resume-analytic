@@ -17,14 +17,6 @@ const PoolCleaningDetail = () => {
   return (
     <div className={styles.poolCleaningDetailContainer}>
       <div>
-        <img
-          src={`${
-            width > 779 ? '/img/pool-cleaning/image.svg' : `/img/pool-cleaning/image_sp.svg`
-          }`}
-          alt="img"
-        />
-      </div>
-      <div>
         <p className={styles.poolingDes}>
         Our team will provide our services as one-off testing and treating for our clients, as well as cleaning them as part of a regular maintenance plan. Regular pool testing is crucial to ensuring the safety of those using it. During maintenance visits, at least one of our specialist engineers will attend to:
         </p>
