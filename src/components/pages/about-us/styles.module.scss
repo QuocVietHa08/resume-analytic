@@ -1,40 +1,49 @@
 @import 'styles/responsive.scss';
 
 .aboutUsDetailContainer {
-  margin-top: 50px;
+  margin-top: 100px;
   margin-bottom: 100px;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  align-items: center;
-  margin-left: calc((100% - 80%) / 2);
 
   @include mobile {
-    flex-direction: column;
+    flex-direction: column-reverse;
     justify-content: unset;
     align-items: unset;
     margin-top: 20px;
+    margin-bottom: 20px;
   }
 
   .descWrapper {
-    width: 45%;
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 50px;
+    font-size: 24px;
+
+    @include tablet {
+      width: 80%;
+      font-size: 16px;
+    }
 
     @include mobile {
       width: 90%;
+      margin-top: 20px;
+      font-size: 12px;
     }
   }
 
   .imageWrapper {
+    width: 100vw;
+    img {
+      width: 100%;
+    }
     @include mobile {
       display: flex;
       justify-content: flex-end;
     }
   }
 
-  .imageWrapperLeft {
-    @include mobile {
-      display: flex;
-    }
-  }
 
   span,
   h3 {
@@ -56,20 +65,14 @@
   }
 
   p {
-    font-size: 16px;
+    font-size: 25px;
+
+    @include tablet {
+      font-size: 16px;
+    }
 
     @include mobile {
       font-size: 12px;
     }
-  }
-}
-
-.aboutUsDetailContainerLeft {
-  @extend .aboutUsDetailContainer;
-  margin-right: calc((100% - 80%) / 2);
-  margin-left: 0px;
-
-  .descWrapper {
-    text-align: right;
   }
 }

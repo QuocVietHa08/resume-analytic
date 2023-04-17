@@ -40,7 +40,7 @@ const OfficeCleaning = () => {
       <Testimonials />
       <CleaningService title="General Office Cleaning Services" />
       <Enquiry isShowBgImage={false} />
-      <Download />
+      {/* <Download /> */}
     </div>
   );
 };

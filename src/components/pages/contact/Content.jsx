@@ -4,22 +4,22 @@ import BreadCumbs from '@/components/atoms/breadcumbs';
 import useDetectWindowSize from '@/hooks/useDetectWindowSize';
 import GoogleMapComponent from "./Map"
 
-const BREADCUMBS = [
-  {
-    text: 'Home',
-    link: '/',
-  },
-  {
-    text: 'Contact Us',
-    link: '',
-  },
-];
+// const BREADCUMBS = [
+//   {
+//     text: 'Home',
+//     link: '/',
+//   },
+//   {
+//     text: 'Contact Us',
+//     link: '',
+//   },
+// ];
 const Content = () => {
   const width = useDetectWindowSize();
 
   return (
     <div className={styles.contactContentContainer}>
-      <BreadCumbs pages={BREADCUMBS} />
+      {/* <BreadCumbs pages={BREADCUMBS} /> */}
       <div className={styles.contactAddress}>
         <div className={styles.googleMapWrapper}>
           <GoogleMapComponent />

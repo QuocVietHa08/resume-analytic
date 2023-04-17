@@ -74,4 +74,13 @@
 
 .headerBreadCumbWrapper {
   padding: 42px 62px;
+  background-color: white;
+  
+  @include tablet {
+    padding: 16px 40px;
+  }
+
+  @include mobile {
+    padding: 15px 20px; 
+  }
 }

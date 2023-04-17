@@ -17,8 +17,6 @@ const BREADCUMBS = [
 const Policy = () => {
   return (
     <div className={styles.policyContainer}>
-      <IntroService title="Privacy Policy" />
-      <BreadCumbs pages={BREADCUMBS} />
       <div className={styles.policyContent}>
         <p className="pre-wrap mt-50 mb-50 font-size-16 font-size-sp-12">
           Last updated: December, 2022 <br /> This Privacy Policy describes Our policies and procedures on the collection, use and

@@ -1,6 +1,5 @@
 import React from 'react';
 import BreadCumbs from '@/components/atoms/breadcumbs';
-import Download from '../home/Download';
 import Enquiry from '../home/Enquiry';
 import Testimonials from '../home/Testimonials';
 import Work from '../home/Work';
@@ -94,7 +93,6 @@ const AirconService = () => {
       <Testimonials />
       <CleaningService title="Aircon Servicing"/>
       <Enquiry isShowBgImage={false} />
-      <Download />
     </div>
   )
 }

@@ -198,7 +198,10 @@ const SERVICE_DETAIL_FIX = [
       'Air Filtration Installation',
       'Gas Top Up ',
     ],
-    links: ['', ''],
+    links: [
+      '/services/ac-diagnostic-service', 
+      '/services/general-servicing'
+    ],
   },
 ];
 

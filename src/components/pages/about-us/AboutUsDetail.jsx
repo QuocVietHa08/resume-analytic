@@ -8,6 +8,9 @@ const AboutUsDetail = () => {
   return (
     <div className="pb-100 pb-sp-0">
       <div className={styles.aboutUsDetailContainer}>
+      <div className={styles.imageWrapper}>
+          <img src={`${width > 779 ? '/img/about-us/detail/banner1.svg' : `/img/about-us/detail/banner1_sp.svg`}`} alt="img" />
+        </div>
         <div className={styles.descWrapper}>
           <h3 className="text-font-family">Our Story</h3>
           <p>
@@ -20,16 +23,14 @@ const AboutUsDetail = () => {
           </p>
           <p>We are here to understand your requirements and to match a carefully balanced solution that satisfies your expectations!</p>
         </div>
-        <div className={styles.imageWrapper}>
-          <img src={`${width > 779 ? '/img/about-us/detail/cleaning1.svg' : `/img/about-us/detail/cleaning1_sp.svg`}`} alt="img" />
-        </div>
+       
       </div>
 
-      <div className={styles.aboutUsDetailContainerLeft}>
-        <div className={styles.imageWrapperLeft}>
-          <img src={`${width > 779 ? '/img/about-us/detail/cleaning2.svg' : `/img/about-us/detail/cleaning2_sp.svg`}`} alt="img" />
+      <div className={styles.aboutUsDetailContainer}>
+        <div className={styles.imageWrapper}>
+          <img src={`${width > 779 ? '/img/about-us/detail/banner2.svg' : `/img/about-us/detail/banner2_sp.svg`}`} alt="img" />
         </div>
-        <div className={`${styles.descWrapper} mt-20`}>
+        <div className={`${styles.descWrapper} mt-50 mt-sp-20`}>
           <span className="text-font-family">
             Your <h3 className="text-font-family">Satisfaction</h3>, Our <h3 className="text-font-family">Promise</h3>
           </span>

@@ -7,7 +7,7 @@ import Content from './Content';
 const Contact = () => {
   return (
     <div className={styles.contactContainer}>
-      <IntroService title="Contact Us" />
+      {/* <IntroService title="Contact Us" /> */}
       <div className="mb-100 pb-100 pb-sp-0">
         <Content />
       </div>
