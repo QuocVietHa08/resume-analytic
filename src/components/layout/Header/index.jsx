@@ -22,11 +22,13 @@ const Header = () => {
 
   useEffect(() => {
     const pathname = router.pathname.split('/');
-    const cloneBreadcumb = pathname.map((url, index) => (url === '' ? 'home /' : pathname.length > 2 && index < pathname.length - 1 ? `${url} /` : url));
+    const cloneBreadcumb = pathname.map((url, index) =>
+      url === '' ? 'home /' : pathname.length > 2 && index < pathname.length - 1 ? `${url} /` : url.split("-").join(" "),
+    );
     setBreadCumbs(cloneBreadcumb);
   }, [router]);
 
-  console.log('bread:', breadcumbs)
+  console.log('bread:', breadcumbs);
   return (
     <div className={styles.headerContainer}>
       <div className={styles.headerWrapper}>
@@ -103,13 +105,13 @@ const Header = () => {
           </div>
         </Drawer>
       </div>
-      <div className={styles.headerBreadCumbWrapper}>
-        {router.pathname !== '/' &&
-          breadcumbs.map((page, index) => (
+      {router.pathname !== '/' && (
+        <div className={styles.headerBreadCumbWrapper}>
+          {breadcumbs?.map((page, index) => (
             <span key={page}>
               <span className="mr-10 mr-sp-5">
                 <Link
-                  href={page === 'home/' ? '/' : page}
+                  href={page === 'home /' ? '/' : page}
                   className={`${
                     index === breadcumbs?.length - 1
                       ? 'color-primary-i text-capitalize font-size-24 font-size-tb-16 font-size-sp-12 text-bold'
@@ -121,7 +123,8 @@ const Header = () => {
               </span>
             </span>
           ))}
-      </div>
+        </div>
+      )}
     </div>
   );
 };

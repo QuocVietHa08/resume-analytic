@@ -161,7 +161,7 @@ const Footer = () => {
               <div>© 2022 KungFu Helper Pte Ltd. All rights reserved.</div>
               <div>|</div>
               <div>
-                <Link href="/policy" className="color-primary-dark">
+                <Link href="/privacy-policy" className="color-primary-dark">
                   Privacy Policy
                 </Link>
               </div>

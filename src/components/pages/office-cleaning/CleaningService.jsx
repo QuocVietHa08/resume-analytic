@@ -41,13 +41,13 @@ const CleaningService = ({ title }) => {
   const width = useDetectWindowSize();
   return (
     <div className={styles.cleaningServiceContainer}>
-      <img
+      {/* <img
         src={`${
           width > 780 ? `/img/office-cleaning/cleaning-service/image_left.svg` : `/img/office-cleaning/cleaning-service/image_left_sp.svg`
         }`}
         className={styles.itemImageLeft}
         alt="cleaning"
-      />
+      /> */}
       <div className={styles.cleaningServiceWrapper}>
         <p className="text-font-family text-normal">
           Our {title} <br /> <span className="text-font-family text-normal">Can Be Applied To</span>
@@ -63,13 +63,13 @@ const CleaningService = ({ title }) => {
           ))}
         </div>
       </div>
-      <img
+      {/* <img
         src={`${
           width > 780 ? `/img/office-cleaning/cleaning-service/image_right.svg` : `/img/office-cleaning/cleaning-service/image_right_sp.svg`
         }`}
         className={styles.itemImageRight}
         alt="cleaning"
-      />
+      /> */}
     </div>
   );
 };

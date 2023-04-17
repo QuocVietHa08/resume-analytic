@@ -18,10 +18,7 @@ const BREADCUMBS = [
 const TestimonialsPageComponent = () => {
   return (
     <div className={styles.testimonialsPageContainer}>
-      <IntroService title="Testimonials" />
-      <BreadCumbs pages={BREADCUMBS} />
       <Testimonials isTestimonialPage/>
-      <Download />
     </div>
   );
 };

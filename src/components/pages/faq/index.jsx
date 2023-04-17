@@ -16,9 +16,6 @@ const BREADCUMBS = [
 const FAQ = () => {
   return (
     <div>
-      <IntroService title="Frequently asked questions" />
-      <div className="mt-40 mt-sp-20"></div>
-      <BreadCumbs pages={BREADCUMBS} />
       <Content />
     </div>
   );
