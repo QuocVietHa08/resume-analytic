@@ -28,7 +28,6 @@ const Header = () => {
     setBreadCumbs(cloneBreadcumb);
   }, [router]);
 
-  console.log('bread:', breadcumbs);
   return (
     <div className={styles.headerContainer}>
       <div className={styles.headerWrapper}>
