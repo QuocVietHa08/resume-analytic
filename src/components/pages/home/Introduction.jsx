@@ -5,6 +5,10 @@ import useDetectWindowSize from '@/hooks/useDetectWindowSize';
 const Introduction = ({ imgSrc }) => {
   const width = useDetectWindowSize();
 
+  const handleOnClickButton = () => {
+    window.location.href = "https://api.whatsapp.com/send/?phone=6588380909"
+  }
+
   return (
     <>
       {width > 1600 ? (
@@ -20,7 +24,7 @@ const Introduction = ({ imgSrc }) => {
                   Download our app today to book a cleaning service <br /> with our expert cleaners!
                 </div>
               </div>
-              <div className={styles.whatAppButton}>
+              <div onClick={handleOnClickButton} className={styles.whatAppButton}>
                 <div>
                   <img src="/img/home/intro/phone.svg" alt="apple" />
                 </div>
@@ -47,7 +51,7 @@ const Introduction = ({ imgSrc }) => {
                   a cleaning service with <br /> our expert cleaners!
                 </div>
               </div>
-              <div className={styles.whatAppButton}>
+              <div onClick={handleOnClickButton} className={styles.whatAppButton}>
                 <div>
                   <img src="/img/home/intro/phone.svg" alt="android" />
                 </div>

@@ -373,6 +373,16 @@
   margin-bottom: 200px;
   margin-top: 150px;
 
+  @include tablet {
+    margin-bottom: 120px;
+    margin-top: 100px;
+  }
+
+  @include mobile {
+    margin-bottom: 70px;
+    margin-top: 50px;
+  }
+
   .serviceDes {
     width: 100%;
   }
@@ -420,6 +430,7 @@
 }
 
 // Work
+
 .workContainer {
   width: 80%;
   display: flex;
@@ -512,7 +523,16 @@
 
 // Helper
 .helperContainer {
+  margin-top: 180px;
   margin-bottom: 50px;
+
+  @include tablet {
+    margin-top: 80px;
+  }
+
+  @include mobile {
+    margin-top: 50px;
+  }
 }
 
 .helperTitle {
@@ -841,6 +861,9 @@
     width: 55%;
   }
   @include mobile {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
     width: 75%;
   }
 
@@ -887,7 +910,6 @@
   padding-bottom: 20px;
   padding-top: 20px;
   height: 430px;
-  // background-color: red;
 
   @include tablet {
     height: 340px;

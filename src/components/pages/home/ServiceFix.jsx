@@ -14,11 +14,11 @@ const SERVICE_DETAIL_SP = [
     imgSrc: '/img/home/service/furniture',
     services: ['Curtain Cleaning', 'Carpet Cleaning', 'Sofa Cleaning', 'Mattress Cleaning', 'Upholstery Cleaning'],
     links: [
-      '/furniture/curtain-cleaning',
-      '/furniture/carpet-cleaning',
-      '/furniture/sofa-cleaning',
-      '/furniture/mattress-cleaning',
-      '/furniture/upholstery-cleaning',
+      '/services/curtain-cleaning',
+      '/services/carpet-cleaning',
+      '/services/sofa-cleaning',
+      '/services/mattress-cleaning',
+      '/services/upholstery-cleaning',
     ],
   },
   {
@@ -26,7 +26,10 @@ const SERVICE_DETAIL_SP = [
     type: 'service',
     imgSrc: '/img/home/service/house_cleaning',
     services: ['Post-Renovation Cleaning', 'Move In / Move out cleaning', 'Spring Cleaning', 'house disinfection'],
-    links: ['/house-service/post-renovation', '/house-service/move', '/house-service/spring', '/house-service/house-disinfection'],
+    links: [
+      '/services/post-rennovation-cleaning', 
+      '/services/move', 
+      '/services/spring-cleaning', '/services/house-disinfection'],
   },
   {
     name: 'Handy Home Services',
@@ -34,7 +37,6 @@ const SERVICE_DETAIL_SP = [
     imgSrc: '/img/home/service/home_service',
     services: [
       'General handyman services',
-      'aircon servicing',
       'pool cleaning',
       'pest control',
       'landscaping',
@@ -43,14 +45,13 @@ const SERVICE_DETAIL_SP = [
       'moving',
     ],
     links: [
-      'handyman-service',
-      'aircon-service',
-      'pool-cleaning',
-      'pest-control',
-      'landscaping-services',
-      'flooring-services',
-      'organising-services',
-      'moving-services',
+      '/services/general-handyman-services',
+      '/services/pool-cleaning',
+      '/services/pest-control',
+      '/services/landscaping-services',
+      '/services/flooring-services',
+      '/services/organising-services',
+      '/services/moving-services',
     ],
   },
   {
@@ -58,68 +59,83 @@ const SERVICE_DETAIL_SP = [
     type: 'service',
     imgSrc: '/img/home/service/office_cleaning',
     services: ['General office cleaning', 'Office Disinfection'],
-    links: ['office-cleaning', 'office-disinfection'],
+    links: ['/services/general-office-cleaning', '/services/general-office-disinfection'],
+  },
+  {
+    name: 'Aircon Services',
+    type: 'service',
+    imgSrc: '/img/home/service/aircon_service',
+    services: [
+      'AC Diagnostic Service',
+      'General Servicing',
+      'Aircon Chemical Wash',
+      'Aircon Chemical Overhaul',
+      'Condenser Dry Cleaning',
+      'Air Filtration Installation',
+      'Gas Top Up ',
+    ],
+    links: ['/services/ac-diagnostic-service', '/services/general-servicing'],
   },
 ];
 
-const SERVICE_DETAIL = [
-  [
-    {
-      name: 'Furniture & Upholstery Cleaning',
-      type: 'service',
-      imgSrc: '/img/home/service/furniture',
-      services: ['Curtain Cleaning', 'Carpet Cleaning', 'Sofa Cleaning', 'Mattress Cleaning', 'Upholstery Cleaning'],
-      links: [
-        '/furniture/curtain-cleaning',
-        '/furniture/carpet-cleaning',
-        '/furniture/sofa-cleaning',
-        '/furniture/mattress-cleaning',
-        '/furniture/upholstery-cleaning',
-      ],
-    },
-    {
-      name: 'House Cleaning',
-      type: 'service',
-      imgSrc: '/img/home/service/house_cleaning',
-      services: ['Post-Renovation Cleaning', 'Move In / Move out cleaning', 'Spring Cleaning', 'house disinfection'],
-      links: ['/house-service/post-renovation', '/house-service/move', '/house-service/spring', '/house-service/house-disinfection'],
-    },
-  ],
-  [
-    {
-      name: 'Handy Home Services',
-      type: 'service',
-      imgSrc: '/img/home/service/home_service',
-      services: [
-        'General handyman services',
-        'aircon servicing',
-        'pool cleaning',
-        'pest control',
-        'landscaping',
-        'flooring',
-        'organising',
-        'moving',
-      ],
-      links: [
-        'handyman-service',
-        'aircon-service',
-        'pool-cleaning',
-        'pest-control',
-        'landscaping-services',
-        'flooring-services',
-        'organising-services',
-        'moving-services',
-      ],
-    },
-    {
-      name: 'Office Cleaning',
-      type: 'service',
-      imgSrc: '/img/home/service/office_cleaning',
-      services: ['General office cleaning', 'Office Disinfection'],
-      links: ['office-cleaning', 'office-disinfection'],
-    },
-  ],
-];
+// const SERVICE_DETAIL = [
+//   [
+//     {
+//       name: 'Furniture & Upholstery Cleaning',
+//       type: 'service',
+//       imgSrc: '/img/home/service/furniture',
+//       services: ['Curtain Cleaning', 'Carpet Cleaning', 'Sofa Cleaning', 'Mattress Cleaning', 'Upholstery Cleaning'],
+//       links: [
+//         '/furniture/curtain-cleaning',
+//         '/furniture/carpet-cleaning',
+//         '/furniture/sofa-cleaning',
+//         '/furniture/mattress-cleaning',
+//         '/furniture/upholstery-cleaning',
+//       ],
+//     },
+//     {
+//       name: 'House Cleaning',
+//       type: 'service',
+//       imgSrc: '/img/home/service/house_cleaning',
+//       services: ['Post-Renovation Cleaning', 'Move In / Move out cleaning', 'Spring Cleaning', 'house disinfection'],
+//       links: ['/house-service/post-renovation', '/house-service/move', '/house-service/spring', '/house-service/house-disinfection'],
+//     },
+//   ],
+//   [
+//     {
+//       name: 'Handy Home Services',
+//       type: 'service',
+//       imgSrc: '/img/home/service/home_service',
+//       services: [
+//         'General handyman services',
+//         'aircon servicing',
+//         'pool cleaning',
+//         'pest control',
+//         'landscaping',
+//         'flooring',
+//         'organising',
+//         'moving',
+//       ],
+//       links: [
+//         'handyman-service',
+//         'aircon-service',
+//         'pool-cleaning',
+//         'pest-control',
+//         'landscaping-services',
+//         'flooring-services',
+//         'organising-services',
+//         'moving-services',
+//       ],
+//     },
+//     {
+//       name: 'Office Cleaning',
+//       type: 'service',
+//       imgSrc: '/img/home/service/office_cleaning',
+//       services: ['General office cleaning', 'Office Disinfection'],
+//       links: ['office-cleaning', 'office-disinfection'],
+//     },
+//   ],
+// ];
 
 const SERVICE_DETAIL_FIX = [
   {
@@ -198,10 +214,7 @@ const SERVICE_DETAIL_FIX = [
       'Air Filtration Installation',
       'Gas Top Up ',
     ],
-    links: [
-      '/services/ac-diagnostic-service', 
-      '/services/general-servicing'
-    ],
+    links: ['/services/ac-diagnostic-service', '/services/general-servicing'],
   },
 ];
 
@@ -224,8 +237,17 @@ const ServiceFix = () => {
       )}
       <>
         <p className={styles.serviceDes}>
-          We offer a wide range of services at Kungfu Helper, click on each of our <br /> main service category below to find out more on
-          what we provide in detail!
+          {width > 1600 ? (
+            <span>
+              We offer a wide range of services at Kungfu Helper, click on each of our <br /> main service category below to find out more
+              on what we provide in detail!
+            </span>
+          ) : (
+            <span>
+              We offer a wide range of services at Kungfu Helper, <br /> click on each of our main service category below to <br /> find out
+              more on what we provide in detail!
+            </span>
+          )}
         </p>
         {width > 1600 && (
           <>
@@ -257,7 +279,7 @@ const ServiceFix = () => {
               <div className="flex flex-column gap-20 gap-tb-0 gap-sp-5">
                 <span className="text-bold font-size-tb-16 color-primary">Part-time Helper </span>
                 <>
-                  <Link href="/part-time-helper">
+                  <Link href="/services/part-time-helper">
                     <div className="flex gap-10 item-center">
                       <p className="font-size-tb-16">Find Out More</p>
                       <span className={styles.dropdownStyle}>

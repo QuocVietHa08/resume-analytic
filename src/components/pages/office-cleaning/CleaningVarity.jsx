@@ -46,7 +46,7 @@ const CleaningVarity = ({ arrayList, title = 'Office Cleaning Services' }) => {
     <div className={styles.cleaningVarityContainer}>
       <div className={styles.cleaningVarityWrapper}>
         <div className={styles.cleaningVarityTitle}>
-          Check Out Our Variety Of <span>{title}</span> Below
+          Check Out Our Variety Of<br /> <span>{title}</span> Below
         </div>
         <div className={styles.cleaningVarityWrapperList}>{handleRenderClearningVarity()}</div> 
       </div>

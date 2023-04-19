@@ -10,7 +10,7 @@ const Footer = () => {
   return (
     <div className={styles.footerContainer}>
       <div className={styles.footerWrapper}>
-        {width > 779 ? (
+        {width > 1600 ? (
           <div className={styles.footerLinkInfo}>
             <div className={styles.quickLinks}>
               <div className={styles.headerText}>Quick Links</div>
@@ -155,7 +155,7 @@ const Footer = () => {
         <div className={styles.dividerWrapper}>
           <Divider className={styles.dividerStyle} />
         </div>
-        {width > 779 ? (
+        {width > 1600 ? (
           <div className={styles.footerCopyRight}>
             <div className="flex item-center justify-evenly gap-25">
               <div>© 2022 KungFu Helper Pte Ltd. All rights reserved.</div>

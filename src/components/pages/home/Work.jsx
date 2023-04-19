@@ -34,7 +34,7 @@ const WORK = [
 const Work = () => {
   const router = useRouter();
   return (
-    <>
+    <div className={styles.workWrapper}>
     {!router.pathname.includes('faq') && (
       <h2 className={styles.workTitle}>How It Works</h2>
     )} 
@@ -45,7 +45,7 @@ const Work = () => {
         </div>
       ))}
     </div>
-    </>
+    </div>
   );
 };
 
