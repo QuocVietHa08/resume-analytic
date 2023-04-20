@@ -11,15 +11,15 @@ const Introduction = ({ imgSrc }) => {
 
   return (
     <>
-      {width > 1600 ? (
+      {width > 768 ? (
         <div className={styles.introContainer}>
           <div className={styles.introWrapper}>
             <div className={styles.introDes}>
               <div>
-                <div className="font-size-88 line-height-110 text-normal text-font-family">
+                <div className="font-size-88 font-size-tb-45 line-height-tb-40 line-height-110 text-normal text-font-family">
                   Best Cleaning <br /> Service Company
                 </div>
-                <div className="font-size-24 line-height-30 mt-20 text-normal">
+                <div className="font-size-24 font-size-tb-16 line-height-tb-20 line-height-30 mt-20 text-normal">
                   We provide top notch cleaning services to our <br /> customers, ensuring consistency and quality. <br />
                   Download our app today to book a cleaning service <br /> with our expert cleaners!
                 </div>
@@ -32,7 +32,7 @@ const Introduction = ({ imgSrc }) => {
               </div>
             </div>
             <div className={styles.cleanerAvatarWrapper}>
-              <img src={`${imgSrc}.svg`} alt="cleaner" />
+              <img src={ width < 1600 ? `${imgSrc}_sp.svg` : `${imgSrc}.svg`} alt="cleaner" />
             </div>
           </div>
         </div>

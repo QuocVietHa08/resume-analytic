@@ -141,3 +141,23 @@
     }
   }
 }
+
+.footer-input-wrapper {
+    display: flex;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: white;
+    border-radius: 10px;
+    // box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.25);
+    background-color: #B2D8C8;
+    
+    .ant-form {
+      display: flex !important;
+      background-color: #B2D8C8;
+    }
+  
+    @include mobile {
+      margin-top: 10px;
+      margin-bottom: 0px;
+    }  
+}

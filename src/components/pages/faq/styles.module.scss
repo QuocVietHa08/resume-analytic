@@ -3,6 +3,10 @@
 .contentContainer {
   width: 80%;
   margin: 0 auto;
+
+  @include mobile {
+    width: 90%;
+  }
 }
 
 // Work
@@ -15,6 +19,12 @@
   margin: 0 auto;
   margin-top: 30px;
   margin-bottom: 70px;
+
+  @include mobile {
+    width: 90%;
+    justify-content: space-between;
+    gap: 0;
+  }
 }
 
 .workTitle {
@@ -34,7 +44,9 @@
 
 .workItemWrapper {
   display: flex;
+  height: 100%;
   position: relative;
+  padding-top: 20px;
 
   p {
     font-weight: 700;
@@ -52,6 +64,10 @@
 
   .imageWrapper {
     margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
 
     @include mobile {
       margin-top: 20px;

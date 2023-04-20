@@ -13,7 +13,7 @@ const CleaningVarityItem = ({ item }) => {
       return (
         <div className={styles.itemContentContact}>
           <p>{itemInfo.text}</p>
-          <button onClick={() => router.push('/contact')} type="button" className={styles.contactButton}>
+          <button onClick={() => router.push('/contact-us')} type="button" className={styles.contactButton}>
             <span className="text-bold">Contact Us</span>
           </button>
         </div>

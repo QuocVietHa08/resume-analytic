@@ -6,7 +6,6 @@ import Helper from './Helper';
 import Certification from './Certification';
 import Testimonials from './Testimonials';
 import Enquiry from './Enquiry';
-import Download from './Download';
 
 const Home = () => {
   const imageSrc = "/img/home/intro/banner"
@@ -18,7 +17,6 @@ const Home = () => {
     <Certification />
     <Testimonials />
     <Enquiry />
-    <Download />
   </div>
 }
 

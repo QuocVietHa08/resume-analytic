@@ -1,11 +1,59 @@
-import { Button, Form, Input } from 'antd';
-import React from 'react';
+import { Button, Form, Input, notification } from 'antd';
+import React, { useState } from 'react';
 import styles from './styles.module.scss';
 import useDetectWindowSize from '@/hooks/useDetectWindowSize';
+// import axios from 'axios';
+import api from '@/api/axios';
 
 const Enquiry = ({ isShowBgImage = true }) => {
   const width = useDetectWindowSize();
+  const [formSubmit] = Form.useForm();
+  const [isLoading, setIsLoading] = useState(false);
 
+  const handleSubmit = (data) => {
+    try {
+
+    setIsLoading(true);
+    const dataSubmit = {
+      content: `phone: ${data.phone}\n message:${data.message}`,
+      receiverEmail: 'info@kungfuhelper.com.sg',
+      senderEmail: data.email,
+      senderName: data.name,
+    };
+
+    const url = 'https://send-in-blue-api.uc.r.appspot.com/v1/sendinblue/send';
+    const headers = {
+      domain_name: 'asure-pro',
+    };
+
+    api
+      .post(url, dataSubmit, { headers })
+      .then((data) => {
+        notification.open({
+          type: 'success',
+          message: 'Email has been sent successfully!',
+        });
+      })
+      .catch((error) => {
+        const errorMessage = JSON.parse(error?.response?.data?.message);
+
+        notification.open({
+          type: 'error',
+          message: errorMessage?.message || 'Please try again!',
+        });
+      })
+      .finally(() => {
+        formSubmit.resetFields();
+        setIsLoading(false);
+      });
+    } catch (error) {
+      console.log(error)
+    }
+  };
+
+  const handleOnFinishFailed = (errorInfo) => {
+    return errorInfo;
+  };
   return (
     <div className={styles.enquiryContainer}>
       {/* {isShowBgImage && (
@@ -23,11 +71,17 @@ const Enquiry = ({ isShowBgImage = true }) => {
         </div>
         <div className={styles.enquiryDes}>
           Please fill in the form below and we will get back to you in 3 business days. For a faster response, WhatsApp us at +
-          <a className="font-size-24 font-size-tb-16 font-size-sp-12 color-black text-underline" href="https://api.whatsapp.com/send/?phone=6588380909">65 8838 0909</a> .
+          <a
+            className="font-size-24 font-size-tb-16 font-size-sp-12 color-black text-underline"
+            href="https://api.whatsapp.com/send/?phone=6588380909"
+          >
+            65 8838 0909
+          </a>{' '}
+          .
         </div>
         <div className={styles.enquiryForm}>
-          <Form>
-            <Form.Item>
+          <Form form={formSubmit} onFinishFailed={handleOnFinishFailed} onFinish={handleSubmit}>
+            <Form.Item rules={[{ required: true, message: 'Please input your name!' }]} name="name">
               <div className="flex flex-column item-flex-start">
                 <div className="text-bold">
                   Name <span className="color-red">*</span>
@@ -36,7 +90,16 @@ const Enquiry = ({ isShowBgImage = true }) => {
               </div>
             </Form.Item>
 
-            <Form.Item>
+            <Form.Item
+              rules={[
+                { required: true, message: 'Please input your phone!' },
+                {
+                  pattern: /^(\+\d{1,3}[- ]?)?\d{10}$/,
+                  message: 'Please enter a valid phone number',
+                },
+              ]}
+              name="phone"
+            >
               <div className="flex flex-column item-flex-start">
                 <div className="text-bold">
                   Phone No.<span className="color-red">*</span>
@@ -45,7 +108,16 @@ const Enquiry = ({ isShowBgImage = true }) => {
               </div>
             </Form.Item>
 
-            <Form.Item>
+            <Form.Item
+              rules={[
+                {
+                  type: 'email',
+                  message: 'The input is not a valid email address',
+                },
+                { required: true, message: 'Please input your email!' },
+              ]}
+              name="email"
+            >
               <div className="flex flex-column item-flex-start">
                 <div className="text-bold">
                   Email <span className="color-red">*</span>
@@ -54,7 +126,7 @@ const Enquiry = ({ isShowBgImage = true }) => {
               </div>
             </Form.Item>
 
-            <Form.Item>
+            <Form.Item name="message" rules={[{ required: true, message: 'Please input your message!' }]}>
               <div className="flex flex-column item-flex-start">
                 <div className="text-bold">
                   Message <span className="color-red">*</span>
@@ -77,10 +149,8 @@ const Enquiry = ({ isShowBgImage = true }) => {
               )}
             </div>
             <Form.Item className="flex">
-              <Button size="large" className={styles.buttonFormStyle}>
-                <span className="text-bold">
-                Submit
-                  </span>
+              <Button loading={isLoading} size="large" htmlType="submit" className={styles.buttonFormStyle}>
+                <span className="text-bold">Submit</span>
               </Button>
             </Form.Item>
           </Form>

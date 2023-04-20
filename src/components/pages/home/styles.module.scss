@@ -19,8 +19,8 @@
     background: #0E8778;
 
     @include tablet {
-      flex-direction: column;
-      align-items: flex-start;
+      // flex-direction: column;
+      // align-items: flex-start;
     }
 
     @include mobile {
@@ -128,7 +128,7 @@
     height: 100%;
 
     @include tablet {
-      width: 100vw;
+      width: 100%;
     }
 
     @include mobile {
@@ -369,6 +369,7 @@
 
 // service fix
 .serviceContainerFix {
+  
   @extend .serviceContainer;
   margin-bottom: 200px;
   margin-top: 150px;
@@ -393,6 +394,13 @@
   flex-wrap: wrap;
   justify-content: space-between;
   width: 88%;
+  max-width: 1920px;
+  margin: 0 auto;
+
+  
+  @include tablet {
+    width: 95%;
+  }
 }
 
 .serviceItemWrapperFix {
@@ -403,6 +411,27 @@
   border-radius: 20px;
   display: flex;
   gap: 54px;
+
+  @include tablet {
+    gap: 20px;
+    padding: 25px;
+
+    @media (max-width: 980px){
+     width: 45%
+    }
+  }
+
+  .serviceItemImageWrapper {
+    @include tablet {
+      width: 70px;
+      height: 70px;
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }  
 }
 
 .cannotFindServiceWrapper {
@@ -415,7 +444,6 @@
   color: white;
   padding: 40px 0px; 
   margin-top: 70px;
-
   gap: 30px;
 
   .buttonContactCannotFind {
@@ -426,6 +454,14 @@
     text-align: center;
     border-radius: 10px;
     background-color: white;
+
+    @include tablet {
+      font-size: 16px;
+    }
+
+    @include mobile {
+      font-size: 12px;
+    }
   }
 }
 
@@ -440,6 +476,8 @@
   margin: 0 auto;
   margin-top: 30px;
   margin-bottom: 70px;
+  max-width: 1920px;
+  margin: 0 auto;
 
   @include mobile {
     width: 90%;
@@ -565,6 +603,7 @@
 
   section {
     width: 70%;
+    max-width: 1920px;
     display: flex;
     justify-content: space-between;
     margin-bottom: 50px;
@@ -613,16 +652,30 @@
 }
 
 .helperInfoValue {
+  margin-bottom: 100px;
+
+  @include tablet {
+    margin-bottom: 50px;
+  }
+
+  @include mobile {
+    margin-bottom: 30px;
+  }
+
   section {
     display: flex;
     justify-content: space-between;
     flex-direction: row;
     width: 75%;
+    max-width: 1920px;
     margin: 50px auto;
 
     @media (min-width: 769px) and (max-width: 1680px) {
-      flex-direction: column;
-      align-items: center;
+      // flex-direction: column;
+      // align-items: center;
+      // background-color: red;
+      width: 90%;
+
     }
 
     @include mobile {
@@ -646,10 +699,22 @@
       text-align: center;
 
       @media (min-width: 769px) and (max-width: 1680px) {
-        width: 100%;
+        width: 32%;
         max-width: 90%;
         margin: 20px 0;
-        gap: 20px;
+        gap: 10px; 
+        padding: 20px 10px;
+        
+        
+        .helperInfoItemImageWrapper {
+          // width: 60px;
+          height: 70px;
+
+          img {
+            width: 100%;
+            height: 100%;
+          }
+        }
       }
 
       @include mobile {
@@ -667,6 +732,7 @@
 
         @media (min-width: 769px) and (max-width: 1680px) {
           margin-bottom: 10px;
+          font-size: 16px;
         }
 
         @include mobile {
@@ -683,6 +749,10 @@
         color: #333333;
         margin-bottom: 10px;
         padding: 0 15px;
+
+        @media (min-width: 769px) and (max-width: 1680px) {
+          font-size: 16px;
+        }
 
         @include mobile {
           font-size: 12px;
@@ -704,6 +774,7 @@
   gap: 50px;
   align-items: center;
   width: 80%;
+  max-width: 1920px;
   margin: 30px auto;
 
   
@@ -855,6 +926,7 @@
 
 .testSlider {
   width: 80%;
+  max-width: 1920px;
   position: relative;
 
   @include tablet {
@@ -1115,6 +1187,7 @@
   .enquiryForm {
     width: 70%;
     margin: 0 auto;
+    max-width: 1920px;
 
     @include mobile {
       width: 80%;
@@ -1150,6 +1223,8 @@
   display: flex;
   gap: 50;
   align-items: center;
+  padding-top: 10px;
+  
 
   @include mobile {
     gap: 10px
