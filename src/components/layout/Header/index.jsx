@@ -25,13 +25,25 @@ const Header = () => {
     const cloneBreadcumb = pathname.map((url, index) => {
       if (url === '') return 'home /';
       if (pathname.length > 2 && index < pathname.length - 1) return `${url} /`;
-      if (url === 'term') return 'Term & Condition';
-      if (url === 'move') return 'Move In/Move Out Cleaning';
-      if (url === 'faq') return 'FAQ'
-      return url.split('-').join(' ');
+      return url
     });
     setBreadCumbs(cloneBreadcumb);
   }, [router]);
+
+  console.log('read:', breadcumbs)
+
+  const handleRenderPageTitle = (url) => {
+    if (url === 'term') return 'Term & Condition';
+    if (url === 'move') return 'Move In/Move Out Cleaning';
+    if (url === 'faq') return 'FAQ'
+    return url?.split('-')?.join(' ');
+  }
+
+  const handlCheckingUrl = (url) => {
+    if (url === 'home /') return '/'
+    if (url.includes('services')) return '/services'
+    return "#"
+  }
 
   return (
     <div className={styles.headerContainer}>
@@ -115,14 +127,14 @@ const Header = () => {
             <span key={page}>
               <span className="mr-10 mr-sp-5">
                 <Link
-                  href={page === 'home /' ? '/' : page}
+                  href={handlCheckingUrl(page)}
                   className={`${
                     index === breadcumbs?.length - 1
                       ? 'color-primary-i text-capitalize font-size-24 font-size-tb-16 font-size-sp-12 text-bold'
                       : 'color-black text-bold text-capitalize font-size-sp-12 font-size-tb-16 font-size-24'
                   }`}
                 >
-                  {page}
+                  {handleRenderPageTitle(page)}
                 </Link>
               </span>
             </span>

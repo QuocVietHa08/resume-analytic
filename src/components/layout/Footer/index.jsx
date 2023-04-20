@@ -184,7 +184,7 @@ const Footer = () => {
                 </div>
                 <div>
                   <img src="/img/footer/phone.svg" alt="" />
-                  <span className="ml-15 text-weight-400">+6588380909</span>
+                  <a href="https://api.whatsapp.com/send/?phone=6588380909" className=" ml-15 text-weight-400">+6588380909</a>
                 </div>
                 <div className="flex item-flex-start">
                   <img src="/img/footer/address.svg" alt="" />
@@ -244,7 +244,7 @@ const Footer = () => {
               <p>© 2022 T9 Facilities Pte Ltd. All rights reserved.</p>
               <div className="flex gap-10 font-size-12">
                 <p className="text-bold">
-                  <Link href="/policy" className="color-primary-dark font-size-12 text-bold">
+                  <Link href="/privacy-policy" className="color-primary-dark font-size-12 text-bold">
                     Privacy Policy
                   </Link>
                 </p>

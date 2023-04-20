@@ -32,7 +32,7 @@ const Introduction = ({ imgSrc }) => {
               </div>
             </div>
             <div className={styles.cleanerAvatarWrapper}>
-              <img src={ width < 1600 ? `${imgSrc}_sp.svg` : `${imgSrc}.svg`} alt="cleaner" />
+              <img src={ width < 1600 ? `${imgSrc}.jpeg` : `${imgSrc}.jpeg`} alt="cleaner" />
             </div>
           </div>
         </div>
@@ -59,7 +59,7 @@ const Introduction = ({ imgSrc }) => {
               </div>
             </div>
             <div className={styles.cleanerAvatarWrapper}>
-              <img src={`${imgSrc}_sp.svg`} alt="cleaner" />
+              <img src={`${imgSrc}.jpeg`} alt="cleaner" />
             </div>
           </div>
         </div>

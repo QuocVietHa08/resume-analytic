@@ -136,17 +136,17 @@ const Enquiry = ({ isShowBgImage = true }) => {
             </Form.Item>
             <div className={styles.enquiryImageContainer}>
               <div className={styles.captchaWrapper}>
-                <img src={`${width > 1600 ? `/img/home/enquiry/captcha.svg` : `/img/home/enquiry/captcha_sp.svg`}`} alt="arrow" />
+                <img src={`${width > 1600 ? `/img/home/enquiry/captcha.svg` : `/img/home/enquiry/captcha.jpeg`}`} alt="arrow" />
               </div>
-              {width > 780 ? (
+              {/* {width > 780 ? ( */}
                 <div className={styles.enquiryInfra}>
-                  <img src="/img/home/enquiry/aws.svg" alt="logo" />
-                  <img src="/img/home/enquiry/cloudflare.svg" alt="logo" />
-                  <img src="/img/home/enquiry/logo.svg" alt="logo" />
+                  <img src="/img/home/enquiry/aws.jpeg" alt="logo" />
+                  <img src="/img/home/enquiry/cloudflare.jpeg" alt="logo" />
+                  <img src="/img/home/enquiry/logo.jpeg" alt="logo" />
                 </div>
-              ) : (
-                <img src="/img/home/enquiry/service.svg" alt="service" />
-              )}
+              {/* // ) : (
+              //   // <img src="/img/home/enquiry/service.jpeg" alt="service" />
+              // )} */}
             </div>
             <Form.Item className="flex">
               <Button loading={isLoading} size="large" htmlType="submit" className={styles.buttonFormStyle}>

@@ -116,6 +116,10 @@
     font-size: 16px;
   }
 
+  a {
+    color: #36625a;
+  }
+
   @include mobile {
     span {
       font-size: 12px;
