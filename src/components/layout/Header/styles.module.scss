@@ -32,6 +32,16 @@
         font-size: 24px;
         font-weight: 400;
         line-height: 20px;
+
+        @include tablet {
+          font-size: 16px;
+          line-height: 16px;
+        }
+
+        @include mobile {
+          font-size: 12px;
+          line-height: 12px;
+        }
       }
     }
   }
@@ -67,7 +77,7 @@
     a {
       color: #3c8477;
       font-size: 20px;
-      font-weight: 700;
+      font-weight: 700; 
     }
   }
 }

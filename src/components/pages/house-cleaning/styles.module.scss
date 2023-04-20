@@ -48,23 +48,35 @@
 
     .applyItem {
       text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 25px;
+
+      img {
+        height: 96px;
+        width: auto;
+      }
 
       @include mobile {
         img {
-          width: 40px;
+          height: 40px;
         }
       }
 
       .applyItemTitle {
-        margin-top: 25px;
         white-space: pre-wrap;
         font-family: 'Helvetica';
         font-weight: 700;
         font-size: 24px;
         line-height: 32px;
+        height: calc(100% - 96px);
+        display: flex;
+        align-items: center;
         color: #393E46;
 
         @include mobile {
+          height: calc(100% - 40px);
           font-size: 12px;
           line-height: 14px;
         }

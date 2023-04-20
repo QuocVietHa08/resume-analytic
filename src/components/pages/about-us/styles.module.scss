@@ -1,10 +1,10 @@
 @import 'styles/responsive.scss';
 
 .aboutUsDetailContainer {
-  margin-top: 100px;
+  margin-top: 40px;
   margin-bottom: 100px;
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
   justify-content: space-between;
 
   @include mobile {

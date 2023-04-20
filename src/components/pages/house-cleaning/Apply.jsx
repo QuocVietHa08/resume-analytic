@@ -45,8 +45,11 @@ const Apply = ({ title }) => {
       <div className={styles.applyGrid}>
         {APPLY_DATA.map((item) => (
           <div key={item.title} className={styles.applyItem}>
+            <div>
             <img src={item.imgSrc} alt="img" />
+            </div>
             <div className={styles.applyItemTitle}>{item.title}</div>
+
           </div>
         ))}
       </div>

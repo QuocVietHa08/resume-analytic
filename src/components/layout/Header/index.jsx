@@ -22,9 +22,14 @@ const Header = () => {
 
   useEffect(() => {
     const pathname = router.pathname.split('/');
-    const cloneBreadcumb = pathname.map((url, index) =>
-      url === '' ? 'home /' : pathname.length > 2 && index < pathname.length - 1 ? `${url} /` : url.split("-").join(" "),
-    );
+    const cloneBreadcumb = pathname.map((url, index) => {
+      if (url === '') return 'home /';
+      if (pathname.length > 2 && index < pathname.length - 1) return `${url} /`;
+      if (url === 'term') return 'Term & Condition';
+      if (url === 'move') return 'Move In/Move Out Cleaning';
+      if (url === 'faq') return 'FAQ'
+      return url.split('-').join(' ');
+    });
     setBreadCumbs(cloneBreadcumb);
   }, [router]);
 
@@ -33,7 +38,7 @@ const Header = () => {
       <div className={styles.headerWrapper}>
         <div className={styles.logoWrapper}>
           <Link href="/">
-            <img src="/img/header/avatart.svg" alt="avatar" />
+            <img src="/img/header/avatart.jpeg" alt="avatar" />
           </Link>
         </div>
         <div>

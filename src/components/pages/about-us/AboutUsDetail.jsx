@@ -8,7 +8,7 @@ const AboutUsDetail = () => {
   return (
     <div className="pb-100 pb-sp-0">
       <div className={styles.aboutUsDetailContainer}>
-      <div className={styles.imageWrapper}>
+        <div className={styles.imageWrapper}>
           <img src={`${width > 779 ? '/img/about-us/detail/banner1.svg' : `/img/about-us/detail/banner1_sp.svg`}`} alt="img" />
         </div>
         <div className={styles.descWrapper}>
@@ -23,7 +23,6 @@ const AboutUsDetail = () => {
           </p>
           <p>We are here to understand your requirements and to match a carefully balanced solution that satisfies your expectations!</p>
         </div>
-       
       </div>
 
       <div className={styles.aboutUsDetailContainer}>

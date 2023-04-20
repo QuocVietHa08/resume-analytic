@@ -237,7 +237,7 @@ const ServiceFix = () => {
       )}
       <>
         <p className={styles.serviceDes}>
-          {width > 1600 ? (
+          {width > 768 ? (
             <span>
               We offer a wide range of services at Kungfu Helper, click on each of our <br /> main service category below to find out more
               on what we provide in detail!
@@ -249,7 +249,7 @@ const ServiceFix = () => {
             </span>
           )}
         </p>
-        {width > 1600 && (
+        {width > 768 && (
           <>
             <div className={styles.serviceItemsWrapperPCFix}>
               {SERVICE_DETAIL_FIX.map((serviceItems, index) => (
@@ -265,12 +265,12 @@ const ServiceFix = () => {
               ))}
             </div>
             <div className={styles.cannotFindServiceWrapper}>
-              <span className="text-bold font-size-36"> Unable to find the service you are looking for?</span>
-              <div className={styles.buttonContactCannotFind}>Contact Us</div>
+              <span className="text-bold font-size-36 font-size-tb-16"> Unable to find the service you are looking for?</span>
+              <Link href="/contact-us" className={styles.buttonContactCannotFind}>Contact Us</Link>
             </div>
           </>
         )}
-        {width < 1600 && (
+        {width < 768 && (
           <div className={styles.serviceItemsWrapper}>
             <div className={`${styles.serviceItemContainer}`}>
               <div className={styles.serviceItemImageWrapper}>

@@ -40,7 +40,7 @@ const Content = () => {
           <section>
             <img src={`${width > 780 ? `/img/contact/email.svg` : `/img/contact/email_sp.svg`}`} alt="item" />
             <p>Email Address</p>
-            <span className="text-underline">info@kungfuhelper.com.sg</span>
+            <a className="text-underline color-black" href="https://api.whatsapp.com/send/?phone=6588380909">info@kungfuhelper.com.sg</a>
           </section>
         </div>
       </div>

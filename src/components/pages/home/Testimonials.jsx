@@ -25,15 +25,15 @@ const Testimonials = ({ isTestimonialPage = false }) => {
   };
 
   const handleRenderSlide = () => {
-    if (width > 1600) {
+    if (width > 768) {
       return (
         <>
           <div className={styles.testSlider}>
             <img
-              onClick={() => handleSlideGo('left')}
+              onClick={() => handleSlideGo('right')}
               tabIndex={0}
               role="button"
-              onKeyDown={() => handleSlideGo('left')}
+              onKeyDown={() => handleSlideGo('right')}
               src={`${width > 1600 ? `${imgSrcArrowRight}.svg` : `${imgSrcArrowRight}_sp.svg`}`}
               className={styles.testSliderArrowRight}
               alt="arrow"
@@ -103,10 +103,10 @@ const Testimonials = ({ isTestimonialPage = false }) => {
               </div>
             </Carousel>
             <img
-              onClick={() => handleSlideGo('right')}
+              onClick={() => handleSlideGo('left')}
               tabIndex={0}
               role="button"
-              onKeyDown={() => handleSlideGo('right')}
+              onKeyDown={() => handleSlideGo('left')}
               src={`${width > 1600 ? `${imgSrcArrowLeft}.svg` : `${imgSrcArrowLeft}_sp.svg`}`}
               className={styles.testSliderArrowLeft}
               alt="arrow"

@@ -1,6 +1,4 @@
 import React from 'react';
-// import IntroService from '../service/IntroService';
-// import BreadCumbs from '@/components/atoms/breadcumbs';
 import Introduction from '../home/Introduction';
 import Work from '@/components/pages/home/Work';
 import Testimonials from '@/components/pages/home/Testimonials';
@@ -111,25 +109,9 @@ These tasks are typically applicable to indoor areas of the home and are focused
   },
 ];
 
-const BREADCUMBS = [
-  {
-    text: 'Home',
-    link: '/'
-  },
-  {
-    text: 'Services',
-    link: '/service'
-  },
-  {
-    text: 'Part-Time Helper',
-    link: ''
-  }
-]
 const Service = () => {
   return (
     <>
-      {/* <IntroService title="Part-Time Helper" /> */}
-      {/* <BreadCumbs pages={BREADCUMBS} /> */}
       <Introduction imgSrc="/img/parttime-helper/banner"/>
       <CleaningHelper data={PARTTIME_DATA} />
       <Disclaimer />

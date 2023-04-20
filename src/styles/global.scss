@@ -33,6 +33,12 @@ html *::-webkit-scrollbar-track {
   font-weight: 300;
   font-family: 'Helvetica', 'Arial', sans-serif;
   scroll-behavior: smooth;
+
+  svg {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+    image-rendering: pixelated;
+ }
 }
 
 .text-font-family {
@@ -159,6 +165,10 @@ th {
   }
 
   @include tablet {
+    .pt-tb-#{$i} {
+      padding-top: #{$i}px !important;
+    }
+
     .font-size-tb-#{$i} {
       font-size: #{$i}px !important;
     } 
@@ -166,6 +176,7 @@ th {
     .gap-tb-#{$i} {
       gap:#{$i}px !important;
     }
+
     .line-height-tb-#{$i} {
       line-height: #{$i}px !important;
     }

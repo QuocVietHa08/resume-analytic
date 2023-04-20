@@ -1,11 +1,57 @@
-import { Button, Divider, Input } from 'antd';
+import { useState } from 'react';
+import { Button, Divider, Form, Input, notification } from 'antd';
 import Link from 'next/link';
-
 import useDetectWindowSize from '@/hooks/useDetectWindowSize';
 import styles from './styles.module.scss';
 
 const Footer = () => {
   const width = useDetectWindowSize();
+  const [isLoading, setIsLoading] = useState(false);
+  const [formSub] = Form.useForm();
+
+  const handleSubmitForm = (data) => {
+    try {
+      setIsLoading(true);
+      const dataSubmit = {
+        content: data.email,
+        receiverEmail: 'info@kungfuhelper.com.sg',
+        senderEmail: data.email,
+        senderName: data.email,
+      };
+
+      const url = 'https://send-in-blue-api.uc.r.appspot.com/v1/sendinblue/send';
+
+      fetch(url, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          domain_name: 'asure-pro',
+        },
+        body: JSON.stringify(dataSubmit),
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          notification.open({
+            type: 'success',
+            message: 'Email subscriber successfully!',
+          });
+        })
+        .catch((error) => {
+          const errorMessage = JSON.parse(error?.response?.data?.message);
+
+          notification.open({
+            type: 'error',
+            message: errorMessage?.message || 'Please try again!',
+          });
+        })
+        .finally(() => {
+          setIsLoading(false);
+          formSub.resetFields();
+        });
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   return (
     <div className={styles.footerContainer}>
@@ -20,7 +66,7 @@ const Footer = () => {
                 </Link>
               </div>
               <div>
-                <Link className="color-primary-dark font-size-16 text-weight-400" href="/service">
+                <Link className="color-primary-dark font-size-16 text-weight-400" href="/services">
                   Services
                 </Link>
               </div>
@@ -40,7 +86,7 @@ const Footer = () => {
                 </Link>
               </div>
               <div>
-                <Link className="color-primary-dark font-size-16 text-weight-400" href="/contact">
+                <Link className="color-primary-dark font-size-16 text-weight-400" href="/contact-us">
                   Contact Us
                 </Link>
               </div>
@@ -70,9 +116,17 @@ const Footer = () => {
             </div>
             <div>
               <div className={styles.headerText}>Subscribe to our Newsletter</div>
-              <div className={styles.inputWrapper}>
-                <Input className={styles.inputStyle} placeholder="Email" />
-                <Button className={styles.buttonSubs}>Subscribe</Button>
+              <div className="footer-input-wrapper">
+                <Form onFinish={handleSubmitForm} layout="vertical" form={formSub}>
+                  <Form.Item name="email">
+                    <Input className={styles.inputStyle} placeholder="Email" />
+                  </Form.Item>
+                  <Form.Item>
+                    <Button loading={isLoading} htmlType="submit" className={styles.buttonSubs}>
+                      Subscribe
+                    </Button>
+                  </Form.Item>
+                </Form>
               </div>
               <img src="/img/footer/logo.svg" className="w-114 h-81" alt="" />
             </div>
@@ -109,7 +163,7 @@ const Footer = () => {
                     </Link>
                   </p>
                   <p>
-                    <Link className="color-primary text-weight-400" href="/contact">
+                    <Link className="color-primary text-weight-400" href="/contact-us">
                       Contact Us
                     </Link>
                   </p>
@@ -143,11 +197,17 @@ const Footer = () => {
             </div>
             <div className="w-full">
               <div className={styles.headerText}>Subscribe to our Newsletter</div>
-              <div className={styles.inputWrapper}>
-                <Input className={styles.inputStyle} placeholder="Email" />
-                <Button className={styles.buttonSubs}>
-                  <span className="text-bold">Subscribe</span>
-                </Button>
+              <div className="footer-input-wrapper">
+                <Form name={formSub} layout="vertical" onFinish={handleSubmitForm}>
+                  <Form.Item name="email">
+                    <Input className={styles.inputStyle} placeholder="Email" />
+                  </Form.Item>
+                  <Form.Item>
+                    <Button loading={isLoading} htmlType="submit" className={styles.buttonSubs}>
+                      <span className="text-bold">Subscribe</span>
+                    </Button>
+                  </Form.Item>
+                </Form>
               </div>
             </div>
           </div>
@@ -199,7 +259,9 @@ const Footer = () => {
 
             <div className="flex item-center justify-center">
               <img src="/img/footer/cyber-save.svg" alt="" />
-              <p className="text-weight-400">ENTERPRISE ON ASSET-BASED CYBER <br /> DEFENSE AN INITIATIVE BY CSA</p>
+              <p className="text-weight-400">
+                ENTERPRISE ON ASSET-BASED CYBER <br /> DEFENSE AN INITIATIVE BY CSA
+              </p>
             </div>
           </div>
         )}
