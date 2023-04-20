@@ -165,6 +165,11 @@ th {
   }
 
   @include tablet {
+
+    .h-tb-#{$i} {
+      height: #{$i}px !important;
+    }
+
     .pt-tb-#{$i} {
       padding-top: #{$i}px !important;
     }
@@ -183,6 +188,11 @@ th {
   }
 
   @include mobile {
+
+    .h-sp-#{$i} {
+      height: #{$i}px !important;
+    }
+
     .mt-sp-#{$i} {
       margin-top:#{$i}px !important;
     }

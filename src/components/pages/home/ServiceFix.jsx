@@ -26,24 +26,13 @@ const SERVICE_DETAIL_SP = [
     type: 'service',
     imgSrc: '/img/home/service/house_cleaning',
     services: ['Post-Renovation Cleaning', 'Move In / Move out cleaning', 'Spring Cleaning', 'house disinfection'],
-    links: [
-      '/services/post-rennovation-cleaning', 
-      '/services/move', 
-      '/services/spring-cleaning', '/services/house-disinfection'],
+    links: ['/services/post-rennovation-cleaning', '/services/move', '/services/spring-cleaning', '/services/house-disinfection'],
   },
   {
     name: 'Handy Home Services',
     type: 'service',
     imgSrc: '/img/home/service/home_service',
-    services: [
-      'General handyman services',
-      'pool cleaning',
-      'pest control',
-      'landscaping',
-      'flooring',
-      'organising',
-      'moving',
-    ],
+    services: ['General handyman services', 'pool cleaning', 'pest control', 'landscaping', 'flooring', 'organising', 'moving'],
     links: [
       '/services/general-handyman-services',
       '/services/pool-cleaning',
@@ -74,7 +63,15 @@ const SERVICE_DETAIL_SP = [
       'Air Filtration Installation',
       'Gas Top Up ',
     ],
-    links: ['/services/ac-diagnostic-service', '/services/general-servicing'],
+    links: [
+      '/services/ac-diagnostic-service',
+      '/services/general-servicing',
+      '/services/aircon-chemical-wash',
+      '/services/aircon-chemical-overhaul',
+      '/services/condenser-dry-cleaning',
+      '/services/air-filtration-installation',
+      '/services/gas-top-up'
+    ],
   },
 ];
 
@@ -214,7 +211,15 @@ const SERVICE_DETAIL_FIX = [
       'Air Filtration Installation',
       'Gas Top Up ',
     ],
-    links: ['/services/ac-diagnostic-service', '/services/general-servicing'],
+    links: [
+      '/services/ac-diagnostic-service',
+      '/services/general-servicing',
+      '/services/aircon-chemical-wash',
+      '/services/aircon-chemical-overhaul',
+      '/services/condenser-dry-cleaning',
+      '/services/air-filtration-installation',
+      '/services/gas-top-up'
+    ],
   },
 ];
 
@@ -227,7 +232,7 @@ const ServiceFix = () => {
   };
 
   return (
-    <div className={`${styles.serviceContainerFix} ${router.pathname === '/services' ? 'mt-100' : ''}`}>
+    <div className={`${styles.serviceContainerFix} ${router.pathname === '/services' ? 'mt-50' : ''}`}>
       {router.pathname !== '/services' && (
         <h4>
           What
@@ -266,7 +271,9 @@ const ServiceFix = () => {
             </div>
             <div className={styles.cannotFindServiceWrapper}>
               <span className="text-bold font-size-36 font-size-tb-16"> Unable to find the service you are looking for?</span>
-              <Link href="/contact-us" className={styles.buttonContactCannotFind}>Contact Us</Link>
+              <Link href="/contact-us" className={styles.buttonContactCannotFind}>
+                Contact Us
+              </Link>
             </div>
           </>
         )}

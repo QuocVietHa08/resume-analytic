@@ -63,7 +63,7 @@ const Certification = () => {
           CERTIFICATIONS.map((item) => (
             <div key={item.title} className={styles.certificationItem}>
               <div className={styles.certificationImageWrapper}>
-                <img src={`${width > 1600 ? `${item.imgSrc}.svg` : `${item.imgSrc}_sp.svg`}`} alt="item" />
+                <img src={`${width > 1600 ? `${item.imgSrc}.svg` : `${item.imgSrc}.jpeg`}`} alt="item" />
               </div>
               <span>{item.title}</span>
             </div>
@@ -73,7 +73,7 @@ const Certification = () => {
             {CERTIFICATIONS_SP.map((item) => (
               <div key={item.title} className={styles.certificationItem}>
                 <div className={styles.certificationImageWrapper}>
-                  <img src={`${width > 1600 ? `${item.imgSrc}.svg` : `${item.imgSrc}_sp.svg`}`} alt="item" />
+                  <img src={`${width > 1600 ? `${item.imgSrc}.svg` : `${item.imgSrc}.jpeg`}`} alt="item" />
                 </div>
                 <span>{item.title}</span>
               </div>
