@@ -8,20 +8,6 @@ import Apply from '@/components/pages/house-cleaning/Apply';
 import FurnitureUpholsteryService from '@/components/pages/furniture/FurnitureUpholsteryService';
 import Detail from './CurtainCleaningDedail';
 
-const BREADCUMBS = [
-  {
-    text: 'Home',
-    link: '/' 
-  },
-  {
-    text: 'Services',
-    link: '/service'
-  },
-  {
-    text: 'Curtan Cleaning',
-    link: ''
-  }
-]
 const CurtainCleaning = () => {
   return (
     <>

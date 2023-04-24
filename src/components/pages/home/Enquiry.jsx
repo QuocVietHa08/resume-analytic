@@ -28,7 +28,7 @@ const Enquiry = ({ isShowBgImage = true }) => {
 
     api
       .post(url, dataSubmit, { headers })
-      .then((data) => {
+      .then(() => {
         notification.open({
           type: 'success',
           message: 'Email has been sent successfully!',

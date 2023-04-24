@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './styles.module.scss';
-import BreadCumbs from '@/components/atoms/breadcumbs';
+// import BreadCumbs from '@/components/atoms/breadcumbs';
 import useDetectWindowSize from '@/hooks/useDetectWindowSize';
 import GoogleMapComponent from "./Map"
 
@@ -30,7 +30,7 @@ const Content = () => {
             <img src={`${width > 780 ? `/img/contact/phone.svg` : `/img/contact/phone_sp.svg`}`} alt="item" />
             <p>Contact No.</p>
             <span>
-              <a className="color-black" href="https://api.whatsapp.com/send/?phone=6588380909">
+              <a className="color-black font-size-sp-12" href="https://api.whatsapp.com/send/?phone=6588380909">
                 +65 8838 0909
               </a>
               .
@@ -40,7 +40,7 @@ const Content = () => {
           <section>
             <img src={`${width > 780 ? `/img/contact/email.svg` : `/img/contact/email_sp.svg`}`} alt="item" />
             <p>Email Address</p>
-            <a className="text-underline color-black" href="https://api.whatsapp.com/send/?phone=6588380909">info@kungfuhelper.com.sg</a>
+            <a className="text-underline font-size-sp-12 color-black" href="mailto:info@kungfuhelper.com.sg">info@kungfuhelper.com.sg</a>
           </section>
         </div>
       </div>

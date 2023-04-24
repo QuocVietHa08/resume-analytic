@@ -103,8 +103,8 @@ These tasks are typically applicable to indoor areas of the home and are focused
     id: 6,
     title: 'Things to Note',
     imgSrc: '/img/parttime-helper/things-to-note.svg',
-    content: `• Service duration depends on the quantity and complexity of tasks. Not sure how long to book your Part time Helper for? WhatsApp us at +65 8838 0909.
-• Cleaning materials are to be provided for a smooth cleaning experience. See list of cleaning equipment`,
+    content: `• Service duration depends on the quantity and complexity of tasks. Not sure how long to book your Part time Helper for? WhatsApp us at 
+`,
     isPartTimeHelper: true,
   },
 ];

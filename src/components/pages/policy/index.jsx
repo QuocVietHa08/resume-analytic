@@ -1,19 +1,19 @@
 import React from 'react';
 
-import BreadCumbs from '@/components/atoms/breadcumbs';
+// import BreadCumbs from '@/components/atoms/breadcumbs';
 import styles from './styles.module.scss';
-import IntroService from '../service/IntroService';
+// import IntroService from '../service/IntroService';
 
-const BREADCUMBS = [
-  {
-    text: 'Home',
-    link: '/'
-  },
-  {
-    text: 'Privacy Policy',
-    link: ''
-  }
-]
+// const BREADCUMBS = [
+//   {
+//     text: 'Home',
+//     link: '/'
+//   },
+//   {
+//     text: 'Privacy Policy',
+//     link: ''
+//   }
+// ]
 const Policy = () => {
   return (
     <div className={styles.policyContainer}>
@@ -307,7 +307,7 @@ const Policy = () => {
         <div className={styles.policySection}>Contact us</div>
         <p>If you have any questions about this Privacy Policy, You can contact us:</p>
         <ul>
-          <li>By email: info@kungfuhelper.com.sg</li>
+          <li>By email: <a className="color-black-primary" href="mailto:info@kungfuhelper.com.sg">info@kungfuhelper.com.sg</a></li>
         </ul>
       </div>
     </div>

@@ -32,8 +32,6 @@ const dataSource = [
   },
 ];
 
-
-
 const HelperItem = ({ title, imgSrc, content, isPartTimeHelper }) => {
   const width = useDetectWindowSize();
   const [isShowModal, setIsShowModal] = useState(false);
@@ -53,8 +51,8 @@ const HelperItem = ({ title, imgSrc, content, isPartTimeHelper }) => {
   ];
 
   const handleCloseModal = () => {
-    setIsShowModal(false)
-  }
+    setIsShowModal(false);
+  };
 
   return (
     <div className={styles.partimeItem}>
@@ -63,26 +61,51 @@ const HelperItem = ({ title, imgSrc, content, isPartTimeHelper }) => {
       <div className={styles.content}>
         {content}
         {isPartTimeHelper && (
-          // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions
-          <span onClick={() => setIsShowModal(true)}>here.</span>
+          <span>
+            <a
+              className="font-size-20 color-black-primary font-size-tb-16 font-size-sp-12 text-underline"
+              href="https://api.whatsapp.com/send/?phone=6588380909"
+            >
+              +65 8838 0909.
+            </a>
+          </span>
+        )}
+        {isPartTimeHelper && (
+          <div>
+            <span className="font-size-20">
+              • Cleaning materials are to be provided for a smooth cleaning experience. See list of cleaning equipment
+            </span>
+            <span
+              tabIndex={0}
+              role="button"
+              onKeyDown={() => setIsShowModal(true)}
+              className={styles.clickableTag}
+              onClick={() => setIsShowModal(true)}
+            >
+              here.
+            </span>
+          </div>
         )}
       </div>
 
       {isShowModal && (
-        <Modal className='modal-parttime-helper' onCancel={handleCloseModal} footer={null} width={width > 768 ? 1143 : 355} open={isShowModal}>
+        <Modal
+          className="modal-parttime-helper"
+          onCancel={handleCloseModal}
+          footer={null}
+          width={width > 768 ? 1143 : 355}
+          open={isShowModal}
+        >
           <div className="modal-parttime-helper-wrapper">
-
-          <div className="parttime-helper-table-wrapper">
-            <Table
-              columns={columns} 
-              dataSource={dataSource}
-              pagination={false}
-            />   
-          </div> 
-          <div className={styles.noteSection}>
-            <span>Note:</span>
-            The specific cleaning tools and equipment needed may vary depending on the tasks being performed and the specific needs of the client. It is always a good idea to discuss your specific cleaning needs with your cleaner to ensure that all necessary supplies are provided.
-          </div>
+            <div className="parttime-helper-table-wrapper">
+              <Table columns={columns} dataSource={dataSource} pagination={false} />
+            </div>
+            <div className={styles.noteSection}>
+              <span>Note:</span>
+              The specific cleaning tools and equipment needed may vary depending on the tasks being performed and the specific needs of the
+              client. It is always a good idea to discuss your specific cleaning needs with your cleaner to ensure that all necessary
+              supplies are provided.
+            </div>
           </div>
         </Modal>
       )}

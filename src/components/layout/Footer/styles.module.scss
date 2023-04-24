@@ -1,11 +1,12 @@
 @import 'styles/responsive.scss';
 .footerContainer {
-  background-color: #B2D8C8;
+  background-color: #b2d8c8;
   width: 100vw;
 }
 
 .footerWrapper {
   width: 80%;
+  max-width: 1920px;
   padding: 50px 0px;
   color: #36625a;
   font-size: 16px;
@@ -16,8 +17,8 @@
     width: 85%;
   }
   @include mobile {
-    padding: 20px 0px; 
-    width: 85%;  
+    padding: 20px 0px;
+    width: 85%;
   }
 
   .footerLinkInfo {
@@ -26,9 +27,6 @@
     justify-content: space-between;
 
     @include tablet {
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
       gap: 30px;
     }
 
@@ -43,7 +41,6 @@
       display: flex;
       width: 100%;
       justify-content: space-between;
-
     }
   }
 
@@ -63,7 +60,7 @@
   }
 
   .dividerStyle {
-    background-color: #0E8778;
+    background-color: #0e8778;
 
     @include mobile {
       width: 50%;
@@ -80,7 +77,7 @@
   font-weight: 700;
   font-size: 20px;
   line-height: 23px;
-  color: #0E8778;
+  color: #0e8778;
 
   @include mobile {
     font-size: 12px;
@@ -101,7 +98,7 @@
     p {
       font-size: 12px;
       a {
-        color: #36625A;
+        color: #36625a;
         font-weight: 400;
       }
     }
@@ -129,7 +126,7 @@
 
 .buttonSubs {
   color: white !important;
-  background-color: #0E8778 !important;
+  background-color: #0e8778 !important;
   border-top-right-radius: 10px !important;
   border-bottom-right-radius: 10px !important;
   border: none !important;
@@ -144,7 +141,6 @@
   background-color: white;
   border-radius: 10px;
   box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.25);
-
 
   @include mobile {
     margin-top: 10px;
