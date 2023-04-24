@@ -61,7 +61,7 @@ const Content = () => {
           </Panel>
 
           <Panel header="How does the referral system work?" key="5">
-            <div>
+            <div className={styles.reFerralWorkContainer}>
               <div>The referral system works as illustrated below:</div>
               <ReFerralWork />
             </div>

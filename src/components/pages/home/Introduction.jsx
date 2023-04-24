@@ -6,8 +6,8 @@ const Introduction = ({ imgSrc }) => {
   const width = useDetectWindowSize();
 
   const handleOnClickButton = () => {
-    window.location.href = "https://api.whatsapp.com/send/?phone=6588380909"
-  }
+    window.location.href = 'https://api.whatsapp.com/send/?phone=6588380909';
+  };
 
   return (
     <>
@@ -24,7 +24,7 @@ const Introduction = ({ imgSrc }) => {
                   Download our app today to book a cleaning service <br /> with our expert cleaners!
                 </div>
               </div>
-              <div onClick={handleOnClickButton} className={styles.whatAppButton}>
+              <div role="button" tabIndex={0} onKeyDown={handleOnClickButton} onClick={handleOnClickButton} className={styles.whatAppButton}>
                 <div>
                   <img src="/img/home/intro/phone.svg" alt="apple" />
                 </div>
@@ -32,7 +32,7 @@ const Introduction = ({ imgSrc }) => {
               </div>
             </div>
             <div className={styles.cleanerAvatarWrapper}>
-              <img src={ width < 1600 ? `${imgSrc}.jpeg` : `${imgSrc}.jpeg`} alt="cleaner" />
+              <img src={width < 1600 ? `${imgSrc}.jpeg` : `${imgSrc}.jpeg`} alt="cleaner" />
             </div>
           </div>
         </div>
@@ -45,13 +45,11 @@ const Introduction = ({ imgSrc }) => {
                   Best Cleaning <br /> Service Company
                 </div>
                 <div className="font-size-12 font-size-tb-16 mt-5">
-                  We provide top notch cleaning services to our <br /> customers,
-                  ensuring consistency and quality. <br />
-                  Download our app today to book
-                  a cleaning service with <br /> our expert cleaners!
+                  We provide top notch cleaning services to our <br /> customers, ensuring consistency and quality. <br />
+                  Download our app today to book a cleaning service with <br /> our expert cleaners!
                 </div>
               </div>
-              <div onClick={handleOnClickButton} className={styles.whatAppButton}>
+              <div tabIndex={0} onClick={handleOnClickButton} role="button" onKeyDown={handleOnClickButton} className={styles.whatAppButton}>
                 <div>
                   <img src="/img/home/intro/phone.svg" alt="android" />
                 </div>

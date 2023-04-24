@@ -3,6 +3,10 @@
 .applyContainer {
   margin: 80px auto;
 
+  @include tablet {
+    width: 85%;
+  };
+
   @include mobile {
     width: 80%;
     margin: 10px auto;
@@ -16,6 +20,10 @@
     font-family: 'Baloo Da';
     font-weight: 700;
 
+    @include tablet {
+      font-size: 35px;
+    }
+
     @include mobile {
       font-size: 12px;
     }
@@ -27,6 +35,10 @@
       text-decoration: underline;
       text-decoration-color: #fddc3a;
       font-weight: 700;
+
+      @include tablet {
+        font-size: 35px;
+      }
 
       @include mobile {
         font-size: 12px;
@@ -58,6 +70,12 @@
         width: auto;
       }
 
+      @include tablet {
+        img {
+          height: 75px;
+        }
+      }
+
       @include mobile {
         img {
           height: 40px;
@@ -74,6 +92,11 @@
         display: flex;
         align-items: center;
         color: #393E46;
+
+        @include tablet {
+          font-size: 16px;
+          line-height: 18px;
+        }
 
         @include mobile {
           height: calc(100% - 40px);

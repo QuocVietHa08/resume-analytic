@@ -30,7 +30,6 @@ const Header = () => {
     setBreadCumbs(cloneBreadcumb);
   }, [router]);
 
-  console.log('read:', breadcumbs)
 
   const handleRenderPageTitle = (url) => {
     if (url === 'term') return 'Term & Condition';
@@ -72,7 +71,7 @@ const Header = () => {
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="text-font-family text-normal">
+                <Link href="/contact-us" className="text-font-family text-normal">
                   Contact Us
                 </Link>
               </li>
@@ -114,7 +113,7 @@ const Header = () => {
               </Link>
             </p>
             <p onClick={onClose} role="button" tabIndex={0} onKeyDown={onClose}>
-              <Link href="/contact" className="text-font-family">
+              <Link href="/contact-us" className="text-font-family">
                 Contact Us
               </Link>
             </p>

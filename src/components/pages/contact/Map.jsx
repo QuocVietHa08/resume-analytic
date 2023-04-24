@@ -48,6 +48,7 @@ const GoogleMapComponent = () => {
               strokeColor: 'red',
               scale: 10,
               scaledSize: 500,
+              borderColor: 'red',
             }}
             onLoad={onLoad}
             position={position}
@@ -55,7 +56,7 @@ const GoogleMapComponent = () => {
 
           <InfoWindow onLoad={onLoad} position={position}>
             <div style={divStyle}>
-              <h1>InfoWindow helllo</h1>
+              <h1>31 WOODLANDS CLOSE #03-11 WOODLANDS HORIZON, 737855</h1>
             </div>
           </InfoWindow>
         </>

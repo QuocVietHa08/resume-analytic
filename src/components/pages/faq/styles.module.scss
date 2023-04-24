@@ -5,7 +5,7 @@
   margin: 0 auto;
 
   @include mobile {
-    width: 90%;
+    width: 100%;
   }
 }
 
@@ -104,5 +104,13 @@
   @include mobile {
     font-size: 20px;
     margin-top: 80px;
+  }
+}
+
+.reFerralWorkContainer {
+
+  @include mobile {
+    width: 90%;
+    margin: 0 auto;
   }
 }
