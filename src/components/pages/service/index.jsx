@@ -6,7 +6,7 @@ const Service = () => {
   return (
     <>
       <ServiceFix />
-      <div className="mt-150 mt-sp-50">
+      <div className=" mt-sp-50 mt-100 ">
         <Enquiry />
       </div>
     </>

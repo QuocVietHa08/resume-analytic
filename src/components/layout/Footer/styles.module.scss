@@ -47,7 +47,6 @@
   .footerCopyRight {
     display: flex;
     justify-content: space-between;
-
     @include mobile {
       flex-direction: column;
       gap: 10px;
@@ -158,7 +157,7 @@
 
 .dividerWrapper {
   @include mobile {
-    width: 80%;
+    width: 100%;
     margin: 0 auto;
   }
 }

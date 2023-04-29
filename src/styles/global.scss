@@ -504,3 +504,9 @@ th {
 .line-height-unset {
   line-height: unset;
 }
+
+.max-width-400px {
+  @media screen and (min-width: 768px) {
+    max-width: 400px;
+  }
+}
