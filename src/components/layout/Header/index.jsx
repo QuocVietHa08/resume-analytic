@@ -104,7 +104,7 @@ const Header = () => {
             </p>
             <p onClick={onClose} role="button" tabIndex={0} onKeyDown={onClose}>
               <Link href="/services" className="text-font-family">
-                Service
+                Services
               </Link>
             </p>
             <p onClick={onClose} role="button" tabIndex={0} onKeyDown={onClose}>

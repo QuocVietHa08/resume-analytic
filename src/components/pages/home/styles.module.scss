@@ -161,14 +161,14 @@
 // service
 .serviceContainer {
   width: 100vw;
-  padding: 0 30px;
+  // padding: 0 30px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 
   @include mobile {
-    padding: 0 20px;
+    padding: 0 0px;
   }
 
   h4 {
@@ -232,10 +232,9 @@
     margin: 0 auto;
 
     @include mobile {
-      flex-direction: column;
       justify-content: center;
-      flex-wrap: nowrap;
-      width: 100%;
+      margin-top: 13px;
+      width: 90%;
     }
   }
   .serviceItemsWrapperPC {
@@ -267,10 +266,13 @@
     }
   }
   @include mobile {
-    width: 100%;
+    width: 28%;
     gap: 20px;
-    padding: 15px 25px;
-    margin: 15px auto;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    margin: 8px auto;
 
     img {
       width: 50px;
@@ -324,19 +326,6 @@
 .serviceItemContainerActive {
   @extend .serviceItemContainer;
   background-color: #0e8778;
-  align-items: unset
-}
-
-.serviceItemContactContainer {
-  @extend .serviceItemContainer;
-  flex-direction: column;
-  background-color: #3e9f93;
-  align-items: flex-start;
-  gap: 20px;
-
-  span {
-    color: white;
-  }
 }
 
 .contactButton {
@@ -456,6 +445,10 @@
   margin-top: 70px;
   gap: 30px;
 
+  @include mobile {
+    margin-top: 50px;
+  }
+
   .buttonContactCannotFind {
     color: #0E8778;
     font-size: 20px;
@@ -475,6 +468,42 @@
   }
 }
 
+.showServicesDetail {
+  margin: 20px auto;
+  width: 90%;
+  background: #FFFFFF;
+  border: 1px solid #86C3BB;
+  padding: 22px;
+  border-radius: 10px;
+}
+
+.showServiceItemDetail {
+  display: flex;
+  gap: 22px;
+  width: 100%;
+
+  img {
+    width: 50px;
+    height: 50px;
+  }
+  .detail {
+    p {
+
+    color: #333;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: capitalize;
+    }
+  }
+
+  .serviceLinkWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    font-size: 12px;
+    color: #333;
+  }
+}
 // Work
 
 .workContainer {

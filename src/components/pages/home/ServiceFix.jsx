@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
@@ -6,133 +6,6 @@ import ServiceItem from './ServiceItem';
 import ServiceItemFix from './ServiceItemFix';
 import styles from './styles.module.scss';
 import useDetectWindowSize from '@/hooks/useDetectWindowSize';
-
-const SERVICE_DETAIL_SP = [
-  {
-    name: 'Furniture & Upholstery Cleaning',
-    type: 'service',
-    imgSrc: '/img/home/service/furniture',
-    services: ['Curtain Cleaning', 'Carpet Cleaning', 'Sofa Cleaning', 'Mattress Cleaning', 'Upholstery Cleaning'],
-    links: [
-      '/services/curtain-cleaning',
-      '/services/carpet-cleaning',
-      '/services/sofa-cleaning',
-      '/services/mattress-cleaning',
-      '/services/upholstery-cleaning',
-    ],
-  },
-  {
-    name: 'House Cleaning',
-    type: 'service',
-    imgSrc: '/img/home/service/house_cleaning',
-    services: ['Post-Renovation Cleaning', 'Move In / Move out cleaning', 'Spring Cleaning', 'house disinfection'],
-    links: ['/services/post-rennovation-cleaning', '/services/move', '/services/spring-cleaning', '/services/house-disinfection'],
-  },
-  {
-    name: 'Handy Home Services',
-    type: 'service',
-    imgSrc: '/img/home/service/home_service',
-    services: ['General handyman services', 'pool cleaning', 'pest control', 'landscaping', 'flooring', 'organising', 'moving'],
-    links: [
-      '/services/general-handyman-services',
-      '/services/pool-cleaning',
-      '/services/pest-control',
-      '/services/landscaping-services',
-      '/services/flooring-services',
-      '/services/organising-services',
-      '/services/moving-services',
-    ],
-  },
-  {
-    name: 'Office Cleaning',
-    type: 'service',
-    imgSrc: '/img/home/service/office_cleaning',
-    services: ['General office cleaning', 'Office Disinfection'],
-    links: ['/services/general-office-cleaning', '/services/general-office-disinfection'],
-  },
-  {
-    name: 'Aircon Services',
-    type: 'service',
-    imgSrc: '/img/home/service/aircon_service',
-    services: [
-      'AC Diagnostic Service',
-      'General Servicing',
-      'Aircon Chemical Wash',
-      'Aircon Chemical Overhaul',
-      'Condenser Dry Cleaning',
-      'Air Filtration Installation',
-      'Gas Top Up ',
-    ],
-    links: [
-      '/services/ac-diagnostic-service',
-      '/services/general-servicing',
-      '/services/aircon-chemical-wash',
-      '/services/aircon-chemical-overhaul',
-      '/services/condenser-dry-cleaning',
-      '/services/air-filtration-installation',
-      '/services/gas-top-up'
-    ],
-  },
-];
-
-// const SERVICE_DETAIL = [
-//   [
-//     {
-//       name: 'Furniture & Upholstery Cleaning',
-//       type: 'service',
-//       imgSrc: '/img/home/service/furniture',
-//       services: ['Curtain Cleaning', 'Carpet Cleaning', 'Sofa Cleaning', 'Mattress Cleaning', 'Upholstery Cleaning'],
-//       links: [
-//         '/furniture/curtain-cleaning',
-//         '/furniture/carpet-cleaning',
-//         '/furniture/sofa-cleaning',
-//         '/furniture/mattress-cleaning',
-//         '/furniture/upholstery-cleaning',
-//       ],
-//     },
-//     {
-//       name: 'House Cleaning',
-//       type: 'service',
-//       imgSrc: '/img/home/service/house_cleaning',
-//       services: ['Post-Renovation Cleaning', 'Move In / Move out cleaning', 'Spring Cleaning', 'house disinfection'],
-//       links: ['/house-service/post-renovation', '/house-service/move', '/house-service/spring', '/house-service/house-disinfection'],
-//     },
-//   ],
-//   [
-//     {
-//       name: 'Handy Home Services',
-//       type: 'service',
-//       imgSrc: '/img/home/service/home_service',
-//       services: [
-//         'General handyman services',
-//         'aircon servicing',
-//         'pool cleaning',
-//         'pest control',
-//         'landscaping',
-//         'flooring',
-//         'organising',
-//         'moving',
-//       ],
-//       links: [
-//         'handyman-service',
-//         'aircon-service',
-//         'pool-cleaning',
-//         'pest-control',
-//         'landscaping-services',
-//         'flooring-services',
-//         'organising-services',
-//         'moving-services',
-//       ],
-//     },
-//     {
-//       name: 'Office Cleaning',
-//       type: 'service',
-//       imgSrc: '/img/home/service/office_cleaning',
-//       services: ['General office cleaning', 'Office Disinfection'],
-//       links: ['office-cleaning', 'office-disinfection'],
-//     },
-//   ],
-// ];
 
 const SERVICE_DETAIL_FIX = [
   {
@@ -218,7 +91,7 @@ const SERVICE_DETAIL_FIX = [
       '/services/aircon-chemical-overhaul',
       '/services/condenser-dry-cleaning',
       '/services/air-filtration-installation',
-      '/services/gas-top-up'
+      '/services/gas-top-up',
     ],
   },
 ];
@@ -230,6 +103,31 @@ const ServiceFix = () => {
   const handlSetActiveService = (id) => {
     setActiveService(id);
   };
+
+  const handleRenderActiveService = useCallback(() => {
+    return SERVICE_DETAIL_FIX.map((service) => {
+      if (service.name === activeService) {
+        return (
+          <div className={styles.showServiceItemDetail} key={service.name}>
+            <div>
+              <img src={`${service.imgSrc}.svg`} alt="img" />
+            </div>
+            <div className={styles.detail}>
+              <p>{service.name}</p>
+              <div className={styles.serviceLinkWrapper}>
+                {service.services?.map((serviceItem, index) => (
+                  <Link key={serviceItem} href={service.links?.[index] || '/service'}>
+                    <div className="font-size-sp-12 hover-underline text-capitalize color-black">{serviceItem}</div>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </div>
+        );
+      }
+      return <></>;
+    });
+  }, [activeService]);
 
   return (
     <div className={`${styles.serviceContainerFix} ${router.pathname === '/services' ? 'mt-50' : ''}`}>
@@ -257,8 +155,8 @@ const ServiceFix = () => {
         {width > 768 && (
           <>
             <div className={styles.serviceItemsWrapperPCFix}>
-              {SERVICE_DETAIL_FIX.map((serviceItems, index) => (
-                <React.Fragment key={index}>
+              {SERVICE_DETAIL_FIX.map((serviceItems) => (
+                <React.Fragment key={serviceItems}>
                   <ServiceItemFix
                     imgSrc={serviceItems.imgSrc}
                     services={serviceItems.services}
@@ -278,46 +176,22 @@ const ServiceFix = () => {
           </>
         )}
         {width < 768 && (
-          <div className={styles.serviceItemsWrapper}>
-            <div className={`${styles.serviceItemContainer}`}>
-              <div className={styles.serviceItemImageWrapper}>
-                <img src="/img/home/service/part_time.svg" alt="img" />
-              </div>
-              <div className="flex flex-column gap-20 gap-tb-0 gap-sp-5">
-                <span className="text-bold font-size-tb-16 color-primary">Part-time Helper </span>
-                <>
-                  <Link href="/services/part-time-helper">
-                    <div className="flex gap-10 item-center">
-                      <p className="font-size-tb-16">Find Out More</p>
-                      <span className={styles.dropdownStyle}>
-                        <img src="/img/home/service/arrow.svg" alt="arrow" />
-                      </span>
-                    </div>
-                  </Link>
-                </>
-              </div>
+          <div>
+            <div className={styles.serviceItemsWrapper}>
+              {SERVICE_DETAIL_FIX.map((item) => (
+                <React.Fragment key={item.name}>
+                  <ServiceItem activeService={activeService} handleOnClick={handlSetActiveService} imgSrc={item.imgSrc} title={item.name} />
+                </React.Fragment>
+              ))}
             </div>
-
-            {SERVICE_DETAIL_SP.map((item) => (
-              <React.Fragment key={item.name}>
-                <ServiceItem
-                  activeService={activeService}
-                  handleOnClick={handlSetActiveService}
-                  imgSrc={item.imgSrc}
-                  services={item.services}
-                  links={item.links}
-                  title={item.name}
-                  type={item.type}
-                />
-              </React.Fragment>
-            ))}
-            <div className={`${styles.serviceItemContactContainer}`}>
-              <span className="text-bold color-white font-size-tb-16 ">Unable to find the service you are looking for?</span>
-              <>
-                <button type="button" onClick={() => router.push('/contact')} className={styles.contactButton}>
-                  <span className="font-size-tb-16">Contact Us</span>
-                </button>
-              </>
+            {activeService.length > 0 && (
+              <div className={styles.showServicesDetail}>{handleRenderActiveService()}</div>
+            )}
+            <div className={styles.cannotFindServiceWrapper}>
+              <span className="text-bold font-size-tb-16"> Unable to find the service you are looking for?</span>
+              <Link href="/contact-us" className={styles.buttonContactCannotFind}>
+                Contact Us
+              </Link>
             </div>
           </div>
         )}

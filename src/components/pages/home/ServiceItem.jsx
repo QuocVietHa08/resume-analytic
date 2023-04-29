@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import Link from 'next/link';
 import styles from './styles.module.scss';
 
-const ServiceItem = ({ activeService, title, imgSrc, services, handleOnClick, links = [] }) => {
+const ServiceItem = ({ activeService, title, imgSrc, handleOnClick }) => {
   const [isActive, setIsActive] = useState(false);
 
   useEffect(() => {
@@ -21,25 +20,8 @@ const ServiceItem = ({ activeService, title, imgSrc, services, handleOnClick, li
       className={`${isActive ? styles.serviceItemContainerActive : styles.serviceItemContainer}`}
     >
       <div>{isActive ? <img src={`${imgSrc}_active.svg`} alt="img" /> : <img src={`${imgSrc}.svg`} alt="img" />}</div>
-      <div className="flex flex-column gap-sp-5">
-        <span className={`text-bold ${isActive ? 'color-white-i' : 'color-primary'}`}>{title} </span>
-        <>
-          <div className="flex flex-column gap-10">
-            <div className="flex item-center gap-20 gap-tb-10 gap-sp-10">
-              <p className={`${isActive ? 'color-white-i' : ''}`}>View Services</p>
-              <span className={styles.dropdownStyle}>
-                <img src={`/img/home/service/${isActive ? 'dropup' : 'dropdown'}.svg`} alt="dropdown" />
-              </span>
-            </div>
-            <div className={`${!isActive ? 'none' : ''} transition-height flex flex-column gap-10`}>
-              {services?.map((service, index) => (
-                <Link key={service} href={links?.[index] || '/service'}>
-                  <div className="font-size-18 font-size-sp-12 hover-underline text-capitalize color-white text-bold">{service}</div>
-                </Link>
-              ))}
-            </div>
-          </div>
-        </>
+      <div className="flex flex-column text-center items-center gap-sp-5">
+        <span className={`text-normal ${isActive ? 'color-white-i' : 'color-primary'}`}>{title} </span>
       </div>
     </div>
   );

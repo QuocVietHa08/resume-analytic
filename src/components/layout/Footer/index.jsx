@@ -49,7 +49,7 @@ const Footer = () => {
           formSub.resetFields();
         });
     } catch (error) {
-      console.log(error);
+      console.error(error);
     }
   };
 
@@ -199,7 +199,7 @@ const Footer = () => {
                 <img src="/img/footer/logo.svg" className="w-75 h-55 mt-sp-30" alt="" />
               </div>
             </div>
-            <div className="w-full">
+            <div className="w-full max-width-400px">
               <div className={styles.headerText}>Subscribe to our Newsletter</div>
               <div className="footer-input-wrapper">
                 <Form name={formSub} layout="vertical" onFinish={handleSubmitForm}>
