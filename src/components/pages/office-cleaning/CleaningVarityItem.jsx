@@ -27,7 +27,7 @@ const CleaningVarityItem = ({ item }) => {
             <img src={`${width > 1600 ? `${item.img}.svg` : `${item.img}_sp.svg`}`} className={styles.itemImage} alt="cleaning" />
           </div>
           <div className="h-50pr font-size-tb-20 flex flex-column justify-between">
-          <p className="font-size-tb-20">{item.text}</p>
+          <p className="font-size-tb-16">{item.text}</p>
           <span>
             <div className="color-primary font-size-tb-16 font-size-sp-12 text-bold flex gap-10">
               Find out more

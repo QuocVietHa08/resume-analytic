@@ -32,7 +32,7 @@ const Header = () => {
 
 
   const handleRenderPageTitle = (url) => {
-    if (url === 'term') return 'Term & Condition';
+    if (url === 'term') return 'Term & Conditions';
     if (url === 'move') return 'Move In/Move Out Cleaning';
     if (url === 'faq') return 'FAQ'
     return url?.split('-')?.join(' ');

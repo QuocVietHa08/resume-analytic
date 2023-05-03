@@ -57,7 +57,7 @@ const HELPER_DATA = [
   },
   {
     id: 6,
-    title: 'Service Does not include',
+    title: 'Service Does Not Include',
     imgSrc: '/img/house-cleaning/not-include.svg',
     content: `• Handy home service
 • Furniture & upholstery service

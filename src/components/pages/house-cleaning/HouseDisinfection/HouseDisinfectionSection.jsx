@@ -20,7 +20,7 @@ const HouseDisinfectionSection = () => {
   return (
     <div className={styles.houseSectionConatiner}>
       <div className={styles.houseTitle}>
-        Product and technologies used
+        <span className="text-font-family">Product And Technologies Used</span>
         <p>
           KungFu Helper will be providing effective product / device for the disinfection service, every medical disinfectant is comply with
           international standards.{' '}
@@ -34,7 +34,9 @@ const HouseDisinfectionSection = () => {
           </div>
         ))}
       </div>
-      <div className={styles.houseTitle}>Our House Disinfection Service Includes:</div>
+      <div className={styles.houseTitle}>
+        <span className="text-font-family">Our House Disinfection Service Includes:</span>
+      </div>
       {SERVICES.map((service) => (
         <div key={service.title} className={styles.serviceItem}>
           <img src={service.imgSrc} alt="img" />

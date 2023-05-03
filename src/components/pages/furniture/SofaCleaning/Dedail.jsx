@@ -26,9 +26,9 @@ const Detail = () => {
       </div>
       <div className={styles.serviceDetail}>
          <div className={styles.serviceDetailContent}>
-          <div className={`${styles.introTextDetail} text-left mb-30 mb-sp-20`}>
+          {/* <div className={`${styles.introTextDetail} text-left mb-30 mb-sp-20`}>
             Discover why we are different and what you can expect from KungFu Helper cleaning company as standard.
-          </div>
+          </div> */}
           <div className="flex flex-column gap-30 gap-sp-10">
             {DETAIL_LIST.map((item) => (
               <div className={styles.poolingDetailContent} key={item}>

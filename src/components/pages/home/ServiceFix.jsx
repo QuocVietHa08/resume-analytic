@@ -27,6 +27,8 @@ const SERVICE_DETAIL_FIX = [
       '/services/part-time-helper',
       '/services/part-time-helper',
       '/services/part-time-helper',
+      '/services/part-time-helper',
+      '/services/part-time-helper',
     ],
   },
   {
@@ -47,7 +49,7 @@ const SERVICE_DETAIL_FIX = [
     type: 'service',
     imgSrc: '/img/home/service/house_cleaning',
     services: ['Post-Renovation Cleaning', 'Move In / Move out cleaning', 'Spring Cleaning', 'house disinfection'],
-    links: ['/services/post-rennovation-cleaning', '/services/move', '/services/spring-cleaning', '/services/house-disinfection'],
+    links: ['/services/post-renovation-cleaning', '/services/move', '/services/spring-cleaning', '/services/house-disinfection'],
   },
   {
     name: 'Handy Home Services',
@@ -135,7 +137,7 @@ const ServiceFix = () => {
         <h4>
           What
           <span>Services</span>
-          Do {width < 768 && <br />} We Provice ?
+          Do {width < 768 && <br />} We Provide ?
         </h4>
       )}
       <>
