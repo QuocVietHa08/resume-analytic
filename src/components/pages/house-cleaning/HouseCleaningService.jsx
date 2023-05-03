@@ -6,7 +6,7 @@ const HOUSE_SERVICE = [
   {
     text: 'Post-Renovation Cleaning',
     img: '/img/house-cleaning/post-renovation',
-    link: '/services/post-rennovation-cleaning',
+    link: '/services/post-renovation-cleaning',
     type: 'info',
   },
   {

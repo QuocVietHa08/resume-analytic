@@ -25,7 +25,7 @@ const Footer = () => {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          domain_name: 'asure-pro',
+          domain_name: 'kungfu-helper',
         },
         body: JSON.stringify(dataSubmit),
       })

@@ -189,16 +189,41 @@
   @extend .cleaningVarityItems;
   justify-content: center;
   gap: 50px;
+  max-width: 1450px;
 
   @include tablet {
-    justify-content: space-between;
-    width: 90%;
+    width: 100%;
+    max-width: 1024px;
+    margin: 0 auto;
+    gap: 40px;
   }
 
   @include mobile {
-    justify-content: space-between;
+    // justify-content: space-between;
     width: 100%;
-    gap: 0px;
+    gap: 28px;
+  }
+}
+
+.clearningVarityFor8Items {
+  width: 95% !important;
+  max-width: 1920px;
+  justify-content: center;
+
+  @include mobile {
+    gap: 10px;
+  }
+}
+
+.cleaningVarityFor5Items {
+  @media screen and (max-width: 906px) {
+    max-width: 500px;
+    justify-content: space-between;
+  }
+
+  @include mobile {
+    max-width: 335px;
+    justify-content: space-between;
   }
 }
 
@@ -215,9 +240,8 @@
   margin-top: 35px;
 
   @include tablet {
-    width: 250px;
-    height: 200px;
-    height: 250px;
+    width: 230px;
+    height: 230px;
   }
 
   @include mobile {
@@ -234,7 +258,7 @@
     padding: 20px;
     width: 329px;
     max-width: 329px;   
-  
+
     @include mobile {
       padding: 10px;
     }
@@ -244,8 +268,8 @@
     background: #0e8778;
     border-radius: 20px;
     padding: 20px;
-    width: 329px;
-    max-width: 329px;
+    // width: 329px;
+    // max-width: 329px;
 
     @include mobile {
       padding: 10px;
@@ -273,7 +297,7 @@
       padding: 5px 5px;
 
       @include tablet {
-        margin-top: 100px;
+        margin-top: 55px;
       }
 
       @include mobile {
@@ -409,4 +433,10 @@
       }
     }
   }
+}
+
+
+.cleaningVarityWrapperList {
+  max-width: 1920px;
+  margin: 0 auto;
 }

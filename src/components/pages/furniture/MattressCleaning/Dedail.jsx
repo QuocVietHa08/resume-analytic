@@ -36,7 +36,7 @@ const Detail = () => {
 
   return (
     <div className={styles.airconServiceDetailContainer}>
-      <div className={`${styles.introText} mt-100 mb-150 mt-sp-40 mb-sp-40`}>
+      <div className={`${styles.introText} ${styles.introTextCarpetCleaning}`}>
         Feel your mattress as good as new, safety checklist with kids, pets, and the environment in mind
       </div>
       <div className={styles.serviceDetail}>
@@ -46,8 +46,8 @@ const Detail = () => {
           </div>
           <div className="flex flex-column gap-30 gap-sp-10">
             {DETAIL_LIST.map((item) => (
-              <div className={styles.poolingDetailContent} key={item}>
-                <img src={`${width > 779 ? `${item.imgSrc}.svg` : `${item.imgSrc}.svg`}`} alt="img" />
+              <div className={`${styles.poolingDetailContent} item-flex-start`} key={item}>
+                <img className={styles.carpetImageStyle} src={`${width > 779 ? `${item.imgSrc}.svg` : `${item.imgSrc}.svg`}`} alt="img" />
                 <div>
                   <div className={styles.poolingDetailTitle}>{item.title}</div>
                   <span>{item.text}</span>

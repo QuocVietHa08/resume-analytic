@@ -10,7 +10,7 @@ const ServiceItemFix = ({ title, imgSrc, services, links = [] }) => {
         <img src={`${imgSrc}.svg`} alt="img" />
       </div>
       <div className="flex flex-column gap-sp-5">
-        <span className="text-bold font-size-20 font-size-tb-16 text-bold pt-tb-15 pt-25 pb-20">{title} </span>
+        <span className="text-bold font-size-20 font-size-tb-18 text-bold pt-tb-15 pt-25 pb-20">{title} </span>
         <div className="flex flex-column gap-10 gap-tb-5">
           <div className="transition-height flex flex-column gap-10">
             {services?.map((service, index) => (

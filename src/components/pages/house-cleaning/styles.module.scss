@@ -5,7 +5,7 @@
 
   @include tablet {
     width: 85%;
-  };
+  }
 
   @include mobile {
     width: 80%;
@@ -91,7 +91,7 @@
         height: calc(100% - 96px);
         display: flex;
         align-items: center;
-        color: #393E46;
+        color: #393e46;
 
         @include tablet {
           font-size: 16px;
@@ -118,20 +118,28 @@
   }
 
   .houseTitle {
-    font-weight: 700;
-    font-size: 32px;
-    line-height: 32px;
-    text-transform: capitalize;
-    color: #0E8778;
+    span {
+      color: #0e8778;
+      font-weight: 700;
+      font-size: 32px;
 
-    @include mobile {
-      font-size: 14px;
-      line-height: 14px;
+      @include mobile {
+        font-size: 20px;
+      }
     }
 
     p {
+      font-size: 24px;
       margin-top: 10px;
-      color: #333333
+      color: #333333;
+
+      @include tablet {
+        font-size: 16px;
+      }
+
+      @include mobile {
+        font-size: 12px;
+      }
     }
   }
 
@@ -143,12 +151,12 @@
 
     @include mobile {
       grid-template-columns: repeat(1, minmax(0, 1fr));
-      gap: 18px
+      gap: 18px;
     }
 
     .productItem {
-      background: #FFFFFF;
-      border: 1px solid #0E8778;
+      background: #ffffff;
+      border: 1px solid #0e8778;
       box-shadow: 0px 0px 20px 5px rgba(178, 216, 200, 0.25);
       border-radius: 10px;
       padding-top: 26px;
@@ -172,9 +180,13 @@
         line-height: 30px;
         text-align: center;
         text-transform: capitalize;
-        color: #0E8778;
+        color: #0e8778;
         white-space: pre-wrap;
         margin-top: 30px;
+
+        @include tablet {
+          font-size: 16px;
+        }
 
         @include mobile {
           font-size: 12px;
@@ -204,6 +216,10 @@
       text-transform: capitalize;
       color: #333333;
       padding-left: 30px;
+      
+      @include tablet{
+        font-size: 16px;
+      }
 
       @include mobile {
         font-size: 12px;

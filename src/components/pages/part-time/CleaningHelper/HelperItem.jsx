@@ -72,7 +72,7 @@ const HelperItem = ({ title, imgSrc, content, isPartTimeHelper }) => {
         )}
         {isPartTimeHelper && (
           <div>
-            <span className="font-size-20">
+            <span className="font-size-20 font-size-sp-12 font-size-tb-16">
               • Cleaning materials are to be provided for a smooth cleaning experience. See list of cleaning equipment
             </span>
             <span
