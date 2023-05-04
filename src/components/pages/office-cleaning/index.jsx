@@ -1,5 +1,5 @@
 import React from 'react';
-import Download from '../home/Download';
+// import Download from '../home/Download';
 import Enquiry from '../home/Enquiry';
 import Testimonials from '../home/Testimonials';
 import styles from './styles.module.scss';

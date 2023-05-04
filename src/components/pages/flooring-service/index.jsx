@@ -5,7 +5,6 @@ import Work from '../home/Work';
 import CleaningService from '../office-cleaning/CleaningService';
 import CleaningVarity from '../office-cleaning/CleaningVarity';
 import Disclaimer from '../office-cleaning/Disclaimer';
-import IntroService from '../service/IntroService';
 import Detail from './Detail';
 import Introduction from '../home/Introduction';
 

@@ -5,7 +5,7 @@
 }
 
 .handymanServiceDetail {
-  width: 90%;
+  width: 80%;
   margin: 0 auto;
 
   .introText {
@@ -44,7 +44,17 @@
 
     @include mobile {
       width: 90%;
-      margin: 30px auto;
+      margin-top: 10px;
     }
+  }
+}
+
+.disclaimerWrapper {
+  margin-top: 150px;
+  margin-bottom: 170px;
+
+  @include mobile {
+    margin-top: 20px;
+    margin-bottom: 100px;
   }
 }

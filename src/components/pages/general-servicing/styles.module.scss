@@ -8,6 +8,10 @@
   width: 80%;
   margin: 0 auto;
 
+  @include mobile {
+    width: 85%;
+  }
+
   .introText {
     font-size: 32px;
     color: #0e8778;
@@ -52,7 +56,7 @@
 
 .cleaningItem {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 30px;
 
   @include tablet {
@@ -61,6 +65,13 @@
 
   @include mobile {
     gap: 20px;
+  }
+
+  img {
+    @include mobile {
+      height: 12px;
+      margin-top: 2px;
+    }
   }
 
   span {
