@@ -3,16 +3,8 @@ const path = require('path');
 module.exports = {
   reactStrictMode: true,
   env: {
-    BASE_URL: process.env.BASE_URL,
-    ADDRESS_NFT_MARKET: process.env.ADDRESS_NFT_MARKET,
-    ADDRESS_NFT_MARKET_POLYGON: process.env.ADDRESS_NFT_MARKET_POLYGON,
-    ADDRESS_NFT_MARKET_ETH: process.env.ADDRESS_NFT_MARKET_ETH,
-    METAHERO_NFT_ADDRESS_POLYGON: process.env.METAHERO_NFT_ADDRESS_POLYGON,
-    METAHERO_NFT_ADDRESS_ETH: process.env.METAHERO_NFT_ADDRESS_ETH,
-
-    ADDRESS_COLLECTION_MARKET_POLYGON:process.env.ADDRESS_COLLECTION_MARKET_POLYGON,
-    ADDRESS_COLLECTION_MARKET_ETH:process.env.ADDRESS_COLLECTION_MARKET_ETH
-
+    GOOGLE_MAP_API_KEY: process.env.GOOGLE_MAP_API_KEY,
+    SEND_IN_BLUE_URL: process.env.SEND_IN_BLUE_URL,
   },
   sassOptions: {
     fiber: false,

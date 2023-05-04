@@ -21,17 +21,18 @@
       position: relative;
 
       @include mobile {
-        padding-top:20px ;
+        padding-top: 20px;
       }
 
       .contactInfoCard {
         display: flex;
         gap: 50px;
         position: absolute;
-        bottom: -10%;
-      
+        bottom: -20%;
+
         @include mobile {
           gap: 10px;
+          bottom: -40%;
         }
 
         section {
@@ -49,13 +50,20 @@
 
           @include tablet {
             width: 250px;
+            height: 160px;
           }
 
           @include mobile {
-            width: 160px;
+            width: 150px;
             height: 105px;
             gap: 5px;
             padding: 10px;
+          }
+
+          img {
+            @include tablet {
+              width: 30px;
+            }
           }
 
           p {
@@ -63,6 +71,11 @@
             font-weight: 700;
             font-size: 16px;
             color: #0e8778;
+
+            @include tablet {
+              font-size: 14px;
+              margin-bottom: 0px;
+            }
 
             @include mobile {
               font-size: 12px;
@@ -76,7 +89,6 @@
               font-size: 12px;
             }
           }
-
         }
       }
 
@@ -88,12 +100,363 @@
         max-height: 704px;
         filter: drop-shadow(0px 3px 6px rgba(0, 0, 0, 0.25));
         border-radius: 10px;
+        position: relative;
 
         @include tablet {
-          width: 90%;
-          // height: 300px;
+          width: 730px;
+          min-height: 300px;
         }
-        
+
+        @include mobile {
+          width: 335px;
+          min-height: 100px;
+        }
+      }
+    }
+  }
+}
+.sidebarMapWrapper {
+  width: 30%;
+  height: 98%;
+  position: absolute;
+  z-index: 2;
+  left: 10px;
+  bottom: 0;
+  // overflow: hidden;
+  background-color: white;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  
+}
+
+.closeSidebarButton {
+  background-color: white;
+  width: 20px;
+  height: 50px;
+
+  position: absolute;
+  right: -20px;
+  top: 40%;
+  z-index: 99;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  transition: all 0.5s ease-in-out;
+  box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.12);
+
+  @include mobile {
+    width: 7px;
+    height: 20px;
+    right: -7px;
+  }
+
+  img {
+    width: 40px;
+
+    @include mobile {
+     width: 20px; 
+    }
+  }
+}
+
+.closeSidebarButtonClose {
+  background-color: white;
+  width: 20px;
+  height: 50px;
+  position: absolute;
+  z-index: 99;
+  top: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.12);
+  transition: all 0.5s ease-in-out;
+  cursor: pointer;
+
+  @include mobile {
+    width: 7px;
+    height: 20px;
+  }
+
+  img {
+    rotate: 180deg;
+    width: 40px;
+
+    @include mobile {
+      width: 20px;
+    }
+  }
+}
+
+.sidebarMapWrapperClose {
+ width: 1px; 
+ height: 1px;
+ overflow: hidden;
+//  transition: all 0.1s ease-in-out;
+}
+
+.imageWrapper {
+  margin: 0 auto;
+  position: relative;
+  height: 230px;
+  overflow: hidden;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+
+  @include tablet {
+    height: 150px;
+  }
+
+  @include mobile {
+    height: 50px;
+  }
+
+  img {
+    width: 100%;
+    margin: 0 auto;
+    top: -105px;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+
+    @include tablet {
+      top: -50px;
+    }
+
+    @include mobile {
+      top: -25px;
+    }
+  }
+}
+
+.closeIconWrapper {
+  position: absolute;
+  z-index: 999;
+  right: 10px;
+  top: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  background-color: white;
+
+  @include mobile {
+    top: 4px;
+    right: 5px;
+    width: 10px;
+    height: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+  }
+
+  svg {
+    width: 30px;
+    height: 30px;
+
+    @include mobile {
+      width: 10px;
+      height: 10px;
+    }
+  }
+}
+
+.sidebarTitlePlace {
+  margin: 20px 0px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ccc;
+  
+  @include tablet {
+    margin: 10px 0px;
+  }
+
+  @include mobile {
+    margin: 5px 0px;
+    padding-bottom: 2px;
+  }
+
+  p {
+    margin-left: 20px;
+    margin-top: 10px;
+    font-size: 24px;
+    line-height: 22px;
+    margin-bottom: 0px;
+
+    @include tablet {
+      font-size: 12px;
+      margin-left: 10px;
+    }
+
+    @include mobile {
+      margin-top: 2px;
+      margin-left: 5px;
+      font-size: 10px;
+      line-height: 10px;
+    }
+  }
+
+  span {
+    margin: 20px;
+    font-size: 16px;
+
+    @include tablet {
+      margin-left: 10px;
+      font-size: 13px;
+    }
+
+    @include mobile {
+      margin-left: 5px;
+      font-size: 7px;
+    }
+  }
+}
+
+.sidebarIcon {
+  display: flex;
+  justify-content: space-evenly;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 10px;
+
+  .iconWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50px;
+    gap: 10px;
+
+    .title {
+      font-size: 14px;
+      text-align: center;
+    }
+
+    @include tablet {
+      width: 45px;
+
+      .title {
+        font-size: 9px;
+      }
+    }
+
+    @include mobile {
+      width: 20px;
+
+      .title {
+        display: none;
+      }
+    }
+
+  }
+
+  .icon {
+    border: 1px solid #3473e0;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include tablet {
+      width: 20px;
+      height: 20px;
+    }
+
+
+    @include mobile {
+      width: 15px;
+      height: 15px
+    }
+  }
+
+  .activeIconStyle {
+    @extend .icon;
+    background-color: #3473e0;
+
+    
+    img {
+      @include tablet {
+        width: 10px;
+      }
+
+      @include mobile {
+        width: 7px
+      }
+    }
+  }
+
+  .iconStyle {
+    @extend .icon;
+    background-color: white;
+
+    img {
+      width: 15px;
+
+      @include tablet {
+        width: 10px;
+      }
+
+      @include mobile {
+        width: 7px;
+      }
+    }
+  }
+}
+
+.sidebarContent {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
+
+  @include tablet {
+    display: block;
+  }
+
+  @include mobile {
+    display: none;
+  }
+
+  .itemWrapper {
+    margin: 0px 10px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 3px 10px;
+
+    @include tablet {
+      gap: 10px;
+    }
+
+    &:hover {
+      background-color: #eee;
+      cursor: pointer;
+    }
+
+    .iconImageWrapper {
+      width: 25px;
+
+      @include tablet {
+        width: 20px;
+      }
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    span {
+      font-size: 14px;
+
+      @include tablet {
+        font-size: 9px;
+      }
+
+      @include mobile {
+        font-size: 12px;
       }
     }
   }

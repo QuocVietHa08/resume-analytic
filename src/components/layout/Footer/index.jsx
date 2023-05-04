@@ -14,12 +14,12 @@ const Footer = () => {
       setIsLoading(true);
       const dataSubmit = {
         content: data.email,
-        receiverEmail: 'info@kungfuhelper.com.sg',
-        senderEmail: data.email,
-        senderName: data.email,
+        receiversEmail: ['info@kungfuhelper.com.sg'],
+        senderEmail: 'info@kungfuhelper.com.sg',
+        senderName: 'KungFu-helper',
       };
 
-      const url = 'https://send-in-blue-api.uc.r.appspot.com/v1/sendinblue/send';
+      const url = process.env.SEND_IN_BLUE_URL;
 
       fetch(url, {
         method: 'POST',
@@ -36,12 +36,10 @@ const Footer = () => {
             message: 'Email subscriber successfully!',
           });
         })
-        .catch((error) => {
-          const errorMessage = JSON.parse(error?.response?.data?.message);
-
+        .catch(() => {
           notification.open({
             type: 'error',
-            message: errorMessage?.message || 'Please try again!',
+            message: 'Please try again!',
           });
         })
         .finally(() => {
@@ -94,17 +92,22 @@ const Footer = () => {
             <div className={styles.info}>
               <div>
                 <img src="/img/footer/email.svg" alt="" />
-                <a href="mailto:info@kungfuhelper.com.sg" className="ml-15">info@kungfuhelper.com.sg</a>
+                <a href="mailto:info@kungfuhelper.com.sg" className="ml-15">
+                  info@kungfuhelper.com.sg
+                </a>
               </div>
               <div>
                 <img src="/img/footer/phone.svg" alt="" />
                 <a href="https://api.whatsapp.com/send/?phone=6588380909" className=" ml-15 text-weight-400">
-                    +6588380909
-                  </a>
+                  +6588380909
+                </a>
               </div>
               <div className="flex item-flex-start">
                 <img src="/img/footer/address.svg" alt="" />
-                <a href="https://www.google.com/maps/place/KUNG+FU+HELPER+PTE+LTD/@1.4365609,103.8034316,17z/data=!3m2!4b1!5s0x31da13769bf4e5e7:0xd29bc5ae026f3d42!4m6!3m5!1s0x31da1317fba6bb1d:0x3f92bcb285eca85e!8m2!3d1.4365555!4d103.8060065!16s%2Fg%2F11p0bchdzm"className="ml-15">
+                <a
+                  href="https://www.google.com/maps/place/KUNG+FU+HELPER+PTE+LTD/@1.4365609,103.8034316,17z/data=!3m2!4b1!5s0x31da13769bf4e5e7:0xd29bc5ae026f3d42!4m6!3m5!1s0x31da1317fba6bb1d:0x3f92bcb285eca85e!8m2!3d1.4365555!4d103.8060065!16s%2Fg%2F11p0bchdzm"
+                  className="ml-15"
+                >
                   31 Woodlands Close <br /> #03-10 Woodlands Horizon <br /> Singapore 737855{' '}
                 </a>
               </div>
@@ -182,7 +185,9 @@ const Footer = () => {
               <div className={styles.info}>
                 <div>
                   <img src="/img/footer/email.svg" alt="" />
-                  <a href="mailto:info@kungfuhelper.com.sg" className="ml-15 text-weight-400">info@kungfuhelper.com.sg</a>
+                  <a href="mailto:info@kungfuhelper.com.sg" className="ml-15 text-weight-400">
+                    info@kungfuhelper.com.sg
+                  </a>
                 </div>
                 <div>
                   <img src="/img/footer/phone.svg" alt="" />
@@ -192,7 +197,10 @@ const Footer = () => {
                 </div>
                 <div className="flex item-flex-start">
                   <img src="/img/footer/address.svg" alt="" />
-                  <a href="https://www.google.com/maps/place/KUNG+FU+HELPER+PTE+LTD/@1.4365609,103.8034316,17z/data=!3m2!4b1!5s0x31da13769bf4e5e7:0xd29bc5ae026f3d42!4m6!3m5!1s0x31da1317fba6bb1d:0x3f92bcb285eca85e!8m2!3d1.4365555!4d103.8060065!16s%2Fg%2F11p0bchdzm" className="ml-15 text-weight-400">
+                  <a
+                    href="https://www.google.com/maps/place/KUNG+FU+HELPER+PTE+LTD/@1.4365609,103.8034316,17z/data=!3m2!4b1!5s0x31da13769bf4e5e7:0xd29bc5ae026f3d42!4m6!3m5!1s0x31da1317fba6bb1d:0x3f92bcb285eca85e!8m2!3d1.4365555!4d103.8060065!16s%2Fg%2F11p0bchdzm"
+                    className="ml-15 text-weight-400"
+                  >
                     31 Woodlands Close <br /> #03-10 Woodlands Horizon <br /> Singapore 737855{' '}
                   </a>
                 </div>
@@ -204,12 +212,11 @@ const Footer = () => {
               <div className="footer-input-wrapper">
                 <Form name={formSub} layout="vertical" onFinish={handleSubmitForm}>
                   <Form.Item name="email">
-                    <div className='flex w-full'>
-
-                    <Input className={styles.inputStyle} placeholder="Email" />
-                    <Button loading={isLoading} htmlType="submit" className={styles.buttonSubs}>
-                      <span className="text-bold">Subscribe</span>
-                    </Button>
+                    <div className="flex w-full">
+                      <Input className={styles.inputStyle} placeholder="Email" />
+                      <Button loading={isLoading} htmlType="submit" className={styles.buttonSubs}>
+                        <span className="text-bold">Subscribe</span>
+                      </Button>
                     </div>
                   </Form.Item>
                 </Form>

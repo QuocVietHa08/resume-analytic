@@ -38,7 +38,7 @@ const CleaningVarity = ({ arrayList, title = 'Office Cleaning Services' }) => {
     }
 
     return (
-      <div className={styles.cleaningVarityItems}>
+      <div className={`${styles.cleaningVarityItemsFix} ${styles.cleaningVarityFor5Items}`}>
         {arrayList.map((item) => (
           <CleaningVarityItem key={item.text} item={item} />
         ))}

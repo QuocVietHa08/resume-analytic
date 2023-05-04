@@ -74,11 +74,20 @@
 
     @include mobile {
       font-size: 12px;
+      line-height: 17px;
+    }
+  }
+
+  img {
+    @include mobile {
+      height: 12px;
+      margin-top: 2px;
     }
   }
 
   @include mobile {
     gap: 10px;
+    align-items: flex-start;
   }
 }
 

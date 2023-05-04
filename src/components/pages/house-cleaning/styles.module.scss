@@ -115,6 +115,7 @@
   @include mobile {
     width: 80%;
     margin: 10px auto;
+    margin-bottom: 50px;
   }
 
   .houseTitle {
@@ -223,6 +224,7 @@
 
       @include mobile {
         font-size: 12px;
+        line-height: 17px;
         padding-left: 20px;
       }
     }

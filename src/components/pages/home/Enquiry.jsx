@@ -388,16 +388,14 @@ const Enquiry = ({ isShowBgImage = true }) => {
     setIsLoading(true);
     const dataSubmit = {
       content: renderEmailContent(data.receiverEmail, data.name, data.email, data.phone, data.message),
-      // receiversEmail: ['it@asure.pro'],
-      receiversEmail: ['quocvietha08@gmail.com'],
-      // receiversEmail: ['info@kungfuhelper.com.sg'],
+      receiversEmail: ['info@kungfuhelper.com.sg'],
       senderEmail: data.email,
-      senderName: data.name,
+      senderName: "KungFu-helper",
     };
 
-    const url = 'https://send-in-blue-api.uc.r.appspot.com/v1/sendinblue/send';
+    const url = process.env.SEND_IN_BLUE_URL
     const headers = {
-      domain_name: 'kungfu-helper.io',
+      domain_name: 'kungfu-helper',
     };
 
     api

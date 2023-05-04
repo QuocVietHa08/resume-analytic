@@ -42,9 +42,14 @@
   color: #0e8778;
   margin-bottom: 30px;
   font-family: 'Baloo Da';
+  margin-top: 80px;
 
+  @include tablet {
+    margin-top: 60px;
+  }
 
   @include mobile {
+    margin-top: 40px;
     font-size: 14px;
     line-height: 14px;
     margin-bottom: 20px;
@@ -53,11 +58,18 @@
 
 .cleaningItem {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 30px;
 
   @include mobile {
     gap: 20px;
+  }
+
+  img {
+    @include mobile {
+      height: 12px;
+      margin-top: 2px;
+    }
   }
 
   span {
@@ -205,6 +217,11 @@
   }
 }
 
+.clearningVarityFor2Items {
+  @include mobile {
+    justify-content: unset;
+  }
+}
 .clearningVarityFor8Items {
   width: 95% !important;
   max-width: 1920px;
@@ -440,3 +457,16 @@
   max-width: 1920px;
   margin: 0 auto;
 }
+
+.cleaningListDetailWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin-bottom: 100px;
+
+  @include mobile {
+    margin-bottom: 20px;
+    gap: 20px;
+  }
+}
+

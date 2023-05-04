@@ -18,11 +18,11 @@ const LandscapingServiceDetail = () => {
   const width = useDetectWindowSize();
   return (
     <div className={styles.poolCleaningDetailContainer}>
-      <div>
+      <div className="w-full">
         <p className={styles.poolingDes}>
           Our landscaping services include:
         </p>
-        <div className="flex flex-column gap-30 gap-sp-10">
+        <div className={styles.detailListWrapper}>
           {DETAIL_LIST.map((item) => (
             <div className={styles.poolingDetailContent} key={item}>
               <img

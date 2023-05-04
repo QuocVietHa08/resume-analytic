@@ -11,8 +11,7 @@ const DisinfectionDetail = () => {
   const width = useDetectWindowSize();
   return (
     <div className="flex flex-column">
-      <div className={styles.cleaningDetailContainer}>
-       
+      <div className={styles.cleaningDetailContainer}>    
         <div>
           <div className={styles.cleaningTitle}>Office Disinfection services</div>
           <p className={styles.cleaningDesc}>
