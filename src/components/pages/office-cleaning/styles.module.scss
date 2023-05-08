@@ -143,14 +143,14 @@
       font-size: 50px;
       text-align: center;
       color: #0f1123;
-      width: 51%;
+      width: 100%;
       margin: 0 auto;
       font-family: 'Baloo Da';
       font-weight: 700;
 
       @include tablet {
         font-size: 35px;
-        width: 80%;
+        width: 100%;
       }
 
       @include mobile {
@@ -244,6 +244,7 @@
   }
 }
 
+
 .cleaningVarityItemContainer {
   display: flex;
   width: 329px;
@@ -278,6 +279,18 @@
 
     @include mobile {
       padding: 10px;
+    }
+
+    .findMore {
+      span {
+        @include mobile {
+          height:  10px;
+
+          img {
+            height: 100%;
+          }
+        }
+      }
     }
   }
 

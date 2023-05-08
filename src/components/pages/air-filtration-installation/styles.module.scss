@@ -68,6 +68,13 @@
   }
 
   img {
+    margin-top: 5px;
+
+    @include tablet {
+      height: 16px;
+      margin-top: 2px;
+    }
+
     @include mobile {
       height: 12px;
       margin-top: 2px;  

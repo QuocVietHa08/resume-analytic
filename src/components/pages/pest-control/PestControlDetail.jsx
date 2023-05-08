@@ -24,7 +24,7 @@ const PestControlDetail = () => {
             <div className={styles.poolingDetailContent} key={item}>
               <img
                 src={`${
-                  width > 779 ? '/img/office-cleaning/cleaning-detail/check.svg' : `/img/office-cleaning/cleaning-detail/check_sp.svg`
+                  width > 768 ? '/img/office-cleaning/cleaning-detail/check.svg' : `/img/office-cleaning/cleaning-detail/check_sp.svg`
                 }`}
                 alt="img"
               />

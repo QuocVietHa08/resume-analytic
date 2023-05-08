@@ -148,7 +148,7 @@ const Footer = () => {
                     </Link>
                   </p>
                   <p>
-                    <Link className="color-primary text-weight-400" href="/service">
+                    <Link className="color-primary text-weight-400" href="/services">
                       Services
                     </Link>
                   </p>

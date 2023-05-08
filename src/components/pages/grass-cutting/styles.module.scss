@@ -1,0 +1,102 @@
+@import 'styles/responsive.scss';
+
+.grassCuttingDetailWrapper {
+  width: 80%;
+  margin: 0 auto;
+  padding-bottom: 110px;
+  padding-top: 70px;
+
+
+  @include tablet {
+    padding-bottom: 30px;
+  }
+
+  @include mobile {
+    padding-bottom: 20px;
+    padding-top: 10px;
+    width: 85%;
+  }
+
+  .content {
+    font-size: 24px;
+
+    @include tablet {
+      font-size: 16px;
+    }
+
+    @include mobile {
+      font-size: 12px;
+    }
+  }
+
+  .detailWrapper {
+    width: 85%;
+    margin: 50px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+
+    @include tablet {
+      margin: 30px auto;
+      gap: 30px;
+    }
+
+    @include mobile {
+      width: 100%;
+    }
+
+    .detailItemWrapper {
+      display: flex;
+      gap: 50px;
+
+      @include tablet {
+        gap: 35px
+      }
+
+      @include mobile {
+        width: 90%;
+        margin: 0 auto;
+        gap: 20px;
+      }
+
+      .imageWrapper {
+        img {
+          @include mobile {
+            width: 45px;
+          }
+        }
+      }
+
+      span {
+        font-size: 24px;
+        white-space: pre;
+
+        @include tablet {
+          font-size: 16px;
+          white-space: unset;
+        }
+
+        @include mobile {
+          white-space: unset;
+          font-size: 12px;
+        }
+      }
+    }
+  }
+}
+
+
+.workContainer {
+  margin-top: 240px;
+  margin-bottom: 300px;
+
+  @include tablet {
+    margin-top: 190px;
+    margin-bottom: 250px;
+  }
+  
+  @include mobile {
+    margin-top: 100px;
+    margin-bottom: 130px;
+  }
+}

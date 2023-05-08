@@ -32,9 +32,31 @@
       display: inline;
       font-family: 'Baloo Da';
       font-size: 50px;
-      text-decoration: underline;
-      text-decoration-color: #fddc3a;
+      position: relative;
       font-weight: 700;
+
+      &::after {
+        position: absolute;
+        height: 4px;
+        margin: 0 auto;
+        content: '';
+        left: 0;
+        right: 0;
+        width: 100%;
+        color: #000;
+        background-color: #fddc3a;
+        left: 0;
+        bottom: 9px;
+        z-index: -1;
+
+        @include tablet {
+          height: 2px;
+        }
+
+        @include mobile {
+          height: 1px;
+        }
+      }
 
       @include tablet {
         font-size: 35px;
@@ -111,9 +133,10 @@
 .houseSectionConatiner {
   max-width: 950px;
   margin: 100px auto;
+  width: 80%;
 
   @include mobile {
-    width: 80%;
+    width: 85%;
     margin: 10px auto;
     margin-bottom: 50px;
   }
@@ -123,6 +146,10 @@
       color: #0e8778;
       font-weight: 700;
       font-size: 32px;
+
+      @include tablet {
+        font-size: 28px;
+      }
 
       @include mobile {
         font-size: 20px;
@@ -150,6 +177,10 @@
     gap: 70px;
     margin: 50px 0;
 
+    @include tablet {
+      gap: 40px;
+    }
+
     @include mobile {
       grid-template-columns: repeat(1, minmax(0, 1fr));
       gap: 18px;
@@ -163,6 +194,12 @@
       padding-top: 26px;
       padding-bottom: 35px;
       text-align: center;
+
+      @include tablet {
+        img {
+          height: 45px;
+        }
+      }
 
       @include mobile {
         padding-top: 13px;
@@ -203,6 +240,13 @@
     align-items: center;
     margin-top: 55px;
 
+    @include tablet {
+      margin-top: 40px;
+      img {
+        width: 50px;
+      }
+    }
+
     @include mobile {
       margin-top: 30px;
 
@@ -217,12 +261,13 @@
       text-transform: capitalize;
       color: #333333;
       padding-left: 30px;
-      
-      @include tablet{
+
+      @include tablet {
         font-size: 16px;
       }
 
       @include mobile {
+        text-transform: none;
         font-size: 12px;
         line-height: 17px;
         padding-left: 20px;

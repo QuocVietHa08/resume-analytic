@@ -28,7 +28,7 @@ const CleaningVarityItem = ({ item }) => {
           </div>
           <div className="h-50pr font-size-tb-20 flex flex-column justify-between">
           <p className="font-size-tb-16">{item.text}</p>
-          <span>
+          <span className={styles.findMore}>
             <div className="color-primary font-size-tb-16 font-size-sp-12 text-bold flex gap-10">
               Find out more
               <span>

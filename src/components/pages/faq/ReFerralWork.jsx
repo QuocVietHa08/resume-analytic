@@ -30,9 +30,9 @@ const ReFerralWork = () => {
     <> 
     <div className={styles.workContainer}>
       {REFERRAL_WORK.map((item, index) => (
-        <div key={item.number}>
+        <React.Fragment key={item.number}>
           <WorkItem number={item.number} text={item.text} index={index} length={REFERRAL_WORK.length} imgSrc={item.imgSrc} />
-        </div>
+        </React.Fragment>
       ))}
     </div>
     </>

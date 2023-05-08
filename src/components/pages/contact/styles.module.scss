@@ -2,13 +2,14 @@
 
 .contactContainer {
   width: 100vw;
-
+  
   .contactContentContainer {
     width: 100%;
     margin: 40px auto;
 
     @include mobile {
       margin: 50px auto;
+      padding-bottom: 80px;
     }
 
     .contactAddress {
@@ -32,7 +33,8 @@
 
         @include mobile {
           gap: 10px;
-          bottom: -40%;
+          bottom: -70%;
+
         }
 
         section {

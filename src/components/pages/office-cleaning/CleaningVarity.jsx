@@ -27,6 +27,16 @@ const CleaningVarity = ({ arrayList, title = 'Office Cleaning Services' }) => {
       );
     }
 
+    if (arrayList.length === 7) {
+      return (
+        <div className={`${styles.cleaningVarityItemsFix} ${styles.cleaningVarityFor5Items}`}>
+          {arrayList.map((item) => (
+            <CleaningVarityItem key={item.text} item={item} />
+          ))}
+        </div>
+      );
+    }
+
     if (arrayList.length === 8) {
       return (
         <div className={`${styles.cleaningVarityItemsFix} ${styles.clearningVarityFor8Items}`}>

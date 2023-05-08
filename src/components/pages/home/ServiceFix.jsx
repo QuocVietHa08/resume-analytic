@@ -67,11 +67,25 @@ const SERVICE_DETAIL_FIX = [
     ],
   },
   {
-    name: 'Office Cleaning',
+    name: 'Landscaping Services',
     type: 'service',
-    imgSrc: '/img/home/service/office_cleaning',
-    services: ['General office cleaning', 'Office Disinfection'],
-    links: ['/services/general-office-cleaning', '/services/general-office-disinfection'],
+    imgSrc: '/img/home/service/landscaping',
+    services: [
+      'Grass Cutting',
+      'Shrubs and Plants Trimming',
+      'Weeding',
+      'Tree Pruning (Below 3m)',
+      'Plants Watering',
+      'Insecticide Spraying',
+    ],
+    links: [
+      '/services/grass-cutting',
+      '/services/shrubs-and-plants-trimming',
+      '/services/weeding',
+      '/services/tree-pruning',
+      '/services/plants-watering',
+      '/services/insecticide-spraying'
+    ],
   },
   {
     name: 'Aircon Services',
@@ -186,9 +200,7 @@ const ServiceFix = () => {
                 </React.Fragment>
               ))}
             </div>
-            {activeService.length > 0 && (
-              <div className={styles.showServicesDetail}>{handleRenderActiveService()}</div>
-            )}
+            {activeService.length > 0 && <div className={styles.showServicesDetail}>{handleRenderActiveService()}</div>}
             <div className={styles.cannotFindServiceWrapper}>
               <span className="text-bold font-size-tb-16"> Unable to find the service you are looking for?</span>
               <Link href="/contact-us" className={styles.buttonContactCannotFind}>

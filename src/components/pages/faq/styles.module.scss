@@ -20,10 +20,19 @@
   margin-top: 30px;
   margin-bottom: 70px;
 
+  @include tablet {
+    width: 100%;
+    gap: 0px;
+  }
+
   @include mobile {
     width: 90%;
     justify-content: space-between;
     gap: 0;
+
+    @media screen and (max-width: 620px) {
+      max-width: 300px;
+    }
   }
 }
 
@@ -47,6 +56,11 @@
   height: 100%;
   position: relative;
   padding-top: 20px;
+  width: 24%;
+
+  @include mobile {
+    width: unset;
+  }
 
   p {
     font-weight: 700;
@@ -56,6 +70,10 @@
     color: #e6e6e6;
     opacity: 0.5;
     margin-bottom: 0;
+
+    @include tablet {
+      font-size: 22px;
+    }
 
     @include mobile {
       font-size: 16px;
@@ -68,6 +86,12 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
+
+    @include tablet {
+      img {
+        height: 100px;
+      }
+    }
 
     @include mobile {
       margin-top: 20px;

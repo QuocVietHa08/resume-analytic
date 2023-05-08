@@ -32,11 +32,14 @@
   }
 
   .poolingDetailContent {
-    width: 45%;
+    width: 60%;
     text-align: left;
     display: flex;
     align-items: center;
     gap: 10px;
+    @include tablet {
+      width: 75%;
+    }
 
     @include mobile {
       width: 80%;
