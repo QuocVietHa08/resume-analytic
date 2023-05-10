@@ -55,12 +55,11 @@ const SERVICE_DETAIL_FIX = [
     name: 'Handy Home Services',
     type: 'service',
     imgSrc: '/img/home/service/home_service',
-    services: ['General handyman services', 'pool cleaning', 'pest control', 'landscaping', 'flooring', 'organising', 'moving'],
+    services: ['General handyman services', 'pool cleaning', 'pest control', 'flooring', 'organising', 'moving'],
     links: [
       '/services/general-handyman-services',
       '/services/pool-cleaning',
       '/services/pest-control',
-      '/services/landscaping-services',
       '/services/flooring-services',
       '/services/organising-services',
       '/services/moving-services',
@@ -184,7 +183,7 @@ const ServiceFix = () => {
               ))}
             </div>
             <div className={styles.cannotFindServiceWrapper}>
-              <span className="text-bold font-size-36 font-size-tb-16"> Unable to find the service you are looking for?</span>
+              <span className="text-bold font-size-36 font-size-tb-20 font-size-sp-12"> Unable to find the service you are looking for?</span>
               <Link href="/contact-us" className={styles.buttonContactCannotFind}>
                 Contact Us
               </Link>

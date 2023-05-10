@@ -222,6 +222,23 @@
     justify-content: unset;
   }
 }
+
+.clearningVarityFor7Items {
+  width: 100% ;
+  justify-content: center;
+  max-width: 1500px;
+
+  @include tablet {
+    max-width: 1485px;
+    justify-content: center;
+  }
+
+  @include mobile {
+    max-width: 335px;
+    justify-content: space-between;
+  }
+}
+
 .clearningVarityFor8Items {
   width: 95% !important;
   max-width: 1920px;

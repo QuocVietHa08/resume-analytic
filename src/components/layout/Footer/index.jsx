@@ -54,7 +54,7 @@ const Footer = () => {
   return (
     <div className={styles.footerContainer}>
       <div className={styles.footerWrapper}>
-        {width > 1600 ? (
+        {width > 768 ? (
           <div className={styles.footerLinkInfo}>
             <div className={styles.quickLinks}>
               <div className={styles.headerText}>Quick Links</div>
@@ -227,9 +227,9 @@ const Footer = () => {
         <div className={styles.dividerWrapper}>
           <Divider className={styles.dividerStyle} />
         </div>
-        {width > 1600 ? (
+        {width > 768 ? (
           <div className={styles.footerCopyRight}>
-            <div className="flex item-center justify-evenly gap-25">
+            <div className="flex item-center justify-evenly gap-25 gap-tb-15">
               <div>© 2022 KungFu Helper Pte Ltd. All rights reserved.</div>
               <div>|</div>
               <div>
@@ -245,7 +245,7 @@ const Footer = () => {
               </div>
             </div>
 
-            <div>
+            <div className="flex item-center">
               <img src="/img/footer/cyber-save.svg" alt="" />
               <span>ENTERPRISE ON ASSET-BASED CYBER DEFENSE AN INITIATIVE BY CSA</span>
             </div>

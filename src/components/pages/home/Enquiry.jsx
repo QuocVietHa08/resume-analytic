@@ -382,44 +382,45 @@ const Enquiry = ({ isShowBgImage = true }) => {
     </body>
   </html>`;
   };
-  
+
   const handleSubmit = (data) => {
     try {
-    setIsLoading(true);
-    const dataSubmit = {
-      content: renderEmailContent(data.receiverEmail, data.name, data.email, data.phone, data.message),
-      receiversEmail: ['info@kungfuhelper.com.sg'],
-      senderEmail: data.email,
-      senderName: "KungFu-helper",
-    };
+      setIsLoading(true);
+      const dataSubmit = {
+        content: renderEmailContent(data.receiverEmail, data.name, data.email, data.phone, data.message),
+        receiversEmail: ['info@kungfuhelper.com.sg'],
+        senderEmail: data.email,
+        senderName: 'KungFu-helper',
+      };
 
-    const url = process.env.SEND_IN_BLUE_URL
-    const headers = {
-      domain_name: 'kungfu-helper',
-    };
+      const url = `${process.env.SEND_IN_BLUE_URL}/send`;
+      const headers = {
+        domain_name: 'kungfu-helper',
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
+        'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept',
+      };
 
-    api
-      .post(url, dataSubmit, { headers })
-      .then(() => {
-        notification.open({
-          type: 'success',
-          message: 'Email has been sent successfully!',
+      api
+        .post(url, dataSubmit, { headers })
+        .then(() => {
+          notification.open({
+            type: 'success',
+            message: 'Email has been sent successfully!',
+          });
+        })
+        .catch(() => {
+          notification.open({
+            type: 'error',
+            message: 'Please try again!',
+          });
+        })
+        .finally(() => {
+          formSubmit.resetFields();
+          setIsLoading(false);
         });
-      })
-      .catch(() => {
-        // const errorMessage = JSON.parse(error?.response?.data?.message || "Please try again");
-        notification.open({
-          type: 'error',
-          // message: errorMessage?.message || 'Please try again!',
-          message:'Please try again!',
-        });
-      })
-      .finally(() => {
-        formSubmit.resetFields();
-        setIsLoading(false);
-      });
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
   };
 
@@ -442,15 +443,36 @@ const Enquiry = ({ isShowBgImage = true }) => {
           </p>
         </div>
         <div className={styles.enquiryDes}>
-          Please fill in the form below and we will get back to you in 3 business days. For a faster response, WhatsApp us at +
-          <a
-            className="font-size-24 font-size-tb-16 font-size-sp-12 color-black text-underline"
-            href="https://api.whatsapp.com/send/?phone=6588380909"
-          >
-            65 8838 0909
-          </a>{' '}
-          .
+          {width > 768 ? (
+            <div>
+              Please fill in the form below and we will get back to you in 3 business days.
+              <div>
+                For a faster response, WhatsApp us at +
+                <a
+                  className="font-size-24 font-size-tb-16 font-size-sp-12 color-black text-underline"
+                  href="https://api.whatsapp.com/send/?phone=6588380909"
+                >
+                  65 8838 0909
+                </a>
+                .
+              </div>
+            </div>
+          ) : (
+            <div>
+              <div>
+                Please fill in the form below and we will get back to you in 3 business days. For a faster response, WhatsApp us at +
+                <a
+                  className="font-size-24 font-size-tb-16 font-size-sp-12 color-black text-underline"
+                  href="https://api.whatsapp.com/send/?phone=6588380909"
+                >
+                  65 8838 0909
+                </a>
+                .
+              </div>
+            </div>
+          )}
         </div>
+
         <div className={styles.enquiryForm}>
           <Form form={formSubmit} onFinishFailed={handleOnFinishFailed} onFinish={handleSubmit}>
             <Form.Item rules={[{ required: true, message: 'Please input your name!' }]} name="name">
@@ -511,18 +533,18 @@ const Enquiry = ({ isShowBgImage = true }) => {
                 <img src={`${width > 1600 ? `/img/home/enquiry/captcha.svg` : `/img/home/enquiry/captcha.jpeg`}`} alt="arrow" />
               </div>
               {/* {width > 780 ? ( */}
-                <div className={styles.enquiryInfra}>
-                  <img src="/img/home/enquiry/aws.jpeg" alt="logo" />
-                  <img src="/img/home/enquiry/cloudflare.jpeg" alt="logo" />
-                  <img src="/img/home/enquiry/logo.jpeg" alt="logo" />
-                </div>
+              <div className={styles.enquiryInfra}>
+                <img src="/img/home/enquiry/aws.jpeg" alt="logo" />
+                <img src="/img/home/enquiry/cloudflare.jpeg" alt="logo" />
+                <img src="/img/home/enquiry/logo.jpeg" alt="logo" />
+              </div>
               {/* // ) : (
               //   // <img src="/img/home/enquiry/service.jpeg" alt="service" />
               // )} */}
             </div>
             <Form.Item className="flex">
               <Button loading={isLoading} size="large" htmlType="submit" className={styles.buttonFormStyle}>
-                <span className="text-bold">Submit</span>
+                <span className="text-bold font-size-20 font-size-sp-12">Submit</span>
               </Button>
             </Form.Item>
           </Form>

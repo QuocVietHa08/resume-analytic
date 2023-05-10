@@ -112,7 +112,7 @@ const Helper = () => {
               {HELPER_INFO_VALUES_SP.map((item) => (
                 <div key={item.title} className={styles.helperInfoItem}>
                   <div className={styles.helperInfoItemImageWrapper}>
-                    <img src={`${width > 780 ? `${item.imgSrc}.svg` : `${item.imgSrc}_sp.svg`}`} alt="item" />
+                    <img src={`${width > 780 ? `${item.imgSrc}.svg` : `${item.imgSrc}_sp.jpeg`}`} alt="item" />
                   </div>
                   <p>{item.title}</p>
                   <span>{item.des}</span>
