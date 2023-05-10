@@ -172,6 +172,7 @@
     font-size: 50px;
     color: #333333;
     margin-bottom: 10px;
+
     @include tablet {
       font-size: 35px;
     }
@@ -194,7 +195,7 @@
 
       &::after {
         position: absolute;
-        height: 4px;
+        height: 10px;
         margin: 0 auto;
         content: '';
         left: 0;
@@ -203,9 +204,20 @@
         color: #000;
         background-color: #fddc3a;
         left: 0;
-        bottom: 9px;
         z-index: -1;
+        bottom: 20px;
+
+        @include tablet {
+          height: 7px;
+          bottom: 13px;
+        }
+
+        @include mobile {
+          height: 4px;
+          bottom: 9px;
+        }
       }
+
       @include tablet {
         font-size: 35px;
       }
@@ -475,19 +487,22 @@
 
   .buttonContactCannotFind {
     color: #0e8778;
-    font-size: 20px;
+    font-size: 36px;
     font-weight: 700;
-    padding: 7px 10px;
+    padding: 7px 20px;
     text-align: center;
     border-radius: 10px;
     background-color: white;
 
     @include tablet {
       font-size: 16px;
+      padding: 5px 15px;
     }
 
     @include mobile {
       font-size: 12px;
+      padding: 3px 10px;
+      border-radius: 5px;
     }
   }
 }
@@ -777,12 +792,14 @@
 
       .helperInfoItemImageWrapper {
         @include mobile {
-          height: 40px;
+          height: 34px;
+          width: 37px;
         }
 
         img {
           width: 100%;
           height: 100%;
+          object-fit: contain;
         }
       }
 
@@ -1261,11 +1278,11 @@
     width: 80%;
     text-align: center;
     margin: 0 auto;
-    font-size: 24px;
+    font-size: 36px;
     margin-bottom: 30px;
 
     @include tablet {
-      font-size: 16px;
+      font-size: 20px;
     }
 
     @include mobile {
@@ -1302,8 +1319,13 @@
   border-radius: 10px;
   padding: 0px 60px !important;
   margin-top: 30px !important;
+  width: 289px !important;
+  height: 51px !important;
+
 
   @include mobile {
+    width: 151px !important;
+    height: 30px !important;
     border-radius: 5px;
     margin-top: 20px !important;
   }
@@ -1322,7 +1344,7 @@
   .captchaWrapper {
     margin-right: 20px;
     @media (max-width: 900px) and (min-width: 780px) {
-      width: 60%;
+      width: 50%;
       margin-right: 10px;
 
       img {
@@ -1349,6 +1371,13 @@
     width: auto;
     max-width: 50%;
     gap: 20px;
+
+    @include tablet {
+      img {
+        width: 55px;
+        height: auto;
+      }
+    }
 
     @include mobile {
       gap: 15px;

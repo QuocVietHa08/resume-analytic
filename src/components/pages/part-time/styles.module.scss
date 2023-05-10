@@ -11,12 +11,18 @@
   font-family: 'Baloo Da' !important;
 
   @include tablet {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 30px;
+    width: 85%;
+
+    @media screen and (max-width: 850px) {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
   }
 
   @include mobile {
     grid-template-columns: repeat(1, minmax(0, 1fr));
     margin-top: 50px;
+    width: 85%;
     margin-bottom: 50px;
   }
 
@@ -28,6 +34,10 @@
 
     @include tablet {
       padding: 15px 20px;
+
+      .partimeItemImage {
+        width: 60px;
+      }
     }
 
     .title {

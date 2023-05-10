@@ -29,7 +29,7 @@ const CleaningVarity = ({ arrayList, title = 'Office Cleaning Services' }) => {
 
     if (arrayList.length === 7) {
       return (
-        <div className={`${styles.cleaningVarityItemsFix} ${styles.cleaningVarityFor5Items}`}>
+        <div className={`${styles.cleaningVarityItemsFix} ${styles.clearningVarityFor7Items}`}>
           {arrayList.map((item) => (
             <CleaningVarityItem key={item.text} item={item} />
           ))}

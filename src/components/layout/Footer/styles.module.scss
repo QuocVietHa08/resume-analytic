@@ -14,7 +14,7 @@
 
   @include tablet {
     padding: 20px 0px;
-    width: 85%;
+    width: 90%;
   }
   @include mobile {
     padding: 20px 0px;
@@ -27,7 +27,7 @@
     justify-content: space-between;
 
     @include tablet {
-      gap: 30px;
+      gap: 10px;
     }
 
     @include mobile {
@@ -47,6 +47,13 @@
   .footerCopyRight {
     display: flex;
     justify-content: space-between;
+
+    @include tablet {      
+      p {
+        font-size: 16px;
+      }
+    }
+
     @include mobile {
       flex-direction: column;
       gap: 10px;

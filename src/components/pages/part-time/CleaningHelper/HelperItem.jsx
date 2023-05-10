@@ -56,7 +56,7 @@ const HelperItem = ({ title, imgSrc, content, isPartTimeHelper }) => {
 
   return (
     <div className={styles.partimeItem}>
-      <img src={imgSrc} alt={title} />
+      <img src={imgSrc} alt={title} className={styles.partimeItemImage} />
       <div className={styles.title}>{title}</div>
       <div className={styles.content}>
         {content}
