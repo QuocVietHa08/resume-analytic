@@ -393,12 +393,9 @@ const Enquiry = ({ isShowBgImage = true }) => {
         senderName: 'KungFu-helper',
       };
 
-      const url = `${process.env.SEND_IN_BLUE_URL}/send`;
+      const url = `${process.env.SEND_IN_BLUE_URL}/v1/sendinblue/send`;
       const headers = {
-        domain_name: 'kungfu-helper',
-        'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
-        'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept',
+        domain_name: 'kungfu-helper', 
       };
 
       api

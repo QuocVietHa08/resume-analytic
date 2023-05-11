@@ -19,8 +19,8 @@ const Footer = () => {
         senderName: 'KungFu-helper',
       };
 
-      const url = process.env.SEND_IN_BLUE_URL;
-
+      const url = `${process.env.SEND_IN_BLUE_URL}/v1/sendinblue/send`;
+      
       fetch(url, {
         method: 'POST',
         headers: {
