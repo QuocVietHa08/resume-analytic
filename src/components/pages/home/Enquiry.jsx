@@ -2,8 +2,8 @@ import { Button, Form, Input, notification } from 'antd';
 import React, { useState } from 'react';
 import styles from './styles.module.scss';
 import useDetectWindowSize from '@/hooks/useDetectWindowSize';
-// import axios from 'axios';
 import api from '@/api/axios';
+import { RECEIVER_EMAIL } from '@/utils/constant';
 
 const Enquiry = ({ isShowBgImage = true }) => {
   const width = useDetectWindowSize();
@@ -388,14 +388,14 @@ const Enquiry = ({ isShowBgImage = true }) => {
       setIsLoading(true);
       const dataSubmit = {
         content: renderEmailContent(data.receiverEmail, data.name, data.email, data.phone, data.message),
-        receiversEmail: ['info@kungfuhelper.com.sg'],
+        receiversEmail: RECEIVER_EMAIL,
         senderEmail: data.email,
-        senderName: 'KungFu-helper',
+        senderName: 'KungFu Helper',
       };
 
       const url = `${process.env.SEND_IN_BLUE_URL}/v1/sendinblue/send`;
       const headers = {
-        domain_name: 'kungfu-helper', 
+        domain_name: 'kungfu-helper.com.sg', 
       };
 
       api
@@ -426,13 +426,6 @@ const Enquiry = ({ isShowBgImage = true }) => {
   };
   return (
     <div className={styles.enquiryContainer}>
-      {/* {isShowBgImage && (
-        <img
-          className={styles.circleLeft}
-          src={`${width > 1600 ? `/img/home/enquiry/circleLeft.svg` : `/img/home/enquiry/circleLeft_sp.svg`}`}
-          alt="arrow"
-        />
-      )} */}
       <div className={styles.enquiryWrapper}>
         <div className={styles.enquiryTitle}>
           <p>
@@ -440,33 +433,31 @@ const Enquiry = ({ isShowBgImage = true }) => {
           </p>
         </div>
         <div className={styles.enquiryDes}>
-          {width > 768 ? (
-            <div>
+          {width > 800 ? (
+            <p>
               Please fill in the form below and we will get back to you in 3 business days.
               <div>
                 For a faster response, WhatsApp us at +
                 <a
-                  className="font-size-24 font-size-tb-16 font-size-sp-12 color-black text-underline"
+                  className="color-black text-underline"
                   href="https://api.whatsapp.com/send/?phone=6588380909"
                 >
                   65 8838 0909
                 </a>
                 .
               </div>
-            </div>
+            </p>
           ) : (
-            <div>
-              <div>
+            <p>
                 Please fill in the form below and we will get back to you in 3 business days. For a faster response, WhatsApp us at +
                 <a
-                  className="font-size-24 font-size-tb-16 font-size-sp-12 color-black text-underline"
+                  className="color-black text-underline"
                   href="https://api.whatsapp.com/send/?phone=6588380909"
                 >
                   65 8838 0909
                 </a>
                 .
-              </div>
-            </div>
+            </p>
           )}
         </div>
 

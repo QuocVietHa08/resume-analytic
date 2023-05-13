@@ -49,7 +49,7 @@ const CleaningService = ({ title }) => {
         alt="cleaning"
       /> */}
       <div className={styles.cleaningServiceWrapper}>
-        <p className="text-font-family text-normal">
+        <p className="text-font-family text-normal ">
           Our {title} <br /> <span className="text-font-family text-normal">Can Be Applied To</span>
         </p>
         <div className={styles.servicesContainer}>

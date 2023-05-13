@@ -17,6 +17,10 @@
     color: #0e8778;
     font-family: 'Baloo Da';
 
+    @include tablet {
+      font-size: 23px;
+    }
+
     @include mobile {
       font-size: 14px;
     }

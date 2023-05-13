@@ -34,12 +34,6 @@ const VARITYS = [
     type: 'info',
   },
   {
-    text: 'Landscaping Services',
-    img: '/img/handyman-service/variety-service/landscaping',
-    link: '/services/landscaping-services',
-    type: 'info',
-  },
-  {
     text: 'Flooring Services',
     img: '/img/handyman-service/variety-service/flooring',
     link: '/services/flooring-services',
