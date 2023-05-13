@@ -25,7 +25,7 @@
     }
 
     @include mobile {
-      font-size: 12px;
+      font-size: 20px;
     }
 
     span {
@@ -50,11 +50,13 @@
         z-index: -1;
 
         @include tablet {
-          height: 2px;
+          height: 7px;
+          bottom: 13px;
         }
 
         @include mobile {
-          height: 1px;
+          height: 4px;
+          bottom: 8px;
         }
       }
 
@@ -63,7 +65,7 @@
       }
 
       @include mobile {
-        font-size: 12px;
+        font-size: 20px;
       }
     }
   }
@@ -78,6 +80,7 @@
     @include mobile {
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 40px;
+      margin: 40px auto;
     }
 
     .applyItem {
@@ -258,7 +261,7 @@
     .serviceTitle {
       font-size: 24px;
       line-height: 40px;
-      text-transform: capitalize;
+      // text-transform: capitalize;
       color: #333333;
       padding-left: 30px;
 

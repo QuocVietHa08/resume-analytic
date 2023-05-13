@@ -72,7 +72,11 @@ const Helper = () => {
 
   return (
     <div className={styles.helperContainer}>
-      <div className={styles.helperTitle}>Why Choose Kung Fu Helper? </div>
+      <div className={styles.helperTitle}>
+        <span>
+          Why Choose Kung Fu Helper? 
+        </span>
+      </div>
       <div className={styles.helperStatisticWrapper}>
         <section>
           {width > 768 ? (

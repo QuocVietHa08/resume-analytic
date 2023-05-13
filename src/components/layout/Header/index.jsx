@@ -56,22 +56,22 @@ const Header = () => {
         <div>
           {width > 780 ? (
             <ul className="flex mb-0 gap-10 text-font-family">
-              <li>
+              <li className={styles.linkListItem}>
                 <Link href="/" className="text-font-family text-normal">
                   Home
                 </Link>
               </li>
-              <li>
+              <li className={styles.linkListItem}>
                 <Link href="/services" className="text-font-family text-normal">
                   Services
                 </Link>
               </li>
-              <li>
+              <li className={styles.linkListItem}>
                 <Link href="/faq" className="text-font-family text-normal">
                   FAQ
                 </Link>
               </li>
-              <li>
+              <li className={styles.linkListItem}>
                 <Link href="/contact-us" className="text-font-family text-normal">
                   Contact Us
                 </Link>

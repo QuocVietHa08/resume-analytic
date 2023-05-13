@@ -3,6 +3,8 @@ import { Button, Divider, Form, Input, notification } from 'antd';
 import Link from 'next/link';
 import useDetectWindowSize from '@/hooks/useDetectWindowSize';
 import styles from './styles.module.scss';
+import api from '@/api/axios';
+import { RECEIVER_EMAIL } from '@/utils/constant';
 
 const Footer = () => {
   const width = useDetectWindowSize();
@@ -14,26 +16,22 @@ const Footer = () => {
       setIsLoading(true);
       const dataSubmit = {
         content: data.email,
-        receiversEmail: ['info@kungfuhelper.com.sg'],
+        receiversEmail: RECEIVER_EMAIL,
         senderEmail: 'info@kungfuhelper.com.sg',
-        senderName: 'KungFu-helper',
+        senderName: 'KungFu Helper',
       };
 
-      const url = `${process.env.SEND_IN_BLUE_URL}/v1/sendinblue/send`;
-      
-      fetch(url, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          domain_name: 'kungfu-helper',
-        },
-        body: JSON.stringify(dataSubmit),
-      })
-        .then((response) => response.json())
+      const url = `${process.env.SEND_IN_BLUE_URL}/v1/sendinblue/subscription`;
+      const headers = {
+        domain_name: 'kungfu-helper.com.sg',
+      };
+
+      api
+        .post(url, dataSubmit, { headers })
         .then(() => {
           notification.open({
             type: 'success',
-            message: 'Email subscriber successfully!',
+            message: 'Subscription successfully!',
           });
         })
         .catch(() => {
@@ -59,32 +57,32 @@ const Footer = () => {
             <div className={styles.quickLinks}>
               <div className={styles.headerText}>Quick Links</div>
               <div>
-                <Link className="color-primary-dark font-size-16 text-weight-400" href="/">
+                <Link className={styles.footerQuickLinkStyle} href="/">
                   Home
                 </Link>
               </div>
               <div>
-                <Link className="color-primary-dark font-size-16 text-weight-400" href="/services">
+                <Link className={styles.footerQuickLinkStyle} href="/services">
                   Services
                 </Link>
               </div>
               <div>
-                <Link className="color-primary-dark font-size-16 text-weight-400" href="/about-us">
+                <Link className={styles.footerQuickLinkStyle} href="/about-us">
                   About
                 </Link>
               </div>
               <div>
-                <Link className="color-primary-dark font-size-16 text-weight-400" href="/testimonials">
+                <Link className={styles.footerQuickLinkStyle} href="/testimonials">
                   Testimonials
                 </Link>
               </div>
               <div>
-                <Link className="color-primary-dark font-size-16 text-weight-400" href="/faq">
+                <Link className={styles.footerQuickLinkStyle} href="/faq">
                   FAQ
                 </Link>
               </div>
               <div>
-                <Link className="color-primary-dark font-size-16 text-weight-400" href="/contact-us">
+                <Link className={styles.footerQuickLinkStyle} href="/contact-us">
                   Contact Us
                 </Link>
               </div>
@@ -92,7 +90,7 @@ const Footer = () => {
             <div className={styles.info}>
               <div>
                 <img src="/img/footer/email.svg" alt="" />
-                <a href="mailto:info@kungfuhelper.com.sg" className="ml-15">
+                <a href="mailto:info@kungfuhelper.com.sg" className={`ml-15 ${styles.footerQuickLinkStyle}`}>
                   info@kungfuhelper.com.sg
                 </a>
               </div>
@@ -254,7 +252,7 @@ const Footer = () => {
           <div className={styles.footerCopyRight}>
             <div className="flex flex-column item-center mb-15 justify-center gap-10">
               <p>© 2022 Kung Fu Helper Pte Ltd. All rights reserved.</p>
-              <div className="flex gap-10 font-size-12">
+              <div className="flex item-center gap-10 font-size-12">
                 <p className="text-bold">
                   <Link href="/privacy-policy" className="color-primary-dark font-size-12 text-bold">
                     Privacy Policy

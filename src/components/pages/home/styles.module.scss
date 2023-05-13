@@ -189,9 +189,6 @@
       color: #333333;
       margin: 0 10px;
       position: relative;
-      // text-decoration: underline;
-      // text-decoration-thickness: 3px;
-      // text-decoration-color: #fddc3a;
 
       &::after {
         position: absolute;
@@ -214,7 +211,7 @@
 
         @include mobile {
           height: 4px;
-          bottom: 9px;
+          bottom: 8px;
         }
       }
 
@@ -562,22 +559,50 @@
 }
 
 .workTitle {
-  font-weight: 700;
-  font-size: 50px;
   text-align: center;
-  text-transform: capitalize;
-  color: #333333;
-  text-decoration: underline;
-  text-decoration-color: #fddc3a;
-  font-family: 'Baloo Da';
 
-  @include tablet {
-    font-size: 35px;
-  }
+  span {
+    font-weight: 700;
+    font-size: 50px;
+    text-align: center;
+    text-transform: capitalize;
+    color: #333333;
+    font-family: 'Baloo Da';
+    position: relative;
 
-  @include mobile {
-    font-size: 20px;
-  }
+    @include tablet {
+      font-size: 35px;
+    }
+  
+    @include mobile {
+      font-size: 20px;
+    }
+
+    &::after {
+      position: absolute;
+      height: 10px;
+      margin: 0 auto;
+      content: '';
+      left: 0;
+      right: 0;
+      width: 100%;
+      color: #000;
+      background-color: #fddc3a;
+      left: 0;
+      z-index: -1;
+      bottom: 20px;
+  
+      @include tablet {
+        height: 7px;
+        bottom: 13px;
+      }
+  
+      @include mobile {
+        height: 4px;
+        bottom: 9px;
+      }
+    }
+  }  
 }
 
 .workItemWrapper {
@@ -649,17 +674,28 @@
     margin-top: 50px;
   }
 }
-
 .helperTitle {
+  text-align: center;
+  margin-bottom: 50px;
+
+  @include tablet {
+    margin-bottom: 35px;
+  }
+
+  @include mobile {
+    margin-bottom: 20px;
+  }
+}
+
+.helperTitle span {
   font-weight: 700;
   font-size: 50px;
   text-align: center;
   text-transform: capitalize;
   color: #333333;
-  text-decoration: underline;
-  text-decoration-color: #fddc3a;
   font-family: 'Baloo Da';
   margin-bottom: 50px;
+  position: relative;
 
   @include tablet {
     font-size: 35px;
@@ -668,6 +704,31 @@
   @include mobile {
     font-size: 20px;
     margin-bottom: 20px;
+  }
+
+  &::after {
+    position: absolute;
+    height: 10px;
+    margin: 0 auto;
+    content: '';
+    left: 0;
+    right: 0;
+    width: 100%;
+    color: #000;
+    background-color: #fddc3a;
+    left: 0;
+    z-index: -1;
+    bottom: 20px;
+
+    @include tablet {
+      height: 7px;
+      bottom: 13px;
+    }
+
+    @include mobile {
+      height: 4px;
+      bottom: 9px;
+    }
   }
 }
 
@@ -886,8 +947,11 @@
     }
   }
 }
-
 .certificationTitle {
+  text-align: center;
+}
+
+.certificationTitle div {
   font-weight: 700;
   font-size: 50px;
   text-transform: capitalize;
@@ -901,8 +965,6 @@
   }
 
   @include mobile {
-    text-decoration: underline;
-    text-decoration-color: #fddc3a;
     font-size: 20px;
     margin-bottom: 10px;
   }
@@ -911,9 +973,8 @@
     margin-left: 10px;
     font-weight: 700;
     font-size: 50px;
-    text-decoration: underline;
-    text-decoration-color: #fddc3a;
     font-family: 'Baloo Da';
+    position: relative;
 
     @include tablet {
       font-size: 35px;
@@ -922,6 +983,31 @@
     @include mobile {
       font-size: 20px;
       margin-left: 3px;
+    }
+
+    &::after {
+      position: absolute;
+      height: 10px;
+      margin: 0 auto;
+      content: '';
+      left: 0;
+      right: 0;
+      width: 100%;
+      color: #000;
+      background-color: #fddc3a;
+      left: 0;
+      z-index: -1;
+      bottom: 20px;
+
+      @include tablet {
+        height: 7px;
+        bottom: 13px;
+      }
+
+      @include mobile {
+        height: 4px;
+        bottom: 8px;
+      }
     }
   }
 }
@@ -999,6 +1085,11 @@
 .testTitle {
   display: flex;
   gap: 10px;
+  margin-bottom: 60px;
+
+  @include mobile {
+    margin-bottom: 20px;
+  }
 
   p,
   span {
@@ -1008,10 +1099,37 @@
     color: #333333;
     font-family: 'Baloo Da';
   }
+  p {
+    margin-bottom: 0;
+  }
 
   span {
-    text-decoration: underline;
-    text-decoration-color: #fddc3a;
+    position: relative;
+    &::after {
+      position: absolute;
+      height: 10px;
+      margin: 0 auto;
+      content: '';
+      left: 0;
+      right: 0;
+      width: 100%;
+      color: #000;
+      background-color: #fddc3a;
+      left: 0;
+      z-index: -1;
+      bottom: 20px;
+
+
+      @include tablet {
+        height: 7px;
+        bottom: 13px;
+      }
+
+      @include mobile {
+        height: 4px;
+        bottom: 8px;
+      }
+    }
   }
 
   @include tablet {
@@ -1244,8 +1362,31 @@
     }
 
     span {
-      text-decoration: underline;
-      text-decoration-color: #fddc3a;
+      position: relative;
+
+      &::after {
+        position: absolute;
+        height: 10px;
+        margin: 0 auto;
+        content: '';
+        left: 0;
+        right: 0;
+        width: 100%;
+        color: #000;
+        background-color: #fddc3a;
+        left: 0;
+        z-index: -1;
+        bottom: 20px;
+
+        @include tablet {
+          height: 7px;
+          bottom: 13px;
+        }
+
+        @include mobile {
+          display: none;
+        }
+      }
     }
 
     @include tablet {
@@ -1260,8 +1401,6 @@
     }
 
     @include mobile {
-      text-decoration: underline;
-      text-decoration-color: #fddc3a;
       gap: 5px;
       p,
       span {
@@ -1270,6 +1409,31 @@
 
       p {
         margin-bottom: 10px;
+        position: relative;
+        &::after {
+          position: absolute;
+          height: 10px;
+          margin: 0 auto;
+          content: '';
+          left: 0;
+          right: 0;
+          width: 100%;
+          color: #000;
+          background-color: #fddc3a;
+          left: 0;
+          z-index: -1;
+          bottom: 20px;
+  
+          @include tablet {
+            height: 7px;
+            bottom: 13px;
+          }
+  
+          @include mobile {
+            height: 4px;
+            bottom: 8px;
+          }
+        }
       }
     }
   }
@@ -1278,17 +1442,26 @@
     width: 80%;
     text-align: center;
     margin: 0 auto;
-    font-size: 36px;
     margin-bottom: 30px;
-
-    @include tablet {
-      font-size: 20px;
-    }
 
     @include mobile {
       font-size: 12px;
       margin-bottom: 10px;
     }
+    
+    p, a {
+      font-size: 24px;
+
+      @include tablet {
+        font-size: 16px;
+      }
+
+      @include mobile {
+        font-size: 12px;
+      }
+    }
+     
+    
   }
 
   .enquiryForm {
