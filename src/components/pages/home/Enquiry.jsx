@@ -436,7 +436,7 @@ const Enquiry = ({ isShowBgImage = true }) => {
           {width > 800 ? (
             <p>
               Please fill in the form below and we will get back to you in 3 business days.
-              <div>
+              <div className="font-size-24 font-size-tb-16 font-size-sp-12">
                 For a faster response, WhatsApp us at +
                 <a
                   className="color-black text-underline"

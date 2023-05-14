@@ -31,13 +31,13 @@ const VARITYS = [
   {
     text: 'Tree Pruning (Below 3m)',
     img: '/img/landscaping/grass-cutting/variety/icon4',
-    link: '/services/flooring-services',
+    link: '/services/tree-pruning',
     type: 'info',
   },
   {
     text: 'Plants Watering',
     img: '/img/landscaping/grass-cutting/variety/icon5',
-    link: '/services/moving-services',
+    link: '/services/plants-watering',
     type: 'info',
   },
   {

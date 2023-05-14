@@ -30,7 +30,7 @@ const VARITYS = [
   {
     text: 'Tree Pruning (Below 3m)',
     img: '/img/landscaping/grass-cutting/variety/icon4',
-    link: '/services/flooring-services',
+    link: '/services/tree-pruning',
     type: 'info',
   },
   {

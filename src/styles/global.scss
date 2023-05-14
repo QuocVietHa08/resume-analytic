@@ -8,9 +8,12 @@
 }
 
 html *::-webkit-scrollbar {
-  border-radius: 0 !important;
-  width: 10px !important;
-  height: 10px !important;
+  // border-radius: 0 !important;
+  // width: 10px !important;
+  // height: 10px !important;
+  display: none;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;
 }
 
 html *::-webkit-scrollbar-thumb {
@@ -254,6 +257,12 @@ th {
 
 .item-center {
   align-items: center;
+}
+
+.item-sp-unset {
+  @include mobile {
+    align-items: unset;
+  }
 }
 
 .item-flex-start {
