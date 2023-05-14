@@ -1,4 +1,4 @@
-import { Button, Form, Input, notification } from 'antd';
+import { Button, Form, Input } from 'antd';
 import React, { useState } from 'react';
 import styles from './styles.module.scss';
 import useDetectWindowSize from '@/hooks/useDetectWindowSize';
@@ -9,6 +9,7 @@ const Enquiry = ({ isShowBgImage = true }) => {
   const width = useDetectWindowSize();
   const [formSubmit] = Form.useForm();
   const [isLoading, setIsLoading] = useState(false);
+  const [isSubmit, setIsSubmit] = useState(false);
 
   const renderEmailContent = (receiverEmail, fullname, userEmail, phone, message) => {
     return `<!doctype html>
@@ -395,26 +396,31 @@ const Enquiry = ({ isShowBgImage = true }) => {
 
       const url = `${process.env.SEND_IN_BLUE_URL}/v1/sendinblue/send`;
       const headers = {
-        domain_name: 'kungfu-helper.com.sg', 
+        domain_name: 'kungfu-helper.com.sg',
       };
 
       api
         .post(url, dataSubmit, { headers })
         .then(() => {
-          notification.open({
-            type: 'success',
-            message: 'Email has been sent successfully!',
-          });
+          // notification.open({
+          //   type: 'success',
+          //   message: 'Email has been sent successfully!',
+          // });
         })
         .catch(() => {
-          notification.open({
-            type: 'error',
-            message: 'Please try again!',
-          });
+          // notification.open({
+          //   type: 'error',
+          //   message: 'Please try again!',
+          // });
         })
         .finally(() => {
+          setIsSubmit(true);
           formSubmit.resetFields();
           setIsLoading(false);
+
+          setTimeout(() => {
+            setIsSubmit(false);
+          }, [2000]);
         });
     } catch (error) {
       console.log(error);
@@ -438,10 +444,7 @@ const Enquiry = ({ isShowBgImage = true }) => {
               Please fill in the form below and we will get back to you in 3 business days.
               <div className="font-size-24 font-size-tb-16 font-size-sp-12">
                 For a faster response, WhatsApp us at +
-                <a
-                  className="color-black text-underline"
-                  href="https://api.whatsapp.com/send/?phone=6588380909"
-                >
+                <a className="color-black text-underline" href="https://api.whatsapp.com/send/?phone=6588380909">
                   65 8838 0909
                 </a>
                 .
@@ -449,14 +452,11 @@ const Enquiry = ({ isShowBgImage = true }) => {
             </p>
           ) : (
             <p>
-                Please fill in the form below and we will get back to you in 3 business days. For a faster response, WhatsApp us at +
-                <a
-                  className="color-black text-underline"
-                  href="https://api.whatsapp.com/send/?phone=6588380909"
-                >
-                  65 8838 0909
-                </a>
-                .
+              Please fill in the form below and we will get back to you in 3 business days. For a faster response, WhatsApp us at +
+              <a className="color-black text-underline" href="https://api.whatsapp.com/send/?phone=6588380909">
+                65 8838 0909
+              </a>
+              .
             </p>
           )}
         </div>
@@ -535,6 +535,12 @@ const Enquiry = ({ isShowBgImage = true }) => {
                 <span className="text-bold font-size-20 font-size-sp-12">Submit</span>
               </Button>
             </Form.Item>
+            {isSubmit && (
+              <div className={styles.formSubmitResult}>
+                <img src="/img/home/enquiry/submitIcon.svg" alt="submit" />
+                <span>Form submitted!</span>
+              </div>
+            )}
           </Form>
         </div>
       </div>

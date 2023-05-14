@@ -3,36 +3,45 @@ import { Button, Divider, Form, Input, notification } from 'antd';
 import Link from 'next/link';
 import useDetectWindowSize from '@/hooks/useDetectWindowSize';
 import styles from './styles.module.scss';
-import api from '@/api/axios';
-import { RECEIVER_EMAIL } from '@/utils/constant';
 
 const Footer = () => {
   const width = useDetectWindowSize();
   const [isLoading, setIsLoading] = useState(false);
+  const [inputValue, setInputValue] = useState("");
   const [formSub] = Form.useForm();
 
   const handleSubmitForm = (data) => {
     try {
       setIsLoading(true);
-      const dataSubmit = {
-        content: data.email,
-        receiversEmail: RECEIVER_EMAIL,
-        senderEmail: 'info@kungfuhelper.com.sg',
-        senderName: 'KungFu Helper',
-      };
 
       const url = `${process.env.SEND_IN_BLUE_URL}/v1/sendinblue/subscription`;
-      const headers = {
-        domain_name: 'kungfu-helper.com.sg',
+
+      const myHeaders = new Headers();
+      myHeaders.append('domain_name', 'kungfu-helper');
+      myHeaders.append('Content-Type', 'text/plain');
+      const raw = data.email;
+
+      const requestOptions = {
+        method: 'POST',
+        headers: myHeaders,
+        body: raw,
+        redirect: 'follow',
       };
 
-      api
-        .post(url, dataSubmit, { headers })
-        .then(() => {
-          notification.open({
-            type: 'success',
-            message: 'Subscription successfully!',
-          });
+      fetch(url, requestOptions)
+        .then((response) => response.text())
+        .then((result) => {
+          if (result === 'Successful') {
+            notification.open({
+              type: 'success',
+              message: 'Subscription successfully!',
+            });
+          } else {
+            notification.open({
+              type: 'error',
+              message: 'Please try again!',
+            });
+          }
         })
         .catch(() => {
           notification.open({
@@ -43,7 +52,8 @@ const Footer = () => {
         .finally(() => {
           setIsLoading(false);
           formSub.resetFields();
-        });
+          setInputValue("")
+        }); 
     } catch (error) {
       console.error(error);
     }
@@ -211,7 +221,7 @@ const Footer = () => {
                 <Form name={formSub} layout="vertical" onFinish={handleSubmitForm}>
                   <Form.Item name="email">
                     <div className="flex w-full">
-                      <Input className={styles.inputStyle} placeholder="Email" />
+                      <Input className={styles.inputStyle} value={inputValue} onChange={(event) => setInputValue(event.target.value) } placeholder="Email" />
                       <Button loading={isLoading} htmlType="submit" className={styles.buttonSubs}>
                         <span className="text-bold">Subscribe</span>
                       </Button>

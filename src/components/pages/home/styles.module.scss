@@ -1660,5 +1660,31 @@
   }
 }
 
-.enquiryWrapperContainer {
+.formSubmitResult {
+  display: flex;
+  gap: 10px;
+
+  span {
+    font-size: 20px;
+  }
+  
+  @include tablet {
+    gap: 8px;
+
+    span {
+      font-size: 16px;
+    }
+  }
+
+  @include mobile {
+    gap: 6px;
+    span {
+      font-size: 12px;
+    }
+
+    img {
+      width: 12px;
+      height: auto;
+    }
+  } 
 }
