@@ -37,7 +37,7 @@ const VARITYS = [
   {
     text: 'Plants Watering',
     img: '/img/landscaping/grass-cutting/variety/icon5',
-    link: '/services/moving-services',
+    link: '/services/plants-watering',
     type: 'info',
   },
   {

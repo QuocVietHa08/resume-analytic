@@ -5,6 +5,8 @@ import Disclaimer from '../office-cleaning/Disclaimer';
 import CleaningService from '../office-cleaning/CleaningService';
 import CleaningVarity from '../office-cleaning/CleaningVarity';
 import AirconChemicalWashDetail from './AirconChemicalWash';
+import Work from '../home/Work';
+import Testimonials from '../home/Testimonials';
 
 const AIRCON_VARITY = [
   {
@@ -62,6 +64,8 @@ const AirconChemicalWash = () => {
        <AirconChemicalWashDetail />
       <Disclaimer />
       <CleaningVarity title="Aircon Services" arrayList={AIRCON_VARITY} />
+      <Work />
+      <Testimonials />
       <CleaningService title="Aircon Services" /> 
       <Enquiry isShowBgImage={false} />
     </>

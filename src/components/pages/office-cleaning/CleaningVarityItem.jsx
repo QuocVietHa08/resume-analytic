@@ -38,7 +38,7 @@ const CleaningVarityItem = ({ item }) => {
           <div className="h-50pr font-size-tb-20 flex flex-column justify-between">
           <p className="font-size-tb-16">{item.text}</p>
           <span className={styles.findMore}>
-            <div className="color-primary font-size-tb-16 item-center font-size-sp-12 text-bold flex gap-10">
+            <div className="color-primary font-size-tb-16 item-center item-sp-unset font-size-sp-12 text-bold flex gap-10">
               <p className="mb-0"> 
                 {router.route === "/services/part-time-helper" ? "View Services" : "Find out more"}
               </p>
