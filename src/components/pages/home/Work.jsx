@@ -36,9 +36,9 @@ const Work = () => {
   return (
     <div className={styles.workWrapper}>
     {!router.pathname.includes('faq') && (
-      <h2 className={styles.workTitle}>
+      <h4 className={styles.workTitle}>
         <span>How It Works</span>
-      </h2>
+      </h4>
     )} 
     <div className={styles.workContainer}>
       {WORK.map((item, index) => (

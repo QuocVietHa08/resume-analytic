@@ -126,8 +126,7 @@
 
 .titleStyle span {
   font-family: 'Baloo Da';
-  font-weight: 700;
-  font-size: 66px;
+  font-size: 50px;
   text-align: center;
   text-transform: capitalize;
   color: #333333;
@@ -156,7 +155,7 @@
     background-color: #fddc3a;
     left: 0;
     z-index: -1;
-    bottom: 28px;
+    bottom: 20px;
 
     @include tablet {
       height: 7px;

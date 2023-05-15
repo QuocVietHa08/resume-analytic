@@ -7,6 +7,7 @@ import Enquiry from '../home/Enquiry';
 import styles from './styles.module.scss';
 import CleaningVarity from '../office-cleaning/CleaningVarity';
 import CleaningService from '../office-cleaning/CleaningService';
+import Testimonials from '../home/Testimonials';
 
 const VARITYS = [
   {
@@ -61,7 +62,10 @@ const GrassCutting = () => {
       <div className={styles.workContainer}>
         <Work />
       </div>
-      <CleaningService title="General Handyman Services" />
+      <div className={styles.testimonialsDivContainer}>
+        <Testimonials />
+      </div>
+      <CleaningService title="Landscaping Services" />
       <Enquiry />
     </div>
   )
