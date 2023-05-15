@@ -65,7 +65,7 @@ const Weeding = () => {
       <div className={styles.testimonialsContainer}>
        <Testimonials />
       </div>
-      <CleaningService title="General Handyman Services" />
+      <CleaningService title="Landscaping Services" />
       <Enquiry />
     </div>
   )

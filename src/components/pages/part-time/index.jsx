@@ -13,31 +13,31 @@ const PARTTIME_SERVICE = [
   {
     text: 'Furniture & Upholstery Cleaning',
     img: '/img/parttime-helper/furniture-upholstery-cleaning',
-    link: '/services/upholstery-cleaning',
+    link: '/services',
     type: 'info',
   },
   {
     text: 'House Cleaning',
     img: '/img/parttime-helper/house-cleaning',
-    link: '/services/post-renovation-cleaning',
+    link: '/services',
     type: 'info',
   },
   {
     text: 'Handy Home Services',
     img: '/img/parttime-helper/handy-home-services',
-    link: '/services/general-handyman-services',
+    link: '/services',
     type: 'info',
   },
   {
     text: 'Landscaping Services',
     img: '/img/parttime-helper/landscaping-services',
-    link: '/services/grass-cutting',
+    link: '/services',
     type: 'info',
   },
   {
     text: 'Aircon Services',
     img: '/img/parttime-helper/aircon-services',
-    link: '/services/ac-diagnostic-service',
+    link: '/services',
     type: 'info',
   },
   {

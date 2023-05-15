@@ -34,7 +34,7 @@ const WeedingDetail = () => {
   return (
     <div className={styles.grassCuttingDetailWrapper}>
       <div className={styles.content}>
-        weeding can be a time-consuming and physically demanding task. Weeding involves removing unwanted plants or weeds from the garden,
+        Weeding can be a time-consuming and physically demanding task. Weeding involves removing unwanted plants or weeds from the garden,
         lawn or landscape beds. Without proper weeding, these unwanted plants can compete with other plants for nutrients, water and
         sunlight, leading to poor growth and health of the desired plants. Additionally, weeds can be unsightly and detract from the overall
         appearance of the garden or lawn. Hiring a weeding service can save time and energy, while also ensuring that the garden or lawn is

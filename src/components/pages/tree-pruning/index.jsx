@@ -55,7 +55,7 @@ const VARITYS = [
 const TreePruning = () => {
   return (
     <div className={styles.shrubPlantsContainer}>
-      <Introduction imgSrc="/img/landscaping/weeding/banner" />
+      <Introduction imgSrc="/img/landscaping/tree-pruning/banner" />
       <TreePruningDetail />
       <Disclaimer />
       <CleaningVarity title="Landscaping Services" arrayList={VARITYS} />
@@ -65,7 +65,7 @@ const TreePruning = () => {
       <div className={styles.testimonialsContainer}>
        <Testimonials />
       </div>
-      <CleaningService title="General Handyman Services" />
+      <CleaningService title="Landscaping Services" />
       <Enquiry />
     </div>
   )

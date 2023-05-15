@@ -32,8 +32,8 @@ const CleaningVarityItem = ({ item }) => {
     return (
       <div className={styles.itemContent} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
         <Link href={item.link} className="h-full flex flex-column justify-between">
-          <div>
-            <img src={`${width > 1600 ? `${isHovered ? `${item.img}_active`: item.img}.svg` : `${item.img}_sp.svg`}`} className={styles.itemImage} alt="cleaning" />
+          <div className={styles.itemImageWrapper}>
+            <img src={`${width > 768 ? `${isHovered ? `${item.img}_active`: item.img}.svg` : `${item.img}_sp.svg`}`} className={styles.itemImage} alt="cleaning" />
           </div>
           <div className="h-50pr font-size-tb-20 flex flex-column justify-between">
           <p className="font-size-tb-16">{item.text}</p>

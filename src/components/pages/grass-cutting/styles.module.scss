@@ -88,15 +88,27 @@
 
 .workContainer {
   margin-top: 240px;
-  margin-bottom: 300px;
+  margin-bottom: 150px;
 
   @include tablet {
     margin-top: 190px;
-    margin-bottom: 250px;
+    margin-bottom: 0px;
   }
   
   @include mobile {
     margin-top: 100px;
     margin-bottom: 130px;
+  }
+}
+
+.testimonialsDivContainer {
+  padding-bottom: 50px;
+
+  @include tablet {
+    padding-bottom: 30px;
+  }
+
+  @include mobile {
+    padding-bottom: 10px;
   }
 }
