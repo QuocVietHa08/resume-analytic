@@ -106,7 +106,7 @@ const Footer = () => {
               </div>
               <div>
                 <img src="/img/footer/phone.svg" alt="" />
-                <a href="https://api.whatsapp.com/send/?phone=6588380909" className=" ml-15 text-weight-400">
+                <a href="https://api.whatsapp.com/send/?phone=6588380909" className={`ml-15 ${styles.footerQuickLinkStyle}`}>
                   +6588380909
                 </a>
               </div>
@@ -114,9 +114,9 @@ const Footer = () => {
                 <img src="/img/footer/address.svg" alt="" />
                 <a
                   href="https://www.google.com/maps/place/KUNG+FU+HELPER+PTE+LTD/@1.4365609,103.8034316,17z/data=!3m2!4b1!5s0x31da13769bf4e5e7:0xd29bc5ae026f3d42!4m6!3m5!1s0x31da1317fba6bb1d:0x3f92bcb285eca85e!8m2!3d1.4365555!4d103.8060065!16s%2Fg%2F11p0bchdzm"
-                  className="ml-15"
+                  className={`ml-15 ${styles.footerQuickLinkStyle} `}
                 >
-                  31 Woodlands Close <br /> #03-10 Woodlands Horizon <br /> Singapore 737855{' '}
+                  31 Woodlands Close <br /> #03-10 Woodlands Horizon <br /> Singapore 737855
                 </a>
               </div>
             </div>
@@ -151,32 +151,32 @@ const Footer = () => {
                 <div className={styles.quickLinks}>
                   <div className={styles.headerText}>Quick Links</div>
                   <p>
-                    <Link className="color-primary text-weight-400" href="/">
+                    <Link className={`color-primary ${styles.footerQuickLinkStyle}`} href="/">
                       Home
                     </Link>
                   </p>
                   <p>
-                    <Link className="color-primary text-weight-400" href="/services">
+                    <Link className={`color-primary ${styles.footerQuickLinkStyle}`}  href="/services">
                       Services
                     </Link>
                   </p>
                   <p>
-                    <Link className="color-primary text-weight-400" href="/about-us">
+                    <Link className={`color-primary ${styles.footerQuickLinkStyle}`}  href="/about-us">
                       About
                     </Link>
                   </p>
                   <p>
-                    <Link className="color-primary text-weight-400" href="/testimonials">
+                    <Link className={`color-primary ${styles.footerQuickLinkStyle}`}  href="/testimonials">
                       Testimonials
                     </Link>
                   </p>
                   <p>
-                    <Link className="color-primary text-weight-400" href="/faq">
+                    <Link className={`color-primary ${styles.footerQuickLinkStyle}`}  href="/faq">
                       FAQ
                     </Link>
                   </p>
                   <p>
-                    <Link className="color-primary text-weight-400" href="/contact-us">
+                    <Link className={`color-primary ${styles.footerQuickLinkStyle}`}  href="/contact-us">
                       Contact Us
                     </Link>
                   </p>
@@ -193,13 +193,13 @@ const Footer = () => {
               <div className={styles.info}>
                 <div>
                   <img src="/img/footer/email.svg" alt="" />
-                  <a href="mailto:info@kungfuhelper.com.sg" className="ml-15 text-weight-400">
+                  <a href="mailto:info@kungfuhelper.com.sg" className={`ml-15 ${styles.footerQuickLinkStyle}`}>
                     info@kungfuhelper.com.sg
                   </a>
                 </div>
                 <div>
                   <img src="/img/footer/phone.svg" alt="" />
-                  <a href="https://api.whatsapp.com/send/?phone=6588380909" className=" ml-15 text-weight-400">
+                  <a href="https://api.whatsapp.com/send/?phone=6588380909" className={`ml-15 ${styles.footerQuickLinkStyle}`}>
                     +6588380909
                   </a>
                 </div>
@@ -207,7 +207,7 @@ const Footer = () => {
                   <img src="/img/footer/address.svg" alt="" />
                   <a
                     href="https://www.google.com/maps/place/KUNG+FU+HELPER+PTE+LTD/@1.4365609,103.8034316,17z/data=!3m2!4b1!5s0x31da13769bf4e5e7:0xd29bc5ae026f3d42!4m6!3m5!1s0x31da1317fba6bb1d:0x3f92bcb285eca85e!8m2!3d1.4365555!4d103.8060065!16s%2Fg%2F11p0bchdzm"
-                    className="ml-15 text-weight-400"
+                    className={`ml-15 ${styles.footerQuickLinkStyle}`}
                   >
                     31 Woodlands Close <br /> #03-10 Woodlands Horizon <br /> Singapore 737855{' '}
                   </a>
