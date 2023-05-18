@@ -7,7 +7,7 @@ import styles from './styles.module.scss';
 const Footer = () => {
   const width = useDetectWindowSize();
   const [isLoading, setIsLoading] = useState(false);
-  const [inputValue, setInputValue] = useState("");
+  const [inputValue, setInputValue] = useState('');
   const [formSub] = Form.useForm();
 
   const handleSubmitForm = (data) => {
@@ -52,8 +52,8 @@ const Footer = () => {
         .finally(() => {
           setIsLoading(false);
           formSub.resetFields();
-          setInputValue("")
-        }); 
+          setInputValue('');
+        });
     } catch (error) {
       console.error(error);
     }
@@ -121,10 +121,17 @@ const Footer = () => {
               </div>
             </div>
             <div>
-              <div className={styles.headerText}>Follow Us</div>
-              <div className="mt-20 flex gap-25">
-                <img src="/img/footer/facebook.svg" alt="" />
+              <div className={styles.headerText}>Find Us On</div>
+              <div className={styles.socialMediaWrapper}>
+                <a href="https://www.facebook.com/profile.php?id=100092323458037">
+                  <img src="/img/footer/facebook.svg" alt="" />
+                </a>
+                <a href="https://www.tiktok.com/@kungfuhelpersg">
+                  <img src="/img/footer/tiktok.svg" alt="" />
+                </a>
                 <img src="/img/footer/insta.svg" alt="" />
+                <img src="/img/footer/lazada.svg" alt="" />
+                <img src="/img/footer/shopee.svg" alt="" />
               </div>
             </div>
             <div>
@@ -156,36 +163,43 @@ const Footer = () => {
                     </Link>
                   </p>
                   <p>
-                    <Link className={`color-primary ${styles.footerQuickLinkStyle}`}  href="/services">
+                    <Link className={`color-primary ${styles.footerQuickLinkStyle}`} href="/services">
                       Services
                     </Link>
                   </p>
                   <p>
-                    <Link className={`color-primary ${styles.footerQuickLinkStyle}`}  href="/about-us">
+                    <Link className={`color-primary ${styles.footerQuickLinkStyle}`} href="/about-us">
                       About
                     </Link>
                   </p>
                   <p>
-                    <Link className={`color-primary ${styles.footerQuickLinkStyle}`}  href="/testimonials">
+                    <Link className={`color-primary ${styles.footerQuickLinkStyle}`} href="/testimonials">
                       Testimonials
                     </Link>
                   </p>
                   <p>
-                    <Link className={`color-primary ${styles.footerQuickLinkStyle}`}  href="/faq">
+                    <Link className={`color-primary ${styles.footerQuickLinkStyle}`} href="/faq">
                       FAQ
                     </Link>
                   </p>
                   <p>
-                    <Link className={`color-primary ${styles.footerQuickLinkStyle}`}  href="/contact-us">
+                    <Link className={`color-primary ${styles.footerQuickLinkStyle}`} href="/contact-us">
                       Contact Us
                     </Link>
                   </p>
                 </div>
                 <div>
-                  <div className={styles.headerText}>Follow Us</div>
-                  <div className="mt-20 flex gap-25">
-                    <img src="/img/footer/facebook.svg" alt="" />
+                  <div className={styles.headerText}>Find Us On</div>
+                  <div className={styles.socialMediaWrapper}>
+                    <a href="https://www.facebook.com/profile.php?id=100092323458037">
+                      <img src="/img/footer/facebook.svg" alt="" />
+                    </a>
+                    <a href="https://www.tiktok.com/@kungfuhelpersg">
+                      <img src="/img/footer/tiktok.svg" alt="" />
+                    </a>
                     <img src="/img/footer/insta.svg" alt="" />
+                    <img src="/img/footer/lazada.svg" alt="" />
+                    <img src="/img/footer/shopee.svg" alt="" />
                   </div>
                 </div>
               </div>
@@ -221,7 +235,12 @@ const Footer = () => {
                 <Form name={formSub} layout="vertical" onFinish={handleSubmitForm}>
                   <Form.Item name="email">
                     <div className="flex w-full">
-                      <Input className={styles.inputStyle} value={inputValue} onChange={(event) => setInputValue(event.target.value) } placeholder="Email" />
+                      <Input
+                        className={styles.inputStyle}
+                        value={inputValue}
+                        onChange={(event) => setInputValue(event.target.value)}
+                        placeholder="Email"
+                      />
                       <Button loading={isLoading} htmlType="submit" className={styles.buttonSubs}>
                         <span className="text-bold">Subscribe</span>
                       </Button>
