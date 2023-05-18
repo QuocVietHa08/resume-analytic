@@ -1,6 +1,6 @@
 @import 'styles/responsive.scss';
 .footerContainer {
-  background-color: #b2d8c8;
+  background-color: #CFE7E4;
   width: 100vw;
 
   @include mobile {
@@ -190,5 +190,21 @@
 
   @include mobile {
     font-size: 12px;
+  }
+}
+
+.socialMediaWrapper {
+  margin-top: 7px;
+  display: flex;
+  width: 180px;
+  gap: 20px;
+  flex-wrap: wrap;
+
+  @include mobile {
+    width: 120px;
+    gap: 15px;
+    img {
+      width: 25px;
+    }
   }
 }
