@@ -129,7 +129,9 @@ const Footer = () => {
                 <a href="https://www.tiktok.com/@kungfuhelpersg">
                   <img src="/img/footer/tiktok.svg" alt="" />
                 </a>
-                <img src="/img/footer/insta.svg" alt="" />
+                <a href="https://www.instagram.com/kungfuhelper1/">
+                  <img src="/img/footer/insta.svg" alt="" />
+                </a>
                 <img src="/img/footer/lazada.svg" alt="" />
                 <img src="/img/footer/shopee.svg" alt="" />
               </div>
@@ -197,7 +199,9 @@ const Footer = () => {
                     <a href="https://www.tiktok.com/@kungfuhelpersg">
                       <img src="/img/footer/tiktok.svg" alt="" />
                     </a>
-                    <img src="/img/footer/insta.svg" alt="" />
+                    <a href="https://www.instagram.com/kungfuhelper1/">
+                      <img src="/img/footer/insta.svg" alt="" />
+                    </a>
                     <img src="/img/footer/lazada.svg" alt="" />
                     <img src="/img/footer/shopee.svg" alt="" />
                   </div>
