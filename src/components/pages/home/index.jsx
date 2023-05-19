@@ -3,7 +3,7 @@ import Introduction from './Introduction';
 import ServiceFix from './ServiceFix';
 import Work from './Work';
 import Helper from './Helper';
-import Certification from './Certification';
+// import Certification from './Certification';
 import Testimonials from './Testimonials';
 import Enquiry from './Enquiry';
 import styles from './styles.module.scss';
@@ -15,7 +15,7 @@ const Home = () => {
     <ServiceFix />
     <Work />
     <Helper />
-    <Certification />
+    {/* <Certification /> */}
     <Testimonials />
     <div className={styles.enquiryWrapperContainer}>
       <Enquiry />
