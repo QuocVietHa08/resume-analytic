@@ -203,7 +203,9 @@
   @include mobile {
     width: 120px;
     gap: 15px;
+    
     img {
+      border-radius: 50%;
       width: 25px;
     }
   }
