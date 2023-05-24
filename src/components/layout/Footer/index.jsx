@@ -194,16 +194,16 @@ const Footer = () => {
                   <div className={styles.headerText}>Find Us On</div>
                   <div className={styles.socialMediaWrapper}>
                     <a href="https://www.facebook.com/profile.php?id=100092323458037">
-                      <img src="/img/footer/facebook.svg" alt="" />
+                      <img src="/img/footer/facebook.jpeg" alt="" />
                     </a>
                     <a href="https://www.tiktok.com/@kungfuhelpersg">
-                      <img src="/img/footer/tiktok.svg" alt="" />
+                      <img src="/img/footer/tiktok.jpeg" alt="" />
                     </a>
                     <a href="https://www.instagram.com/kungfuhelper1/">
-                      <img src="/img/footer/insta.svg" alt="" />
+                      <img src="/img/footer/insta.jpeg" alt="" />
                     </a>
-                    <img src="/img/footer/lazada.svg" alt="" />
-                    <img src="/img/footer/shopee.svg" alt="" />
+                    <img src="/img/footer/lazada.jpeg" alt="" />
+                    <img src="/img/footer/shopee.jpeg" alt="" />
                   </div>
                 </div>
               </div>
@@ -284,7 +284,7 @@ const Footer = () => {
         ) : (
           <div className={styles.footerCopyRight}>
             <div className="flex flex-column item-center mb-15 justify-center gap-10">
-              <p>© 2022 Kung Fu Helper Pte Ltd. All rights reserved.</p>
+              <p>© 2022 KungFu Helper Pte Ltd. All rights reserved.</p>
               <div className="flex item-center gap-10 font-size-12">
                 <p className="text-bold">
                   <Link href="/privacy-policy" className="color-primary-dark font-size-12 text-bold">
