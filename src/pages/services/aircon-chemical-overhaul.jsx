@@ -1,9 +1,13 @@
 import React from 'react';
+import { NextSeo } from 'next-seo';
 import AirconChemicalOverhaulComponent from '@/components/pages/aircon-chemical-overhaul';
 
 const AirconChemicalOverhaul = () => {
   return (
-    <AirconChemicalOverhaulComponent />
+    <>
+      <NextSeo title='Aircon Chemical Overhaul' /> 
+      <AirconChemicalOverhaulComponent />
+    </>
   )
 }
 
