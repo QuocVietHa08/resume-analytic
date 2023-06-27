@@ -1,8 +1,14 @@
-import React from 'react'
-import InsecticideSprayingComponent from '@/components/pages/insecticide-spraying'
+import React from 'react';
+import { NextSeo } from 'next-seo';
+import InsecticideSprayingComponent from '@/components/pages/insecticide-spraying';
 
 const InsecticideSpraying = () => {
-  return <InsecticideSprayingComponent />
-}
+  return (
+    <>
+      <NextSeo title="Insecticide Spraying" />
+      <InsecticideSprayingComponent />
+    </>
+  );
+};
 
-export default InsecticideSpraying
+export default InsecticideSpraying;

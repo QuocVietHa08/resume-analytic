@@ -33,11 +33,6 @@ class ProjectDocument extends Document {
             href="https://use.fontawesome.com/releases/v5.0.10/css/all.css"
             rel="stylesheet"
           />
-
-          <meta
-            name="description"
-            content="工学系、情報科学、計算科学系などの理系学生が対象のオファーが届く理系学生専門就活サイト、テックオファー（TECH OFFER）。あなたが学んだ内容で、技術系企業との最適なマッチングを提供。 研究や技術を評価する企業から早期選考や書類通過確約（準推薦）などの各種特典も。"
-          />
         </Head>
         <body>
           <Main />
