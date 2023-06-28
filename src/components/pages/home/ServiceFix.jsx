@@ -147,11 +147,11 @@ const ServiceFix = () => {
   return (
     <div className={`${styles.serviceContainerFix} ${router.pathname === '/services' ? 'mt-50' : ''}`}>
       {router.pathname !== '/services' && (
-        <h4>
+        <h1>
           What
           <span>Services</span>
           Do {width < 768 && <br />} We Provide ?
-        </h4>
+        </h1>
       )}
       <>
         <p className={styles.serviceDes}>

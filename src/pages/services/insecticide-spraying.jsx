@@ -5,7 +5,10 @@ import InsecticideSprayingComponent from '@/components/pages/insecticide-sprayin
 const InsecticideSpraying = () => {
   return (
     <>
-      <NextSeo title="Insecticide Spraying" />
+      <NextSeo
+        title="Effective Insecticide Spraying Services in Singapore | KungFu Helper"
+        description="Eliminate pests and insects from your premises with our effective insecticide spraying services. KungFu Helper's professionals provide targeted solutions for long-lasting pest control."
+      />
       <InsecticideSprayingComponent />
     </>
   );
