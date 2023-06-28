@@ -99,19 +99,19 @@ const Footer = () => {
             </div>
             <div className={styles.info}>
               <div>
-                <img src="/img/footer/email.svg" alt="" />
+                <img src="/img/footer/email.svg" alt="Email Icon" />
                 <a href="mailto:info@kungfuhelper.com.sg" className={`ml-15 ${styles.footerQuickLinkStyle}`}>
                   info@kungfuhelper.com.sg
                 </a>
               </div>
               <div>
-                <img src="/img/footer/phone.svg" alt="" />
+                <img src="/img/footer/phone.svg" alt="Phone Icon" />
                 <a href="https://api.whatsapp.com/send/?phone=6588380909" className={`ml-15 ${styles.footerQuickLinkStyle}`}>
                   +6588380909
                 </a>
               </div>
               <div className="flex item-flex-start">
-                <img src="/img/footer/address.svg" alt="" />
+                <img src="/img/footer/address.svg" alt="Address Icon" />
                 <a
                   href="https://www.google.com/maps/place/KUNG+FU+HELPER+PTE+LTD/@1.4365609,103.8034316,17z/data=!3m2!4b1!5s0x31da13769bf4e5e7:0xd29bc5ae026f3d42!4m6!3m5!1s0x31da1317fba6bb1d:0x3f92bcb285eca85e!8m2!3d1.4365555!4d103.8060065!16s%2Fg%2F11p0bchdzm"
                   className={`ml-15 ${styles.footerQuickLinkStyle} `}
@@ -124,16 +124,16 @@ const Footer = () => {
               <div className={styles.headerText}>Find Us On</div>
               <div className={styles.socialMediaWrapper}>
                 <a href="https://www.facebook.com/profile.php?id=100092323458037">
-                  <img src="/img/footer/facebook.svg" alt="" />
+                  <img src="/img/footer/facebook.svg" alt="Facebook Icon" />
                 </a>
                 <a href="https://www.tiktok.com/@kungfuhelpersg">
-                  <img src="/img/footer/tiktok.svg" alt="" />
+                  <img src="/img/footer/tiktok.svg" alt="Tiktok Icon" />
                 </a>
                 <a href="https://www.instagram.com/kungfuhelper1/">
-                  <img src="/img/footer/insta.svg" alt="" />
+                  <img src="/img/footer/insta.svg" alt="Insta Icon" />
                 </a>
-                <img src="/img/footer/lazada.svg" alt="" />
-                <img src="/img/footer/shopee.svg" alt="" />
+                <img src="/img/footer/lazada.svg" alt="Lazada Icon" />
+                <img src="/img/footer/shopee.svg" alt="Shopee Icon" />
               </div>
             </div>
             <div>
@@ -150,7 +150,7 @@ const Footer = () => {
                   </Form.Item>
                 </Form>
               </div>
-              <img src="/img/footer/logo.svg" className="w-114 h-81" alt="" />
+              <img src="/img/footer/logo.svg" className="w-114 h-81" alt="Logo Icon" />
             </div>
           </div>
         ) : (
@@ -194,35 +194,35 @@ const Footer = () => {
                   <div className={styles.headerText}>Find Us On</div>
                   <div className={styles.socialMediaWrapper}>
                     <a href="https://www.facebook.com/profile.php?id=100092323458037">
-                      <img src="/img/footer/facebook.jpeg" alt="" />
+                      <img src="/img/footer/facebook.jpeg" alt="Facebook Icon" />
                     </a>
                     <a href="https://www.tiktok.com/@kungfuhelpersg">
-                      <img src="/img/footer/tiktok.jpeg" alt="" />
+                      <img src="/img/footer/tiktok.jpeg" alt="Tiktok Icon" />
                     </a>
                     <a href="https://www.instagram.com/kungfuhelper1/">
-                      <img src="/img/footer/insta.jpeg" alt="" />
+                      <img src="/img/footer/insta.jpeg" alt="Instal Icon" />
                     </a>
-                    <img src="/img/footer/lazada.jpeg" alt="" />
-                    <img src="/img/footer/shopee.jpeg" alt="" />
+                    <img src="/img/footer/lazada.jpeg" alt="Lazada Icon" />
+                    <img src="/img/footer/shopee.jpeg" alt="Shopee Icon" />
                   </div>
                 </div>
               </div>
 
               <div className={styles.info}>
                 <div>
-                  <img src="/img/footer/email.svg" alt="" />
+                  <img src="/img/footer/email.svg" alt="Email Icon" />
                   <a href="mailto:info@kungfuhelper.com.sg" className={`ml-15 ${styles.footerQuickLinkStyle}`}>
                     info@kungfuhelper.com.sg
                   </a>
                 </div>
                 <div>
-                  <img src="/img/footer/phone.svg" alt="" />
+                  <img src="/img/footer/phone.svg" alt="Phone Icon" />
                   <a href="https://api.whatsapp.com/send/?phone=6588380909" className={`ml-15 ${styles.footerQuickLinkStyle}`}>
                     +6588380909
                   </a>
                 </div>
                 <div className="flex item-flex-start">
-                  <img src="/img/footer/address.svg" alt="" />
+                  <img src="/img/footer/address.svg" alt="Address Icon" />
                   <a
                     href="https://www.google.com/maps/place/KUNG+FU+HELPER+PTE+LTD/@1.4365609,103.8034316,17z/data=!3m2!4b1!5s0x31da13769bf4e5e7:0xd29bc5ae026f3d42!4m6!3m5!1s0x31da1317fba6bb1d:0x3f92bcb285eca85e!8m2!3d1.4365555!4d103.8060065!16s%2Fg%2F11p0bchdzm"
                     className={`ml-15 ${styles.footerQuickLinkStyle}`}
@@ -230,7 +230,7 @@ const Footer = () => {
                     31 Woodlands Close <br /> #03-10 Woodlands Horizon <br /> Singapore 737855{' '}
                   </a>
                 </div>
-                <img src="/img/footer/logo.svg" className="w-75 h-55 mt-sp-30" alt="" />
+                <img src="/img/footer/logo.svg" className="w-75 h-55 mt-sp-30" alt="Logo Icon" />
               </div>
             </div>
             <div className="w-full max-width-400px">
@@ -277,7 +277,7 @@ const Footer = () => {
             </div>
 
             <div className="flex item-center">
-              <img src="/img/footer/cyber-save.svg" alt="" />
+              <img src="/img/footer/cyber-save.svg" alt="Cyber Save Icon" />
               <span>ENTERPRISE ON ASSET-BASED CYBER DEFENSE AN INITIATIVE BY CSA</span>
             </div>
           </div>
@@ -301,7 +301,7 @@ const Footer = () => {
             </div>
 
             <div className="flex item-center justify-center">
-              <img src="/img/footer/cyber-save.svg" alt="" />
+              <img src="/img/footer/cyber-save.svg" alt="Cyber Save Icon" />
               <p className="text-weight-400">
                 ENTERPRISE ON ASSET-BASED CYBER <br /> DEFENSE AN INITIATIVE BY CSA
               </p>

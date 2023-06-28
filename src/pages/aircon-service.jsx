@@ -5,10 +5,13 @@ import AirconServiceComponent from '@/components/pages/aircon-service';
 const AirconService = () => {
   return (
     <>
-      <NextSeo title="Aircon Service" />
-      <AirconServiceComponent  />
+      <NextSeo
+        title="Professional Aircon Services in Singapore | KungFu Helper"
+        description="Ensure optimal performance of your air conditioning system with our professional aircon services in Singapore. Our skilled technicians provide maintenance, repair, and installation solutions for all AC brands."
+      />
+      <AirconServiceComponent />
     </>
-  )
-}
+  );
+};
 
-export default AirconService
+export default AirconService;

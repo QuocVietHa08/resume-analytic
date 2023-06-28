@@ -5,7 +5,10 @@ import ServiceComponent from '@/components/pages/service';
 const Service = () => {
   return (
     <>
-      <NextSeo title='Service' />
+      <NextSeo
+        title="Comprehensive Cleaning and Maintenance Services in Singapore | KungFu Helper"
+        description="Explore our wide range of cleaning and maintenance services in Singapore. KungFu Helper offers reliable solutions for homes and businesses, ensuring cleanliness and comfort."
+      />
       <ServiceComponent />
     </>
   );

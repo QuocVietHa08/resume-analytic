@@ -5,7 +5,10 @@ import CurtainCleaningComponent from '@/components/pages/furniture/CurtainCleani
 const CurtainCleaning = () => {
   return (
     <>
-      <NextSeo title='Curtain Cleaning' />
+      <NextSeo
+        title="Professional Curtain Cleaning Services in Singapore | KungFu Helper"
+        description="Enhance the cleanliness and appearance of your curtains with our professional curtain cleaning services. KungFu Helper offers specialized cleaning methods to remove dust, stains, and allergens."
+      />
       <CurtainCleaningComponent />
     </>
   );

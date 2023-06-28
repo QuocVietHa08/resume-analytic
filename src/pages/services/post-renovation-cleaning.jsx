@@ -5,7 +5,10 @@ import PostRenovationComponent from '@/components/pages/house-cleaning/PostRenov
 const PostRenovation = () => {
   return (
     <>
-      <NextSeo title="Post rennovaion cleaning" />
+      <NextSeo
+        title="Thorough Post Renovation Cleaning Services in Singapore | KungFu Helper"
+        description="Enjoy a clean and dust-free space after renovations with our thorough post renovation cleaning services. KungFu Helper's experts remove debris, dust, and traces of construction for a pristine environment."
+      />
       <PostRenovationComponent />
     </>
   );
