@@ -5,6 +5,7 @@ module.exports = {
   env: {
     GOOGLE_MAP_API_KEY: process.env.GOOGLE_MAP_API_KEY,
     SEND_IN_BLUE_URL: process.env.SEND_IN_BLUE_URL,
+    BASE_URL: process.env.BASE_URL,
   },
   sassOptions: {
     fiber: false,
@@ -12,10 +13,20 @@ module.exports = {
   },
   eslint: {
     ignoreDuringBuilds: true,
+  },  
+  webpack: (config, { isServer }) => {
+    if (isServer) {
+      require('./scripts/sitemap-generator');
+    }
+
+    return config;
   },
-  i18n: {
-    localeDetection: false,
-    locales: ['jp'],
-    defaultLocale: 'jp',
+  async rewrites() {
+    return [
+      {
+        source: '/robots.txt',
+        destination: '/api/robots',
+      },
+    ];
   },
 };
