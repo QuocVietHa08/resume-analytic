@@ -8,8 +8,7 @@ const api = Axios.create({
 
 api.interceptors.request.use(
   (config) => {
-    config.headers['domain_name']= `asure-pro`;
-    
+    config.headers.domain_name= `kungfu-helper`; 
     return config;
   },
   (error) => Promise.reject(error),

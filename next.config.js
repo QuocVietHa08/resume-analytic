@@ -3,16 +3,11 @@ const path = require('path');
 module.exports = {
   reactStrictMode: true,
   env: {
+    GOOGLE_MAP_API_KEY: process.env.GOOGLE_MAP_API_KEY,
+    SEND_IN_BLUE_URL: process.env.SEND_IN_BLUE_URL,
     BASE_URL: process.env.BASE_URL,
-    ADDRESS_NFT_MARKET: process.env.ADDRESS_NFT_MARKET,
-    ADDRESS_NFT_MARKET_POLYGON: process.env.ADDRESS_NFT_MARKET_POLYGON,
-    ADDRESS_NFT_MARKET_ETH: process.env.ADDRESS_NFT_MARKET_ETH,
-    METAHERO_NFT_ADDRESS_POLYGON: process.env.METAHERO_NFT_ADDRESS_POLYGON,
-    METAHERO_NFT_ADDRESS_ETH: process.env.METAHERO_NFT_ADDRESS_ETH,
-
-    ADDRESS_COLLECTION_MARKET_POLYGON:process.env.ADDRESS_COLLECTION_MARKET_POLYGON,
-    ADDRESS_COLLECTION_MARKET_ETH:process.env.ADDRESS_COLLECTION_MARKET_ETH
-
+    ACCESS_KEY_ID: process.env.ACCESS_KEY_ID,
+    SERCRET_ACCESS_KEY: process.env.SERCRET_ACCESS_KEY,
   },
   sassOptions: {
     fiber: false,
@@ -20,10 +15,20 @@ module.exports = {
   },
   eslint: {
     ignoreDuringBuilds: true,
+  },  
+  webpack: (config, { isServer }) => {
+    if (isServer) {
+      require('./scripts/sitemap-generator');
+    }
+
+    return config;
   },
-  i18n: {
-    localeDetection: false,
-    locales: ['jp'],
-    defaultLocale: 'jp',
+  async rewrites() {
+    return [
+      {
+        source: '/robots.txt',
+        destination: '/api/robots',
+      },
+    ];
   },
 };

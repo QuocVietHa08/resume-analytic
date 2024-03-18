@@ -29,7 +29,8 @@
   font-size: 24px;
   color: #000000;
   margin: 50px 0px;
-  font-family: 'Baloo Da';
+  font-weight: bold;
+  // font-family: 'Baloo Da';
 
   @include mobile {
     font-size: 12px;

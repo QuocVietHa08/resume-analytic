@@ -5,12 +5,12 @@ import useDetectWindowSize from '@/hooks/useDetectWindowSize';
 const DETAIL_LIST = [
   {
     imgSrc: '/img/furniture/calendar',
-    title: 'Certified carpet cleaner',
+    title: 'Same-day and full weekly availability',
     text: 'Send an inquiry to us and our team will arrange a time and day that suits you best.',
   },
   {
     imgSrc: '/img/furniture/user',
-    title: 'Same-day and full weekly availability',
+    title: 'Certified carpet cleaner',
     text: 'Our carpet cleaners have all been through training and have in-depth knowledge of carpet cleaning solutions.',
   },
   {
@@ -35,7 +35,7 @@ const Detail = () => {
 
   return (
     <div className={styles.airconServiceDetailContainer}>
-      <div className={`${styles.introText} mt-100 mb-150 mt-sp-40 mb-sp-40`}>
+      <div className={`${styles.introText} ${styles.introTextCarpetCleaning}`}>
         Feel your carpet as good as new, safety checklist with kids, pets, and the environment in mind
       </div>
       <div className={styles.serviceDetail}>
@@ -44,7 +44,7 @@ const Detail = () => {
           <div className="flex flex-column gap-30 gap-sp-10">
             {DETAIL_LIST.map((item) => (
               <div className={styles.poolingDetailContent} key={item}>
-                <img src={`${width > 779 ? `${item.imgSrc}.svg` : `${item.imgSrc}.svg`}`} alt="img" />
+                <img className={styles.carpetImageStyle} src={`${width > 779 ? `${item.imgSrc}.svg` : `${item.imgSrc}.svg`}`} alt="img" />
                 <div>
                   <div className={styles.poolingDetailTitle}>{item.title}</div>
                   <span>{item.text}</span>

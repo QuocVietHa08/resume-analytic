@@ -4,14 +4,17 @@
   width: 80%;
   margin: 0 auto;
 
+  @include tablet {
+    width: 95%;
+  }
   @include mobile {
-    width: 100%;
+    width: 95%;
   }
 }
 
 // Work
 .workContainer {
-  width: 80%;
+  width: 100%;
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
@@ -19,11 +22,19 @@
   margin: 0 auto;
   margin-top: 30px;
   margin-bottom: 70px;
+  @include tablet {
+    width: 100%;
+    gap: 0px;
+  }
 
   @include mobile {
     width: 90%;
     justify-content: space-between;
     gap: 0;
+
+    @media screen and (max-width: 620px) {
+      max-width: 300px;
+    }
   }
 }
 
@@ -44,9 +55,16 @@
 
 .workItemWrapper {
   display: flex;
+  justify-content: center;
   height: 100%;
   position: relative;
   padding-top: 20px;
+  width: 24%;
+
+  
+  @include mobile {
+    width: unset;
+  }
 
   p {
     font-weight: 700;
@@ -56,6 +74,10 @@
     color: #e6e6e6;
     opacity: 0.5;
     margin-bottom: 0;
+
+    @include tablet {
+      font-size: 22px;
+    }
 
     @include mobile {
       font-size: 16px;
@@ -69,32 +91,47 @@
     align-items: center;
     justify-content: space-between;
 
+    @include tablet {
+      img {
+        height: 100px;
+      }
+    }
+
     @include mobile {
       margin-top: 20px;
     }
   }
 
   .workItemLine {
-    width: 80px;
+    width: 40%;
     height: 0;
-    border: 3px dashed #9fcfc9;
+    border: 2px dashed #9fcfc9;
     position: absolute;
     top: 50%;
-    right: -20%;
+    right: 0%;
+    transform: translateX(50%);
     z-index: 99;
+
+    @include tablet {
+      width: 25%;
+      border-width: 2px;
+    }
+
   }
 }
 
 .titleStyle {
+  text-align: center;
+}
+
+.titleStyle span {
   font-family: 'Baloo Da';
-  font-weight: 700;
-  font-size: 66px;
+  font-size: 50px;
   text-align: center;
   text-transform: capitalize;
   color: #333333;
-  text-decoration: underline;
-  text-decoration-color: #fddc3a;
   margin-top: 150px;
+  position: relative;
 
   @include tablet {
     font-size: 35px;
@@ -105,12 +142,65 @@
     font-size: 20px;
     margin-top: 80px;
   }
+
+  &::after {
+    position: absolute;
+    height: 10px;
+    margin: 0 auto;
+    content: '';
+    left: 0;
+    right: 0;
+    width: 100%;
+    color: #000;
+    background-color: #fddc3a;
+    left: 0;
+    z-index: -1;
+    bottom: 20px;
+
+    @include tablet {
+      height: 7px;
+      bottom: 13px;
+    }
+
+    @include mobile {
+      height: 4px;
+      bottom: 8px;
+    }
+  }
 }
 
 .reFerralWorkContainer {
 
   @include mobile {
-    width: 90%;
+    width: 100%;
     margin: 0 auto;
+  }
+}
+
+
+.panelActive {
+  color: #3C8477;
+  font-size: 20px;
+  font-weight: bold;
+
+  @include tablet {
+    font: 16px;
+  }
+
+  @include mobile {
+    font-size: 12px;
+  }
+}
+
+.panelInActive {
+  font-size: 20px;
+  color: #393E46;
+  font-weight: bold;
+
+  @include tablet {
+    font-size: 16px;
+  }
+  @include mobile {
+    font-size: 12px;
   }
 }

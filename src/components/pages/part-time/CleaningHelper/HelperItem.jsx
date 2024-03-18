@@ -56,7 +56,7 @@ const HelperItem = ({ title, imgSrc, content, isPartTimeHelper }) => {
 
   return (
     <div className={styles.partimeItem}>
-      <img src={imgSrc} alt={title} />
+      <img src={imgSrc} alt={title} className={styles.partimeItemImage} />
       <div className={styles.title}>{title}</div>
       <div className={styles.content}>
         {content}
@@ -72,7 +72,7 @@ const HelperItem = ({ title, imgSrc, content, isPartTimeHelper }) => {
         )}
         {isPartTimeHelper && (
           <div>
-            <span className="font-size-20">
+            <span className="font-size-20 font-size-sp-12 font-size-tb-16">
               • Cleaning materials are to be provided for a smooth cleaning experience. See list of cleaning equipment
             </span>
             <span

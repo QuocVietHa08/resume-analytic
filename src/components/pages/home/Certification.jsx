@@ -28,14 +28,15 @@ const CERTIFICATIONS_SP = [
     imgSrc: '/img/home/cert/enviroment',
     title: `NEA Licence Number
 190978/8396C/R02`,
+  }, 
+  {
+    imgSrc: '/img/home/cert/safe',
+    title: `ISO 9001 Quality
+    Management Systems`,
+
   },
   {
     imgSrc: '/img/home/cert/body',
-    title: `ISO 9001 Quality
-    Management Systems`,
-  },
-  {
-    imgSrc: '/img/home/cert/safe',
     title: 'bizSAFE Star',
   },
   {
@@ -50,12 +51,14 @@ const Certification = () => {
     <div className={styles.certificationContainer}>
       <div className={styles.certificationTitle}>
         {width > 1600 ? (
-          <>
+          <div>
             Our
             <span>Certifications</span>
-          </>
+          </div>
         ) : (
-          <span>Our Certifications</span>
+          <div>
+            <span>Our Certifications</span>
+          </div>
         )}
       </div>
       <section>

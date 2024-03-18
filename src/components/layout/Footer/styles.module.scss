@@ -1,7 +1,12 @@
 @import 'styles/responsive.scss';
 .footerContainer {
-  background-color: #b2d8c8;
+  background-color: #CFE7E4;
   width: 100vw;
+
+  @include mobile {
+    padding-top: 30px;
+  }
+
 }
 
 .footerWrapper {
@@ -14,7 +19,7 @@
 
   @include tablet {
     padding: 20px 0px;
-    width: 85%;
+    width: 90%;
   }
   @include mobile {
     padding: 20px 0px;
@@ -27,7 +32,7 @@
     justify-content: space-between;
 
     @include tablet {
-      gap: 30px;
+      gap: 10px;
     }
 
     @include mobile {
@@ -47,6 +52,13 @@
   .footerCopyRight {
     display: flex;
     justify-content: space-between;
+
+    @include tablet {      
+      p {
+        font-size: 16px;
+      }
+    }
+
     @include mobile {
       flex-direction: column;
       gap: 10px;
@@ -78,6 +90,10 @@
   line-height: 23px;
   color: #0e8778;
 
+  @include tablet {
+    font-size: 16px;
+  }
+
   @include mobile {
     font-size: 12px;
   }
@@ -96,7 +112,7 @@
     gap: 10px;
     p {
       font-size: 12px;
-      a {
+      a { 
         color: #36625a;
         font-weight: 400;
       }
@@ -159,5 +175,38 @@
   @include mobile {
     width: 100%;
     margin: 0 auto;
+  }
+}
+
+
+.footerQuickLinkStyle {
+  color: #36625A;
+  font-weight: 400;
+  font-size: 16px;
+
+  @include tablet {
+    font-size: 14px;
+  }
+
+  @include mobile {
+    font-size: 12px;
+  }
+}
+
+.socialMediaWrapper {
+  margin-top: 7px;
+  display: flex;
+  width: 180px;
+  gap: 20px;
+  flex-wrap: wrap;
+
+  @include mobile {
+    width: 120px;
+    gap: 15px;
+    
+    img {
+      border-radius: 50%;
+      width: 25px;
+    }
   }
 }

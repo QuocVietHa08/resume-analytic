@@ -1,9 +1,7 @@
 import React from 'react';
 import styles from './styles.module.scss';
-import useDetectWindowSize from '@/hooks/useDetectWindowSize';
 
 const Detail = () => {
-  const width = useDetectWindowSize();
 
   return (
     <div className={styles.airconServiceDetailContainer}>
@@ -18,7 +16,7 @@ const Detail = () => {
         </div>
       </div>
 
-      <div className={`${styles.serviceDetailAignRight} mb-100 mb-sp-50 `}>
+      <div className={`${styles.serviceDetailAignRight}`}>
         <div className={styles.serviceDetailContent}>
           <div className={`${styles.introText} text-left mb-10 mb-sp-5`}>Floor Sanding & Floor Tiling</div>
           <p>

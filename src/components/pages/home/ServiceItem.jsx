@@ -21,7 +21,7 @@ const ServiceItem = ({ activeService, title, imgSrc, handleOnClick }) => {
     >
       <div>{isActive ? <img src={`${imgSrc}_active.svg`} alt="img" /> : <img src={`${imgSrc}.svg`} alt="img" />}</div>
       <div className="flex flex-column text-center items-center gap-sp-5">
-        <span className={`text-normal ${isActive ? 'color-white-i' : 'color-primary'}`}>{title} </span>
+        <span className={` ${isActive ? 'color-white-i' : 'color-primary'}`}>{title} </span>
       </div>
     </div>
   );

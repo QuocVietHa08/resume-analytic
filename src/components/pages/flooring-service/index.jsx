@@ -5,7 +5,6 @@ import Work from '../home/Work';
 import CleaningService from '../office-cleaning/CleaningService';
 import CleaningVarity from '../office-cleaning/CleaningVarity';
 import Disclaimer from '../office-cleaning/Disclaimer';
-import IntroService from '../service/IntroService';
 import Detail from './Detail';
 import Introduction from '../home/Introduction';
 
@@ -32,12 +31,6 @@ const VARITYS = [
     text: 'Moving Services',
     img: '/img/handyman-service/variety-service/moving',
     link: '/services/moving-services',
-    type: 'info',
-  },
-  {
-    text: 'Landscaping Services',
-    img: '/img/handyman-service/variety-service/landscaping',
-    link: '/services/landscaping-services',
     type: 'info',
   },
   {

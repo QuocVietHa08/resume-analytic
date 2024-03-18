@@ -27,6 +27,8 @@ const SERVICE_DETAIL_FIX = [
       '/services/part-time-helper',
       '/services/part-time-helper',
       '/services/part-time-helper',
+      '/services/part-time-helper',
+      '/services/part-time-helper',
     ],
   },
   {
@@ -47,29 +49,42 @@ const SERVICE_DETAIL_FIX = [
     type: 'service',
     imgSrc: '/img/home/service/house_cleaning',
     services: ['Post-Renovation Cleaning', 'Move In / Move out cleaning', 'Spring Cleaning', 'house disinfection'],
-    links: ['/services/post-rennovation-cleaning', '/services/move', '/services/spring-cleaning', '/services/house-disinfection'],
+    links: ['/services/post-renovation-cleaning', '/services/move', '/services/spring-cleaning', '/services/house-disinfection'],
   },
   {
     name: 'Handy Home Services',
     type: 'service',
     imgSrc: '/img/home/service/home_service',
-    services: ['General handyman services', 'pool cleaning', 'pest control', 'landscaping', 'flooring', 'organising', 'moving'],
+    services: ['General handyman services', 'pool cleaning', 'pest control', 'flooring', 'organising', 'moving'],
     links: [
       '/services/general-handyman-services',
       '/services/pool-cleaning',
       '/services/pest-control',
-      '/services/landscaping-services',
       '/services/flooring-services',
       '/services/organising-services',
       '/services/moving-services',
     ],
   },
   {
-    name: 'Office Cleaning',
+    name: 'Landscaping Services',
     type: 'service',
-    imgSrc: '/img/home/service/office_cleaning',
-    services: ['General office cleaning', 'Office Disinfection'],
-    links: ['/services/general-office-cleaning', '/services/general-office-disinfection'],
+    imgSrc: '/img/home/service/landscaping',
+    services: [
+      'Grass Cutting',
+      'Shrubs and Plants Trimming',
+      'Weeding',
+      'Tree Pruning (Below 3m)',
+      'Plants Watering',
+      'Insecticide Spraying',
+    ],
+    links: [
+      '/services/grass-cutting',
+      '/services/shrubs-and-plants-trimming',
+      '/services/weeding',
+      '/services/tree-pruning',
+      '/services/plants-watering',
+      '/services/insecticide-spraying'
+    ],
   },
   {
     name: 'Aircon Services',
@@ -132,11 +147,11 @@ const ServiceFix = () => {
   return (
     <div className={`${styles.serviceContainerFix} ${router.pathname === '/services' ? 'mt-50' : ''}`}>
       {router.pathname !== '/services' && (
-        <h4>
+        <h1>
           What
           <span>Services</span>
-          Do {width < 768 && <br />} We Provice ?
-        </h4>
+          Do {width < 768 && <br />} We Provide ?
+        </h1>
       )}
       <>
         <p className={styles.serviceDes}>
@@ -168,7 +183,7 @@ const ServiceFix = () => {
               ))}
             </div>
             <div className={styles.cannotFindServiceWrapper}>
-              <span className="text-bold font-size-36 font-size-tb-16"> Unable to find the service you are looking for?</span>
+              <span className="text-bold font-size-36 font-size-tb-20 font-size-sp-12"> Unable to find the service you are looking for?</span>
               <Link href="/contact-us" className={styles.buttonContactCannotFind}>
                 Contact Us
               </Link>
@@ -184,9 +199,7 @@ const ServiceFix = () => {
                 </React.Fragment>
               ))}
             </div>
-            {activeService.length > 0 && (
-              <div className={styles.showServicesDetail}>{handleRenderActiveService()}</div>
-            )}
+            {activeService.length > 0 && <div className={styles.showServicesDetail}>{handleRenderActiveService()}</div>}
             <div className={styles.cannotFindServiceWrapper}>
               <span className="text-bold font-size-tb-16"> Unable to find the service you are looking for?</span>
               <Link href="/contact-us" className={styles.buttonContactCannotFind}>

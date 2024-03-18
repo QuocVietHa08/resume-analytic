@@ -17,12 +17,6 @@ const HANDYMAN_VARITY = [
     link: '/services/general-handyman-services',
     type: 'info',
   },
-  // {
-  //   text: 'Aircon Servicing',
-  //   img: '/img/handyman-service/variety-service/aircon',
-  //   link: '/aircon-service',
-  //   type: 'info',
-  // },
   {
     text: 'Pool Cleaning',
     img: '/img/handyman-service/variety-service/pool',
@@ -40,13 +34,7 @@ const HANDYMAN_VARITY = [
     img: '/img/handyman-service/variety-service/moving',
     link: '/services/moving-services',
     type: 'info',
-  },
-  {
-    text: 'Landscaping Services',
-    img: '/img/handyman-service/variety-service/landscaping',
-    link: '/services/landscaping-services',
-    type: 'info',
-  },
+  }, 
   {
     text: 'Flooring Services',
     img: '/img/handyman-service/variety-service/flooring',
@@ -70,7 +58,7 @@ const HandymanService = () => {
     <div className={styles.handymanServiceContainer}>
       <Introduction imgSrc="/img/handy-home/general-handyman/banner" />
       <HandymanServiceDetail />
-      <div className="mt-150 mt-sp-20 mb-170 mb-sp-100">
+      <div className={styles.disclaimerWrapper}>
         <Disclaimer />
       </div>
       <CleaningVarity title="Handy Home Services" arrayList={HANDYMAN_VARITY} />

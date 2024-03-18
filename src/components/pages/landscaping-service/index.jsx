@@ -1,6 +1,5 @@
 import React from 'react';
 import styles from './styles.module.scss';
-import IntroService from '../service/IntroService';
 import Disclaimer from '../office-cleaning/Disclaimer';
 import CleaningVarity from '../office-cleaning/CleaningVarity';
 import Work from '../home/Work';
@@ -8,7 +7,6 @@ import Testimonials from '../home/Testimonials';
 import CleaningService from '../office-cleaning/CleaningService';
 import Enquiry from '../home/Enquiry';
 import Download from '../home/Download';
-import BreadCumbs from '@/components/atoms/breadcumbs';
 import LandscapingServiceDetail from './LandscapingServiceDetail';
 import Introduction from '../home/Introduction';
 
@@ -60,21 +58,6 @@ const VARITYS = [
     type: 'contact',
   },
 ];
-
-const BREADCUMBS = [
-  {
-    text: 'Home',
-    link: '/'
-  },
-  {
-    text: 'Services',
-    link: '/service'
-  },
-  {
-    text: 'Landscaping Services',
-    link: '' 
-  }
-]
 
 const LandscapingService = () => {
   return (

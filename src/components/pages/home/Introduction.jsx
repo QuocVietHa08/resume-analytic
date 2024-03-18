@@ -21,7 +21,7 @@ const Introduction = ({ imgSrc }) => {
                 </div>
                 <div className="font-size-24 font-size-tb-16 line-height-tb-20 line-height-30 mt-20 text-normal">
                   We provide top notch cleaning services to our <br /> customers, ensuring consistency and quality. <br />
-                  Download our app today to book a cleaning service <br /> with our expert cleaners!
+                  WhatsApp us today to book a cleaning service <br /> with our expert cleaners!
                 </div>
               </div>
               <div role="button" tabIndex={0} onKeyDown={handleOnClickButton} onClick={handleOnClickButton} className={styles.whatAppButton}>

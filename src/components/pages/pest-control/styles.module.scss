@@ -8,10 +8,13 @@
   gap: 150px;
 
   @include mobile {
+    width: 100%;
     flex-direction: column;
     align-items: start;
     gap: 0px;
-    margin: 50px auto;
+    margin: 0px;
+    margin-bottom: 30px;
+    // margin: 50px auto;
   }
 
   .poolingDes {
@@ -20,12 +23,12 @@
     @include mobile {
       width: 80%;
       font-size: 12px;
-      margin: 20px auto;
+      margin: 0px auto;
     }
   }
 
   .poolingDetailContent {
-    width: 45%;
+    width: 75%;
     text-align: left;
     display: flex;
     align-items: center;
@@ -44,5 +47,18 @@
       width: 80%;
       margin: 10px auto;
     }
+  }
+}
+
+.detailListWrapper {
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px;
+  gap: 30px;
+
+  @include mobile {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    gap: 10px
   }
 }

@@ -4,8 +4,11 @@
     width: 80%;
     margin: 0 auto;
 
+    @include mobile {
+      width: 85%;
+    }
+
   .introText {
-    font-weight: 700;
     font-size: 32px;
     text-align: left;
     color: #0e8778;
@@ -27,7 +30,7 @@
       flex-direction: column;
       align-items: start;
       gap: 0px;
-      margin-top: 50px;
+      margin-top: 20px;
 
     }
   }
@@ -35,12 +38,14 @@
   .serviceDetailAignRight {
     @extend .serviceDetail;
     margin-top: 50px;
+    margin-bottom: 100px;
 
     @include tablet {
       margin-top: 30px;
     }
     
     @include mobile {
+      margin-bottom: 50px;
       margin-top: 20px;
       align-items: end;
     }
@@ -59,8 +64,8 @@
     }
 
     @include mobile {
-      width: 90%;
-      margin: 30px auto;
+      width: 100%;
+      margin: 10px auto;
     }
   }
 }

@@ -6,47 +6,49 @@ import CleaningService from '../office-cleaning/CleaningService';
 import CleaningVarity from '../office-cleaning/CleaningVarity';
 // import CondenserDryCleaningDetail from './CondenserDryCleaningDetail';
 import GasTopUpDetail from './GasTopUpDetail';
+import Work from '../home/Work';
+import Testimonials from '../home/Testimonials';
 
-const HANDYMAN_VARITY = [
+const AIRCON_VARITY = [
   {
     text: 'AC Diagnostic Service',
-    img: '/img/handyman-service/variety-service/handman',
+    img: '/img/aircon/ac-diagnostic/icon',
     link: '/services/ac-diagnostic-service',
     type: 'info',
   },
   {
     text: 'General Servicing',
-    img: '/img/handyman-service/variety-service/pool',
+    img: '/img/aircon/general-servicing/icon',
     link: '/services/general-servicing',
     type: 'info',
   },
   {
     text: 'Aircon Chemical Wash',
-    img: '/img/handyman-service/variety-service/pest',
+    img: '/img/aircon/aircon-chemical-wash/icon',
     link: '/services/aircon-chemical-wash',
     type: 'info',
   },
   {
     text: 'Aircon Chemical Overhaul',
-    img: '/img/handyman-service/variety-service/moving',
+    img: '/img/aircon/aircon-chemical-overhaul/icon',
     link: '/services/aircon-chemical-overhaul',
     type: 'info',
   },
   {
     text: 'Condenser Dry Cleaning',
-    img: '/img/handyman-service/variety-service/landscaping',
+    img: '/img/aircon/condenser-dry-cleaning/icon',
     link: '/services/condenser-dry-cleaning',
     type: 'info',
   },
   {
     text: 'Air Filtration Installation',
-    img: '/img/handyman-service/variety-service/flooring',
+    img: '/img/aircon/air-filtration/icon',
     link: '/services/air-filtration-installation',
     type: 'info',
   },
   {
     text: 'Gas Top Up',
-    img: '/img/handyman-service/variety-service/organising',
+    img: '/img/aircon/gas-top-up/icon',
     link: '/services/gas-top-up',
     type: 'info',
   },
@@ -62,7 +64,9 @@ const GasTopUp = () => {
       <Introduction imgSrc="/img/aircon/gas-top-up/banner" />
        <GasTopUpDetail />
       <Disclaimer />
-      <CleaningVarity title="Aircon Services" arrayList={HANDYMAN_VARITY} />
+      <CleaningVarity title="Aircon Services" arrayList={AIRCON_VARITY} />
+      <Work />
+      <Testimonials />
       <CleaningService title="Aircon Services" /> 
       <Enquiry isShowBgImage={false} />
     </>

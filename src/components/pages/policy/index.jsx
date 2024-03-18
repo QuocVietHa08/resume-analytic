@@ -25,14 +25,14 @@ const Policy = () => {
           information in accordance with this Privacy Policy.{' '}
         </p>
 
-        <div className={`${styles.policySection} text-font-family`}>Interpretation and Definitions</div>
+        <div className={`${styles.policySection}`}>Interpretation and Definitions</div>
         <div className={styles.policyTitle}>Interpretations</div>
         <p>
           The words of which the initial letter is capitalized have meanings defined under the following conditions. The following
           definitions shall have the same meaning regardless of whether they appear in singular or in plural.
         </p>
 
-        <div className={styles.polictyTitle}>Definitions</div>
+        <div className={styles.policyTitle}>Definitions</div>
         <p>For the purposes of this Privacy Policy: </p>
         <ul>
           <li>
@@ -282,7 +282,7 @@ const Policy = () => {
           electronic storage is 100% secure. While We strive to use commercially acceptable means to protect Your Personal Data, We cannot
           guarantee its absolute security.
         </p>
-        <div className={`${styles.policySection} text-font-family`}>Children’s Privacy</div>
+        <div className={`${styles.policySection}`}>Children’s Privacy</div>
         <p>
           Our Service does not address anyone under the age of 13. We do not knowingly collect personally identifiable information from
           anyone under the age of 13. If You are a parent or guardian and You are aware that Your child has provided Us with Personal Data,

@@ -36,6 +36,7 @@ const Detail = () => {
                   src={`${
                     width > 779 ? '/img/office-cleaning/cleaning-detail/check.svg' : `/img/office-cleaning/cleaning-detail/check_sp.svg`
                   }`}
+                  className="h-sp-12"
                   alt="img"
                 />
                 <span>{item}</span>

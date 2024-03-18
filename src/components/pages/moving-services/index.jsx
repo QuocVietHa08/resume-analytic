@@ -1,7 +1,4 @@
 import React from 'react';
-import BreadCumbs from '@/components/atoms/breadcumbs';
-import IntroService from '../service/IntroService';
-// import styles from './styles.module.scss';
 import Disclaimer from '../office-cleaning/Disclaimer';
 import CleaningVarity from '../office-cleaning/CleaningVarity';
 import Work from '../home/Work';
@@ -34,25 +31,19 @@ const VARITYS = [
   {
     text: 'Moving Services',
     img: '/img/handyman-service/variety-service/moving',
-    link: '/moving-services',
+    link: '/services/moving-services',
     type: 'info',
-  },
-  {
-    text: 'Landscaping Services',
-    img: '/img/handyman-service/variety-service/landscaping',
-    link: '/landscaping-services',
-    type: 'info',
-  },
+  }, 
   {
     text: 'Flooring Services',
     img: '/img/handyman-service/variety-service/flooring',
-    link: '/flooring-services',
+    link: '/services/flooring-services',
     type: 'info',
   },
   {
     text: 'Organising Services',
     img: '/img/handyman-service/variety-service/organising',
-    link: '/organising-services',
+    link: '/services/organising-services',
     type: 'info',
   },
   {
@@ -61,25 +52,10 @@ const VARITYS = [
   },
 ];
 
-const BREADCUMBS = [
-  {
-    text: 'Home',
-    link: '/'
-  },
-  {
-    text: 'Services',
-    link: '/service'
-  },
-  {
-    text: 'Moving Services',
-    link: ''
-  }
-]
+
 const MovingService = () => {
   return (
     <div>
-      {/* <IntroService title="Moving Services" /> */}
-      {/* <BreadCumbs pages={BREADCUMBS} /> */}
       <Introduction imgSrc="/img/handy-home/moving/banner" />
       <MovingDetailService />
       <Disclaimer />
