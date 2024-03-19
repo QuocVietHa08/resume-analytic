@@ -522,50 +522,76 @@ th {
 }
 
 // chatbot
-.chat-bot-wrapper {
-  margin: 50px auto;
-  max-width: 450px;
-  position: relative;
-}
-.react-chatbot-kit-chat-container {
-  // position: absolute;
-  width: 100%;
-  // right: 0;
-  // bottom: 0;
-}
-
-.react-chatbot-kit-chat-inner-container {
-  height: 500px;
-  background-color: #fff;
-  border-radius: 3px;
-  border-radius: 5px;
-}
-
-.react-chatbot-kit-chat-header {
+.bot-icon-wrapper {
+  background-color: #3C8477; 
+  border-radius: 50%;
+  padding: 10px;
+  width: 60px;
+  height: 60px;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 14px;
-  color: #514f4f;
-  height: 30px;
+
+  svg {
+    width: 40px;
+    fill: white;
+  }
+}
+.chat-bot-wrapper {
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  z-index: 9999;
+  width: 450px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 20px;
+}
+.react-chatbot-kit-chat-container {
+  width: 100%;
+}
+
+.react-chatbot-kit-chat-inner-container {
+  height: 60vh;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+
+  background-color: #fff;
+  font-weight: 600;
+}
+
+.react-chatbot-kit-chat-header {
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
+  height: 40px;
   text-align: center;
   border: 1px solid black;
   border-bottom: none;
+  font-family: 'Baloo Da';
+  background-color: #3C8477;
 }
 
 .react-chatbot-kit-chat-input-container {
-  position: absolute;
-  bottom: -50px;
+  // position: absolute;
+  // bottom: 0px;
   width: 100%;
   display: flex;
   border: 1px solid black;
+  border-bottom-right-radius: 10px;
 }
 
 .react-chatbot-kit-chat-message-container {
   padding: 0 17.5px 10px 17.5px;
-  overflow: scroll;
-  overflow-y: scroll;
-  height: calc(100% - 20px);
+  overflow: auto;
+  height: calc(100% - 85px);
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -591,13 +617,14 @@ th {
 }
 
 .react-chatbot-kit-chat-btn-send {
-  background-color: #2898ec;
+  background-color: #3C8477;
   width: 100px;
   border: none;
   color: #fff;
   border-bottom-right-radius: 5px;
 
   svg {
+    fill: white;
     width: 25px
   }
 }
@@ -615,7 +642,7 @@ th {
 .message-style {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 15px;
   font-size: 16px;
 
   svg { 
@@ -631,7 +658,7 @@ th {
     color: white;
     margin-top: 10px;
     margin-bottom: 10px;
-    padding: 20px;
+    padding: 10px 15px;
     width: 60%;
     height: auto;
     word-wrap: break-word;
@@ -644,7 +671,7 @@ th {
     background-color: #F7F7F7;
     border-radius: 20px;
     color: #1B1A57;
-    padding: 20px;
+    padding: 10px 15px;
     width: 70%;
     height: auto;
     word-wrap: break-word;
