@@ -139,19 +139,7 @@ const Chatbot = () => {
         }
         setMessage((prevMess) => [...prevMess, botMessage])
         setInput('');
-
-        // const rawRes = res?.results[0];
-        // const jsonString = new TextDecoder().decode(rawRes);
-        // const parsedResponse = JSON.parse(jsonString);
-        // const botMessage = {
-        //   message: parsedResponse.outputText,
-        //   role: 'bot',
-        // }
-        // setMessage((prevMess) => [...prevMess, botMessage])
       });
-      // setTimeout(() => {
-      //   setMessage((prevMess) => [...prevMess, { message: 'I am a bot', role: 'bot' }]);
-      // }, 1000);
     } catch (error) {
       console.error('error', error);
     } finally {
