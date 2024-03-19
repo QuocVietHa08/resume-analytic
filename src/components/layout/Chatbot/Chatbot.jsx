@@ -1,4 +1,6 @@
-import React  from 'react';
+/* eslint-disable react/no-array-index-key */
+/* eslint-disable jsx-a11y/control-has-associated-label */
+import React, { useEffect, useRef } from 'react';
 import { BedrockRuntimeClient, InvokeModelCommand } from '@aws-sdk/client-bedrock-runtime';
 
 const client = new BedrockRuntimeClient({
@@ -8,6 +10,7 @@ const client = new BedrockRuntimeClient({
     secretAccessKey: process.env.SERCRET_ACCESS_KEY,
   },
 });
+
 
 const ChatIcon = () => {
   return (
@@ -84,31 +87,44 @@ const Chatbot = () => {
   const [input, setInput] = React.useState('');
   const [message, setMessage] = React.useState([]);
   const [loading, setLoading] = React.useState(false);
+  const messagesEndRef = useRef(null);
+
+  useEffect(() => {
+    if (messagesEndRef.current) {
+      messagesEndRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  }, [message]);
 
   const handleCallChatbotAPI = (questionInput) => {
-    const prompt = `
-  Human: ${questionInput}
-  Assistant:
-  `;
+    const prompt = `${questionInput}`;
     const promptInput = {
-      modelId: 'anthropic.claude-3-sonnet-20240229-v1:0',
+      modelId: 'amazon.titan-text-lite-v1',
       contentType: 'application/json',
       accept: 'application/json',
       body: JSON.stringify({
-        anthropic_version: 'bedrock-2023-05-31',
-        max_tokens: 1000,
-        messages: [
-          {
-            role: 'user',
-            content: [
-              {
-                type: 'text',
-                text: prompt,
-              },
-            ],
-          },
-        ],
-      }),
+        inputText: prompt,
+        textGenerationConfig: {
+          maxTokenCount: 4096,
+          stopSequences: [],
+          temperature: 0,
+          topP: 1
+        }
+      })
+      // "body": "{\"inputText\":\"this is where you place your input text\",\"textGenerationConfig\":{\"maxTokenCount\":4096,\"stopSequences\":[],\"temperature\":0,\"topP\":1}}""body": "{\"inputText\":\"this is where you place your input text\",\"textGenerationConfig\":{\"maxTokenCount\":4096,\"stopSequences\":[],\"temperature\":0,\"topP\":1}}"
+      // body: JSON.stringify({
+      //   max_tokens: 1000,
+      //   messages: [
+      //     {
+      //       role: 'user',
+      //       content: [
+      //         {
+      //           type: 'text',
+      //           text: prompt,
+      //         },
+      //       ],
+      //     },
+      //   ],
+      // }),
     };
     const command = new InvokeModelCommand(promptInput);
     try {
@@ -116,15 +132,28 @@ const Chatbot = () => {
         const rawRes = res?.body;
         const jsonString = new TextDecoder().decode(rawRes);
         const parsedResponse = JSON.parse(jsonString);
+        const output = parsedResponse?.results[0].outputText;
         const botMessage = {
-          message: parsedResponse.content[0].text,
+          message: output,
           role: 'bot',
         }
         setMessage((prevMess) => [...prevMess, botMessage])
         setInput('');
+
+        // const rawRes = res?.results[0];
+        // const jsonString = new TextDecoder().decode(rawRes);
+        // const parsedResponse = JSON.parse(jsonString);
+        // const botMessage = {
+        //   message: parsedResponse.outputText,
+        //   role: 'bot',
+        // }
+        // setMessage((prevMess) => [...prevMess, botMessage])
       });
+      // setTimeout(() => {
+      //   setMessage((prevMess) => [...prevMess, { message: 'I am a bot', role: 'bot' }]);
+      // }, 1000);
     } catch (error) {
-        console.error("error", error)
+      console.error('error', error);
     } finally {
       setLoading(false);
     }
@@ -145,41 +174,18 @@ const Chatbot = () => {
   };
 
   const renderMessages = () => {
-    // return messages.map((messageObject, index) => {
-    //   if (botMessage(messageObject)) {
-    //     return (
-    //       <React.Fragment key={messageObject.id}>
-    //         {renderChatbotMessage(messageObject, index)}
-    //       </React.Fragment>
-    //     );
-    //   }
-
-    //   if (userMessage(messageObject)) {
-    //     return (
-    //       <React.Fragment key={messageObject.id}>
-    //         {renderUserMessage(messageObject)}
-    //       </React.Fragment>
-    //     );
-    //   }
-
-    //   if (customMessage(messageObject, customMessages)) {
-    //     return (
-    //       <React.Fragment key={messageObject.id}>
-    //         {renderCustomMessage(messageObject)}
-    //       </React.Fragment>
-    //     );
-    //   }
-    // });
-    return message.map((msg, index) => {
-      return (
-        // eslint-disable-next-line react/no-array-index-key
-        <div className={`message-style ${msg.role === 'user' ? 'justify-end' : ''} `} key={index}>
-          {msg.role === 'bot' && <BotIcon />}
-          <div className={`role-${msg?.role}`}>{msg.message}</div>
-          {msg.role === 'user' && <UserIcon />}
-        </div>
-      );
-    });
+    return (
+      <div style={{ overflow: 'auto' }}>
+        {message.map((msg, index) => (
+          <div className={`message-style ${msg.role === 'user' ? 'justify-end' : ''} `} key={index}>
+            {msg.role === 'bot' && <BotIcon />}
+            <div className={`role-${msg?.role}`}>{msg.message}</div>
+            {msg.role === 'user' && <UserIcon />}
+          </div>
+        ))}
+        <div ref={messagesEndRef} />
+      </div>
+    );
   };
 
   return (
@@ -196,24 +202,7 @@ const Chatbot = () => {
         /> */}
         <div className="react-chatbot-kit-chat-header">Kungfu Helper Chatbot</div>
 
-        <div
-          className="react-chatbot-kit-chat-message-container"
-          // ref={messageContainerRef}
-        >
-          {/* <ConditionallyRender
-            condition={
-              typeof messageHistory === 'string' && Boolean(messageHistory)
-            }
-            show={
-              <div
-                dangerouslySetInnerHTML={{ __html: messageHistory as string }}
-              />
-            }
-          /> */}
-          {renderMessages()}
-          {loading && <div className="loading">Loading...</div>}
-          <div style={{ paddingBottom: '15px' }} />
-        </div>
+        <div className="react-chatbot-kit-chat-message-container">{renderMessages()}</div>
 
         <div className="react-chatbot-kit-chat-input-container">
           <form className="react-chatbot-kit-chat-input-form" onSubmit={handleSubmit}>
