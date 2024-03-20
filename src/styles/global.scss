@@ -628,7 +628,7 @@ th {
   font-weight: 600;
 
   @media screen and (max-width: 768px){
-    height: 100vh;
+    height: calc(100vh - 32px);
     border-radius: 0px;
   }
 }
@@ -671,13 +671,15 @@ th {
 
   @media screen and (max-width: 768px) {
     border-radius: 0px;
+    border: none;
+    position: fixed;
   }
 }
 
 .react-chatbot-kit-chat-message-container {
   padding: 0 17.5px 10px 17.5px;
   overflow: auto;
-  height: calc(100% - 85px);
+  height: calc(100% - 85px - 32px);
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -690,7 +692,6 @@ th {
   padding: 12.5px;
   border: none;
   font-size: 0.85rem;
-  border-top: 1px solid #3c8477;
   border-bottom-left-radius: 16px;
 }
 
@@ -698,6 +699,7 @@ th {
   width: 100%;
   display: flex;
   border-bottom-left-radius: 16px;
+  border-top: 1px solid #3c8477;
 }
 
 .react-chatbot-kit-chat-input::placeholder {
@@ -705,14 +707,15 @@ th {
 }
 
 .react-chatbot-kit-chat-btn-send {
-  background-color: #3c8477;
+  background-color: white;
   width: 100px;
   border: none;
   color: #fff;
   border-bottom-right-radius: 16px;
 
   svg {
-    fill: white;
+    // fill: white;
+    fill: #3c8477;
     width: 20px;
   }
 
@@ -722,12 +725,19 @@ th {
 }
 
 .react-chatbot-kit-chat-btn-send-icon {
-  fill: #fff;
   margin: 0 auto;
 
   svg {
-    width: 15px;
+    fill: #3c8477;
+    width: 20px;
+
+    path {
+
+    fill: #3c8477;
+    } 
   }
+
+  
 }
 
 .message-style {
@@ -795,6 +805,23 @@ th {
   border: 1px solid #3c8477;
   @media screen and (max-width: 768px) {
     margin-right: 10px;
+  }
+}
+
+.footer-chatbot {
+  display: none;
+  width: 100%;
+  background-color: white;
+  text-align: center;
+  color: #3c8477; 
+  padding: 5px 0px;
+  border: 1px solid #3c8477;
+  border-top: 0px;
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+
+  @media screen and (max-width: 768px) {
+    display: block; 
   }
 }
 
