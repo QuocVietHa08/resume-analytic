@@ -1,6 +1,7 @@
 /* eslint-disable react/no-array-index-key */
 /* eslint-disable jsx-a11y/control-has-associated-label */
 import React, { useCallback, useEffect, useRef } from 'react';
+import { message as messageAntd } from 'antd'
 import { BedrockRuntimeClient, InvokeModelCommand } from '@aws-sdk/client-bedrock-runtime';
 
 const client = new BedrockRuntimeClient({
@@ -104,12 +105,13 @@ const DotLoading = () => {
     </div>
   );
 };
-const SUGGESTION_QUESTION = ['Hello', 'Tell me about your service', 'Who are you ?'];
+const SUGGESTION_QUESTION = ['Hello', 'Who are you ?'];
 const Chatbot = ({ onClose }) => {
   const [input, setInput] = React.useState('');
   const [message, setMessage] = React.useState([]);
   const [loading, setLoading] = React.useState(false);
   const messagesEndRef = useRef(null);
+  const [messageApi, contextHolder] = messageAntd.useMessage();
 
   useEffect(() => {
     if (messagesEndRef.current) {
@@ -148,7 +150,10 @@ const Chatbot = ({ onClose }) => {
         setInput('');
       });
     } catch (error) {
-      console.error('error', error);
+      messageApi.open({
+        type: 'error',
+        content: 'Connection timout! Please reload chatbot',
+      });
     } finally {
       setLoading(false);
     }
@@ -211,6 +216,8 @@ const Chatbot = ({ onClose }) => {
   };
 
   return (
+    <>
+     {contextHolder}
     <div className="react-chatbot-kit-chat-container">
       <div className="react-chatbot-kit-chat-inner-container">
         <div className="react-chatbot-kit-chat-header">
@@ -245,6 +252,8 @@ const Chatbot = ({ onClose }) => {
         </div>
       </div>
     </div>
+    </>
+
   );
 };
 
