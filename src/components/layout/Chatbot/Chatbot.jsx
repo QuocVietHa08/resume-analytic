@@ -11,7 +11,6 @@ const client = new BedrockRuntimeClient({
   },
 });
 
-
 const ChatIcon = () => {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
@@ -83,7 +82,18 @@ const UserIcon = () => {
   );
 };
 
-const Chatbot = () => {
+const CloseIcon = () => {
+  return (
+    <svg width="116" height="116" viewBox="0 0 116 116" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M99.3586 26.8711L89.1089 16.6214L57.99 47.7403L26.8711 16.6214L16.6214 26.8711L47.7403 57.99L16.6214 89.1089L26.8711 99.3586L57.99 68.2397L89.1089 99.3586L99.3586 89.1089L68.2397 57.99L99.3586 26.8711Z"
+        fill="white"
+      />
+    </svg>
+  );
+};
+const SUGGESTION_QUESTION = ['Hello', 'Who are you ?'];
+const Chatbot = ({ onClose }) => {
   const [input, setInput] = React.useState('');
   const [message, setMessage] = React.useState([]);
   const [loading, setLoading] = React.useState(false);
@@ -96,38 +106,23 @@ const Chatbot = () => {
   }, [message]);
 
   const handleCallChatbotAPI = (questionInput) => {
-    const prompt = `${questionInput}`;
-    const promptInput = {
-      modelId: 'amazon.titan-text-lite-v1',
-      contentType: 'application/json',
-      accept: 'application/json',
-      body: JSON.stringify({
-        inputText: prompt,
-        textGenerationConfig: {
-          maxTokenCount: 4096,
-          stopSequences: [],
-          temperature: 0,
-          topP: 1
-        }
-      })
-      // "body": "{\"inputText\":\"this is where you place your input text\",\"textGenerationConfig\":{\"maxTokenCount\":4096,\"stopSequences\":[],\"temperature\":0,\"topP\":1}}""body": "{\"inputText\":\"this is where you place your input text\",\"textGenerationConfig\":{\"maxTokenCount\":4096,\"stopSequences\":[],\"temperature\":0,\"topP\":1}}"
-      // body: JSON.stringify({
-      //   max_tokens: 1000,
-      //   messages: [
-      //     {
-      //       role: 'user',
-      //       content: [
-      //         {
-      //           type: 'text',
-      //           text: prompt,
-      //         },
-      //       ],
-      //     },
-      //   ],
-      // }),
-    };
-    const command = new InvokeModelCommand(promptInput);
     try {
+      const prompt = `${questionInput}`;
+      const promptInput = {
+        modelId: 'amazon.titan-text-lite-v1',
+        contentType: 'application/json',
+        accept: 'application/json',
+        body: JSON.stringify({
+          inputText: prompt,
+          textGenerationConfig: {
+            maxTokenCount: 4096,
+            stopSequences: [],
+            temperature: 0,
+            topP: 1,
+          },
+        }),
+      };
+      const command = new InvokeModelCommand(promptInput);
       client.send(command).then((res) => {
         const rawRes = res?.body;
         const jsonString = new TextDecoder().decode(rawRes);
@@ -136,8 +131,8 @@ const Chatbot = () => {
         const botMessage = {
           message: output,
           role: 'bot',
-        }
-        setMessage((prevMess) => [...prevMess, botMessage])
+        };
+        setMessage((prevMess) => [...prevMess, botMessage]);
         setInput('');
       });
     } catch (error) {
@@ -176,27 +171,48 @@ const Chatbot = () => {
     );
   };
 
+  const handlePressStartQuestion = (msg) => {
+    setLoading(true);
+    const userMessagee = {
+      message: msg,
+      role: 'user',
+    };
+    setMessage((prevMess) => [...prevMess, userMessagee]);
+    handleCallChatbotAPI(msg);
+  };
+
+  const renderSuggestionPrompt = () => {
+    return (
+      <div className="flex gap-2 items-center" style={{ overflow: 'auto' }}>
+        {SUGGESTION_QUESTION.map((question) => (
+          <button type="button" key={question} onClick={() => handlePressStartQuestion(question)} className="all-unset start-question">
+            {question}
+          </button>
+        ))}
+      </div>
+    );
+  };
+
   return (
     <div className="react-chatbot-kit-chat-container">
       <div className="react-chatbot-kit-chat-inner-container">
-        {/* <ConditionallyRender
-          condition={!!customComponents.header}
-          show={
-            customComponents.header && customComponents.header(actionProvider)
-          }
-          elseShow={
-            <div className="react-chatbot-kit-chat-header">{header}</div>
-          }
-        /> */}
-        <div className="react-chatbot-kit-chat-header">Kungfu Helper Chatbot</div>
+        <div className="react-chatbot-kit-chat-header">
+          <div>Kungfu Helper Chatbot</div>
+          <button type="button" className="all-unset" onClick={onClose}>
+            <CloseIcon />
+          </button>
+        </div>
 
-        <div className="react-chatbot-kit-chat-message-container">{renderMessages()}</div>
+        <div className="react-chatbot-kit-chat-message-container">
+          {renderMessages()}
+          {message.length === 0 && renderSuggestionPrompt()}
+        </div>
 
         <div className="react-chatbot-kit-chat-input-container">
           <form className="react-chatbot-kit-chat-input-form" onSubmit={handleSubmit}>
             <input
               className="react-chatbot-kit-chat-input"
-              placeholder="Enter your message..."
+              placeholder="Typ your message here ..."
               value={input}
               onKeyDown={(e) => {
                 if (e.code === 'Enter') {
@@ -205,11 +221,7 @@ const Chatbot = () => {
               }}
               onChange={(e) => setInput(e.target.value)}
             />
-            <button
-              type="submit"
-              className="react-chatbot-kit-chat-btn-send"
-              // style={customButtonStyle}
-            >
+            <button type="submit" className="react-chatbot-kit-chat-btn-send">
               <ChatIcon className="react-chatbot-kit-chat-btn-send-icon" />
             </button>
           </form>

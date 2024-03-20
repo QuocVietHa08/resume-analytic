@@ -3,16 +3,13 @@
 @import url('https://fonts.googleapis.com/css?family=Baloo Da');
 
 :root {
-  --primary-color: #3E9F93;
+  --primary-color: #3e9f93;
   --color-border-table: rgb(238, 238, 238);
 }
 
 html *::-webkit-scrollbar {
-  // border-radius: 0 !important;
-  // width: 10px !important;
-  // height: 10px !important;
   display: none;
-  -ms-overflow-style: none;  /* IE and Edge */
+  -ms-overflow-style: none;
   scrollbar-width: none;
 }
 
@@ -25,7 +22,6 @@ html *::-webkit-scrollbar-track {
   border-radius: 0 !important;
   background-color: rgba(255, 255, 255, 0) !important;
 }
-
 
 @font-face {
   font-family: 'Baloo Da';
@@ -42,11 +38,11 @@ html *::-webkit-scrollbar-track {
     image-rendering: -webkit-optimize-contrast;
     image-rendering: crisp-edges;
     image-rendering: pixelated;
- }
+  }
 }
 
 .text-font-family {
-    font-family: 'Baloo Da';
+  font-family: 'Baloo Da';
 }
 
 th {
@@ -169,7 +165,6 @@ th {
   }
 
   @include tablet {
-
     .h-tb-#{$i} {
       height: #{$i}px !important;
     }
@@ -180,10 +175,10 @@ th {
 
     .font-size-tb-#{$i} {
       font-size: #{$i}px !important;
-    } 
+    }
 
     .gap-tb-#{$i} {
-      gap:#{$i}px !important;
+      gap: #{$i}px !important;
     }
 
     .line-height-tb-#{$i} {
@@ -192,33 +187,32 @@ th {
   }
 
   @include mobile {
-
     .h-sp-#{$i} {
       height: #{$i}px !important;
     }
 
     .mt-sp-#{$i} {
-      margin-top:#{$i}px !important;
+      margin-top: #{$i}px !important;
     }
 
     .mb-sp-#{$i} {
-      margin-bottom:#{$i}px !important;
+      margin-bottom: #{$i}px !important;
     }
 
     .mr-sp-#{$i} {
-      margin-right:#{$i}px !important;
+      margin-right: #{$i}px !important;
     }
 
     .pb-sp-#{$i} {
-      padding-bottom:#{$i}px !important;
+      padding-bottom: #{$i}px !important;
     }
-    
+
     .pt-sp-#{$i} {
-      padding-top:#{$i}px !important;
+      padding-top: #{$i}px !important;
     }
 
     .gap-sp-#{$i} {
-      gap:#{$i}px !important;
+      gap: #{$i}px !important;
     }
 
     .font-size-sp-#{$i} {
@@ -228,7 +222,6 @@ th {
     .line-height-sp-#{$i} {
       line-height: #{$i}px !important;
     }
-
   }
 }
 .none {
@@ -278,7 +271,7 @@ th {
 }
 
 .justify-evenly {
-  justify-content: space-evenly
+  justify-content: space-evenly;
 }
 
 .justify-center {
@@ -345,7 +338,7 @@ th {
 }
 
 .color-primary-dark {
-  color: #36625A;
+  color: #36625a;
 }
 
 .color-gray {
@@ -463,7 +456,6 @@ th {
   margin: 0 auto;
 }
 
-
 .vertical-bottom {
   vertical-align: bottom;
 }
@@ -521,20 +513,40 @@ th {
   }
 }
 
+.all-unset {
+  all: unset;
+}
+
 // chatbot
 .bot-icon-wrapper {
-  background-color: #3C8477; 
+  all: unset;
+  background-color: #3c8477;
   border-radius: 50%;
   padding: 10px;
-  width: 60px;
-  height: 60px;
+  width: 40px;
+  height: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
+  -webkit-transition: all 400ms ease-in-out;
+  -moz-transition: all 400ms ease-in-out;
+  transition: all 400ms ease-in-out;
+
+  path {
+    fill: white;
+  }
 
   svg {
-    width: 40px;
     fill: white;
+    width: 25px;
+  }
+
+  &:hover {
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    transform: scale(1.1);
   }
 }
 .chat-bot-wrapper {
@@ -548,16 +560,30 @@ th {
   flex-direction: column;
   align-items: flex-end;
   gap: 20px;
+  transition: all 250ms ease 0s;
+  transform-origin: right bottom;
 }
 .react-chatbot-kit-chat-container {
   width: 100%;
+  animation: showup 0.25s forwards;
+  transform-origin: right bottom;
+}
+
+@keyframes showup {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
 .react-chatbot-kit-chat-inner-container {
   height: 60vh;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-
+  border-radius: 20px;
   background-color: #fff;
   font-weight: 600;
 }
@@ -566,26 +592,33 @@ th {
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  font-size: 16px;
-  font-weight: 600;
-  color: white;
   height: 40px;
-  text-align: center;
-  border: 1px solid black;
+  border: 1px solid #3c8477;
   border-bottom: none;
-  font-family: 'Baloo Da';
-  background-color: #3C8477;
+  background-color: #3c8477;
+  padding: 0 15px;
+
+  div {
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+    font-family: 'Baloo Da';
+  }
+
+  svg {
+    width: 20px;
+  }
 }
 
 .react-chatbot-kit-chat-input-container {
-  // position: absolute;
-  // bottom: 0px;
   width: 100%;
   display: flex;
-  border: 1px solid black;
-  border-bottom-right-radius: 10px;
+  border: 1px solid #3c8477;
+  border-top: 0px;
+  border-bottom-right-radius: 16px;
+  border-bottom-left-radius: 16px;
 }
 
 .react-chatbot-kit-chat-message-container {
@@ -595,7 +628,8 @@ th {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  border: 1px solid black;
+  border: 1px solid #3c8477;
+  border-bottom: 0px;
 }
 
 .react-chatbot-kit-chat-input {
@@ -603,13 +637,14 @@ th {
   padding: 12.5px;
   border: none;
   font-size: 0.85rem;
-  border-top: 1px solid #d8d8d8;
-  border-bottom-left-radius: 5px;
+  border-top: 1px solid #3c8477;
+  border-bottom-left-radius: 16px;
 }
 
 .react-chatbot-kit-chat-input-form {
   width: 100%;
   display: flex;
+  border-bottom-left-radius: 16px;
 }
 
 .react-chatbot-kit-chat-input::placeholder {
@@ -617,21 +652,20 @@ th {
 }
 
 .react-chatbot-kit-chat-btn-send {
-  background-color: #3C8477;
+  background-color: #3c8477;
   width: 100px;
   border: none;
   color: #fff;
-  border-bottom-right-radius: 5px;
+  border-bottom-right-radius: 16px;
 
   svg {
     fill: white;
-    width: 25px
+    width: 20px;
   }
 }
 
 .react-chatbot-kit-chat-btn-send-icon {
   fill: #fff;
-  width: 15px;
   margin: 0 auto;
 
   svg {
@@ -645,7 +679,7 @@ th {
   gap: 15px;
   font-size: 16px;
 
-  svg { 
+  svg {
     width: 30px;
   }
 
@@ -653,7 +687,7 @@ th {
     float: right;
     display: flex;
     justify-content: flex-end;
-    background-color: #2F80ED;
+    background-color: #3c8477;
     border-radius: 20px;
     color: white;
     margin-top: 10px;
@@ -664,13 +698,13 @@ th {
     word-wrap: break-word;
     word-break: break-all;
   }
-  
+
   .role-bot {
     display: flex;
     justify-content: flex-start;
-    background-color: #F7F7F7;
+    background-color: #f7f7f7;
     border-radius: 20px;
-    color: #1B1A57;
+    color: #1b1a57;
     padding: 10px 15px;
     width: 70%;
     height: auto;
@@ -680,3 +714,20 @@ th {
   }
 }
 
+.start-question {
+  background-color: white;
+  border: 1px solid #3c8477;
+  border-radius: 16px;
+  color: #3c8477;
+  width: 100px;
+  margin: 0 auto;
+  padding: 5px 10px;
+  cursor: pointer;
+  text-align: center;
+  font-size: 14px;
+
+  &:hover {
+    background-color: #3c8477;
+    color: white;
+  }
+}

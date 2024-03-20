@@ -41,9 +41,24 @@ const BotIcon = () => {
   );
 };
 
+const TickIcon = () => {
+  return (
+    <svg width="88" height="69" viewBox="0 0 88 69" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M-0.00249958 39.3402L10.2472 29.0905L29.0215 47.8575L76.7835 0.095499L87.0332 10.3452L29.0142 68.357L-0.00249958 39.3402Z"
+        fill="white"
+      />
+    </svg>
+  );
+};
+
 const Main = ({ children }) => {
   const router = useRouter();
   const [openChatbot, setOpenChatbot] = useState(false);
+
+  const handleCloseChatBot = () => {
+    setOpenChatbot((prev) => (!prev))
+  }
 
   return (
     <div className="w-full overflow-hidden relative">
@@ -51,11 +66,9 @@ const Main = ({ children }) => {
         <Header />
       </div>
       <div className="chat-bot-wrapper">
-        {openChatbot && (
-          <Chatbot />
-        )}
-        <button type="button" className="bot-icon-wrapper" onClick={() => setOpenChatbot((prev) => !prev)}>
-          <BotIcon />
+        {openChatbot && <Chatbot open={openChatbot} onClose={() => setOpenChatbot(false)} />}
+        <button type="button" className="bot-icon-wrapper" onClick={handleCloseChatBot}>
+          {openChatbot ? <TickIcon /> : <BotIcon />}
         </button>
       </div>
       {children}
