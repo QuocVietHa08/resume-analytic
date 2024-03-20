@@ -52,10 +52,10 @@ const TickIcon = () => {
   );
 };
 
+
 const Main = ({ children }) => {
   const router = useRouter();
   const [openChatbot, setOpenChatbot] = useState(false);
-
   const handleCloseChatBot = () => {
     setOpenChatbot((prev) => (!prev))
   }
@@ -65,11 +65,11 @@ const Main = ({ children }) => {
       <div className={`${router.pathname === '/' ? 'h-110 h-sp-70 h-tb-82' : 'h-220 h-tb-140 h-sp-122'}`}>
         <Header />
       </div>
-      <div className="chat-bot-wrapper">
+      <div className={`chat-bot-wrapper ${openChatbot ? 'h-screen-sp' : ''}`}>
         {openChatbot ? <Chatbot open={openChatbot} onClose={() => setOpenChatbot(false)} /> : (
           <div className="popup-remind">Ask me if you need anything!</div>
         )}
-        <button type="button" className="bot-icon-wrapper" onClick={handleCloseChatBot}>
+        <button type="button" className={`bot-icon-wrapper ${openChatbot ? 'none-sp' : ''}`} onClick={handleCloseChatBot}>
           {openChatbot ? <TickIcon /> : <BotIcon />}
         </button>
       </div>

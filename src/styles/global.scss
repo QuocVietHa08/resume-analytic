@@ -228,6 +228,13 @@ th {
   display: none !important;
 }
 
+.none-sp {
+  @media screen and (max-width: 768px) {
+   display: none; 
+  } 
+  display: none !important;
+}
+
 .flex {
   display: flex;
 }
@@ -388,6 +395,16 @@ th {
   min-height: 100vh;
 }
 
+.h-screen {
+  height: 100vh;
+}
+.h-screen-sp {
+  @media screen and (max-width) {
+    height: 100vh; 
+  }
+}
+
+
 .h-50pr {
   height: 50%;
 }
@@ -448,6 +465,13 @@ th {
   position: relative;
 }
 
+.absolute {
+  position: absolute !important;
+}
+
+.zIndex-minus {
+  z-index: -1 !important;
+}
 .margin-auto {
   margin: auto;
 }
@@ -548,6 +572,11 @@ th {
     -o-transform: scale(1.1);
     transform: scale(1.1);
   }
+
+  @media screen and (max-width: 768px) {
+    margin-right: 10px; 
+    margin-bottom: 10px;
+  }
 }
 .chat-bot-wrapper {
   position: fixed;
@@ -562,11 +591,22 @@ th {
   gap: 15px;
   transition: all 250ms ease 0s;
   transform-origin: right bottom;
+
+  @media screen and (max-width: 768px){
+    width: 100%;
+    right: 0px;
+    bottom: 0px;
+    border-radius: 0px;
+  }
 }
 .react-chatbot-kit-chat-container {
   width: 100%;
   animation: showup 0.25s forwards;
   transform-origin: right bottom;
+
+  @media screen and (max-width: 768px) {
+   height: 100%; 
+  }
 }
 
 @keyframes showup {
@@ -586,6 +626,11 @@ th {
   border-radius: 20px;
   background-color: #fff;
   font-weight: 600;
+
+  @media screen and (max-width: 768px){
+    height: 100vh;
+    border-radius: 0px;
+  }
 }
 
 .react-chatbot-kit-chat-header {
@@ -610,6 +655,10 @@ th {
   svg {
     width: 20px;
   }
+
+  @media screen and (max-width: 768px) {
+   border-radius: 0px; 
+  }
 }
 
 .react-chatbot-kit-chat-input-container {
@@ -619,6 +668,10 @@ th {
   border-top: 0px;
   border-bottom-right-radius: 16px;
   border-bottom-left-radius: 16px;
+
+  @media screen and (max-width: 768px) {
+    border-radius: 0px;
+  }
 }
 
 .react-chatbot-kit-chat-message-container {
@@ -661,6 +714,10 @@ th {
   svg {
     fill: white;
     width: 20px;
+  }
+
+  @media screen and (max-width: 768px) {
+    border-radius: 0px; 
   }
 }
 
@@ -719,7 +776,6 @@ th {
   border: 1px solid #3c8477;
   border-radius: 16px;
   color: #3c8477;
-  // width: 100px;
   padding: 5px 10px;
   cursor: pointer;
   text-align: center;
@@ -737,6 +793,9 @@ th {
   padding: 7px 10px;
   border-radius: 16px;
   border: 1px solid #3c8477;
+  @media screen and (max-width: 768px) {
+    margin-right: 10px;
+  }
 }
 
 // DotLoading
