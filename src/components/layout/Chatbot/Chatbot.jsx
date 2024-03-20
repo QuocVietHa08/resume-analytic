@@ -236,7 +236,7 @@ const Chatbot = ({ onClose }) => {
           <form className="react-chatbot-kit-chat-input-form" onSubmit={handleSubmit}>
             <input
               className="react-chatbot-kit-chat-input"
-              placeholder="Typ your message here ..."
+              placeholder="Type your message here ..."
               value={input}
               onKeyDown={(e) => {
                 if (e.code === 'Enter') {
@@ -251,6 +251,7 @@ const Chatbot = ({ onClose }) => {
           </form>
         </div>
       </div>
+      <div className='footer-chatbot'>Power by Asure Pro</div>
     </div>
     </>
 
