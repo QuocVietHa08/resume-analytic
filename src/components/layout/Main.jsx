@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/control-has-associated-label */
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import Header from './Header';
 import Footer from './Footer';
@@ -60,21 +60,20 @@ const Main = ({ children }) => {
     setOpenChatbot((prev) => (!prev))
   }
 
-  // useEffect(() => {
-  //   if (openChatbot) {
-  //     document.body.style.overflow = 'hidden'
-  //   } else {
-  //     document.body.style.overflow = 'auto'
-  //   }
-  // }, [openChatbot])
-
+  useEffect(() => {
+    if (openChatbot) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = 'auto'
+    }
+  }, [openChatbot])
 
   return (
     <div className="w-full overflow-hidden relative">
       <div className={`${router.pathname === '/' ? 'h-110 h-sp-70 h-tb-82' : 'h-220 h-tb-140 h-sp-122'}`}>
         <Header />
       </div>
-      <div className={`chat-bot-wrapper ${openChatbot ? 'h-screen-sp' : ''}`}>
+      <div className={`chat-bot-wrapper ${openChatbot ? 'h-full-sp chat-bot-border' : 'p-1'}`}>
         {openChatbot ? <Chatbot onClose={() => setOpenChatbot(false)} /> : (
           <div className="popup-remind">Ask me if you need anything!</div>
         )}
