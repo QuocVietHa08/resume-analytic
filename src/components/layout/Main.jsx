@@ -66,7 +66,9 @@ const Main = ({ children }) => {
         <Header />
       </div>
       <div className="chat-bot-wrapper">
-        {openChatbot && <Chatbot open={openChatbot} onClose={() => setOpenChatbot(false)} />}
+        {openChatbot ? <Chatbot open={openChatbot} onClose={() => setOpenChatbot(false)} /> : (
+          <div className="popup-remind">Ask me if you need anything!</div>
+        )}
         <button type="button" className="bot-icon-wrapper" onClick={handleCloseChatBot}>
           {openChatbot ? <TickIcon /> : <BotIcon />}
         </button>

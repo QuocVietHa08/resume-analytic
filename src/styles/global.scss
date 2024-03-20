@@ -559,7 +559,7 @@ th {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  gap: 20px;
+  gap: 15px;
   transition: all 250ms ease 0s;
   transform-origin: right bottom;
 }
@@ -693,10 +693,10 @@ th {
     margin-top: 10px;
     margin-bottom: 10px;
     padding: 10px 15px;
-    width: 60%;
+    max-width: 60%;
     height: auto;
     word-wrap: break-word;
-    word-break: break-all;
+    // word-break: break-all;
   }
 
   .role-bot {
@@ -709,7 +709,7 @@ th {
     width: 70%;
     height: auto;
     word-wrap: break-word;
-    word-break: break-all;
+    // word-break: break-all;
     margin-bottom: 10px;
   }
 }
@@ -719,8 +719,7 @@ th {
   border: 1px solid #3c8477;
   border-radius: 16px;
   color: #3c8477;
-  width: 100px;
-  margin: 0 auto;
+  // width: 100px;
   padding: 5px 10px;
   cursor: pointer;
   text-align: center;
@@ -729,5 +728,61 @@ th {
   &:hover {
     background-color: #3c8477;
     color: white;
+  }
+}
+
+.popup-remind {
+  background-color: white;
+  color: #3c8477;
+  padding: 7px 10px;
+  border-radius: 16px;
+  border: 1px solid #3c8477;
+}
+
+// DotLoading
+.jumping-dots span {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  animation: jump 1s infinite;
+  display: inline-block;
+}
+
+.jumping-dots .dot-1 {
+  background-color: #3c8477;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 5px;
+  animation-delay: 200ms;
+}
+
+.jumping-dots .dot-2 {
+  background-color: #3c8477;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 5px;
+  animation-delay: 400ms;
+}
+
+.jumping-dots .dot-3 {
+  background-color: #3c8477;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 5px;
+  animation-delay: 600ms;
+}
+
+@keyframes jump {
+  0% {
+    bottom: 0px;
+  }
+  20% {
+    bottom: 5px;
+  }
+  40% {
+    bottom: 0px;
   }
 }
