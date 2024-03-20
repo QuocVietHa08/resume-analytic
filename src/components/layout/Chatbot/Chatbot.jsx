@@ -1,6 +1,6 @@
 /* eslint-disable react/no-array-index-key */
 /* eslint-disable jsx-a11y/control-has-associated-label */
-import React, { useEffect, useRef } from 'react';
+import React, { useCallback, useEffect, useRef } from 'react';
 import { BedrockRuntimeClient, InvokeModelCommand } from '@aws-sdk/client-bedrock-runtime';
 
 const client = new BedrockRuntimeClient({
@@ -92,7 +92,19 @@ const CloseIcon = () => {
     </svg>
   );
 };
-const SUGGESTION_QUESTION = ['Hello', 'Who are you ?'];
+
+const DotLoading = () => {
+  return (
+    <div className="my message">
+      <span className="jumping-dots">
+        <span className="dot-1"></span>
+        <span className="dot-2"></span>
+        <span className="dot-3"></span>
+      </span>
+    </div>
+  );
+};
+const SUGGESTION_QUESTION = ['Hello', 'Tell me about your service', 'Who are you ?'];
 const Chatbot = ({ onClose }) => {
   const [input, setInput] = React.useState('');
   const [message, setMessage] = React.useState([]);
@@ -105,7 +117,7 @@ const Chatbot = ({ onClose }) => {
     }
   }, [message]);
 
-  const handleCallChatbotAPI = (questionInput) => {
+  const handleCallChatbotAPI = async (questionInput) => {
     try {
       const prompt = `${questionInput}`;
       const promptInput = {
@@ -123,7 +135,7 @@ const Chatbot = ({ onClose }) => {
         }),
       };
       const command = new InvokeModelCommand(promptInput);
-      client.send(command).then((res) => {
+      await client.send(command).then((res) => {
         const rawRes = res?.body;
         const jsonString = new TextDecoder().decode(rawRes);
         const parsedResponse = JSON.parse(jsonString);
@@ -142,10 +154,9 @@ const Chatbot = ({ onClose }) => {
     }
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (loading) return;
 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
     setLoading(true);
     const userMessage = {
       message: input,
@@ -153,10 +164,10 @@ const Chatbot = ({ onClose }) => {
     };
     setMessage((prevMess) => [...prevMess, userMessage]);
     setInput('');
-    handleCallChatbotAPI(input);
+    await handleCallChatbotAPI(input);
   };
 
-  const renderMessages = () => {
+  const renderMessages = useCallback(() => {
     return (
       <div style={{ overflow: 'auto' }}>
         {message.map((msg, index) => (
@@ -167,23 +178,29 @@ const Chatbot = ({ onClose }) => {
           </div>
         ))}
         <div ref={messagesEndRef} />
+        {loading && (
+          <div className="message-style">
+            <BotIcon />
+            <DotLoading />
+          </div>
+        )}
       </div>
     );
-  };
+  }, [loading, message, messagesEndRef]);
 
-  const handlePressStartQuestion = (msg) => {
+  const handlePressStartQuestion = async (msg) => {
     setLoading(true);
     const userMessagee = {
       message: msg,
       role: 'user',
     };
     setMessage((prevMess) => [...prevMess, userMessagee]);
-    handleCallChatbotAPI(msg);
+    await handleCallChatbotAPI(msg);
   };
 
   const renderSuggestionPrompt = () => {
     return (
-      <div className="flex gap-2 items-center" style={{ overflow: 'auto' }}>
+      <div className="flex items-center" style={{ overflow: 'auto', justifyContent: 'flex-start', gap: '5px' }}>
         {SUGGESTION_QUESTION.map((question) => (
           <button type="button" key={question} onClick={() => handlePressStartQuestion(question)} className="all-unset start-question">
             {question}
