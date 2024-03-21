@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/control-has-associated-label */
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
-// import Header from './Header';
+import Header from './Header';
 // import Footer from './Footer';
 // import UpToTop from './UpToTop';
 import Chatbot from './Chatbot/Chatbot';
@@ -69,9 +69,9 @@ const Main = ({ children }) => {
   }, [openChatbot])
 
   return (
-    <div className="w-full overflow-hidden relative">
+  <div className="w-full overflow-hidden relative" style={{ backgroundColor: '#E1F0DA'}}>
       <div className={`${router.pathname === '/' ? 'h-110 h-sp-70 h-tb-82' : 'h-220 h-tb-140 h-sp-122'}`}>
-        {/* <Header /> */}
+        <Header />
       </div>
       <div className={`chat-bot-wrapper ${openChatbot ? 'h-full-sp chat-bot-border' : 'p-1'}`}>
         {openChatbot ? <Chatbot onClose={() => setOpenChatbot(false)} /> : (
