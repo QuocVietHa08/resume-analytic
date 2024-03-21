@@ -221,7 +221,7 @@ const Chatbot = ({ onClose }) => {
     <div className="react-chatbot-kit-chat-container">
       <div className="react-chatbot-kit-chat-inner-container">
         <div className="react-chatbot-kit-chat-header">
-          <div>Kungfu Helper Chatbot</div>
+          <div>AWS Bedrock Chatbot</div>
           <button type="button" className="all-unset" onClick={onClose}>
             <CloseIcon />
           </button>
@@ -251,7 +251,7 @@ const Chatbot = ({ onClose }) => {
           </form>
         </div>
       </div>
-      <div className='footer-chatbot'>Power by Asure Pro</div>
+      <div className='footer-chatbot'>Create by Edward Ha</div>
     </div>
     </>
 
