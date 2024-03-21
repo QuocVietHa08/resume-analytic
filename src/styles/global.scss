@@ -693,6 +693,8 @@ th {
     border-radius: 0px;
     border: none;
     position: fixed;
+
+
   }
 }
 
@@ -722,8 +724,12 @@ th {
   display: flex;
   border-bottom-left-radius: 16px;
   border-top: 1px solid #3c8477;
+
   input {
+    font-size: 16px;
+    outline: none;
     &:focus {
+      outline: none;
       outline-width: 0;
     }
   }
