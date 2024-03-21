@@ -9,21 +9,40 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: center;
+  gap: 20;
+}
+
+.titleHome {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  span {
+    width: 400px;
+    font-family: 'Baloo Da';
+    font-size: 12px;
+    text-align: center;
+    font-weight: lighter;
+  }
 }
 
 .imageWrapper {
   margin-top: 100px;
-  width: 150px;
+  margin-bottom: 20px;
   display: flex;
   justify-content: center;
-  gap: 50px;
   align-items: center;
+  gap: 20px;
   margin: 0 auto;
 
+  div {
+    font-family: 'Baloo Da';
+  }
+
   img {
-    width: 100%;
-    height: auto;
+    width: auto;
+    height: 100px;
     object-fit: cover;
   }
 }
