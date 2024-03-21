@@ -1,8 +1,8 @@
 {
-  "name": "kungfu_helper",
+  "name": "aws_chatbot",
   "version": "1.0.0",
   "private": true,
-  "description": "KungFu Helper LandingPage",
+  "description": "AWS Bedrock Chatbot",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

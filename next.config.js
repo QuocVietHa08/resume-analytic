@@ -6,8 +6,6 @@ module.exports = {
     GOOGLE_MAP_API_KEY: process.env.GOOGLE_MAP_API_KEY,
     SEND_IN_BLUE_URL: process.env.SEND_IN_BLUE_URL,
     BASE_URL: process.env.BASE_URL,
-    ACCESS_KEY_ID: process.env.ACCESS_KEY_ID,
-    SERCRET_ACCESS_KEY: process.env.SERCRET_ACCESS_KEY,
   },
   sassOptions: {
     fiber: false,
