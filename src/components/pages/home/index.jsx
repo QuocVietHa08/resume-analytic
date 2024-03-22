@@ -3,7 +3,7 @@
 import React, { useCallback, useEffect, useRef } from 'react';
 import { message as messageAntd } from 'antd';
 import { BedrockRuntimeClient, InvokeModelCommand } from '@aws-sdk/client-bedrock-runtime';
-
+import dayjs from 'dayjs'; 
 import styles from './styles.module.scss';
 
 const client = new BedrockRuntimeClient({
@@ -97,9 +97,17 @@ const DotLoading = () => {
   );
 };
 
+
+const DEFALUT_TEXT = [
+  {
+    role: 'bot',
+    message: 'Hello, I am a bot. How can I help you today?',
+  }
+]
+
 const Home = () => {
   const [input, setInput] = React.useState('');
-  const [messages, setMessages] = React.useState([]);
+  const [messages, setMessages] = React.useState(DEFALUT_TEXT);
   const [loading, setLoading] = React.useState(false);
   const [messageApi, contextHolder] = messageAntd.useMessage();
   const messagesEndRef = useRef(null);
@@ -152,7 +160,7 @@ const Home = () => {
       //   setInput('');
       // });
       await setTimeout(() => {
-        setMessages((prevMess) => [...prevMess, { message: 'I am a bot, I am not ready yet', role: 'bot' }]);
+        setMessages((prevMess) => [...prevMess, { message: 'I am a bot, I am not ready yet, I am a bot, I am not ready yet,I am a bot, I am not ready yet,I am a bot, I am not ready yetI am a bot, I am not ready yetI am a bot, I am not ready yetI am a bot, I am not ready yetI am a bot, I am not ready yet', role: 'bot' }]);
       }, [3000])
     } catch (error) {
       messageApi.open({
@@ -202,7 +210,7 @@ const Home = () => {
             future improve. All chats are recorded, please don't share your deep secret to the bot!
           </span>
         </div>
-
+        <div className="mt-20">{dayjs(new Date()).format('D MMM YYYY')}</div>
         <div className="react-chatbot-kit-chat-message-container">
           {renderMessages()}
         </div>
