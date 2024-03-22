@@ -628,8 +628,8 @@ th {
   display: flex;
   border-radius: 16px;
   overflow: hidden;
-  position: absolute;
-  bottom: 10px;
+  position: fixed;
+  bottom: 30px;
 
 
   @media screen and (max-width: 768px) {
@@ -640,14 +640,14 @@ th {
 }
 
 .react-chatbot-kit-chat-message-container {
-  padding: 0 17.5px 10px 17.5px;
-  height: 64vh;
+  padding: 10px 17.5px 10px 17.5px;
+  height: 60vh;
   width: 100%;
   max-width: 800px;
   overflow: auto;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: flex-start;
   border-bottom: 0px;
 
   @media screen and (max-width: 768px) {
