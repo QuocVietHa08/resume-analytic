@@ -83,17 +83,6 @@ const UserIcon = () => {
   );
 };
 
-const CloseIcon = () => {
-  return (
-    <svg width="116" height="116" viewBox="0 0 116 116" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path
-        d="M99.3586 26.8711L89.1089 16.6214L57.99 47.7403L26.8711 16.6214L16.6214 26.8711L47.7403 57.99L16.6214 89.1089L26.8711 99.3586L57.99 68.2397L89.1089 99.3586L99.3586 89.1089L68.2397 57.99L99.3586 26.8711Z"
-        fill="white"
-      />
-    </svg>
-  );
-};
-
 const DotLoading = () => {
   return (
     <div className="my message">
@@ -106,7 +95,7 @@ const DotLoading = () => {
   );
 };
 const SUGGESTION_QUESTION = ['Hello', 'Who are you ?'];
-const Chatbot = ({ onClose }) => {
+const Chatbot = () => {
   const [input, setInput] = React.useState('');
   const [message, setMessage] = React.useState([]);
   const [loading, setLoading] = React.useState(false);
@@ -220,13 +209,6 @@ const Chatbot = ({ onClose }) => {
      {contextHolder}
     <div className="react-chatbot-kit-chat-container">
       <div className="react-chatbot-kit-chat-inner-container">
-        <div className="react-chatbot-kit-chat-header">
-          <div>AWS Bedrock Chatbot</div>
-          <button type="button" className="all-unset" onClick={onClose}>
-            <CloseIcon />
-          </button>
-        </div>
-
         <div className="react-chatbot-kit-chat-message-container">
           {renderMessages()}
           {message.length === 0 && renderSuggestionPrompt()}
@@ -251,7 +233,6 @@ const Chatbot = ({ onClose }) => {
           </form>
         </div>
       </div>
-      <div className='footer-chatbot'>Create by Edward Ha</div>
     </div>
     </>
 

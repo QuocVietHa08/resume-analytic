@@ -582,18 +582,9 @@ th {
   }
 }
 
-.chat-bot-border {
-  border: 1px solid white;
-  animation: showupborder 0.5s forwards;
-  transform-origin: right bottom;
-}
-
 .chat-bot-wrapper {
-  position: fixed;
-  right: 10px;
-  bottom: 10px;
-  z-index: 9999;
-  width: 450px;
+  width: 50%;
+  max-width: 800px;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -611,8 +602,6 @@ th {
 }
 .react-chatbot-kit-chat-container {
   width: 100%;
-  animation: showup 0.25s forwards;
-  transform-origin: right bottom;
   border-radius: 20px;
   overflow: hidden;
 
@@ -622,32 +611,9 @@ th {
   }
 }
 
-@keyframes showupborder{
-  0% {
-    border: none;
-  }
-
-  100% {
-    border: 1px solid #36625a
-  }
-}
-
-@keyframes showup {
-  0% {
-    transform: scale(0);
-    opacity: 0;
-  }
-
-  100% {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
-
 .react-chatbot-kit-chat-inner-container {
   height: 60vh;
   border-radius: 20px;
-  background-color: #fff;
   font-weight: 600;
 
   @media screen and (max-width: 768px){
@@ -656,55 +622,29 @@ th {
   }
 }
 
-.react-chatbot-kit-chat-header {
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 40px;
-  border: 1px solid #3c8477;
-  border-bottom: none;
-  background-color: #3c8477;
-  padding: 0 15px;
-
-  div {
-    font-size: 16px;
-    font-weight: 600;
-    color: white;
-    font-family: 'Baloo Da';
-  }
-
-  svg {
-    width: 20px;
-  }
-
-  @media screen and (max-width: 768px) {
-   border-radius: 0px; 
-  }
-}
-
 .react-chatbot-kit-chat-input-container {
   width: 100%;
+  max-width: 800px;
   display: flex;
-  // border: 1px solid #3c8477;
-  border-top: 0px;
-  border-bottom-right-radius: 16px;
-  border-bottom-left-radius: 16px;
+  border-radius: 16px;
+  overflow: hidden;
+  position: absolute;
+  bottom: 10px;
+
 
   @media screen and (max-width: 768px) {
     border-radius: 0px;
     border: none;
     position: fixed;
-
-
   }
 }
 
 .react-chatbot-kit-chat-message-container {
   padding: 0 17.5px 10px 17.5px;
+  height: 64vh;
+  width: 100%;
+  max-width: 800px;
   overflow: auto;
-  height: calc(100% - 45px - 40px);
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -725,8 +665,6 @@ th {
 .react-chatbot-kit-chat-input-form {
   width: 100%;
   display: flex;
-  border-bottom-left-radius: 16px;
-  border-top: 1px solid #3c8477;
 
   input {
     font-size: 16px;
@@ -843,15 +781,6 @@ th {
   @media screen and (max-width: 768px) {
     margin-right: 10px;
   }
-}
-
-.footer-chatbot {
-  width: 100%;
-  background-color: white;
-  text-align: center;
-  color: #3c8477; 
-  padding: 5px 0px;
-
 }
 
 // DotLoading
