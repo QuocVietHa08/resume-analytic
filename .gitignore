@@ -32,6 +32,7 @@ yarn-error.log*
 
 # local env files
 .env*.local
+.env
 
 yarn.lock
 package-lock.json
@@ -42,5 +43,4 @@ package-lock.json
 # typescript
 *.tsbuildinfo
 next-env.d.ts
-
-sitemap.xml
+public/sitemap.xml
