@@ -43,5 +43,4 @@ package-lock.json
 # typescript
 *.tsbuildinfo
 next-env.d.ts
-
-sitemap.xml
+public/sitemap.xml
