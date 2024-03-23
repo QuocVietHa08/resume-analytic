@@ -1,3 +1,4 @@
+/* eslint-disable react/no-array-index-key */
 /* eslint-disable jsx-a11y/control-has-associated-label */
 /* eslint-disable react/no-unescaped-entities */
 import React, { useCallback, useEffect, useRef } from 'react';
@@ -9,8 +10,8 @@ import styles from './styles.module.scss';
 const client = new BedrockRuntimeClient({
   region: 'us-east-1',
   credentials: {
-    accessKeyId: process.env.ACCESS_KEY_ID,
-    secretAccessKey: process.env.SERCRET_ACCESS_KEY,
+    accessKeyId: '',
+    secretAccessKey: '',
   },
 });
 
@@ -131,37 +132,37 @@ const Home = () => {
 
   const handleCallChatbotAPI = async (questionInput) => {
     try {
-      // const prompt = `${questionInput}`;
-      // const promptInput = {
-      //   modelId: 'amazon.titan-text-lite-v1',
-      //   contentType: 'application/json',
-      //   accept: 'application/json',
-      //   body: JSON.stringify({
-      //     inputText: prompt,
-      //     textGenerationConfig: {
-      //       maxTokenCount: 4096,
-      //       stopSequences: [],
-      //       temperature: 0,
-      //       topP: 1,
-      //     },
-      //   }),
-      // };
-      // const command = new InvokeModelCommand(promptInput);
-      // await client.send(command).then((res) => {
-      //   const rawRes = res?.body;
-      //   const jsonString = new TextDecoder().decode(rawRes);
-      //   const parsedResponse = JSON.parse(jsonString);
-      //   const output = parsedResponse?.results[0].outputText;
-      //   const botMessage = {
-      //     message: output,
-      //     role: 'bot',
-      //   };
-      //   setMessages((prevMess) => [...prevMess, botMessage]);
-      //   setInput('');
-      // });
-      await setTimeout(() => {
-        setMessages((prevMess) => [...prevMess, { message: 'I am a bot, I am not ready yet, I am a bot, I am not ready yet,I am a bot, I am not ready yet,I am a bot, I am not ready yetI am a bot, I am not ready yetI am a bot, I am not ready yetI am a bot, I am not ready yetI am a bot, I am not ready yet', role: 'bot' }]);
-      }, [3000])
+      const prompt = `${questionInput}`;
+      const promptInput = {
+        modelId: 'amazon.titan-text-lite-v1',
+        contentType: 'application/json',
+        accept: 'application/json',
+        body: JSON.stringify({
+          inputText: prompt,
+          textGenerationConfig: {
+            maxTokenCount: 4096,
+            stopSequences: [],
+            temperature: 0,
+            topP: 1,
+          },
+        }),
+      };
+      const command = new InvokeModelCommand(promptInput);
+      await client.send(command).then((res) => {
+        const rawRes = res?.body;
+        const jsonString = new TextDecoder().decode(rawRes);
+        const parsedResponse = JSON.parse(jsonString);
+        const output = parsedResponse?.results[0].outputText;
+        const botMessage = {
+          message: output,
+          role: 'bot',
+        };
+        setMessages((prevMess) => [...prevMess, botMessage]);
+        setInput('');
+      });
+      // await setTimeout(() => {
+      //   setMessages((prevMess) => [...prevMess, { message: 'I am a bot, I am not ready yet, I am a bot, I am not ready yet,I am a bot, I am not ready yet,I am a bot, I am not ready yetI am a bot, I am not ready yetI am a bot, I am not ready yetI am a bot, I am not ready yetI am a bot, I am not ready yet', role: 'bot' }]);
+      // }, [3000])
     } catch (error) {
       messageApi.open({
         type: 'error',
