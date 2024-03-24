@@ -126,7 +126,6 @@ const Home = () => {
   const messagesContainerRef = useRef(null);
   const [preLearningLoading, setPreLearningLoading] = useState(false);
 
-  console.log('hello--->', BEGIN_PROMPT);
 
   useEffect(() => {
     if (messagesContainerRef.current) {
@@ -298,13 +297,13 @@ const Home = () => {
               {/* <img src="/img/react.png" alt="React logo" /> */}
             </div>
             <span style={{ fontSize: '18px' }}>AWS Chatbot Bedrock</span>
-            <span>
+            <p>
               An AI version of Chatbot using React and AWS Bedrock. Trained on your personal data and other data sources. Note: Even with a
               lot of training data, the bot may still hallucinate, don't trust everything it says. Please give this repo a start for more
               future improve. All chats are recorded, please don't share your deep secret to the bot!
-            </span>
+            </p>
           </div>
-          <div className="mt-20">{dayjs(new Date()).format('D MMM YYYY')}</div>
+          <div>{dayjs(new Date()).format('D MMM YYYY')}</div>
           <div className={styles.chatMessageContainer}>{renderMessages()}</div>
         </div>
 

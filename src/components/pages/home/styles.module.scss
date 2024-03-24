@@ -22,7 +22,10 @@
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  // background-color: red;
+
+  @media screen and (max-width: 768px) {
+    gap: 10px; 
+  }
 }
 
 .titleHome {
@@ -30,12 +33,28 @@
   flex-direction: column;
   gap: 20px;
 
+  @media screen and (max-width: 768px) {
+    gap: 10px; 
+    margin-top: 20px;
+  }
+
   span {
     width: 400px;
     font-family: 'Baloo Da';
     font-size: 12px;
     text-align: center;
-    font-weight: lighter;
+  }
+
+  p {
+    width: 400px;
+    font-size: 12px;
+    text-align: center;
+
+    @media screen and (max-width: 768px) {
+      padding: 10px 30px;
+      text-align: center;
+      margin-bottom: 0px;
+    }
   }
 }
 
@@ -83,19 +102,18 @@
 
 
   @media screen and (max-width: 768px) {
-    border-radius: 0px;
     border: none;
     position: fixed;
+    width: 90%;
+    bottom: 10px;
   }
 }
 
 .chatMessageContainer {
   padding: 10px 17.5px 10px 17.5px;
-  // height: 60vh;
   width: 100%;
   max-width: 800px;
   // overflow: auto;
-  display: flex;
   flex-direction: column;
   justify-content: flex-start;
   border-bottom: 0px;
@@ -122,6 +140,10 @@
 
   input {
     outline: none;
+
+    @media screen and (max-width: 768px){
+     font-size: 16px; 
+    }
     &:focus {
       outline: none;
       outline-width: 0;
@@ -190,7 +212,11 @@
   max-width: 60%;
   height: auto;
   word-wrap: break-word;
-  // word-break: break-all;
+
+  @media screen and (max-width: 768px) {
+   padding: 5px 15px; 
+   font-size: 12px;
+  }
 }
 
 .roleBot {
@@ -204,8 +230,13 @@
   width: 80%;
   height: auto;
   word-wrap: break-word;
-  // word-break: break-all;
   margin-bottom: 10px;
+
+  @media screen and (max-width: 768px) {
+   padding: 5px 15px; 
+   width: 65%;
+   font-size: 12px;
+  }
 }
 
 .messageTool {
