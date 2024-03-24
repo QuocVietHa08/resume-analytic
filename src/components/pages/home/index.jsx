@@ -1,11 +1,13 @@
+/* eslint-disable react/no-unknown-property */
 /* eslint-disable react/no-array-index-key */
 /* eslint-disable jsx-a11y/control-has-associated-label */
 /* eslint-disable react/no-unescaped-entities */
-import React, { useCallback, useEffect, useRef } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { message as messageAntd } from 'antd';
 import { BedrockRuntimeClient, InvokeModelCommand } from '@aws-sdk/client-bedrock-runtime';
-import dayjs from 'dayjs'; 
+import dayjs from 'dayjs';
 import styles from './styles.module.scss';
+import { BEGIN_PROMPT } from './training-data';
 
 const client = new BedrockRuntimeClient({
   region: 'us-east-1',
@@ -86,6 +88,17 @@ const UserIcon = () => {
   );
 };
 
+const CopyIcon = () => {
+  return (
+    <svg width="76" height="88" viewBox="0 0 76 88" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M56 0H8C3.6 0 0 3.6 0 8V64H8V8H56V0ZM68 16H24C19.6 16 16 19.6 16 24V80C16 84.4 19.6 88 24 88H68C72.4 88 76 84.4 76 80V24C76 19.6 72.4 16 68 16ZM68 80H24V24H68V80Z"
+        fill="#CCCCCC"
+      />
+    </svg>
+  );
+};
+
 const DotLoading = () => {
   return (
     <div className="my message">
@@ -98,24 +111,26 @@ const DotLoading = () => {
   );
 };
 
-
 const DEFALUT_TEXT = [
   {
     role: 'bot',
-    message: 'Hello, I am a bot. How can I help you today?',
-  }
-]
+    message: `Hello, I am a chatbot. \nHow can I help you today?`,
+  },
+];
 
 const Home = () => {
   const [input, setInput] = React.useState('');
   const [messages, setMessages] = React.useState(DEFALUT_TEXT);
   const [loading, setLoading] = React.useState(false);
   const [messageApi, contextHolder] = messageAntd.useMessage();
-  const messagesEndRef = useRef(null);
+  const messagesContainerRef = useRef(null);
+  const [preLearningLoading, setPreLearningLoading] = useState(false);
+
+  console.log('hello--->', BEGIN_PROMPT);
 
   useEffect(() => {
-    if (messagesEndRef.current) {
-      messagesEndRef.current.scrollIntoView({ behavior: 'smooth' });
+    if (messagesContainerRef.current) {
+      messagesContainerRef.current.scrollIntoView({ behavior: 'smooth' });
     }
   }, [messages]);
   const handleSubmit = async (e) => {
@@ -130,21 +145,28 @@ const Home = () => {
     await handleCallChatbotAPI(input);
   };
 
-  const handleCallChatbotAPI = async (questionInput) => {
+  const preLearningThread = useCallback(async () => {
+    setPreLearningLoading(true);
     try {
-      const prompt = `${questionInput}`;
+      const prompt = BEGIN_PROMPT;
       const promptInput = {
-        modelId: 'amazon.titan-text-lite-v1',
+        modelId: 'anthropic.claude-3-haiku-20240307-v1:0',
         contentType: 'application/json',
         accept: 'application/json',
         body: JSON.stringify({
-          inputText: prompt,
-          textGenerationConfig: {
-            maxTokenCount: 4096,
-            stopSequences: [],
-            temperature: 0,
-            topP: 1,
-          },
+          anthropic_version: 'bedrock-2023-05-31',
+          max_tokens: 2000,
+          messages: [
+            {
+              role: 'user',
+              content: [
+                {
+                  type: 'text',
+                  text: prompt,
+                },
+              ],
+            },
+          ],
         }),
       };
       const command = new InvokeModelCommand(promptInput);
@@ -152,7 +174,55 @@ const Home = () => {
         const rawRes = res?.body;
         const jsonString = new TextDecoder().decode(rawRes);
         const parsedResponse = JSON.parse(jsonString);
-        const output = parsedResponse?.results[0].outputText;
+        const output = parsedResponse?.content[0].text;
+        const botMessage = {
+          message: output,
+          role: 'bot',
+        };
+        setMessages((prevMess) => [...prevMess, botMessage]);
+        setPreLearningLoading(false);
+      });
+    } catch (err) {
+      messageApi.open({
+        type: 'error',
+        content: 'Pretraing data error! The bot is not ready to chat. Please reload the page.',
+      });
+    }
+  }, [messageApi]);
+
+  useEffect(() => {
+    // preLearningThread();
+  }, [preLearningThread]);
+
+  const handleCallChatbotAPI = async (questionInput) => {
+    try {
+      const prompt = `${questionInput}`;
+      const promptInput = {
+        modelId: 'anthropic.claude-3-haiku-20240307-v1:0',
+        contentType: 'application/json',
+        accept: 'application/json',
+        body: JSON.stringify({
+          anthropic_version: 'bedrock-2023-05-31',
+          max_tokens: 2000,
+          messages: [
+            {
+              role: 'user',
+              content: [
+                {
+                  type: 'text',
+                  text: prompt,
+                },
+              ],
+            },
+          ],
+        }),
+      };
+      const command = new InvokeModelCommand(promptInput);
+      await client.send(command).then((res) => {
+        const rawRes = res?.body;
+        const jsonString = new TextDecoder().decode(rawRes);
+        const parsedResponse = JSON.parse(jsonString);
+        const output = parsedResponse?.content[0].text;
         const botMessage = {
           message: output,
           role: 'bot',
@@ -160,9 +230,11 @@ const Home = () => {
         setMessages((prevMess) => [...prevMess, botMessage]);
         setInput('');
       });
-      // await setTimeout(() => {
-      //   setMessages((prevMess) => [...prevMess, { message: 'I am a bot, I am not ready yet, I am a bot, I am not ready yet,I am a bot, I am not ready yet,I am a bot, I am not ready yetI am a bot, I am not ready yetI am a bot, I am not ready yetI am a bot, I am not ready yetI am a bot, I am not ready yet', role: 'bot' }]);
-      // }, [3000])
+      // const botMessage = {
+      //   message: 'I am a chatbot. I am not ready to chat. Please wait for a moment!',
+      //   role: 'bot',
+      // };
+      // setMessages((prevMess) => [...prevMess, botMessage]);
     } catch (error) {
       messageApi.open({
         type: 'error',
@@ -175,51 +247,71 @@ const Home = () => {
 
   const renderMessages = useCallback(() => {
     return (
-      <div style={{ overflow: 'auto' }}>
-        {messages.map((msg, index) => (
-          <div className={`message-style ${msg.role === 'user' ? 'justify-end' : ''} `} key={index}>
-            {msg.role === 'bot' && <BotIcon />}
-            <div className={`role-${msg?.role}`}>{msg.message}</div>
-            {msg.role === 'user' && <UserIcon />}
-          </div>
-        ))}
-        <div ref={messagesEndRef} />
+      <div>
+        {!!messages &&
+          messages?.map((msg, index) => (
+            <div
+              className={`${styles.messageStyle} ${msg.role === 'user' ? 'justify-end' : ''} ${
+                index > 1 && index + 1 === messages.length ? 'h-550' : ''
+              }`}
+              key={index}
+            >
+              {msg.role === 'bot' && <BotIcon />}
+              <div className={`${msg?.role === 'user' ? styles.roleUser : styles.roleBot}`}>
+                {msg.message}
+                {/* {index > 1 && index + 1 === messages?.length && msg.role === 'bot' && (
+                  <div className={styles.messageTool}>
+                    <div className={styles.messageToolItem}>
+                      <CopyIcon />
+                      Copy
+                    </div>
+                    <div className={styles.messageToolItem}>
+                      <img src="/img/retryIcon.png" alt="React logo" />
+                      Retry
+                    </div>
+                  </div>
+                )} */}
+              </div>
+              {msg.role === 'user' && <UserIcon />}
+            </div>
+          ))}
+        <div ref={messagesContainerRef}></div>
         {loading && (
-          <div className="message-style">
+          <div className={styles.messageStyle}>
             <BotIcon />
             <DotLoading />
           </div>
         )}
       </div>
     );
-  }, [loading, messages, messagesEndRef]);
+  }, [loading, messages]);
 
   return (
     <>
       {contextHolder}
       <div className={styles.HomeWrapper}>
-        <div className={styles.titleHome}>
-          <div className={styles.imageWrapper}>
-            <img src="/img/bedrock.png" alt="Bedrock logo" />
-            <div>and</div>
-            <img src="/img/react.png" alt="React logo" />
+        <div className={styles.homeContent}>
+          <div className={styles.titleHome}>
+            <div className={styles.imageWrapper}>
+              <img src="/img/bedrock.png" alt="Bedrock logo" />
+              {/* <div>and</div> */}
+              {/* <img src="/img/react.png" alt="React logo" /> */}
+            </div>
+            <span style={{ fontSize: '18px' }}>AWS Chatbot Bedrock</span>
+            <span>
+              An AI version of Chatbot using React and AWS Bedrock. Trained on your personal data and other data sources. Note: Even with a
+              lot of training data, the bot may still hallucinate, don't trust everything it says. Please give this repo a start for more
+              future improve. All chats are recorded, please don't share your deep secret to the bot!
+            </span>
           </div>
-          <span style={{ fontSize: '18px' }}>AWS Chatbot Bedrock and ReactJs</span>
-          <span>
-            An AI version of Chatbot using React and AWS Bedrock. Trained on your personal data and other data sources. Note: Even with a
-            lot of training data, the bot may still hallucinate, don't trust everything it says. Please give this repo a start for more
-            future improve. All chats are recorded, please don't share your deep secret to the bot!
-          </span>
-        </div>
-        <div className="mt-20">{dayjs(new Date()).format('D MMM YYYY')}</div>
-        <div className="react-chatbot-kit-chat-message-container">
-          {renderMessages()}
+          <div className="mt-20">{dayjs(new Date()).format('D MMM YYYY')}</div>
+          <div className={styles.chatMessageContainer}>{renderMessages()}</div>
         </div>
 
-        <div className="react-chatbot-kit-chat-input-container">
-          <form className="react-chatbot-kit-chat-input-form" onSubmit={handleSubmit}>
+        <div className={styles.chatInputContainer}>
+          <form className={styles.chatInputForm} onSubmit={handleSubmit}>
             <input
-              className="react-chatbot-kit-chat-input"
+              className={styles.chatInput}
               placeholder="Type your message here ..."
               value={input}
               onKeyDown={(e) => {
@@ -229,8 +321,8 @@ const Home = () => {
               }}
               onChange={(e) => setInput(e.target.value)}
             />
-            <button type="submit" className="react-chatbot-kit-chat-btn-send">
-              <ChatIcon className="react-chatbot-kit-chat-btn-send-icon" />
+            <button type="submit" className={styles.chatBtnSend}>
+              <ChatIcon className={styles.btnSendIcon} />
             </button>
           </form>
         </div>

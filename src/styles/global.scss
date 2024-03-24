@@ -401,6 +401,12 @@ th {
 .h-screen {
   height: 100vh;
 }
+.h-550 {
+  height: 550px;
+}
+.h-700 {
+  height: 700px;
+}
 .h-full-sp {
   @media screen and (max-width: 768px) {
     height: 100% !important; 
@@ -411,6 +417,7 @@ th {
 .h-50pr {
   height: 50%;
 }
+
 
 .w-full {
   width: 100%;
@@ -544,7 +551,6 @@ th {
   all: unset;
 }
 
-// chatbot
 .bot-icon-wrapper {
   all: unset;
   background-color: #3c8477;
@@ -611,147 +617,17 @@ th {
   }
 }
 
-.react-chatbot-kit-chat-inner-container {
-  height: 60vh;
-  border-radius: 20px;
-  font-weight: 600;
-
-  @media screen and (max-width: 768px){
-    height: calc(100vh - 32px);
-    border-radius: 0px;
-  }
-}
-
-.react-chatbot-kit-chat-input-container {
-  width: 100%;
-  max-width: 800px;
-  display: flex;
-  border-radius: 16px;
-  overflow: hidden;
-  position: fixed;
-  bottom: 30px;
 
 
-  @media screen and (max-width: 768px) {
-    border-radius: 0px;
-    border: none;
-    position: fixed;
-  }
-}
-
-.react-chatbot-kit-chat-message-container {
-  padding: 10px 17.5px 10px 17.5px;
-  height: 60vh;
-  width: 100%;
-  max-width: 800px;
-  overflow: auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  border-bottom: 0px;
-
-  @media screen and (max-width: 768px) {
-   height: calc(100dvh - 43px - 32px - 40px);
-  }
-}
-
-.react-chatbot-kit-chat-input {
-  width: 100%;
-  padding: 12.5px;
-  border: none;
-  font-size: 0.85rem;
-}
-
-.react-chatbot-kit-chat-input-form {
-  width: 100%;
-  display: flex;
-
-  input {
-    font-size: 16px;
-    outline: none;
-    &:focus {
-      outline: none;
-      outline-width: 0;
-    }
-  }
-}
-
-.react-chatbot-kit-chat-input::placeholder {
-  color: #585858;
-}
-
-.react-chatbot-kit-chat-btn-send {
+.popup-remind {
   background-color: white;
-  width: 100px;
-  border: none;
-  color: #fff;
-  // border-bottom-right-radius: 16px;
-
-  svg {
-    // fill: white;
-    fill: #3c8477;
-    width: 20px;
-  }
-
+  color: #3c8477;
+  padding: 7px 10px;
+  border-radius: 16px;
+  border: 1px solid #3c8477;
+  overflow: hidden;
   @media screen and (max-width: 768px) {
-    border-radius: 0px; 
-  }
-}
-
-.react-chatbot-kit-chat-btn-send-icon {
-  margin: 0 auto;
-
-  svg {
-    fill: #3c8477;
-    width: 20px;
-
-    path {
-
-    fill: #3c8477;
-    } 
-  }
-
-  
-}
-
-.message-style {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  font-size: 16px;
-
-  svg {
-    width: 30px;
-  }
-
-  .role-user {
-    float: right;
-    display: flex;
-    justify-content: flex-end;
-    background-color: #3c8477;
-    border-radius: 20px;
-    color: white;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    padding: 10px 15px;
-    max-width: 60%;
-    height: auto;
-    word-wrap: break-word;
-    // word-break: break-all;
-  }
-
-  .role-bot {
-    display: flex;
-    justify-content: flex-start;
-    background-color: #f7f7f7;
-    border-radius: 20px;
-    color: #1b1a57;
-    padding: 10px 15px;
-    width: 70%;
-    height: auto;
-    word-wrap: break-word;
-    // word-break: break-all;
-    margin-bottom: 10px;
+    margin-right: 10px;
   }
 }
 
@@ -768,18 +644,6 @@ th {
   &:hover {
     background-color: #3c8477;
     color: white;
-  }
-}
-
-.popup-remind {
-  background-color: white;
-  color: #3c8477;
-  padding: 7px 10px;
-  border-radius: 16px;
-  border: 1px solid #3c8477;
-  overflow: hidden;
-  @media screen and (max-width: 768px) {
-    margin-right: 10px;
   }
 }
 
