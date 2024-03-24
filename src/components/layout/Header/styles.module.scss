@@ -16,6 +16,10 @@
   align-items: center;
   width: 100%;
   padding: 10px 62px; 
+
+  @media screen and (max-width: 768px) {
+    padding: 10px 20px;
+  }
 }
 
 .buttonLogin {
