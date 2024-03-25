@@ -12,8 +12,8 @@ import { BEGIN_PROMPT } from './training-data';
 const client = new BedrockRuntimeClient({
   region: 'us-east-1',
   credentials: {
-    accessKeyId: '',
-    secretAccessKey: '',
+    accessKeyId: process.env.KEY,
+    secretAccessKey: process.env.PASSWORD,
   },
 });
 
@@ -88,16 +88,16 @@ const UserIcon = () => {
   );
 };
 
-const CopyIcon = () => {
-  return (
-    <svg width="76" height="88" viewBox="0 0 76 88" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path
-        d="M56 0H8C3.6 0 0 3.6 0 8V64H8V8H56V0ZM68 16H24C19.6 16 16 19.6 16 24V80C16 84.4 19.6 88 24 88H68C72.4 88 76 84.4 76 80V24C76 19.6 72.4 16 68 16ZM68 80H24V24H68V80Z"
-        fill="#CCCCCC"
-      />
-    </svg>
-  );
-};
+// const CopyIcon = () => {
+//   return (
+//     <svg width="76" height="88" viewBox="0 0 76 88" fill="none" xmlns="http://www.w3.org/2000/svg">
+//       <path
+//         d="M56 0H8C3.6 0 0 3.6 0 8V64H8V8H56V0ZM68 16H24C19.6 16 16 19.6 16 24V80C16 84.4 19.6 88 24 88H68C72.4 88 76 84.4 76 80V24C76 19.6 72.4 16 68 16ZM68 80H24V24H68V80Z"
+//         fill="#CCCCCC"
+//       />
+//     </svg>
+//   );
+// };
 
 const DotLoading = () => {
   return (
@@ -111,21 +111,20 @@ const DotLoading = () => {
   );
 };
 
-const DEFALUT_TEXT = [
-  {
-    role: 'bot',
-    message: `Hello, I am a chatbot. \nHow can I help you today?`,
-  },
-];
+// const DEFALUT_TEXT = [
+//   {
+//     role: 'bot',
+//     message: `Hello, I am a chatbot. \nHow can I help you today?`,
+//   },
+// ];
 
 const Home = () => {
   const [input, setInput] = React.useState('');
-  const [messages, setMessages] = React.useState(DEFALUT_TEXT);
+  const [messages, setMessages] = React.useState([]);
   const [loading, setLoading] = React.useState(false);
   const [messageApi, contextHolder] = messageAntd.useMessage();
   const messagesContainerRef = useRef(null);
   const [preLearningLoading, setPreLearningLoading] = useState(false);
-
 
   useEffect(() => {
     if (messagesContainerRef.current) {
@@ -190,10 +189,12 @@ const Home = () => {
   }, [messageApi]);
 
   useEffect(() => {
-    // preLearningThread();
-  }, [preLearningThread]);
+    preLearningThread();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const handleCallChatbotAPI = async (questionInput) => {
+    console.log('handle call chatbot api--->');
     try {
       const prompt = `${questionInput}`;
       const promptInput = {
@@ -229,11 +230,6 @@ const Home = () => {
         setMessages((prevMess) => [...prevMess, botMessage]);
         setInput('');
       });
-      // const botMessage = {
-      //   message: 'I am a chatbot. I am not ready to chat. Please wait for a moment!',
-      //   role: 'bot',
-      // };
-      // setMessages((prevMess) => [...prevMess, botMessage]);
     } catch (error) {
       messageApi.open({
         type: 'error',
@@ -247,40 +243,9 @@ const Home = () => {
   const renderMessages = useCallback(() => {
     return (
       <div>
-        {!!messages &&
-          messages?.map((msg, index) => (
-            <div
-              className={`${styles.messageStyle} ${msg.role === 'user' ? 'justify-end' : ''} ${
-                index > 1 && index + 1 === messages.length ? 'h-550' : ''
-              }`}
-              key={index}
-            >
-              {msg.role === 'bot' && <BotIcon />}
-              <div className={`${msg?.role === 'user' ? styles.roleUser : styles.roleBot}`}>
-                {msg.message}
-                {/* {index > 1 && index + 1 === messages?.length && msg.role === 'bot' && (
-                  <div className={styles.messageTool}>
-                    <div className={styles.messageToolItem}>
-                      <CopyIcon />
-                      Copy
-                    </div>
-                    <div className={styles.messageToolItem}>
-                      <img src="/img/retryIcon.png" alt="React logo" />
-                      Retry
-                    </div>
-                  </div>
-                )} */}
-              </div>
-              {msg.role === 'user' && <UserIcon />}
-            </div>
-          ))}
+        {!!messages && messages?.map((msg, index) => <Message key={index} index={index} mesLength={messages?.length} msg={msg} />)}
         <div ref={messagesContainerRef}></div>
-        {loading && (
-          <div className={styles.messageStyle}>
-            <BotIcon />
-            <DotLoading />
-          </div>
-        )}
+        <LoadingChatBot loading={loading} />
       </div>
     );
   }, [loading, messages]);
@@ -293,8 +258,6 @@ const Home = () => {
           <div className={styles.titleHome}>
             <div className={styles.imageWrapper}>
               <img src="/img/bedrock.png" alt="Bedrock logo" />
-              {/* <div>and</div> */}
-              {/* <img src="/img/react.png" alt="React logo" /> */}
             </div>
             <span style={{ fontSize: '18px' }}>AWS Chatbot Bedrock</span>
             <p>
@@ -304,6 +267,7 @@ const Home = () => {
             </p>
           </div>
           <div>{dayjs(new Date()).format('D MMM YYYY')}</div>
+          <div>{preLearningLoading && 'Bot is learning...'}</div>
           <div className={styles.chatMessageContainer}>{renderMessages()}</div>
         </div>
 
@@ -331,3 +295,45 @@ const Home = () => {
 };
 
 export default Home;
+
+const Message = ({ msg, index, mesLength }) => {
+  return (
+    <div
+      className={`${styles.messageStyle} ${msg.role === 'user' ? 'justify-end' : ''} ${
+        index > 1 && index + 1 === mesLength ? 'h-550' : ''
+      }`}
+      key={index}
+    >
+      {msg.role === 'bot' && <BotIcon />}
+      <div className={`${msg?.role === 'user' ? styles.roleUser : styles.roleBot}`}>
+        {msg.message}
+        {/* {index > 1 && index + 1 === messages?.length && msg.role === 'bot' && (
+                  <div className={styles.messageTool}>
+                    <div className={styles.messageToolItem}>
+                      <CopyIcon />
+                      Copy
+                    </div>
+                    <div className={styles.messageToolItem}>
+                      <img src="/img/retryIcon.png" alt="React logo" />
+                      Retry
+                    </div>
+                  </div>
+                )} */}
+      </div>
+      {msg.role === 'user' && <UserIcon />}
+    </div>
+  );
+};
+
+const LoadingChatBot = ({ loading }) => {
+  return (
+    <>
+      {loading && (
+        <div className={styles.messageStyle}>
+          <BotIcon />
+          <DotLoading />
+        </div>
+      )}
+    </>
+  );
+};

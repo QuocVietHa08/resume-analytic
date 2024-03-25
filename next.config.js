@@ -3,6 +3,8 @@ const path = require('path');
 module.exports = {
   reactStrictMode: true,
   env: {
+    KEY: process.env.KEY,
+    PASSWORD: process.env.PASSWORD
   },
   sassOptions: {
     fiber: false,
