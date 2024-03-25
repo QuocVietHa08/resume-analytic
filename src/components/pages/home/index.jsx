@@ -17,7 +17,6 @@ const client = new BedrockRuntimeClient({
   },
 });
 
-
 const ChatIcon = () => {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
@@ -141,10 +140,10 @@ const Home = () => {
         body: JSON.stringify({
           anthropic_version: 'bedrock-2023-05-31',
           max_tokens: 2000,
-          temperature:1,
-          top_k:250,
-          top_p:0.999,
-          stop_sequences: ["\n\nHuman:"],
+          temperature: 1,
+          top_k: 250,
+          top_p: 0.999,
+          stop_sequences: ['\n\nHuman:'],
           messages: [
             {
               role: 'user',
@@ -170,15 +169,17 @@ const Home = () => {
         };
         setMessages((prevMess) => [...prevMess, botMessage]);
         setInput('');
+        setLoading(false)
       });
+      await setTimeout(() => {
+        setLoading(false);
+      }, 4000)
     } catch (error) {
       messageApi.open({
         type: 'error',
         content: 'Connection timout! Please reload chatbot',
       });
-    } finally {
-      setLoading(false);
-    }
+    } 
   };
 
   const renderMessages = useCallback(() => {
@@ -190,6 +191,10 @@ const Home = () => {
       </div>
     );
   }, [loading, messages]);
+
+  // const handleStopGenerate = () => {
+  //   console.log("hello")
+  // }
 
   return (
     <>
@@ -208,10 +213,14 @@ const Home = () => {
             </p>
           </div>
           <div>{dayjs(new Date()).format('D MMM YYYY')}</div>
-          {/* <div>{preLearningLoading && 'Bot is summaring training data...'}</div> */}
           <div className={styles.chatMessageContainer}>{renderMessages()}</div>
         </div>
-
+        {/* {loading && (
+          <button type="button" onClick={handleStopGenerate} className={styles.stopWrapper}>
+            <div className={styles.stopBlock}></div>
+            <span>Stop</span>
+          </button>
+        )} */}
         <div className={styles.chatInputContainer}>
           <form className={styles.chatInputForm} onSubmit={handleSubmit}>
             <input
@@ -237,12 +246,10 @@ const Home = () => {
 
 export default Home;
 
-const Message = ({ msg, index, mesLength }) => {
+const Message = ({ msg, index }) => {
   return (
     <div
-      className={`${styles.messageStyle} ${msg.role === 'user' ? 'justify-end' : ''} ${
-        index > 1 && index + 1 === mesLength ? 'h-550' : ''
-      }`}
+      className={`${styles.messageStyle} ${msg.role === 'user' ? 'justify-end' : ''}`}
       key={index}
     >
       {msg.role === 'bot' && <BotIcon />}
