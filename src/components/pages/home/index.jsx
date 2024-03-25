@@ -2,12 +2,12 @@
 /* eslint-disable react/no-array-index-key */
 /* eslint-disable jsx-a11y/control-has-associated-label */
 /* eslint-disable react/no-unescaped-entities */
-import React, { useCallback, useEffect, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useRef } from 'react';
 import { message as messageAntd } from 'antd';
 import { BedrockRuntimeClient, InvokeModelCommand } from '@aws-sdk/client-bedrock-runtime';
 import dayjs from 'dayjs';
 import styles from './styles.module.scss';
-import { BEGIN_PROMPT } from './training-data';
+import { handleRenderInput } from './training-data';
 
 const client = new BedrockRuntimeClient({
   region: 'us-east-1',
@@ -16,6 +16,7 @@ const client = new BedrockRuntimeClient({
     secretAccessKey: process.env.PASSWORD,
   },
 });
+
 
 const ChatIcon = () => {
   return (
@@ -88,17 +89,6 @@ const UserIcon = () => {
   );
 };
 
-// const CopyIcon = () => {
-//   return (
-//     <svg width="76" height="88" viewBox="0 0 76 88" fill="none" xmlns="http://www.w3.org/2000/svg">
-//       <path
-//         d="M56 0H8C3.6 0 0 3.6 0 8V64H8V8H56V0ZM68 16H24C19.6 16 16 19.6 16 24V80C16 84.4 19.6 88 24 88H68C72.4 88 76 84.4 76 80V24C76 19.6 72.4 16 68 16ZM68 80H24V24H68V80Z"
-//         fill="#CCCCCC"
-//       />
-//     </svg>
-//   );
-// };
-
 const DotLoading = () => {
   return (
     <div className="my message">
@@ -111,21 +101,19 @@ const DotLoading = () => {
   );
 };
 
-// const DEFALUT_TEXT = [
-//   {
-//     role: 'bot',
-//     message: `Hello, I am a chatbot. \nHow can I help you today?`,
-//   },
-// ];
+const DEFALUT_TEXT = [
+  {
+    role: 'bot',
+    message: `Hello, I am Asure Shark Tank program chatbot. \nHow can I help you today?`,
+  },
+];
 
 const Home = () => {
   const [input, setInput] = React.useState('');
-  const [messages, setMessages] = React.useState([]);
+  const [messages, setMessages] = React.useState(DEFALUT_TEXT);
   const [loading, setLoading] = React.useState(false);
   const [messageApi, contextHolder] = messageAntd.useMessage();
   const messagesContainerRef = useRef(null);
-  const [preLearningLoading, setPreLearningLoading] = useState(false);
-
   useEffect(() => {
     if (messagesContainerRef.current) {
       messagesContainerRef.current.scrollIntoView({ behavior: 'smooth' });
@@ -143,60 +131,9 @@ const Home = () => {
     await handleCallChatbotAPI(input);
   };
 
-  const preLearningThread = useCallback(async () => {
-    setPreLearningLoading(true);
-    try {
-      const prompt = BEGIN_PROMPT;
-      const promptInput = {
-        modelId: 'anthropic.claude-3-haiku-20240307-v1:0',
-        contentType: 'application/json',
-        accept: 'application/json',
-        body: JSON.stringify({
-          anthropic_version: 'bedrock-2023-05-31',
-          max_tokens: 2000,
-          messages: [
-            {
-              role: 'user',
-              content: [
-                {
-                  type: 'text',
-                  text: prompt,
-                },
-              ],
-            },
-          ],
-        }),
-      };
-      const command = new InvokeModelCommand(promptInput);
-      await client.send(command).then((res) => {
-        const rawRes = res?.body;
-        const jsonString = new TextDecoder().decode(rawRes);
-        const parsedResponse = JSON.parse(jsonString);
-        const output = parsedResponse?.content[0].text;
-        const botMessage = {
-          message: output,
-          role: 'bot',
-        };
-        setMessages((prevMess) => [...prevMess, botMessage]);
-        setPreLearningLoading(false);
-      });
-    } catch (err) {
-      messageApi.open({
-        type: 'error',
-        content: 'Pretraing data error! The bot is not ready to chat. Please reload the page.',
-      });
-    }
-  }, [messageApi]);
-
-  useEffect(() => {
-    preLearningThread();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
   const handleCallChatbotAPI = async (questionInput) => {
-    console.log('handle call chatbot api--->');
     try {
-      const prompt = `${questionInput}`;
+      const prompt = handleRenderInput(questionInput);
       const promptInput = {
         modelId: 'anthropic.claude-3-haiku-20240307-v1:0',
         contentType: 'application/json',
@@ -204,6 +141,10 @@ const Home = () => {
         body: JSON.stringify({
           anthropic_version: 'bedrock-2023-05-31',
           max_tokens: 2000,
+          temperature:1,
+          top_k:250,
+          top_p:0.999,
+          stop_sequences: ["\n\nHuman:"],
           messages: [
             {
               role: 'user',
@@ -267,7 +208,7 @@ const Home = () => {
             </p>
           </div>
           <div>{dayjs(new Date()).format('D MMM YYYY')}</div>
-          <div>{preLearningLoading && 'Bot is learning...'}</div>
+          {/* <div>{preLearningLoading && 'Bot is summaring training data...'}</div> */}
           <div className={styles.chatMessageContainer}>{renderMessages()}</div>
         </div>
 
