@@ -57,8 +57,7 @@ TOWNHALL CONTENT STRATEGY
       5.Highlight: Townhall 
   `;
 
-export const BEGIN_PROMPT = `Human: I'm going to give you a document. Then I'm going to ask you a question about it. 
-I'd like you to first write down exact data of parts of the document that would help answer the question, and then I'd like you to answer the question using facts from the data content. 
+export const BEGIN_PROMPT = `Human: I'm going to give you a document. Then I'm going to ask you a question about it. I'd like you to answer the question using facts from the data content. 
 
 Here is my document:
 
@@ -67,27 +66,8 @@ ${DATA_LEARNING}
 </document>
 `;
 
-const ANSWER_FORMAT = `
-First, find the data from the document that are most relevant to answering the question, and then print them in numbered order.
-Answer should be relatively short. If there are no relevant data, write "No data provide" instead.
- 
-Then, answer the question, starting with "Answer:". Do not include or reference data content verbatim in the answer. Don't say "According to data [1]" when answering. Instead make references to data relevant to each section of the answer solely by adding their bracketed numbers at the end of relevant sentences.
- 
-Thus, the format of your overall response should look like what's shown between the <example></example> tags. Make sure to follow the formatting and spacing exactly.
- 
-<example>
-Relevant data:
-[1] "Asure Shark Tank program start on 24 Octorber 2023."
-[2] "There are 4 main shark: Marc, Chien, Nic and Jon."
- 
-Answer: 
-Asure Shark Tank program start on 24 Octorber 2023 [1]  There are 4 main shark: Marc, Chien, Nic and Jon. [2]
-</example>
-`
-const FINAL_PRMOPT = `If the question cannot be answered by the document, say so.
- 
-Answer the question immediately without preamble.
- 
+const ANSWER_FORMAT = `First, find the data from the document that are most relevant to answering the question. Answer should be relatively short. If there are no relevant data, write "No data provide" instead. Then, answer the question. Do not include or reference data content verbatim in the answer. Don't say "According to data [1]" when answering. Make sure to follow the formatting and spacing exactly.`
+const FINAL_PRMOPT = `If the question cannot be answered by the document, say "I don't have data for this question. Please try another one".Answer the question immediately without preamble. 
 Assistant:
 `
 
