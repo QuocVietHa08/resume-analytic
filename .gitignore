@@ -44,3 +44,4 @@ package-lock.json
 *.tsbuildinfo
 next-env.d.ts
 public/sitemap.xml
+sitemap.xml
