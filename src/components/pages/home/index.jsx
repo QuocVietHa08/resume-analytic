@@ -246,10 +246,12 @@ const Home = () => {
 
 export default Home;
 
-const Message = ({ msg, index }) => {
+const Message = ({ msg, index, mesLength }) => {
   return (
     <div
-      className={`${styles.messageStyle} ${msg.role === 'user' ? 'justify-end' : ''}`}
+      className={`${styles.messageStyle} ${msg.role === 'user' ? 'justify-end' : ''} ${
+        index > 1 && index + 1 === mesLength && msg.role === 'bot' ? 'pb-10': '' 
+      }`}
       key={index}
     >
       {msg.role === 'bot' && <BotIcon />}
