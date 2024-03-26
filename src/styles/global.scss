@@ -227,6 +227,10 @@ th {
     }
   }
 }
+
+.visbility-hidden {
+  visibility: hidden;
+}
 .none {
   display: none !important;
 }
@@ -413,11 +417,9 @@ th {
   }
 }
 
-
 .h-50pr {
   height: 50%;
 }
-
 
 .w-full {
   width: 100%;
