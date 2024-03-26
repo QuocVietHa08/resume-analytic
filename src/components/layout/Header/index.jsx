@@ -8,13 +8,12 @@ const Header = () => {
       <div className={styles.headerWrapper}>
         <div className={styles.logoWrapper}></div>
         <div className="flex items-center gap-20">
-        <Link className={styles.buttonLogin} href="train">
-          Training
-        </Link>
-        <a href="https://github.com/QuocVietHa08/aws-bedrock-chatbot" target="_blank" className={styles.buttonLogin} rel="noreferrer">
-          Repository
-        </a>
-        
+          <Link className={styles.buttonLogin} href="/">
+            Home
+          </Link>
+          <Link className={styles.buttonLogin} href="train">
+            Training
+          </Link>
         </div>
       </div>
     </div>
