@@ -335,6 +335,11 @@
   justify-content: flex-end;
   cursor: pointer;
   animation: slide-up 0.2s ease-in-out forwards;
+
+  @media screen and (max-width: 768px) {
+    bottom: 60px;
+    width: 90%;
+  }
 }
 
 .newChatButton {

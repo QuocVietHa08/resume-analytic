@@ -71,3 +71,26 @@
     font-family: 'Baloo Da';
   }
 }
+
+.buttonTrain {
+  all: unset;
+  width: 100px; 
+  padding: 8px 15px;
+  text-align: center;
+  color: white;
+  border-radius: 16px;
+  background-color: #3c8477;
+  cursor: pointer;
+}
+
+.buttonCancelTrain {
+  all: unset;
+  width: 100px; 
+  padding: 8px 15px;
+  text-align: center;
+  color: #3c8477;
+  background-color: white;
+  border-radius: 16px;
+  border: 1px solid #3c8477;
+  cursor: pointer;
+}
