@@ -1,30 +1,21 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import ConvertApi from 'convertapi-js';
 import { message, Modal } from 'antd';
 import { useRouter } from 'next/router';
-import { Button, Form, Input, InputNumber, Upload } from 'antd';
-import { PlusOutlined } from '@ant-design/icons';
+import { Editor } from '@tinymce/tinymce-react';
 
 import styles from './styles.module.scss';
 
-const { TextArea } = Input;
 const Train = () => {
-  console.log('convertApi', process.env.CONVERT_API_KEY);
   const convertApi = ConvertApi.auth(process.env.CONVERT_API_KEY);
   const router = useRouter();
-  const [text, setText] = useState('');
+  const [text, setText] = useState('Default text');
   const [loading, setLoading] = useState(false);
   const [fileName, setFileeName] = useState('');
   const [openModal, setOpenModal] = useState(false);
-
-  const normFile = (e) => {
-    if (Array.isArray(e)) {
-      return e;
-    }
-    return e?.fileList;
-  };
+  const editorRef = useRef(null);
 
   const handleFileChange = async (event) => {
     event.preventDefault();
@@ -97,38 +88,23 @@ const Train = () => {
               </div>
             )}
             <div className="mt-20">Data Training:{loading && ' Loading...'}</div>
-            <textarea className={styles.pdfContent} value={text} onChange={(e) => setText(e.target.value)} />
-          </div>
-          <div className={styles.settingAccount}>
-            <div className={styles.uploadData}>
-              <div className="flex items-center justify-center gap-20">
-                <label className={styles.buttonUpload}>Save</label>
-              </div>
-            </div>
-            <Form labelCol={{ span: 6}}  wrapperCol={{ span: 14 }} className="w-full" layout="horizontal" style={{ marginTop: 30 }}>
-              <Form.Item label="Name">
-                <Input />
-              </Form.Item>
-              <Form.Item label="TextArea">
-                <TextArea rows={4} />
-              </Form.Item>
-
-              <Form.Item label="Max tokens">
-                <InputNumber />
-              </Form.Item>
-
-              <Form.Item label="Upload" valuePropName="fileList" getValueFromEvent={normFile}>
-                <Upload action="/upload.do" listType="picture-card">
-                  <button style={{ border: 0, background: 'none' }} type="button">
-                    <PlusOutlined />
-                    <div style={{ marginTop: 8 }}>Upload</div>
-                  </button>
-                </Upload>
-              </Form.Item>
-              <Form.Item>
-                <Button>Button</Button>
-              </Form.Item>
-            </Form>
+            {/* <textarea className={styles.pdfContent} value={text} onChange={(e) => setText(e.target.value)} /> */}
+            <Editor
+              apiKey={process.env.TINY_API_KEY}
+              // eslint-disable-next-line no-return-assign
+              onInit={(evt, editor) => (editorRef.current = editor)}
+              initialValue={text}
+              init={{
+                height: 600,
+                menubar: false,
+                toolbar:
+                  'undo redo | blocks | ' +
+                  'bold italic forecolor | alignleft aligncenter ' +
+                  'alignright alignjustify | bullist numlist outdent indent | ' +
+                  'removeformat | help',
+                content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px, white-space: break-spaces, }',
+              }}
+            />
           </div>
         </div>
       </div>

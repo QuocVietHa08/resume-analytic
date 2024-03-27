@@ -17,9 +17,9 @@ const Header = () => {
           <Link className={styles.buttonLogin} href="data">
             Data
           </Link>
-          <Link className={styles.buttonLogin} href="setting">
+          {/* <Link className={styles.buttonLogin} href="setting">
             Setting
-          </Link>
+          </Link> */}
         </div>
       </div>
     </div>
