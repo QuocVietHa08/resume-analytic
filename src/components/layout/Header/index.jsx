@@ -14,6 +14,12 @@ const Header = () => {
           <Link className={styles.buttonLogin} href="train">
             Training
           </Link>
+          <Link className={styles.buttonLogin} href="data">
+            Data
+          </Link>
+          <Link className={styles.buttonLogin} href="setting">
+            Setting
+          </Link>
         </div>
       </div>
     </div>
