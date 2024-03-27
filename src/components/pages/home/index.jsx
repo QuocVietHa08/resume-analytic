@@ -4,7 +4,7 @@
 /* eslint-disable react/no-unescaped-entities */
 import React, { useCallback, useEffect, useRef } from 'react';
 import { message as messageAntd } from 'antd';
-import { BedrockRuntimeClient, InvokeModelCommand } from '@aws-sdk/client-bedrock-runtime';
+import { BedrockRuntimeClient, InvokeModelCommand} from '@aws-sdk/client-bedrock-runtime';
 import dayjs from 'dayjs';
 import { PlusOutlined } from '@ant-design/icons';
 import styles from './styles.module.scss';
@@ -88,7 +88,6 @@ const Home = () => {
 
   useEffect(() => {
     const dataTraining = localStorage.getItem('dataTraining');
-    console.log(dataTraining)
     setTrainingInput(dataTraining)
   }, [])
 
