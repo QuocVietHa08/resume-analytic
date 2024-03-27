@@ -3,7 +3,7 @@ import HomeComp from '@/components/pages/home';
 
 const Home = () => {
   return (
-    <div style={{ backgroundColor: '#E1F0DA',height: '100%', width: '100vw' }} >
+    <div style={{ backgroundColor: '#f7f7f7',height: '100%', width: '100vw' }} >
       <HomeComp />
     </div>
   );

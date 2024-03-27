@@ -3,13 +3,25 @@
 // tablet title 35 text 16
 // mobile title 20 text 12
 
-.HomeWrapper {
+.HomeContainer {
   width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+}
+.HomeWrapper {
+  width: 80%;
+  height: 80%;
+  display: flex;
+  background-color: white;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 16px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
 .homeContent {
@@ -31,7 +43,9 @@
 .titleHome {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 20px;
+  text-align: center;
 
   @media screen and (max-width: 768px) {
     gap: 10px;
@@ -46,8 +60,8 @@
   }
 
   p {
-    width: 400px;
-    font-size: 12px;
+    width: 500px;
+    font-size: 14px;
     text-align: center;
 
     @media screen and (max-width: 768px) {
@@ -78,289 +92,11 @@
   }
 }
 
-// chatbot
-.react-chatbot-kit-chat-inner-container {
-  height: 60vh;
-  border-radius: 20px;
-  font-weight: 600;
-
-  @media screen and (max-width: 768px) {
-    height: calc(100vh - 32px);
-    border-radius: 0px;
-  }
-}
-
-.chatInputContainer {
-  width: 100%;
-  max-width: 800px;
-  display: flex;
-  margin: 0 auto;
-  border-radius: 16px;
-  overflow: hidden;
-  position: fixed;
-  bottom: 30px;
-
-  @media screen and (max-width: 768px) {
-    border: none;
-    position: fixed;
-    width: 90%;
-    bottom: 10px;
-  }
-}
-
-.chatMessageContainer {
-  padding: 10px 17.5px 10px 17.5px;
-  width: 100%;
-  max-width: 800px;
-  flex-direction: column;
-  justify-content: flex-start;
-  border-bottom: 0px;
-
-  @media screen and (max-width: 768px) {
-    height: calc(100dvh - 43px - 32px - 40px);
-  }
-}
-
-.chatInput {
-  width: 100%;
-  padding: 15px 20px;
-  border: none;
-  font-size: 0.85rem;
-
-  @media screen and (max-width: 768px) {
-    padding: 8px;
-  }
-
-  &::placeholder {
-    color: #585858;
-  }
-}
-
-.chatInputForm {
-  width: 100%;
-  display: flex;
-  font-size: 20px;
-
-  input {
-    outline: none;
-
-    @media screen and (max-width: 768px) {
-      font-size: 16px;
-    }
-    &:focus {
-      outline: none;
-      outline-width: 0;
-    }
-  }
-}
-
-.chatBtnSend {
-  background-color: white;
-  width: 100px;
-  border: none;
-  color: #fff;
-  // border-bottom-right-radius: 16px;
-
-  svg {
-    // fill: white;
-    fill: #3c8477;
-    width: 20px;
-  }
-
-  @media screen and (max-width: 768px) {
-    border-radius: 0px;
-  }
-}
-
-.btnSendIcon {
-  margin: 0 auto;
-
-  svg {
-    fill: #3c8477;
-    width: 20px;
-
-    path {
-      fill: #3c8477;
-    }
-  }
-}
-
-.messageStyle {
-  display: flex;
-  align-items: center;
-  white-space: break-spaces;
-
-  gap: 15px;
-  font-size: 16px;
-
-  svg {
-    width: 30px;
-  }
-}
-
-.roleUser {
-  // float: right;
-  display: flex;
-  justify-content: flex-end;
-  background-color: #3c8477;
-  border-radius: 20px;
-  color: white;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  padding: 10px 15px;
-  max-width: 60%;
-  height: auto;
-  word-wrap: break-word;
-
-  @media screen and (max-width: 768px) {
-    padding: 5px 15px;
-    font-size: 12px;
-  }
-}
-
-.roleBot {
-  display: flex;
-  position: relative;
-  justify-content: flex-start;
-  background-color: #f7f7f7;
-  border-radius: 20px;
-  color: #1b1a57;
-  padding: 10px 15px;
-  width: 80%;
-  height: auto;
-  word-wrap: break-word;
-
-  @media screen and (max-width: 768px) {
-    padding: 5px 15px;
-    width: 75%;
-    font-size: 12px;
-  }
-}
-
-.botIconWrapper {
-  all: unset;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: white;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  overflow: hidden;
-
-  img {
-    width: 100%;
-    height: auto;
-    object-fit: fit;
-  }
-}
-
-.messageTool {
-  position: absolute;
-  display: flex;
-  gap: 10px;
-  align-items: center;
-  justify-content: center;
-  width: 150px;
-  height: 25px;
-  right: 0px;
-  bottom: 0px;
-  transform: translate(0%, 50%);
-  z-index: 9999;
-  border: 1px solid #ccc;
+.uploadContainer {
+  width: 50%;
+  height: 50%;
   border-radius: 10px;
-  background-color: #f7f7f7;
-}
-
-.messageToolItem {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 5px;
-  cursor: pointer;
-  color: #1b1a57;
-  opacity: 0.5;
-
-  svg {
-    width: 10px;
-    fill: #1b1a57;
-
-    path {
-      fill: #1b1a57;
-    }
-  }
-
-  img {
-    width: 10px;
-  }
-}
-
-.stopWrapper {
-  all: unset;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: white;
-  border-radius: 20px;
-  padding: 5px 20px;
-  margin-bottom: 20px;
-  gap: 10px;
-  cursor: pointer;
-  animation: slide-up 0.2s ease-in-out forwards;
-
-  @media screen and (max-width: 768px) {
-    padding: 5px 25px;
-    font-size: 12px;
-    padding: 3px 10px;
-    margin-bottom: 50px;
-  }
-}
-
-.stopBlock {
-  width: 12px;
-  height: 12px;
-  background-color: white;
-  border-radius: 2px;
-}
-
-// new chat
-.newChatWrapper {
-  @extend .chatInputContainer;
-  border-radius: 0px;
-  bottom: 90px;
-  z-index: 1;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  cursor: pointer;
-  animation: slide-up 0.2s ease-in-out forwards;
-
-  @media screen and (max-width: 768px) {
-    bottom: 60px;
-    width: 90%;
-  }
-}
-
-.newChatButton {
-  all: unset;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  background-color: #3c8477;
-  color: white;
-  padding: 5px 10px;
-  border-radius: 10px;
-}
-
-@keyframes slide-up {
-  0% {
-    transform: translateY(100%);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0%);
-    opacity: 1;
-  }
 }
