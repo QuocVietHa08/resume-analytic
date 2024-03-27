@@ -1,9 +1,9 @@
 import React from 'react'
-import SettingComp from '@/components/pages/setting'
+import DataComp from '@/components/pages/data'
 
 const Train = () => {
   return (
-    <SettingComp />
+    <DataComp />
   )
 }
 

@@ -1,0 +1,106 @@
+@import 'styles/responsive.scss';
+
+.trainContainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+
+}
+.trainWrapper {
+  width: 80%;
+  height: calc(100vh - 45px);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  justify-content: flex-start;
+
+  .title {
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: 600;
+    color: #3c8477; 
+    font-family: 'Baloo Da';
+  }
+}
+
+.buttonUpload {
+ width: 200px; 
+ padding: 10px 20px;
+ text-align: center;
+ color: white;
+ border-radius: 16px;
+  background-color: #3c8477;
+  cursor: pointer;
+}
+
+.trainUpload {
+  display: flex;
+  justify-content: center;
+  height: 80%;
+  width: 80%;
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
+.settingAccount {
+  width: 30%;
+  display: flex; 
+  align-items: center;
+  flex-direction:column;
+
+  padding: 0px 20px;
+}
+
+.uploadWrapper {
+  background-color: white !important;
+  padding: 20px;
+  border: 1px solid #3c8477;
+}
+
+.pdfContent {
+  white-space: break-spaces;
+  overflow: auto;
+  padding: 10px;
+  width: 100%;
+  height: 50%;
+  margin: 0 auto;
+  border: 1px solid #3c8477;
+  background-color: white;
+  white-space: break-word;
+}
+
+.fileName {
+  margin-top: 20px;
+ text-align: center; 
+
+  span {
+    font-size: 16px;
+    font-family: 'Baloo Da';
+  }
+}
+
+.buttonTrain {
+  all: unset;
+  width: 100px; 
+  padding: 8px 15px;
+  text-align: center;
+  color: white;
+  border-radius: 16px;
+  background-color: #3c8477;
+  cursor: pointer;
+}
+
+.buttonCancelTrain {
+  all: unset;
+  width: 100px; 
+  padding: 8px 15px;
+  text-align: center;
+  color: #3c8477;
+  background-color: white;
+  border-radius: 16px;
+  border: 1px solid #3c8477;
+  cursor: pointer;
+}
