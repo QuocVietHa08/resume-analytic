@@ -4,7 +4,8 @@ module.exports = {
   reactStrictMode: true,
   env: {
     KEY: process.env.KEY,
-    PASSWORD: process.env.PASSWORD
+    PASSWORD: process.env.PASSWORD,
+    CONVERT_API_KEY: process.env.CONVERT_API_KEY
   },
   sassOptions: {
     fiber: false,

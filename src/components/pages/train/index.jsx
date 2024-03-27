@@ -11,7 +11,8 @@ import styles from './styles.module.scss';
 
 const { TextArea } = Input;
 const Train = () => {
-  const convertApi = ConvertApi.auth('3po7Okkq2RYWSD6z');
+  console.log('convertApi', process.env.CONVERT_API_KEY);
+  const convertApi = ConvertApi.auth(process.env.CONVERT_API_KEY);
   const router = useRouter();
   const [text, setText] = useState('');
   const [loading, setLoading] = useState(false);
