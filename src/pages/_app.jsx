@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import { Analytics } from "@vercel/analytics/react"
 import Layout from '../components/layout/Main';
 
 import '../styles/global.scss';
@@ -13,6 +14,7 @@ const App = ({ Component, pageProps }) => {
         <meta name="viewport" content="width=device-width" />
       </Head>
       <Component {...pageProps} />
+      <Analytics />
     </Layout>
   );
 };

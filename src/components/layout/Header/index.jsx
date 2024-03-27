@@ -14,9 +14,9 @@ const Header = () => {
           <Link className={styles.buttonLogin} href="train">
             Training
           </Link>
-          <Link className={styles.buttonLogin} href="data">
+          {/* <Link className={styles.buttonLogin} href="data">
             Data
-          </Link>
+          </Link> */}
           {/* <Link className={styles.buttonLogin} href="setting">
             Setting
           </Link> */}
