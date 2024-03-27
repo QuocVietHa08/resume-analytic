@@ -10,7 +10,7 @@ const App = ({ Component, pageProps }) => {
   return (
     <Layout>
       <Head>
-        <title>AWS Chatbot</title>
+        <title>Resume Analytic</title>
         <meta name="viewport" content="width=device-width" />
       </Head>
       <Component {...pageProps} />
