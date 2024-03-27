@@ -17,7 +17,7 @@
   align-items: center;
   justify-content: flex-start;
 
-  span {
+  .title {
     margin-top: 20px;
     font-size: 20px;
     font-weight: 600;
@@ -38,12 +38,25 @@
 
 .trainUpload {
   display: flex;
-  flex-direction: column;
   height: 80%;
   width: 80%;
-  max-width: 1000px;
+  max-width: 1500px;
   margin: 0 auto;
 }
+
+.uploadData {
+  width: 70%;
+}
+
+.settingAccount {
+  width: 30%;
+  display: flex; 
+  align-items: center;
+  flex-direction:column;
+
+  padding: 0px 20px;
+}
+
 .uploadWrapper {
   background-color: white !important;
   padding: 20px;

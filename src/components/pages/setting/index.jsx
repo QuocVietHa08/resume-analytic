@@ -10,7 +10,7 @@ import { PlusOutlined } from '@ant-design/icons';
 import styles from './styles.module.scss';
 
 const { TextArea } = Input;
-const Train = () => {
+const Setting = () => {
   const convertApi = ConvertApi.auth('3po7Okkq2RYWSD6z');
   const router = useRouter();
   const [text, setText] = useState('');
@@ -147,4 +147,4 @@ const Train = () => {
   );
 };
 
-export default Train;
+export default Setting;
