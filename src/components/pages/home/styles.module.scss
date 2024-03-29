@@ -14,7 +14,7 @@
 }
 .HomeWrapper {
   width: 80%;
-  height: 80%;
+  height: 85%;
   display: flex;
   background-color: white;
   flex-direction: column;
@@ -99,4 +99,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.documentContent {
+  display: flex;
+  height: 95%;
+}
+
+.documentWrapper {
+  // border: 1px solid black;
+  
 }
