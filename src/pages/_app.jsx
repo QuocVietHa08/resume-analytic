@@ -1,10 +1,13 @@
 import Head from 'next/head';
-import { Analytics } from "@vercel/analytics/react"
+import { pdfjs } from 'react-pdf';
+import { Analytics } from '@vercel/analytics/react';
 import Layout from '../components/layout/Main';
 
 import '../styles/global.scss';
 import 'antd/dist/antd.css';
+import 'react-pdf/dist/Page/TextLayer.css';
 
+pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
 const App = ({ Component, pageProps }) => {
   return (

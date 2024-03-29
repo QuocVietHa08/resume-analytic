@@ -41,6 +41,7 @@ We use the power of AI to analyze your CV so you can be more prepare for your fu
 1. Suggest project and technology you need to learn.
 2. Generate info to share with friend and family.
 3. Quize to practive interview question.
+4. Mobile web version.
 
 ## Development
 

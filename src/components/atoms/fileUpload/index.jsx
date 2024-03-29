@@ -1,13 +1,12 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styles from './styles.module.scss';
 
-const FileUploader = () => {
-  const [files, setFiles] = useState([]);
+const FileUploader = ({ onChangeFile }) => {
 
   const handleDrop = (e) => {
     e.preventDefault();
     const droppedFiles = Array.from(e.dataTransfer.files);
-    setFiles([...files, ...droppedFiles]);
+    onChangeFile(droppedFiles[0]);
   };
 
   const handleDragOver = (e) => {
@@ -16,29 +15,17 @@ const FileUploader = () => {
 
   const handleFileInputChange = (e) => {
     const selectedFiles = Array.from(e.target.files);
-    setFiles([...files, ...selectedFiles]);
+    onChangeFile(selectedFiles[0]);
   };
 
   return (
-    <div className={styles.fileUploader} onDrop={handleDrop} onDragOver={handleDragOver}>
-      <input className="visbility-hidden" id="upload-file" type="file" onChange={handleFileInputChange} multiple />
+    <label htmlFor="upload-file" className={styles.fileUploader} onDrop={handleDrop} onDragOver={handleDragOver}>
+      <input className="visbility-hidden" multiple={false} id="upload-file" type="file" accept=".pdf" onChange={handleFileInputChange} />
       <img src="/img/uploadIcon.png" alt="upload-logo" className={styles.uploadIcon} />
-      <label htmlFor='upload-file' className={styles.title}>
+      <span className={styles.title}>
         Drag & Drop PDF file or <span>Browser</span>
-      </label>
-      <div>
-        {files.length > 0 && (
-          <div className={styles.fileList}>
-            {files.map((file, index) => (
-              // eslint-disable-next-line react/no-array-index-key
-              <div key={index} className={styles.fileItem}>
-                {file.name}
-              </div>
-            ))}
-          </div>
-        )}
-      </div>
-    </div>
+      </span>
+    </label>
   );
 };
 
