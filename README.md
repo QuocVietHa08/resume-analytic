@@ -23,50 +23,24 @@ A simple way to review and estimate your value based on the market.
 
 ## How to use
 
-1. Run `npx lumentis` in an empty directory. That's really it. You can skip the rest of this README.
-2. Feed it a transcript, doc or notes when asked.
-3. Answer some questions about themes and audience.
-4. Pick what you like from the generated outline.
-5. Wait for your docs to be written up!
-6. [Deploy your docs to Vercel](https://vercel.com/docs/deployments/overview) by pushing your folder and following the guide.
+1. Upload your cv to the [website](https://resume-analytic.vercel.app/).
+2. Wait for the AI will analyze your resume to understand the props and cons.
+3. Improve base on suggestion.
 
-## Examples
-
-Lumentis lets you swap models between stages. Here's some docs exactly as Lumentis generated them, no editing. I just hit Enter a few times.
-
-1. **[The Feynman Lectures on Physics](https://feynman-lectures.vercel.app/)** - taken from the [5 hour Feynman Lectures](https://www.youtube.com/watch?v=kEx-gRfuhhk), this is Sonnet doing the hard work for 72 cents, and Haiku writing it out for 38 cents.
-2. **[Designing Frictionless Interfaces for Google](https://designing-better-ui.vercel.app/)** - Mustafa Kurtuldu gave a wonderful talk on design and UX I wish more people would watch. Now you can read it. [(Do still watch it)](https://www.youtube.com/watch?v=Drf5ZKd4aVY) but this is Haiku doing the whole thing for less than 8 (not eighty) cents!
-3. **[How the AI in Spiderman 2 works](https://spiderman-2-ai-mechanics.vercel.app/)** - from [something that's been on my list](https://www.youtube.com/watch?v=LxWq65CZBU8) for a long time. Opus took about $3.80 to do the whole thing.
-4. **[Sam Altman and Lex Friedman on GPT-5](https://sam-lex-gpt5.vercel.app/)** - Sam and Lex [had a conversation](https://www.youtube.com/watch?v=jvqFAi7vkBc) recently. Here's Opus doing the hard work for $2.3, and Sonnet doing the rest for $2.5. This is the expensive option.
-5. **[Self-Discover in DSPy with Chris Dossman](https://lumentis-autogen-dspy-weviate-podcast.vercel.app/)** - [an interesting conversation between Chris Dossman and Weviate](https://www.youtube.com/watch?v=iC64q1gFWiY) about DSPy and structured reasoning, one of the core concepts behind the framework. [Eugene](https://github.com/eugene-yaroslavtsev) splurged something like $25 on this 😱 because he wanted to see how Lumentis would do at its best.
 
 ## Features
-
-- Cost before run: Lumentis will dynamically tell you what each operation costs.
-- Switch models: Use a smarter model to do the hard parts, and a cheaper model for long-form work. See the examples.
-- Easy to change: Ctrl+C at any time and restart. Lumentis remembers your responses, and lets you change them.
-- Everything in the open: want to know how it works? Check the `.lumentis` folder to see every message and response to the AI.
-- Super clean: Other than `.lumentis` with the prompts and state, you have a clean project to do anything with. Git/Vercel/Camera ready.
-- Super fast: (If you run with `bun`. Can't vouch for npm.)
+- Analyze your CV.
+- Suggestion about the improve in the future.
 
 ## How it works
 
-Lumentis reads your transcript and:
-
-1. Asks you some questions to understand the themes and audience. Also to surf the latent space or things.
-2. Generates an outline and asks you to select what you want to keep.
-3. Auto generates structure from the information and further refines it with your input, while self-healing things.
-4. Generates detailed pages with visual variety, formatting and styles.
+We use the power of AI to analyze your CV so you can be more prepare for your future job.
 
 ## Coming soon (when I have a free night)
 
-1. Folders
-2. PDFs
-3. Auto-transcription with a rubber ducky
-4. Scraping entire websites
-5. Scientific papers
-6. Recursive summarisation and expansion
-7. Continuously updating docs
+1. Suggest project and technology you need to learn.
+2. Generate info to share with friend and family.
+3. Quize to practive interview question.
 
 ## Development
 
@@ -80,5 +54,3 @@ yarn dev
 ## How to help
 
 Try it out and let me know the URL so I can add it here! There's also some badly organized things in `TODO.md` that I need to get around to.
-
-
