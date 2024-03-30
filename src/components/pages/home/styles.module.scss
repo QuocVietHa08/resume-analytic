@@ -103,15 +103,14 @@
 .documentContent {
   display: flex;
   justify-content: center;
-
   gap: 50px;
   width: 80%;
-  height: 95%;
+  height: 100%;
 }
 
 .documentWrapper {
   position: relative;
-  overflow: hidden;
+  overflow: auto;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 
   &:hover,
@@ -156,21 +155,9 @@
 }
 // analytics section
 .analyticsSection {
-  width: 300px;
-  // border: 1px solid black;
-
-  .estimateSalary {
-    font-size: 20px;
-    display: flex; 
-    flex-direction: column; 
-    align-items: flex-start;
-    gap: 10px;
-    text-align: left;
-    font-family: 'Baloo Da';
-    div {
-      font-size: 30px;
-    }
-  }
+  width: 400px;
+  height: auto;
+  overflow: auto;
 
   .keyFeature {
     display: flex;
@@ -195,23 +182,9 @@
 
     .keyFeatureItemContent {
       white-space: break-spaces;
-    }
- 
-  }
-
-  .improve {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-    margin-top: 10px;
-
-    .improveTitle {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 20px;
-      font-family: 'Baloo Da';
-    }
+      span {
+        font-size: 18px;
+      }
+    } 
   }
 }

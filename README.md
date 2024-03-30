@@ -1,6 +1,5 @@
 <h1 align="center">
   <br>
-  <!-- <a href="https://github.com/QuocVietHa08/resume-analytic"><img src="https://github.com/QuocVietHa08/resume-analytic/public/img/file.png" alt="Lumentis" width="200"></a> -->
   <a href="https://github.com/QuocVietHa08/resume-analytic"><img src="./public/img/file.png" alt="Lumentis" width="200"></a>
   <br>
 <code>Resume Analytic</code>
@@ -10,16 +9,6 @@
 <h3 align="center">Generate detail information about your resume with a single upload.</h3>
 
 A simple way to review and estimate your value based on the market.
-
-<!-- [![Twitter Follow](https://img.shields.io/twitter/follow/hrishi?style=social)](https://twitter.com/hrishioa) -->
-
-</div>
-
-<div align="center">
-
-<!-- ![lumentis](https://github.com/hrishioa/lumentis/assets/973967/cd16bc41-bd8a-40b6-97b0-c3b57d4650cb) -->
-
-</div>
 
 ## How to use
 
@@ -51,7 +40,3 @@ cd resume-analytic
 yarn
 yarn dev
 ```
-
-## How to help
-
-Try it out and let me know the URL so I can add it here! There's also some badly organized things in `TODO.md` that I need to get around to.

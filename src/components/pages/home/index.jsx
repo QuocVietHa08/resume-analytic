@@ -4,7 +4,7 @@ import { message as messageAntd, Skeleton } from 'antd';
 import { Document, Page } from 'react-pdf';
 import { BedrockRuntimeClient, InvokeModelCommand } from '@aws-sdk/client-bedrock-runtime';
 import styles from './styles.module.scss';
-import { PROMPT_ANALYZE_RESUME} from './training-data';
+import { PROMPT_ANALYZE_RESUME } from './training-data';
 import FileUploader from '@/components/atoms/fileUpload';
 
 const client = new BedrockRuntimeClient({
@@ -19,31 +19,14 @@ const Home = () => {
   const convertApi = ConvertApi.auth(process.env.CONVERT_API_KEY);
   const [file, setFile] = useState();
   const [fileBase64, setFileBase64] = useState();
-  const [loading, setLoading] = useState(false);
-  const [text, setText] = useState('');
-  const [resultPrompt, setResultPrompt] = useState('');
   const [pageNumber, setPageNumber] = useState(1);
   const [numPages, setNumPages] = useState();
-  const [salary, setSalary] = useState(0);
-  const [keyFactor, setKeyFactor] = useState('');
-  const [improvement, setImprovement] = useState('');
   const [analyze, setAnalyze] = useState('');
 
-  const handleRenderInput = useCallback((trainingInput, type) => {
-    // if (type === 'salaray') {
-      return `${PROMPT_ANALYZE_RESUME}
+  const handleRenderInput = useCallback((trainingInput) => {
+    return `${PROMPT_ANALYZE_RESUME}
     ${trainingInput}
     `;
-    // }
-    // if (type === 'factor') {
-    //   return `${PROMPT_GET_KEY_FACTOR}
-    // ${trainingInput}
-    // `;
-    // }
-
-    // return `${PROMPT_GET_IMPROVEMENT}
-    // ${trainingInput}
-    // `;
   }, []);
 
   const handleCallChatbotAPI = useCallback(
@@ -80,11 +63,10 @@ const Home = () => {
           const jsonString = new TextDecoder().decode(rawRes);
           const parsedResponse = JSON.parse(jsonString);
           const output = parsedResponse?.content[0].text;
-          setAnalyze(output)
+          setAnalyze(output);
         });
       } catch (error) {
         messageAntd.error('Connection timout! Please reload chatbot');
-        setLoading(false);
       }
     },
     [handleRenderInput],
@@ -95,13 +77,11 @@ const Home = () => {
       .then((response) => response.text())
       .then((data) => {
         messageAntd.success('Convert pdf to text successfully');
-        setText(data);
         handleCallChatbotAPI(data);
       });
   };
 
   const handleChangeFile = async (newFile) => {
-    setLoading(true);
     setFile(newFile);
     handleConvertToBase64(newFile);
     const params = convertApi.createParams();
@@ -111,9 +91,6 @@ const Home = () => {
       .then((result) => {
         handelFetchContentOfTxtFile(result?.dto?.Files?.[0]?.Url);
       })
-      .finally(() => {
-        setLoading(false);
-      });
   };
 
   const handleConvertToBase64 = (pdfFile) => {
@@ -164,28 +141,14 @@ const Home = () => {
               </div>
 
               <div className={styles.analyticsSection}>
-                {/* <div className={styles.estimateSalary}>
-                  Analy:{' '}
-                  <Skeleton loading={!salary} paragraph active style={{ width: 300 }}>
-                    ${salary} / month
-                  </Skeleton>
-                </div> */}
                 <div className={styles.keyFeature}>
                   <div className={styles.keyFeatureItemTitle}>Analyze Resume</div>
                   <div className={styles.keyFeatureItemContent}>
                     <Skeleton loading={!analyze} active style={{ width: 300 }}>
-                      <div>{analyze}</div>
+                      <span>{analyze}</span>
                     </Skeleton>
                   </div>
                 </div>
-                {/* <div className={styles.improve}>
-                  <div className={styles.improveTitle}>Improvements</div>
-                  <div className={styles.improveContent}>
-                    <Skeleton style={{ width: 300 }} active loading={!improvement}>
-                      <div>{improvement}</div>
-                    </Skeleton>
-                  </div>
-                </div> */}
               </div>
             </div>
           ) : (
