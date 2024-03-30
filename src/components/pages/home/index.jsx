@@ -1,10 +1,10 @@
 import React, { useCallback, useState } from 'react';
 import ConvertApi from 'convertapi-js';
-import { message as messageAntd } from 'antd';
+import { message as messageAntd, Skeleton } from 'antd';
 import { Document, Page } from 'react-pdf';
 import { BedrockRuntimeClient, InvokeModelCommand } from '@aws-sdk/client-bedrock-runtime';
 import styles from './styles.module.scss';
-import { BEGIN_PROMPT, ANSWER_FORMAT, FINAL_PRMOPT } from './training-data';
+import { PROMPT_ANALYZE_RESUME} from './training-data';
 import FileUploader from '@/components/atoms/fileUpload';
 
 const client = new BedrockRuntimeClient({
@@ -24,16 +24,26 @@ const Home = () => {
   const [resultPrompt, setResultPrompt] = useState('');
   const [pageNumber, setPageNumber] = useState(1);
   const [numPages, setNumPages] = useState();
-  // console.log('text:', text)
+  const [salary, setSalary] = useState(0);
+  const [keyFactor, setKeyFactor] = useState('');
+  const [improvement, setImprovement] = useState('');
+  const [analyze, setAnalyze] = useState('');
 
-  const handleRenderInput = useCallback((trainingInput) => {
-    return `${BEGIN_PROMPT}
-    Here is my document:
-    <document>
+  const handleRenderInput = useCallback((trainingInput, type) => {
+    // if (type === 'salaray') {
+      return `${PROMPT_ANALYZE_RESUME}
     ${trainingInput}
-    </document>
-    ${ANSWER_FORMAT}
     `;
+    // }
+    // if (type === 'factor') {
+    //   return `${PROMPT_GET_KEY_FACTOR}
+    // ${trainingInput}
+    // `;
+    // }
+
+    // return `${PROMPT_GET_IMPROVEMENT}
+    // ${trainingInput}
+    // `;
   }, []);
 
   const handleCallChatbotAPI = useCallback(
@@ -70,7 +80,7 @@ const Home = () => {
           const jsonString = new TextDecoder().decode(rawRes);
           const parsedResponse = JSON.parse(jsonString);
           const output = parsedResponse?.content[0].text;
-          console.log('output:', output);
+          setAnalyze(output)
         });
       } catch (error) {
         messageAntd.error('Connection timout! Please reload chatbot');
@@ -99,7 +109,7 @@ const Home = () => {
     await convertApi
       .convert('pdf', 'txt', params)
       .then((result) => {
-        // handelFetchContentOfTxtFile(result?.dto?.Files?.[0]?.Url);
+        handelFetchContentOfTxtFile(result?.dto?.Files?.[0]?.Url);
       })
       .finally(() => {
         setLoading(false);
@@ -119,8 +129,17 @@ const Home = () => {
     }
     return null;
   };
-  const onDocumentLoadSuccess = ({ numPage }) => {
-    setNumPages(numPage);
+  const onDocumentLoadSuccess = (document) => {
+    // eslint-disable-next-line no-underscore-dangle
+    setNumPages(document._pdfInfo.numPages);
+  };
+
+  const handleChangePage = (type = 'next' || 'previous') => {
+    if (type === 'next') {
+      setPageNumber((prev) => prev + 1);
+    } else {
+      setPageNumber((prev) => (prev - 1 > 0 ? prev - 1 : 1));
+    }
   };
 
   return (
@@ -131,8 +150,42 @@ const Home = () => {
             <div className={styles.documentContent}>
               <div className={styles.documentWrapper}>
                 <Document file={fileBase64} onLoadSuccess={onDocumentLoadSuccess}>
-                  <Page pageNumber={1} />
+                  <Page pageNumber={pageNumber} />
                 </Document>
+                <p className={styles.documentPage}>
+                  <button disabled={pageNumber === 1} type="button" onClick={() => handleChangePage('previous')}>
+                    ‹
+                  </button>
+                  {pageNumber} of {numPages}
+                  <button type="button" onClick={() => handleChangePage('next')}>
+                    ›
+                  </button>
+                </p>
+              </div>
+
+              <div className={styles.analyticsSection}>
+                {/* <div className={styles.estimateSalary}>
+                  Analy:{' '}
+                  <Skeleton loading={!salary} paragraph active style={{ width: 300 }}>
+                    ${salary} / month
+                  </Skeleton>
+                </div> */}
+                <div className={styles.keyFeature}>
+                  <div className={styles.keyFeatureItemTitle}>Analyze Resume</div>
+                  <div className={styles.keyFeatureItemContent}>
+                    <Skeleton loading={!analyze} active style={{ width: 300 }}>
+                      <div>{analyze}</div>
+                    </Skeleton>
+                  </div>
+                </div>
+                {/* <div className={styles.improve}>
+                  <div className={styles.improveTitle}>Improvements</div>
+                  <div className={styles.improveContent}>
+                    <Skeleton style={{ width: 300 }} active loading={!improvement}>
+                      <div>{improvement}</div>
+                    </Skeleton>
+                  </div>
+                </div> */}
               </div>
             </div>
           ) : (
