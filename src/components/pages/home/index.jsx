@@ -127,7 +127,7 @@ const Home = () => {
             <div className={styles.documentContent}>
               <div className={styles.documentWrapper}>
                 <Document file={fileBase64} onLoadSuccess={onDocumentLoadSuccess}>
-                  <Page pageNumber={pageNumber} />
+                  <Page height={450} className={styles.pageStyle} scale={1} pageNumber={pageNumber} />
                 </Document>
                 <p className={styles.documentPage}>
                   <button disabled={pageNumber === 1} type="button" onClick={() => handleChangePage('previous')}>
@@ -169,6 +169,11 @@ const Home = () => {
             </>
           )}
         </div>
+      </div>
+      <div className={styles.HomeFooter}>Build by 
+      <a href="https://www.linkedin.com/in/viethadev/" target="_blank" rel="noreferrer">
+        Edward Ha
+      </a>
       </div>
     </div>
   );
