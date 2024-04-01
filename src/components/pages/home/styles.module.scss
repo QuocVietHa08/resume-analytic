@@ -1,7 +1,4 @@
 @import 'styles/responsive.scss';
-// pc: title 88 - text - 24
-// tablet title 35 text 16
-// mobile title 20 text 12
 
 .HomeContainer {
   width: 100%;
@@ -10,6 +7,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  position: relative;
 }
 .HomeWrapper {
   width: 80%;
@@ -21,6 +19,14 @@
   justify-content: center;
   border-radius: 16px;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+  @media screen and (max-width: 768px) {
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+    box-shadow: none; 
+    padding: 0 20px;
+  }
 }
 
 .homeContent {
@@ -36,6 +42,7 @@
 
   @media screen and (max-width: 768px) {
     gap: 10px;
+
   }
 }
 
@@ -64,6 +71,7 @@
     text-align: center;
 
     @media screen and (max-width: 768px) {
+      width: 100%;
       padding: 10px 30px;
       text-align: center;
       margin-bottom: 0px;
@@ -98,20 +106,44 @@
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @media screen and (max-width: 768px) {
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+    
+  }
 }
 
 .documentContent {
   display: flex;
+  flex-direction: row;
   justify-content: center;
   gap: 50px;
   width: 80%;
   height: 100%;
+
+  @media screen and (max-width: 768px) {
+   flex-direction: column; 
+   width: 100%;
+   gap: 20px;
+   height: auto;
+  }
 }
 
 .documentWrapper {
   position: relative;
   overflow: auto;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+  @media screen and (max-width: 768px) {
+    width: 100%;
+    height: 450px;
+    border-radius: 0;
+    box-shadow: none; 
+    padding: 0 20px;
+    overflow: hidden;
+  }
 
   &:hover,
   &:active {
@@ -151,13 +183,31 @@
         background-color: #ccc;
       }
     }
+
+    @media screen and (max-width: 768px) {
+      opacity: 1;
+      button {
+        width: 30px;
+        height: 30px;
+      }
+    }
   }
+}
+
+.pageStyle {
+  width: 100px;
+  height: auto;
 }
 // analytics section
 .analyticsSection {
   width: 400px;
   height: auto;
   overflow: auto;
+
+  @media screen and (max-width: 768px) {
+    width: 100%;
+    height: auto;
+  }
 
   .keyFeature {
     display: flex;
@@ -186,5 +236,19 @@
         font-size: 18px;
       }
     } 
+  }
+}
+
+.HomeFooter {
+  position: fixed;
+  bottom: 10px;
+  display: flex;
+  gap: 5px;
+
+  a {
+    text-decoration: underline;
+    color: #493ea8;
+    font-family: 'Baloo Da';
+    font-size: 14px;
   }
 }

@@ -6,7 +6,6 @@ module.exports = {
     KEY: process.env.KEY,
     PASSWORD: process.env.PASSWORD,
     CONVERT_API_KEY: process.env.CONVERT_API_KEY,
-    TINY_API_KEY: process.env.TINY_API_KEY
   },
   sassOptions: {
     fiber: false,
