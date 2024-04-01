@@ -32,6 +32,12 @@ We use the power of AI to analyze your CV so you can be more prepare for your fu
 3. Quize to practive interview question.
 4. Mobile web version.
 
+## Requirement
+
+1. AWS Credential (AWS Access Key Id and AWS Secret Access Key to able to access to AWS Bedrock model)
+2. AWs bedrock model.
+3. Convertapi Key.
+
 ## Development
 
 ```bash
