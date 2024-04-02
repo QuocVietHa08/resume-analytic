@@ -118,6 +118,11 @@ const Home = () => {
     }
   };
 
+  const handleResetFrom = () => {
+    setAnalyze('')
+    setFileBase64('')
+  }
+
   return (
     <div className={styles.HomeContainer}>
       <div className={styles.HomeWrapper}>
@@ -170,6 +175,9 @@ const Home = () => {
             </>
           )}
         </div>
+        {fileBase64 && (
+          <button type="button" onClick={handleResetFrom}  className={styles.buttonReset} >Reset</button>
+        )}
       </div>
       <div className={styles.HomeFooter}>
         Build by
