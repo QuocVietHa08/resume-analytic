@@ -3,6 +3,7 @@ import ConvertApi from 'convertapi-js';
 import { message as messageAntd, Skeleton } from 'antd';
 import { Document, Page } from 'react-pdf';
 import { BedrockRuntimeClient, InvokeModelCommand } from '@aws-sdk/client-bedrock-runtime';
+import Confetti from 'react-confetti';
 import styles from './styles.module.scss';
 import { PROMPT_ANALYZE_RESUME } from './training-data';
 import FileUploader from '@/components/atoms/fileUpload';
@@ -78,7 +79,7 @@ const Home = () => {
       .then((data) => {
         messageAntd.success('Convert pdf to text successfully');
         handleCallChatbotAPI(data);
-      });
+    });
   };
 
   const handleChangeFile = async (newFile) => {
@@ -86,11 +87,9 @@ const Home = () => {
     handleConvertToBase64(newFile);
     const params = convertApi.createParams();
     params.add('File', newFile);
-    await convertApi
-      .convert('pdf', 'txt', params)
-      .then((result) => {
-        handelFetchContentOfTxtFile(result?.dto?.Files?.[0]?.Url);
-      })
+    await convertApi.convert('pdf', 'txt', params).then((result) => {
+      handelFetchContentOfTxtFile(result?.dto?.Files?.[0]?.Url);
+    });
   };
 
   const handleConvertToBase64 = (pdfFile) => {
@@ -113,7 +112,7 @@ const Home = () => {
 
   const handleChangePage = (type = 'next' || 'previous') => {
     if (type === 'next') {
-      setPageNumber((prev) => prev + 1);
+      setPageNumber((prev) => prev + 1 > numPages ? numPages : prev + 1);
     } else {
       setPageNumber((prev) => (prev - 1 > 0 ? prev - 1 : 1));
     }
@@ -123,11 +122,13 @@ const Home = () => {
     <div className={styles.HomeContainer}>
       <div className={styles.HomeWrapper}>
         <div className={styles.homeContent}>
+          {analyze && <Confetti width={window.innerWidth} height={window.innerHeight} recycle={false} />}
           {fileBase64 ? (
             <div className={styles.documentContent}>
               <div className={styles.documentWrapper}>
                 <Document file={fileBase64} onLoadSuccess={onDocumentLoadSuccess}>
-                  <Page height={450} className={styles.pageStyle} scale={1} pageNumber={pageNumber} />
+                  <Page className={styles.pageStylePC} scale={1} pageNumber={pageNumber} />
+                  <Page height={450} className={styles.pageStyleMobile} scale={1} pageNumber={pageNumber} />
                 </Document>
                 <p className={styles.documentPage}>
                   <button disabled={pageNumber === 1} type="button" onClick={() => handleChangePage('previous')}>
@@ -170,10 +171,11 @@ const Home = () => {
           )}
         </div>
       </div>
-      <div className={styles.HomeFooter}>Build by 
-      <a href="https://www.linkedin.com/in/viethadev/" target="_blank" rel="noreferrer">
-        Edward Ha
-      </a>
+      <div className={styles.HomeFooter}>
+        Build by
+        <a href="https://www.linkedin.com/in/viethadev/" target="_blank" rel="noreferrer">
+          Edward Ha
+        </a>
       </div>
     </div>
   );

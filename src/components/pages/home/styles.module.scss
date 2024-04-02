@@ -135,6 +135,7 @@
   position: relative;
   overflow: auto;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  overflow: hidden;
 
   @media screen and (max-width: 768px) {
     width: 100%;
@@ -194,9 +195,25 @@
   }
 }
 
-.pageStyle {
+.pageStyleMobile {
   width: 100px;
   height: auto;
+  display: none;
+
+  @media  screen and (max-width: 768px) {
+    display: block; 
+  }
+}
+
+.pageStylePC {
+  width: 100%;
+  height: auto;
+  display: block;
+
+  @media  screen and (max-width: 768px) {
+    display: none; 
+  }
+
 }
 // analytics section
 .analyticsSection {

@@ -46,3 +46,11 @@ cd resume-analytic
 yarn
 yarn dev
 ```
+## Tech Stack
+
+1. React
+2. Next
+3. AWS-sdk
+4. Zustand
+5. Scss
+6. Antd
