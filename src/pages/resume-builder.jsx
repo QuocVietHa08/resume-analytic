@@ -1,7 +1,10 @@
 import React from 'react';
+import ResumeBuilderComp from '@/components/pages/resume-builder';
 
 const ResumeBuilder = () => {
-  return <div>hello</div> 
+  return <>
+    <ResumeBuilderComp />
+  </> 
 }
 
 export default ResumeBuilder;
