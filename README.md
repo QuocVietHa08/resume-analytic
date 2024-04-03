@@ -7,6 +7,9 @@
 </h1>
 
 <h3 align="center">Generate detail information about your resume with a single upload.</h3>
+<div algin="center">
+  ![a](https://github.com/QuocVietHa08/resume-analytic/assets/56016006/99795c96-4bfb-43df-b89d-fd188005f9bb)
+</div>
 
 A simple way to review and estimate your value based on the market.
 
