@@ -6,32 +6,33 @@
   <br>
 </h1>
 
-<h3 align="center">Generate detail information about your resume with a single upload.</h3>
+<h3 align="center">Generate detailed information about your resume with a single upload.</h3>
+
 <div algin="center">
-  ![a](https://github.com/QuocVietHa08/resume-analytic/assets/56016006/99795c96-4bfb-43df-b89d-fd188005f9bb)
+  ![a](https://github.com/QuocVietHa08/resume-analytic/assets/56016006/c1376a4f-04b6-4135-8f49-7571a169fbaa)
 </div>
 
 A simple way to review and estimate your value based on the market.
 
 ## How to use
 
-1. Upload your cv to the [website](https://resume-analytic.vercel.app/).
-2. Wait for the AI will analyze your resume to understand the props and cons.
-3. Improve base on suggestion.
+1. Upload your CV to the [website](https://resume-analytic.vercel.app/).
+2. Wait for the AI will analyze your resume to understand the pros and cons.
+3. Improve based on suggestions.
 
 
 ## Features
 - Analyze your CV.
-- Suggestion about the improve in the future.
+- Suggestion about the improvement in the future.
 
 ## How it works
 
-We use the power of AI to analyze your CV so you can be more prepare for your future job.
+We use the power of AI to analyze your CV so you can be more prepared for your future job.
 
 ## Coming soon (when I have a free night)
 
-1. Suggest project and technology you need to learn.
-2. Generate info to share with friend and family.
+1. Suggest the project and technology you need to learn.
+2. Generate info to share with friends and family.
 3. Quize to practive interview question.
 4. Mobile web version.
 
