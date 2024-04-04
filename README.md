@@ -8,8 +8,8 @@
 
 <h3 align="center">Generate detailed information about your resume with a single upload.</h3>
 
-<div algin="center">
-  <video src="https://github.com/QuocVietHa08/resume-analytic/assets/56016006/c1376a4f-04b6-4135-8f49-7571a169fbaa" />
+<div algin="center" width="100%">
+  <video src="https://github.com/QuocVietHa08/resume-analytic/assets/56016006/111280ab-8aa9-43eb-8a63-927d4673b275" />
 </div>
 
 A simple way to review and estimate your value based on the market.
