@@ -1,4 +1,4 @@
-// import Link from 'next/link';
+import Link from 'next/link';
 import styles from './styles.module.scss';
 
 const Header = () => {
@@ -7,9 +7,12 @@ const Header = () => {
       <div className={styles.headerWrapper}>
         <div className={styles.logoWrapper}></div>
         <div className="flex items-center gap-20">
-          {/* <Link href="/resume-builder" className={styles.buttonLogin} rel="noreferrer">
-            Resume-builder
-          </Link> */}
+          <Link href="/" className={styles.buttonLogin} rel="noreferrer">
+            Home
+          </Link>
+          <Link href="/resume" className={styles.buttonLogin} rel="noreferrer">
+            Resume
+          </Link>
           <a target="_blank" href="https://github.com/QuocVietHa08/resume-analytic" className={styles.buttonLogin} rel="noreferrer">
             Repository
           </a>
