@@ -27,17 +27,33 @@ const ResumeBuilder = () => {
       endDate: '2021',
     },
     introduction: {
-      content: `Experienced Frontend Engineer with three years of hands-on experience building user-friendly websites and web apps. Skilled in HTML, CSS, and JavaScript frameworks like React and Angular. I'm good at turning design ideas into working code that looks great and runs smoothly. I enjoy solving problems and making sure websites work well on different devices and browsers. I love learning new things and keeping up with the latest trends in frontend development. As a team player, I enjoy collaborating with others to create awesome digital experiences.`
+      content: `Experienced Frontend Engineer with three years of hands-on experience building user-friendly websites and web apps. Skilled in HTML, CSS, and JavaScript frameworks like React and Angular. I'm good at turning design ideas into working code that looks great and runs smoothly. I enjoy solving problems and making sure websites work well on different devices and browsers. I love learning new things and keeping up with the latest trends in frontend development. As a team player, I enjoy collaborating with others to create awesome digital experiences.`,
     },
     experience: [
-      { 
+      {
         id: 1,
         company: 'Company A',
         location: 'Hanoi, Vietnam',
         role: 'Frontend Developer',
         startDate: '2019',
         endDate: '2021',
-        description: `Developed and maintained the company's website using React. Worked closely with the design team to turn mockups into responsive web pages. Optimized website performance and improved user experience.`
+        description: [
+          `Developed and maintained the company's website using React.`,
+          `Worked closely with the design team to turn mockups into responsive web pages.`,
+          `Optimized website performance and improved user experience.`,
+        ],
+        projects: [
+          {
+            id: 1,
+            name: 'Project A',
+            description: `A web app that helps users track their daily water intake. Built with React and styled with CSS. Users can log in, set daily water intake goals, and track their progress.`,
+          },
+          {
+            id: 2,
+            name: 'Project B',
+            description: `A portfolio website showcasing my work as a frontend developer. Built with HTML, CSS, and JavaScript. Includes a gallery of projects, contact form, and resume.`,
+          },
+        ],
       },
       {
         id: 2,
@@ -46,52 +62,53 @@ const ResumeBuilder = () => {
         role: 'Web Developer',
         startDate: '2017',
         endDate: '2019',
-        description: `Built and maintained websites for clients using HTML, CSS, and JavaScript. Collaborated with the design team to create visually appealing websites. Ensured websites were responsive and worked well on different devices.`
+        description: [
+          `Built and maintained websites for clients using HTML, CSS, and JavaScript.`,
+          `Collaborated with the design team to create visually appealing websites.`,
+          ` Ensured websites were responsive and worked well on different devices.`,
+        ],
+        projects: [
+          {
+            id: 1,
+            name: 'Project A',
+            description: `A web app that helps users track their daily water intake. Built with React and styled with CSS. Users can log in, set daily water intake goals, and track their progress.`,
+          },
+          {
+            id: 2,
+            name: 'Project B',
+            description: `A portfolio website showcasing my work as a frontend developer. Built with HTML, CSS, and JavaScript. Includes a gallery of projects, contact form, and resume.`,
+          },
+        ],
       },
-      {
-        id: 3,
-        company: 'Company C',
-        location: 'Hanoi, Vietnam',
-        role: 'Junior Web Developer',
-        startDate: '2016',
-        endDate: '2017',
-        description: `Assisted senior developers in building and maintaining websites. Learned new technologies and improved coding skills.`
-      }
     ],
     personalProject: [
       {
         id: 1,
         name: 'Project A',
-        description: `A web app that helps users track their daily water intake. Built with React and styled with CSS. Users can log in, set daily water intake goals, and track their progress.`
+        description: `A web app that helps users track their daily water intake. Built with React and styled with CSS. Users can log in, set daily water intake goals, and track their progress.`,
       },
       {
         id: 2,
         name: 'Project B',
-        description: `A portfolio website showcasing my work as a frontend developer. Built with HTML, CSS, and JavaScript. Includes a gallery of projects, contact form, and resume.`
+        description: `A portfolio website showcasing my work as a frontend developer. Built with HTML, CSS, and JavaScript. Includes a gallery of projects, contact form, and resume.`,
       },
-      {
-        id: 3,
-        name: 'Project C',
-        description: `A weather app that displays the current weather and forecast for a given location. Built with Angular and styled with Bootstrap. Users can search for a location and view weather details.`
-      }
     ],
     achivement: [
       {
         id: 1,
         name: 'Best Employee of the Year',
-        description: 'Awarded for outstanding performance and dedication to the company.'
+        description: 'Awarded for outstanding performance and dedication to the company.',
+        startDate: '2020',
+        endDate: '2021',
       },
       {
         id: 2,
         name: 'Top Performer',
-        description: 'Recognized for exceeding performance goals and delivering high-quality work.'
+        description: 'Recognized for exceeding performance goals and delivering high-quality work.',
+        startDate: '2019',
+        endDate: '2020',
       },
-      {
-        id: 3,
-        name: 'Employee of the Month',
-        description: 'Awarded for consistently demonstrating excellence in job performance.'
-      }
-    ]
+    ],
   });
   return (
     <div className={styles.container}>
