@@ -10,8 +10,11 @@ const Header = () => {
           <Link href="/" className={styles.buttonLogin} rel="noreferrer">
             Home
           </Link>
+          {/* <Link href="/resume-builder" className={styles.buttonLogin} rel="noreferrer">
+            Resume Builder
+          </Link> */}
           <Link href="/resume" className={styles.buttonLogin} rel="noreferrer">
-            Resume
+            Contact
           </Link>
           <a target="_blank" href="https://github.com/QuocVietHa08/resume-analytic" className={styles.buttonLogin} rel="noreferrer">
             Repository
