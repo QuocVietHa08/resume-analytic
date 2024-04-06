@@ -6,6 +6,7 @@ import Introduction from './Introduction';
 import Experience from './Experience';
 import PersonalProject from './PersonalProject';
 import Achivement from './Achivement';
+import FormResume from './FormResume';
 
 const ResumeBuilder = () => {
   const [info, setInfo] = React.useState({
@@ -110,6 +111,11 @@ const ResumeBuilder = () => {
       },
     ],
   });
+
+  const handleChangeInfo = (newInfo) => {
+    console.log('newinfo', newInfo)
+  }
+
   return (
     <div className={styles.container}>
       <div className={styles.wrapper}>
@@ -121,10 +127,13 @@ const ResumeBuilder = () => {
           <PersonalProject info={info.personalProject} />
           <Achivement info={info.achivement} />
         </div>
-        <div className={styles.formContainer}></div>
+        <div className={styles.formContainer}>
+          <FormResume info={info} onChangeInfo={handleChangeInfo} />
+        </div>
       </div>
     </div>
   );
 };
 
 export default ResumeBuilder;
+
