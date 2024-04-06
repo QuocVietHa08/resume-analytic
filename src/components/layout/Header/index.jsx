@@ -10,9 +10,9 @@ const Header = () => {
           <Link href="/" className={styles.buttonLogin} rel="noreferrer">
             Home
           </Link>
-          <Link href="/resume-builder" className={styles.buttonLogin} rel="noreferrer">
+          {/* <Link href="/resume-builder" className={styles.buttonLogin} rel="noreferrer">
             Resume Builder
-          </Link>
+          </Link> */}
           <Link href="/resume" className={styles.buttonLogin} rel="noreferrer">
             Contact
           </Link>

@@ -7,13 +7,15 @@
 .wrapper {
   width: 80%;
   max-width: 1200px;
+  display: flex;
+  gap: 20px;
   justify-content: space-between;
   margin: 0px auto;
   padding-top: 20px;
 }
 
 .resume {
-  width: 60%;
+  width: 65%;
   max-width: 900px;
   height: 85vh;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
@@ -32,6 +34,30 @@
   flex-direction: column;
   gap: 10px;
   justify-content: center;
+  border: 1px solid white;
+  padding: 10px;
+  position: relative;
+
+  .buttonEdit {
+    all: unset;
+    display: none;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color:white ;
+    background-color: #1155cc;
+    padding: 2px 15px;
+    border-radius: 5px;
+  }
+
+  &:hover {
+    border: 1px dashed #1155cc;
+
+    .buttonEdit {
+      display: block;
+    }
+  }
 
   .name {
     font-size: 30px;
@@ -100,6 +126,15 @@
 }
 
 .formContainer {
-  width: 40%;
+  width: 35%;
   height: 100%;
+  // border: 1px solid;
+  padding: 20px;
 }
+
+.formResumeContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
