@@ -259,6 +259,10 @@ th {
   display: flex;
 }
 
+.flex-i {
+  display: flex !important;
+}
+
 .flex-reverse {
   flex-direction: row-reverse;
 }
@@ -438,6 +442,10 @@ th {
   height: 50%;
 }
 
+.w-min-content {
+  width: min-content;
+}
+
 .w-full {
   width: 100%;
 }
@@ -550,6 +558,10 @@ th {
 .pre-wrap {
   white-space: pre-wrap;
 }
+
+.no-wrap {
+  white-space: nowrap;
+}
 .hover-underline {
   &:hover {
     text-decoration: underline;
@@ -605,6 +617,10 @@ th {
     margin-right: 10px; 
     margin-bottom: 10px;
   }
+}
+
+.border-bottom-1 {
+  border-bottom: 1px solid black;
 }
 
 .chat-bot-wrapper {

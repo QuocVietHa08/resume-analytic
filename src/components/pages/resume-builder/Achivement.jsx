@@ -8,7 +8,7 @@ const Achivement = ({ info }) => {
         <div className={styles.text}>Achivements</div>
         <div className={styles.line}></div>
       </div>
-      <div className="flex flex-column gap-10">
+      <div className="flex flex-column gap-5">
         {info.map((item) => (
           <AchivementItem key={item.id} info={item} />
         ))}
@@ -23,7 +23,10 @@ const AchivementItem = ({ info }) => {
   return (
     <div className={styles.item}>
       <span className="text-bold">{info.name}: </span>
-      <span className={styles.description}>{info.description}</span>
+      <span className={styles.description}>
+        {info.description}
+        <span className="ml-5 text-bold">({info.startDate}-{info.endDate})</span>
+        </span>
     </div>
   );
 };

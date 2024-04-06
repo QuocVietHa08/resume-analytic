@@ -11,9 +11,13 @@ const Education = ({ info }) => {
       <div>
         <div className="flex items-center justify-between">
           <div>{info.major}, {info.school}</div>
-          <div>{info.startDate}-{info.endDate}</div>
+          <div className="text-bold">{info.startDate}-{info.endDate}</div>
         </div>
-        <div>Degree: {info.degree}</div>
+        <div>
+          <span>
+          Degree: {info.degree}
+          </span>
+          </div>
       </div>
     </div>
   )

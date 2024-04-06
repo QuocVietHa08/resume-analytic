@@ -27,14 +27,29 @@ const ExperienceItem = ({ info }) => {
         <Col span={8} className="text-bold">
           {info.role}
         </Col>
-        <Col span={8} className="text-bold text-center text-underline">
-          {info.company}
+        <Col span={8} className="text-bold text-center flex-i justify-center">
+          <div className="text-bold text-center border-bottom-1 no-wrap w-min-content">{info.company}</div>
         </Col>
         <Col span={8} className="text-bold text-right">
           {info.location}, {info.startDate} - {info.endDate}
         </Col>
       </Row>
-      <div>{info.description}</div>
+      <div>
+        <ul>
+          {info.description.map((item) => (
+            <li key={item}>{item}</li>
+          ))}
+        </ul>
+      </div>
+      <div className="text-bold">Projects: </div>
+      <ul>
+        {info.projects.map((project) => (
+          <li key={project.id}>
+            <span className="text-bold">{project.name}: </span>
+            <span>{project.description}</span>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 };
