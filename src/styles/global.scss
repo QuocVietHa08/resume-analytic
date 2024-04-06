@@ -31,6 +31,12 @@ html *::-webkit-scrollbar-track {
   src: url('/fonts/Baloo-Regular.otf');
 }
 
+.nunito-font {
+  font-family: "Nunito", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
 * {
   font-size: 14px;
   font-weight: 300;
@@ -241,6 +247,13 @@ th {
   } 
   display: none !important;
 }
+.grid {
+  display: grid;
+}
+
+.grid-template-columns-3auto {
+  grid-template-columns: auto auto auto;
+}
 
 .flex {
   display: flex;
@@ -325,6 +338,10 @@ th {
 
 .text-left {
   text-align: left;
+}
+
+.text-right {
+  text-align: right;
 }
 
 .text-inherit {
