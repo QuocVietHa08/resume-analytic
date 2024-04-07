@@ -212,8 +212,44 @@
       color: #1155cc;
       border-color: #1155cc;
     }
-
   }
+}
+
+.formListKeyItem {
+  border: 1px solid #ccc;
+  margin-top: 20px;
+
+  &:hover {
+    border: 1px dashed #1155cc;
+  }
+
+  .formListItemDeleteIcon {
+    all: unset;
+    // position: absolute;
+    color: #ccc;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border: 1px dashed #ccc;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 2;
+
+    &:hover {
+      color: #1155cc;
+      border-color: #1155cc;
+    }
+  } 
+}
+// Experience wrapper
+.descriptionWrapper {
+  display: flex;
+  flex-direction: column;
+  row-gap: 16px;
+  background-color: blue;
 }
 
 .formContainer {
