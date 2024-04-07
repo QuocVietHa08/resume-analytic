@@ -3,7 +3,9 @@ import ResumeComp from '@/components/pages/resume';
 
 const Resume = () => {
   return (
-    <ResumeComp />
+    <div style={{ height: '100vh'}}>
+      <ResumeComp />
+    </div>
   )
 }
 

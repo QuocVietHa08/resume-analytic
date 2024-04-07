@@ -2,10 +2,12 @@
 import React, { useState } from 'react';
 import { PhoneFilled, MailFilled, GlobalOutlined, HomeFilled, GithubOutlined } from '@ant-design/icons';
 import { Modal, Form, Input, Button } from 'antd';
+import { EditOutlined } from '@ant-design/icons';
 import styles from './styles.module.scss';
 
-const Header = ({ info }) => {
+const Header = ({ info, onChangeInfo }) => {
   const [open, setOpen] = useState(false);
+
   const handleOpenModal = () => {
     setOpen(true);
   };
@@ -13,9 +15,10 @@ const Header = ({ info }) => {
   const handleCloseModal = () => {
     setOpen(false);
   };
+
   return (
     <div className={styles.header}>
-      <ModalEditHeader info={info} open={open} onOpenModal={handleOpenModal} onCloseModal={handleCloseModal} />
+      <ModalEditHeader info={info} onSubmit={onChangeInfo} open={open} onOpenModal={handleOpenModal} onCloseModal={handleCloseModal} />
       <div className={styles.name}>{info.name}</div>
       <div className={styles.content}>
         <div>
@@ -31,16 +34,17 @@ const Header = ({ info }) => {
         </div>
         <div>
           <div className={styles.text}>
-            {' '}
             <MailFilled />
             {info.email}
           </div>
           <div className={styles.text}>
             <HomeFilled /> {info.role}
           </div>
-          <div className={styles.text}>
-            <GlobalOutlined /> {info.website}
-          </div>
+          {info.website && (
+            <div className={styles.text}>
+              <GlobalOutlined /> {info.website}
+            </div>
+          )}
         </div>
         <div className={styles.avatar}>
           <img src={info.avatar} alt="avatar" />
@@ -52,7 +56,7 @@ const Header = ({ info }) => {
 
 export default Header;
 
-const ModalEditHeader = ({ info, open, onOpenModal, onCloseModal }) => {
+const ModalEditHeader = ({ info, open, onOpenModal, onCloseModal, onSubmit }) => {
   const [form] = Form.useForm();
   const layout = {
     labelCol: {
@@ -64,13 +68,19 @@ const ModalEditHeader = ({ info, open, onOpenModal, onCloseModal }) => {
   };
 
   const handleFinish = (values) => {
-    console.log('values', values);
+    onSubmit(values, 'header');
+    onCloseModal();
+  };
+
+  const handleCancel = () => {
+    onCloseModal();
+    form.resetFields();
   };
 
   return (
     <>
-      <button type="button" className={styles.buttonEdit} onClick={onOpenModal}>
-        Edit
+      <button type="button" className={styles.buttonEdit} onClick={onOpenModal} aria-label="Edit">
+      <EditOutlined />
       </button>
       <Modal closeIcon={<></>} title="Edit Header" open={open} footer={null}>
         <Form
@@ -81,15 +91,25 @@ const ModalEditHeader = ({ info, open, onOpenModal, onCloseModal }) => {
           }}
           onFinish={handleFinish}
         >
-          <Form.Item name="avatar" label="Avatar URL">
+          <Form.Item
+            name="avatar"
+            label="Avatar URL"
+            rules={[
+              {
+                required: true,
+                message: 'Please input your avatar URL!',
+              },
+            ]}
+          >
             <Input />
           </Form.Item>
           <Form.Item
             name="name"
-            label="Full Name"
+            label="Name"
             rules={[
               {
                 required: true,
+                message: 'Please input your name!',
               },
             ]}
           >
@@ -101,6 +121,11 @@ const ModalEditHeader = ({ info, open, onOpenModal, onCloseModal }) => {
             rules={[
               {
                 required: true,
+                message: 'Please input your email!',
+              },
+              {
+                type: 'email',
+                message: 'Please enter a valid email address!',
               },
             ]}
           >
@@ -112,6 +137,11 @@ const ModalEditHeader = ({ info, open, onOpenModal, onCloseModal }) => {
             rules={[
               {
                 required: true,
+                message: 'Please input your phone number!',
+              },
+              {
+                pattern: /^[0-9]{10}$/,
+                message: 'Please enter a valid 10-digit phone number!',
               },
             ]}
           >
@@ -123,6 +153,7 @@ const ModalEditHeader = ({ info, open, onOpenModal, onCloseModal }) => {
             rules={[
               {
                 required: true,
+                message: 'Please input your address!',
               },
             ]}
           >
@@ -134,6 +165,7 @@ const ModalEditHeader = ({ info, open, onOpenModal, onCloseModal }) => {
             rules={[
               {
                 required: true,
+                message: 'Please input your role!',
               },
             ]}
           >
@@ -145,12 +177,26 @@ const ModalEditHeader = ({ info, open, onOpenModal, onCloseModal }) => {
             rules={[
               {
                 required: true,
+                message: 'Please input your GitHub link!',
+              },
+              {
+                type: 'url',
+                message: 'Please enter a valid URL!',
               },
             ]}
           >
             <Input />
           </Form.Item>
-          <Form.Item name="website" label="Website">
+          <Form.Item
+            name="website"
+            label="Website"
+            rules={[
+              {
+                type: 'url',
+                message: 'Please enter a valid URL!',
+              },
+            ]}
+          >
             <Input />
           </Form.Item>
           <Form.Item
@@ -162,7 +208,9 @@ const ModalEditHeader = ({ info, open, onOpenModal, onCloseModal }) => {
             <Button type="primary" htmlType="submit">
               Submit
             </Button>
-            <Button className="ml-10" onClick={onCloseModal}>Close</Button>
+            <Button className="ml-10" onClick={handleCancel}>
+              Close
+            </Button>
           </Form.Item>
         </Form>
       </Modal>

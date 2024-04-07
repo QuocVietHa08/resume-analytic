@@ -6,7 +6,6 @@ import Introduction from './Introduction';
 import Experience from './Experience';
 import PersonalProject from './PersonalProject';
 import Achivement from './Achivement';
-import FormResume from './FormResume';
 
 const ResumeBuilder = () => {
   const [info, setInfo] = React.useState({
@@ -20,16 +19,13 @@ const ResumeBuilder = () => {
       gitHubLink: 'https://github.com/QuocVietHa08',
       website: 'https://haquocviet.hashnode.dev/',
     },
-    education: {
+    education: [{
       school: 'Hanoi University of Science and Technology',
       major: 'Information Technology',
-      degree: 'Bachelor',
       startDate: '2016',
       endDate: '2021',
-    },
-    introduction: {
-      content: `Experienced Frontend Engineer with three years of hands-on experience building user-friendly websites and web apps. Skilled in HTML, CSS, and JavaScript frameworks like React and Angular. I'm good at turning design ideas into working code that looks great and runs smoothly. I enjoy solving problems and making sure websites work well on different devices and browsers. I love learning new things and keeping up with the latest trends in frontend development. As a team player, I enjoy collaborating with others to create awesome digital experiences.`,
-    },
+    }],
+    introduction: `Experienced Frontend Engineer with three years of hands-on experience building user-friendly websites and web apps. Skilled in HTML, CSS, and JavaScript frameworks like React and Angular. I'm good at turning design ideas into working code that looks great and runs smoothly. I enjoy solving problems and making sure websites work well on different devices and browsers. I love learning new things and keeping up with the latest trends in frontend development. As a team player, I enjoy collaborating with others to create awesome digital experiences.`,
     experience: [
       {
         id: 1,
@@ -112,23 +108,22 @@ const ResumeBuilder = () => {
     ],
   });
 
-  const handleChangeInfo = (newInfo) => {
-    console.log('newinfo', newInfo)
+  const handleChangeInfo = (newInfo, key) => {
+    console.log('newInfo', newInfo, key)
+    const updateValue = { ...info, [key]: newInfo };
+    setInfo(updateValue);
   }
 
   return (
     <div className={styles.container}>
       <div className={styles.wrapper}>
         <div className={styles.resume}>
-          <Header info={info.header} />
-          <Education info={info.education} />
-          <Introduction info={info.introduction} />
+          <Header info={info.header} onChangeInfo={handleChangeInfo} />
+          <Education info={info.education} onChangeInfo={handleChangeInfo} />
+          <Introduction info={info.introduction} onChangeInfo={handleChangeInfo} />
           <Experience info={info.experience} />
           <PersonalProject info={info.personalProject} />
           <Achivement info={info.achivement} />
-        </div>
-        <div className={styles.formContainer}>
-          <FormResume info={info} onChangeInfo={handleChangeInfo} />
         </div>
       </div>
     </div>
@@ -136,4 +131,5 @@ const ResumeBuilder = () => {
 };
 
 export default ResumeBuilder;
+
 
