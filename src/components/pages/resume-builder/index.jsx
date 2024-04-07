@@ -109,7 +109,6 @@ const ResumeBuilder = () => {
   });
 
   const handleChangeInfo = (newInfo, key) => {
-    console.log('newInfo', newInfo, key)
     const updateValue = { ...info, [key]: newInfo };
     setInfo(updateValue);
   }
@@ -121,9 +120,9 @@ const ResumeBuilder = () => {
           <Header info={info.header} onChangeInfo={handleChangeInfo} />
           <Education info={info.education} onChangeInfo={handleChangeInfo} />
           <Introduction info={info.introduction} onChangeInfo={handleChangeInfo} />
-          <Experience info={info.experience} />
-          <PersonalProject info={info.personalProject} />
-          <Achivement info={info.achivement} />
+          <Experience info={info.experience} onChangeInfo={handleChangeInfo} />
+          <PersonalProject info={info.personalProject} onChangeInfo={handleChangeInfo} />
+          <Achivement info={info.achivement} onChangeInfo={handleChangeInfo} />
         </div>
       </div>
     </div>
