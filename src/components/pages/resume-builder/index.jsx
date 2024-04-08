@@ -1,4 +1,8 @@
 import React from 'react';
+import { DownloadOutlined } from '@ant-design/icons';
+import { jsPDF } from 'jspdf';
+import html2canvas from 'html2canvas';
+
 import Header from './Header';
 import styles from './styles.module.scss';
 import Education from './Education';
@@ -19,12 +23,14 @@ const ResumeBuilder = () => {
       gitHubLink: 'https://github.com/QuocVietHa08',
       website: 'https://haquocviet.hashnode.dev/',
     },
-    education: [{
-      school: 'Hanoi University of Science and Technology',
-      major: 'Information Technology',
-      startDate: '2016',
-      endDate: '2021',
-    }],
+    education: [
+      {
+        school: 'Hanoi University of Science and Technology',
+        major: 'Information Technology',
+        startDate: '2016',
+        endDate: '2021',
+      },
+    ],
     introduction: `Experienced Frontend Engineer with three years of hands-on experience building user-friendly websites and web apps. Skilled in HTML, CSS, and JavaScript frameworks like React and Angular. I'm good at turning design ideas into working code that looks great and runs smoothly. I enjoy solving problems and making sure websites work well on different devices and browsers. I love learning new things and keeping up with the latest trends in frontend development. As a team player, I enjoy collaborating with others to create awesome digital experiences.`,
     experience: [
       {
@@ -111,12 +117,25 @@ const ResumeBuilder = () => {
   const handleChangeInfo = (newInfo, key) => {
     const updateValue = { ...info, [key]: newInfo };
     setInfo(updateValue);
-  }
+  };
+
+  const handleDonwloadPDF = () => {
+    const resume = document.querySelector('#resume');
+    return html2canvas(resume).then((canvas) => {
+      const imgData = canvas.toDataURL('image/png');
+      // eslint-disable-next-line new-cap
+      const pdf = new jsPDF('p', 'mm', 'a4');
+      const width = pdf.internal.pageSize.getWidth();
+      const height = pdf.internal.pageSize.getHeight();
+      pdf.addImage(imgData, 'PNG', 0, 0, width, height);
+      pdf.save('resume.pdf');
+    });
+  };
 
   return (
     <div className={styles.container}>
       <div className={styles.wrapper}>
-        <div className={styles.resume}>
+        <div className={styles.resume} id="resume">
           <Header info={info.header} onChangeInfo={handleChangeInfo} />
           <Education info={info.education} onChangeInfo={handleChangeInfo} />
           <Introduction info={info.introduction} onChangeInfo={handleChangeInfo} />
@@ -124,11 +143,16 @@ const ResumeBuilder = () => {
           <PersonalProject info={info.personalProject} onChangeInfo={handleChangeInfo} />
           <Achivement info={info.achivement} onChangeInfo={handleChangeInfo} />
         </div>
+        <ul className={styles.functionButton}>
+          <li>
+            <button onClick={handleDonwloadPDF} type="button">
+              <DownloadOutlined /> Download
+            </button>
+          </li>
+        </ul>
       </div>
     </div>
   );
 };
 
 export default ResumeBuilder;
-
-
