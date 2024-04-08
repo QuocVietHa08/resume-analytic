@@ -53,7 +53,6 @@
   width: 100%;
   max-width: 900px;
   height: 100%;
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   padding: 25px;
   background-color: white;
 
@@ -61,7 +60,7 @@
   span,
   li {
     font-family: 'Nunito', sans-serif;
-    word-spacing: 1px;
+    // word-spacing: 0px;
   }  
 }
 
@@ -143,9 +142,9 @@
 .experience,
 .personalProject,
 .achivement {
-  margin-top: 10px;
+  margin-top: 5px;
   position: relative;
-  padding: 10px;
+  padding: 5px;
   border: 1px solid transparent;
 
   &:hover {
