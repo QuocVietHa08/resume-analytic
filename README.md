@@ -14,6 +14,12 @@
 
 A simple way to review and estimate your value based on the market.
 
+<div align="center" width="100%">
+  <video src="https://github.com/QuocVietHa08/resume-analytic/assets/56016006/cbc6e031-aa53-401c-ab7f-a4886eed5b3f" />  
+</div>
+
+Create and download your resume based on a professional template.
+
 ## How to use
 
 1. Upload your CV to the [website](https://resume-analytic.vercel.app/).
