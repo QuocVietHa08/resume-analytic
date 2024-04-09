@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import { Form, Input, Button, Modal } from 'antd';
-import { EditOutlined, MinusCircleOutlined, PlusOutlined } from '@ant-design/icons';
+import { EditOutlined, MinusCircleOutlined, PlusOutlined, CompressOutlined } from '@ant-design/icons';
+
+import { Draggable } from 'react-beautiful-dnd';
 
 import styles from './styles.module.scss';
 
-const PersonalProject = ({ info, onChangeInfo }) => {
+const PersonalProject = ({ info, onChangeInfo, index }) => {
   const [open, setOpen] = useState(false);
 
   const handleOpenModal = () => {
@@ -18,24 +20,33 @@ const PersonalProject = ({ info, onChangeInfo }) => {
   if (info.length === 0) return null;
 
   return (
-    <div className={styles.personalProject}>
-      <ModalEditPersonalProject
-        info={info}
-        onSubmit={onChangeInfo}
-        onOpenModal={handleOpenModal}
-        onCloseModal={handleCloseModal}
-        open={open}
-      />
-      <div className={styles.title}>
-        <div className={styles.text}>Personal Projects</div>
-        <div className={styles.line}></div>
-      </div>
-      <div className="flex flex-column gap-10">
-        {info.map((item) => (
-          <PersonalProjectItem key={item.id} info={item} />
-        ))}
-      </div>
-    </div>
+    <Draggable draggableId="personalProject" index={index} key="personalProject">
+      {(provided) => (
+        <div className={styles.personalProject} ref={provided.innerRef} {...provided.draggableProps}>
+          <div className={styles.buttonEditWrap}>
+            <ModalEditPersonalProject
+              info={info}
+              onSubmit={onChangeInfo}
+              onOpenModal={handleOpenModal}
+              onCloseModal={handleCloseModal}
+              open={open}
+            />
+            <div className={styles.buttonEdit} {...provided.dragHandleProps}>
+              <CompressOutlined />
+            </div>
+          </div>
+          <div className={styles.title}>
+            <div className={styles.text}>Personal Projects</div>
+            <div className={styles.line}></div>
+          </div>
+          <div className="flex flex-column gap-10">
+            {info.map((item) => (
+              <PersonalProjectItem key={item.id} info={item} />
+            ))}
+          </div>
+        </div>
+      )}
+    </Draggable>
   );
 };
 
@@ -131,7 +142,7 @@ const ModalEditPersonalProject = ({ info, open, onOpenModal, onCloseModal, onSub
                   className="mt-10"
                 >
                   <Button type="dashed" className="mx-center w-full" onClick={() => add()} block icon={<PlusOutlined />}>
-                    Add Project 
+                    Add Project
                   </Button>
                 </Form.Item>
               </>

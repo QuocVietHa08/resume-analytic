@@ -1,7 +1,8 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import { DownloadOutlined } from '@ant-design/icons';
 import { jsPDF } from 'jspdf';
-import { toPng } from "html-to-image";
+import { toPng } from 'html-to-image';
+import { DragDropContext, Droppable } from 'react-beautiful-dnd';
 
 import Header from './Header';
 import styles from './styles.module.scss';
@@ -113,10 +114,17 @@ const DEFAULT_INFO = {
   ],
 };
 
+const RESUME_POSITION = [
+  { id: 'education'},
+  { id: 'introduction'},
+  { id: 'experience'},
+  { id: 'personalProject'},
+  { id: 'achivement'}
+]
 const ResumeBuilder = () => {
   const [info, setInfo] = React.useState(DEFAULT_INFO);
   const [loading, setLoading] = React.useState(false);
-  const resumeRef = useRef(null);
+  const [resumePosition, setResumePosition] = React.useState(RESUME_POSITION);
 
   const handleChangeInfo = (newInfo, key) => {
     const updateValue = { ...info, [key]: newInfo };
@@ -136,20 +144,58 @@ const ResumeBuilder = () => {
         setLoading(false);
         pdf.save('resume.pdf');
       });
-    }, 1000)
+    }, 1000);
     setLoading(false);
   };
+
+  const onDragEnd = (result) => {
+    if (!result.destination) return;
+    const items = Array.from(resumePosition);
+    const [reorderedItem] = items.splice(result.source.index, 1);
+    items.splice(result.destination.index, 0, reorderedItem);
+    setResumePosition(items);
+  };
+
+  const handleRenderResumePosition = () => {
+    return resumePosition.map((item, index) => {
+      switch (item.id) {
+        case 'education':
+          return <Education key={item.id} index={index} info={info.education} onChangeInfo={handleChangeInfo} />;
+        case 'introduction':
+          return <Introduction key={item.id} index={index} info={info.introduction} onChangeInfo={handleChangeInfo} />;
+        case 'experience':
+          return <Experience key={item.id} index={index} info={info.experience} onChangeInfo={handleChangeInfo} />;
+        case 'personalProject':
+          return <PersonalProject key={item.id} index={index} info={info.personalProject} onChangeInfo={handleChangeInfo} />;
+        case 'achivement':
+          return <Achivement key={item.id} index={index} info={info.achivement} onChangeInfo={handleChangeInfo} />;
+        default:
+          return null;
+      }
+    });
+  }
 
   return (
     <div className={styles.container}>
       <div className={styles.wrapper}>
-        <div className={styles.resume} id="resume" ref={resumeRef}>
+        <div id="resume" className={styles.resume}>
           <Header info={info.header} onChangeInfo={handleChangeInfo} />
-          <Education info={info.education} onChangeInfo={handleChangeInfo} />
-          <Introduction info={info.introduction} onChangeInfo={handleChangeInfo} />
-          <Experience info={info.experience} onChangeInfo={handleChangeInfo} />
-          <PersonalProject info={info.personalProject} onChangeInfo={handleChangeInfo} />
-          <Achivement info={info.achivement} onChangeInfo={handleChangeInfo} />
+          <DragDropContext onDragEnd={onDragEnd}>
+            <Droppable droppableId="board">
+              {(provided, snapshot) => (
+                <div
+                  style={{
+                    backgroundColor: snapshot.isDraggingOver ? 'white' : 'white',
+                  }}
+                  ref={provided.innerRef}
+                  {...provided.droppableProps}
+                >
+                  {handleRenderResumePosition()}
+                  {provided.placeholder}
+                </div>
+              )}
+            </Droppable>
+          </DragDropContext>
         </div>
         <ul className={styles.functionButton}>
           <li>

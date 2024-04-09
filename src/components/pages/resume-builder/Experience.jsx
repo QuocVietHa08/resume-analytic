@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import { Form, Input, Button, Modal, Row, Col } from 'antd';
-import { EditOutlined, MinusCircleOutlined, PlusOutlined } from '@ant-design/icons';
+import { EditOutlined, MinusCircleOutlined, PlusOutlined, CompressOutlined } from '@ant-design/icons';
+import { Draggable } from 'react-beautiful-dnd';
 
 import styles from './styles.module.scss';
 
-const Experience = ({ info, onChangeInfo }) => {
+const Experience = ({ info, onChangeInfo, index }) => {
   const [open, setOpen] = useState(false);
 
   const handleOpenModal = () => {
@@ -18,18 +19,33 @@ const Experience = ({ info, onChangeInfo }) => {
   if (info?.length === 0) return null;
 
   return (
-    <div className={styles.experience}>
-      <ModalEditExperience info={info} onSubmit={onChangeInfo} open={open} onOpenModal={handleOpenModal} onCloseModal={handleCloseModal} />
-      <div className={styles.title}>
-        <div className={styles.text}>Experience</div>
-        <div className={styles.line}></div>
-      </div>
-      <div className="flex flex-column gap-10">
-        {info.map((item) => (
-          <ExperienceItem key={item.id} info={item} />
-        ))}
-      </div>
-    </div>
+    <Draggable draggableId="experience" index={index} key="experience">
+      {(provided) => (
+        <div className={styles.experience} ref={provided.innerRef} {...provided.draggableProps}>
+          <div className={styles.buttonEditWrap}>
+            <ModalEditExperience
+              info={info}
+              onSubmit={onChangeInfo}
+              open={open}
+              onOpenModal={handleOpenModal}
+              onCloseModal={handleCloseModal}
+            />
+            <div className={styles.buttonEdit} {...provided.dragHandleProps}>
+              <CompressOutlined />
+            </div>
+          </div>
+          <div className={styles.title}>
+            <div className={styles.text}>Experience</div>
+            <div className={styles.line}></div>
+          </div>
+          <div className="flex flex-column gap-10">
+            {info.map((item) => (
+              <ExperienceItem key={item.id} info={item} />
+            ))}
+          </div>
+        </div>
+      )}
+    </Draggable>
   );
 };
 
@@ -93,7 +109,7 @@ const ModalEditExperience = ({ info, open, onOpenModal, onCloseModal, onSubmit }
       })),
       id: indexValue + 1,
     }));
-  }
+  };
 
   const handleFinish = (values) => {
     const { experience } = values;
@@ -132,7 +148,6 @@ const ModalEditExperience = ({ info, open, onOpenModal, onCloseModal, onSubmit }
           <Form.List name="experience">
             {(fields, { add, remove }) => (
               <>
-              {/* {console.log('add new --->', add)} */}
                 {fields.map(({ key, name, ...restField }) => (
                   <div key={key} className={styles.formListItem}>
                     <Form.Item
@@ -290,7 +305,13 @@ const ModalEditExperience = ({ info, open, onOpenModal, onCloseModal, onSubmit }
                             }}
                             className="mt-10"
                           >
-                            <Button type="dashed" className="mx-center w-full" onClick={() => projectOpt.add()} block icon={<PlusOutlined />}>
+                            <Button
+                              type="dashed"
+                              className="mx-center w-full"
+                              onClick={() => projectOpt.add()}
+                              block
+                              icon={<PlusOutlined />}
+                            >
                               Add Project
                             </Button>
                           </Form.Item>

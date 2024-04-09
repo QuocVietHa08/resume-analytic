@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import { Form, Input, Button, Modal } from 'antd';
-import { EditOutlined } from '@ant-design/icons';
+import { EditOutlined, CompressOutlined } from '@ant-design/icons';
+import { Draggable } from 'react-beautiful-dnd';
 
 import styles from './styles.module.scss';
 
-const Introduction = ({ info, onChangeInfo }) => {
+const Introduction = ({ info, onChangeInfo, index }) => {
   const [open, setOpen] = useState(false);
 
   const handleOpenModal = () => {
@@ -18,20 +19,29 @@ const Introduction = ({ info, onChangeInfo }) => {
   if (!info) return null;
 
   return (
-    <div className={styles.introduction}>
-      <ModalEditIntroduction
-        info={info}
-        onSubmit={onChangeInfo}
-        onOpenModal={handleOpenModal}
-        onCloseModal={handleCloseModal}
-        open={open}
-      />
-      <div className={styles.title}>
-        <div className={styles.text}>Introduction</div>
-        <div className={styles.line}></div>
-      </div>
-      <div>{info}</div>
-    </div>
+    <Draggable draggableId="introduction" index={index} key="introduction">
+      {(provided) => (
+        <div className={styles.introduction} ref={provided.innerRef} {...provided.draggableProps}>
+          <div className={styles.buttonEditWrap}>
+            <ModalEditIntroduction
+              info={info}
+              onSubmit={onChangeInfo}
+              onOpenModal={handleOpenModal}
+              onCloseModal={handleCloseModal}
+              open={open}
+            />
+            <div className={styles.buttonEdit} {...provided.dragHandleProps}>
+              <CompressOutlined />
+            </div>
+          </div>
+          <div className={styles.title}>
+            <div className={styles.text}>Introduction</div>
+            <div className={styles.line}></div>
+          </div>
+          <div>{info}</div>
+        </div>
+      )}
+    </Draggable>
   );
 };
 
@@ -49,7 +59,7 @@ const ModalEditIntroduction = ({ info, open, onOpenModal, onCloseModal, onSubmit
   };
 
   const handleFinish = (values) => {
-    const { introduction } = values
+    const { introduction } = values;
     onSubmit(introduction, 'introduction');
     onCloseModal();
   };
@@ -58,9 +68,9 @@ const ModalEditIntroduction = ({ info, open, onOpenModal, onCloseModal, onSubmit
     onCloseModal();
     form.resetFields();
   };
-  
+
   const initialValues = {
-    introduction: info
+    introduction: info,
   };
 
   return (
@@ -68,12 +78,9 @@ const ModalEditIntroduction = ({ info, open, onOpenModal, onCloseModal, onSubmit
       <button type="button" className={styles.buttonEdit} onClick={onOpenModal} aria-label="Edit">
         <EditOutlined />
       </button>
-      <Modal closeIcon={<></>} width={1000}  title="Edit Education" open={open} footer={null}>
+      <Modal closeIcon={<></>} width={1000} title="Edit Education" open={open} footer={null}>
         <Form {...layout} form={form} initialValues={initialValues} onFinish={handleFinish}>
-        <Form.Item
-            name="introduction"
-            label="Introduction"
-          >
+          <Form.Item name="introduction" label="Introduction">
             <Input.TextArea rows={8} />
           </Form.Item>
           <Form.Item

@@ -80,7 +80,7 @@ const ModalEditHeader = ({ info, open, onOpenModal, onCloseModal, onSubmit }) =>
   return (
     <>
       <button type="button" className={styles.buttonEdit} onClick={onOpenModal} aria-label="Edit">
-      <EditOutlined />
+        <EditOutlined />
       </button>
       <Modal closeIcon={<></>} title="Edit Header" open={open} footer={null}>
         <Form

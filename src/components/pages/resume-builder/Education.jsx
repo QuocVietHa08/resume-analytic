@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import { Form, Input, Button, Modal } from 'antd';
-import { EditOutlined, MinusCircleOutlined, PlusOutlined } from '@ant-design/icons';
-
+import { EditOutlined, MinusCircleOutlined, PlusOutlined, CompressOutlined } from '@ant-design/icons';
+import { Draggable } from 'react-beautiful-dnd';
+// import DraggableComponent from './DraggableComp';
 import styles from './styles.module.scss';
 
-const Education = ({ info, onChangeInfo }) => {
+const Education = ({ info, onChangeInfo, index }) => {
   const [open, setOpen] = useState(false);
 
   const handleOpenModal = () => {
@@ -18,22 +19,38 @@ const Education = ({ info, onChangeInfo }) => {
   if (info?.length === 0) return null;
 
   return (
-    <div className={styles.education}>
-      <ModalEditEducation info={info} onSubmit={onChangeInfo} open={open} onOpenModal={handleOpenModal} onCloseModal={handleCloseModal} />
-      <div className={styles.title}>
-        <div className={styles.text}>Education</div>
-        <div className={styles.line}></div>
-      </div>
-      <div>
-        <ul className="flex flex-column gap-5">
-          {info.map((item) => (
-            <EducationItem key={item.id} info={item} />
-          ))}
-        </ul>
-      </div>
-    </div>
+    <Draggable draggableId="education" index={index} key="education">
+      {(provided) => (
+        <div className={styles.education} ref={provided.innerRef} {...provided.draggableProps}>
+          <div className={styles.buttonEditWrap}>
+            <ModalEditEducation
+              info={info}
+              onSubmit={onChangeInfo}
+              open={open}
+              onOpenModal={handleOpenModal}
+              onCloseModal={handleCloseModal}
+            />
+            <div className={styles.buttonEdit} {...provided.dragHandleProps}>
+              <CompressOutlined />
+            </div>
+          </div>
+          <div className={styles.title}>
+            <div className={styles.text}>Education</div>
+            <div className={styles.line}></div>
+          </div>
+          <div>
+            <ul className="flex flex-column gap-5">
+              {info.map((item) => (
+                <EducationItem key={item.id} info={item} />
+              ))}
+            </ul>
+          </div>
+        </div>
+      )}
+    </Draggable>
   );
 };
+
 
 export default Education;
 

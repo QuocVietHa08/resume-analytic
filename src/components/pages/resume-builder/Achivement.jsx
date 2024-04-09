@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import { Form, Input, Button, Modal } from 'antd';
-import { EditOutlined, MinusCircleOutlined, PlusOutlined } from '@ant-design/icons';
+import { EditOutlined, MinusCircleOutlined, PlusOutlined, CompressOutlined } from '@ant-design/icons';
+import { Draggable } from 'react-beautiful-dnd';
 
 import styles from './styles.module.scss';
 
-const Achivement = ({ info, onChangeInfo }) => {
+const Achivement = ({ info, onChangeInfo, index }) => {
   const [open, setOpen] = useState(false);
 
   const handleOpenModal = () => {
@@ -18,24 +19,33 @@ const Achivement = ({ info, onChangeInfo }) => {
   if (info.length === 0) return null;
 
   return (
-    <div className={styles.achivement}>
-      <ModalEditPersonalProject
-        info={info}
-        onSubmit={onChangeInfo}
-        onOpenModal={handleOpenModal}
-        onCloseModal={handleCloseModal}
-        open={open}
-      />
-      <div className={styles.title}>
-        <div className={styles.text}>Achivements</div>
-        <div className={styles.line}></div>
-      </div>
-      <div className="flex flex-column gap-5">
-        {info.map((item) => (
-          <AchivementItem key={item.id} info={item} />
-        ))}
-      </div>
-    </div>
+    <Draggable draggableId="achivement" index={index} key="achivement">
+      {(provided) => (
+        <div className={styles.achivement} ref={provided.innerRef} {...provided.draggableProps}>
+          <div className={styles.buttonEditWrap}>
+            <ModalEditPersonalProject
+              info={info}
+              onSubmit={onChangeInfo}
+              onOpenModal={handleOpenModal}
+              onCloseModal={handleCloseModal}
+              open={open}
+            />
+            <div className={styles.buttonEdit} {...provided.dragHandleProps}>
+              <CompressOutlined />
+            </div>
+          </div>
+          <div className={styles.title}>
+            <div className={styles.text}>Achivements</div>
+            <div className={styles.line}></div>
+          </div>
+          <div className="flex flex-column gap-5">
+            {info.map((item) => (
+              <AchivementItem key={item.id} info={item} />
+            ))}
+          </div>
+        </div>
+      )}
+    </Draggable>
   );
 };
 
