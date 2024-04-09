@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import { DownloadOutlined } from '@ant-design/icons';
 import { jsPDF } from 'jspdf';
 import { toPng } from 'html-to-image';
@@ -114,10 +114,17 @@ const DEFAULT_INFO = {
   ],
 };
 
+const RESUME_POSITION = [
+  { id: 'education'},
+  { id: 'introduction'},
+  { id: 'experience'},
+  { id: 'personalProject'},
+  { id: 'achivement'}
+]
 const ResumeBuilder = () => {
   const [info, setInfo] = React.useState(DEFAULT_INFO);
   const [loading, setLoading] = React.useState(false);
-  // const resumeRef = useRef(null);
+  const [resumePosition, setResumePosition] = React.useState(RESUME_POSITION);
 
   const handleChangeInfo = (newInfo, key) => {
     const updateValue = { ...info, [key]: newInfo };
@@ -141,37 +148,55 @@ const ResumeBuilder = () => {
     setLoading(false);
   };
 
-  const onDragEnd = () => {
-    console.log('onDragEnd');
+  const onDragEnd = (result) => {
+    if (!result.destination) return;
+    const items = Array.from(resumePosition);
+    const [reorderedItem] = items.splice(result.source.index, 1);
+    items.splice(result.destination.index, 0, reorderedItem);
+    setResumePosition(items);
   };
+
+  const handleRenderResumePosition = () => {
+    return resumePosition.map((item, index) => {
+      switch (item.id) {
+        case 'education':
+          return <Education key={item.id} index={index} info={info.education} onChangeInfo={handleChangeInfo} />;
+        case 'introduction':
+          return <Introduction key={item.id} index={index} info={info.introduction} onChangeInfo={handleChangeInfo} />;
+        case 'experience':
+          return <Experience key={item.id} index={index} info={info.experience} onChangeInfo={handleChangeInfo} />;
+        case 'personalProject':
+          return <PersonalProject key={item.id} index={index} info={info.personalProject} onChangeInfo={handleChangeInfo} />;
+        case 'achivement':
+          return <Achivement key={item.id} index={index} info={info.achivement} onChangeInfo={handleChangeInfo} />;
+        default:
+          return null;
+      }
+    });
+  }
 
   return (
     <div className={styles.container}>
       <div className={styles.wrapper}>
-        <DragDropContext onDragEnd={onDragEnd}>
-          <Droppable droppableId="board">
-            {(provided, snapshot) => (
-              <div
-                className={styles.resume}
-                style={{
-                  backgroundColor: snapshot.isDraggingOver ? 'red' : 'white',
-                }}
-                id="resume"
-                ref={provided.innerRef}
-                {...provided.droppableProps}
-              >
-                <Header info={info.header} onChangeInfo={handleChangeInfo} />
-                <Education info={info.education} onChangeInfo={handleChangeInfo} />
-                <Introduction info={info.introduction} onChangeInfo={handleChangeInfo} />
-                <Experience info={info.experience} onChangeInfo={handleChangeInfo} />
-                <PersonalProject info={info.personalProject} onChangeInfo={handleChangeInfo} />
-                <Achivement info={info.achivement} onChangeInfo={handleChangeInfo} />
-                {/* <SampleDrag /> */}
-                {provided.placeholder}
-              </div>
-            )}
-          </Droppable>
-        </DragDropContext>
+        <div id="resume" className={styles.resume}>
+          <Header info={info.header} onChangeInfo={handleChangeInfo} />
+          <DragDropContext onDragEnd={onDragEnd}>
+            <Droppable droppableId="board">
+              {(provided, snapshot) => (
+                <div
+                  style={{
+                    backgroundColor: snapshot.isDraggingOver ? 'white' : 'white',
+                  }}
+                  ref={provided.innerRef}
+                  {...provided.droppableProps}
+                >
+                  {handleRenderResumePosition()}
+                  {provided.placeholder}
+                </div>
+              )}
+            </Droppable>
+          </DragDropContext>
+        </div>
         <ul className={styles.functionButton}>
           <li>
             <button loading={loading} onClick={handleDonwloadPDF} type="button">
@@ -191,30 +216,3 @@ const ResumeBuilder = () => {
 };
 
 export default ResumeBuilder;
-
-// const SampleDrag = () => {
-//   const draggableSample = [
-//     {
-//       id: '1',
-//       content: 'First',
-//     },
-//     {
-//       id: '2',
-//       content: 'Second',
-//     },
-//     {
-//       id: '3',
-//       content: 'Third',
-//     },
-//   ];
-
-//   return draggableSample.map((item, index) => (
-//     <Draggable draggableId={item.id} index={index} key={item.id}>
-//       {(provided) => (
-//         <div ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps}>
-//           {item.content}
-//         </div>
-//       )}
-//     </Draggable>
-//   ));
-// };

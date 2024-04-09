@@ -1,4 +1,5 @@
 import React from 'react';
+import { resetServerContext } from 'react-beautiful-dnd';
 import Document, { Html, Main, Head, NextScript } from 'next/document';
 
 class ProjectDocument extends Document {
@@ -52,6 +53,8 @@ ProjectDocument.getInitialProps = async (ctx) => {
     });
 
   const initialProps = await Document.getInitialProps(ctx);
+
+  resetServerContext();
 
   return {
     ...initialProps,

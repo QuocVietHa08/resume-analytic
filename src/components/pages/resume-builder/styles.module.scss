@@ -61,7 +61,7 @@
   li {
     font-family: 'Nunito', sans-serif;
     // word-spacing: 0px;
-  }  
+  }
 }
 
 .header {
@@ -162,18 +162,24 @@
     }
   }
 
+  .buttonEditWrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    transform: translate(20%, -50%);
+  }
+
   .buttonEdit {
     all: unset;
     display: none;
     cursor: pointer;
-    position: absolute;
-    top: 0px;
-    right: 0px;
     color: #ccc;
     border: 1px dashed #ccc;
     background-color: white;
-    transform: translate(50%, -50%);
-    cursor: pointer;
     width: 25px;
     height: 25px;
     z-index: 2;

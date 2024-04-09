@@ -1,7 +1,7 @@
 const path = require('path');
 
 module.exports = {
-  reactStrictMode: true,
+  reactStrictMode: false,
   env: {
     KEY: process.env.KEY,
     PASSWORD: process.env.PASSWORD,

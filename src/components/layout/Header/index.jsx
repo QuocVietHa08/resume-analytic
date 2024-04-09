@@ -16,6 +16,9 @@ const Header = () => {
           <Link href="/resume" className={styles.buttonLogin} rel="noreferrer">
             Contact
           </Link>
+          {/* <Link href="/demo" className={styles.buttonLogin} rel="noreferrer">
+            Demo 
+          </Link> */}
           <a target="_blank" href="https://github.com/QuocVietHa08/resume-analytic" className={styles.buttonLogin} rel="noreferrer">
             Repository
           </a>
