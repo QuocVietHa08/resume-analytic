@@ -4,6 +4,7 @@ import { PhoneFilled, MailFilled, GlobalOutlined, HomeFilled, GithubOutlined } f
 import { Modal, Form, Input, Button } from 'antd';
 import { EditOutlined } from '@ant-design/icons';
 import styles from './styles.module.scss';
+import DraggableComponent from './DraggableComp';
 
 const Header = ({ info, onChangeInfo }) => {
   const [open, setOpen] = useState(false);
@@ -54,7 +55,15 @@ const Header = ({ info, onChangeInfo }) => {
   );
 };
 
-export default Header;
+const DraggableHeader = ({ info, onChangeInfo }) => {
+  return (
+    <DraggableComponent id="header" index={0}>
+      <Header info={info} onChangeInfo={onChangeInfo} />
+    </DraggableComponent>
+  );
+};
+
+export default DraggableHeader;
 
 const ModalEditHeader = ({ info, open, onOpenModal, onCloseModal, onSubmit }) => {
   const [form] = Form.useForm();
@@ -80,7 +89,7 @@ const ModalEditHeader = ({ info, open, onOpenModal, onCloseModal, onSubmit }) =>
   return (
     <>
       <button type="button" className={styles.buttonEdit} onClick={onOpenModal} aria-label="Edit">
-      <EditOutlined />
+        <EditOutlined />
       </button>
       <Modal closeIcon={<></>} title="Edit Header" open={open} footer={null}>
         <Form

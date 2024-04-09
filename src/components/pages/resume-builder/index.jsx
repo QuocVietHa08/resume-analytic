@@ -1,7 +1,8 @@
 import React, { useRef } from 'react';
 import { DownloadOutlined } from '@ant-design/icons';
 import { jsPDF } from 'jspdf';
-import { toPng } from "html-to-image";
+import { toPng } from 'html-to-image';
+import { DragDropContext, Droppable } from 'react-beautiful-dnd';
 
 import Header from './Header';
 import styles from './styles.module.scss';
@@ -116,7 +117,7 @@ const DEFAULT_INFO = {
 const ResumeBuilder = () => {
   const [info, setInfo] = React.useState(DEFAULT_INFO);
   const [loading, setLoading] = React.useState(false);
-  const resumeRef = useRef(null);
+  // const resumeRef = useRef(null);
 
   const handleChangeInfo = (newInfo, key) => {
     const updateValue = { ...info, [key]: newInfo };
@@ -136,21 +137,41 @@ const ResumeBuilder = () => {
         setLoading(false);
         pdf.save('resume.pdf');
       });
-    }, 1000)
+    }, 1000);
     setLoading(false);
+  };
+
+  const onDragEnd = () => {
+    console.log('onDragEnd');
   };
 
   return (
     <div className={styles.container}>
       <div className={styles.wrapper}>
-        <div className={styles.resume} id="resume" ref={resumeRef}>
-          <Header info={info.header} onChangeInfo={handleChangeInfo} />
-          <Education info={info.education} onChangeInfo={handleChangeInfo} />
-          <Introduction info={info.introduction} onChangeInfo={handleChangeInfo} />
-          <Experience info={info.experience} onChangeInfo={handleChangeInfo} />
-          <PersonalProject info={info.personalProject} onChangeInfo={handleChangeInfo} />
-          <Achivement info={info.achivement} onChangeInfo={handleChangeInfo} />
-        </div>
+        <DragDropContext onDragEnd={onDragEnd}>
+          <Droppable droppableId="board">
+            {(provided, snapshot) => (
+              <div
+                className={styles.resume}
+                style={{
+                  backgroundColor: snapshot.isDraggingOver ? 'red' : 'white',
+                }}
+                id="resume"
+                ref={provided.innerRef}
+                {...provided.droppableProps}
+              >
+                <Header info={info.header} onChangeInfo={handleChangeInfo} />
+                <Education info={info.education} onChangeInfo={handleChangeInfo} />
+                <Introduction info={info.introduction} onChangeInfo={handleChangeInfo} />
+                <Experience info={info.experience} onChangeInfo={handleChangeInfo} />
+                <PersonalProject info={info.personalProject} onChangeInfo={handleChangeInfo} />
+                <Achivement info={info.achivement} onChangeInfo={handleChangeInfo} />
+                {/* <SampleDrag /> */}
+                {provided.placeholder}
+              </div>
+            )}
+          </Droppable>
+        </DragDropContext>
         <ul className={styles.functionButton}>
           <li>
             <button loading={loading} onClick={handleDonwloadPDF} type="button">
@@ -170,3 +191,30 @@ const ResumeBuilder = () => {
 };
 
 export default ResumeBuilder;
+
+// const SampleDrag = () => {
+//   const draggableSample = [
+//     {
+//       id: '1',
+//       content: 'First',
+//     },
+//     {
+//       id: '2',
+//       content: 'Second',
+//     },
+//     {
+//       id: '3',
+//       content: 'Third',
+//     },
+//   ];
+
+//   return draggableSample.map((item, index) => (
+//     <Draggable draggableId={item.id} index={index} key={item.id}>
+//       {(provided) => (
+//         <div ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps}>
+//           {item.content}
+//         </div>
+//       )}
+//     </Draggable>
+//   ));
+// };

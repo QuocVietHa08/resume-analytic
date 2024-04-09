@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Form, Input, Button, Modal } from 'antd';
 import { EditOutlined, MinusCircleOutlined, PlusOutlined } from '@ant-design/icons';
-
+import DraggableComponent from './DraggableComp';
 import styles from './styles.module.scss';
 
 const Education = ({ info, onChangeInfo }) => {
@@ -35,7 +35,15 @@ const Education = ({ info, onChangeInfo }) => {
   );
 };
 
-export default Education;
+const DraggableEducation = ({ info, onChangeInfo }) => {
+  return (
+    <DraggableComponent id="education" index={1}>
+      <Education info={info} onChangeInfo={onChangeInfo} />
+    </DraggableComponent>
+  );
+};
+
+export default DraggableEducation;
 
 const EducationItem = ({ info }) => {
   return (
