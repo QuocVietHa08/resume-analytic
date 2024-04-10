@@ -13,9 +13,9 @@ const Header = () => {
           <Link href="/resume-builder" className={styles.buttonLogin} rel="noreferrer">
             Resume Builder
           </Link>
-          <Link href="/resume" className={styles.buttonLogin} rel="noreferrer">
+          {/* <Link href="/resume" className={styles.buttonLogin} rel="noreferrer">
             Contact
-          </Link>
+          </Link> */}
           {/* <Link href="/demo" className={styles.buttonLogin} rel="noreferrer">
             Demo 
           </Link> */}
