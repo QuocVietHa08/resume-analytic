@@ -2,11 +2,14 @@ import React, { useState } from 'react';
 import { Form, Input, Button, Modal } from 'antd';
 import { EditOutlined, CompressOutlined } from '@ant-design/icons';
 import { Draggable } from 'react-beautiful-dnd';
+import { useResumeBuilderStore } from '@/pages/resume-builder';
 
 import styles from './styles.module.scss';
 
 const Introduction = ({ info, onChangeInfo, index }) => {
   const [open, setOpen] = useState(false);
+  const themeColor = useResumeBuilderStore((state) => state.themeColor);
+  const fontFamily = useResumeBuilderStore((state) => state.fontFamily);
 
   const handleOpenModal = () => {
     setOpen(true);
@@ -35,10 +38,18 @@ const Introduction = ({ info, onChangeInfo, index }) => {
             </div>
           </div>
           <div className={styles.title}>
-            <div className={styles.text}>Introduction</div>
+            <div
+              className={styles.text}
+              style={{
+                fontFamily,
+                color: themeColor,
+              }}
+            >
+              Introduction
+            </div>
             <div className={styles.line}></div>
           </div>
-          <div>{info}</div>
+          <div style={{ fontFamily }}>{info}</div>
         </div>
       )}
     </Draggable>

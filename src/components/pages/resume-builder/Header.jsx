@@ -4,9 +4,11 @@ import { PhoneFilled, MailFilled, GlobalOutlined, HomeFilled, GithubOutlined } f
 import { Modal, Form, Input, Button } from 'antd';
 import { EditOutlined } from '@ant-design/icons';
 import styles from './styles.module.scss';
+import { useResumeBuilderStore } from '@/pages/resume-builder';
 
 const Header = ({ info, onChangeInfo }) => {
   const [open, setOpen] = useState(false);
+  const fontFamily = useResumeBuilderStore((state) => state.fontFamily);
 
   const handleOpenModal = () => {
     setOpen(true);
@@ -17,31 +19,31 @@ const Header = ({ info, onChangeInfo }) => {
   };
 
   return (
-    <div className={styles.header}>
+    <div className={`${styles.header}`}>
       <ModalEditHeader info={info} onSubmit={onChangeInfo} open={open} onOpenModal={handleOpenModal} onCloseModal={handleCloseModal} />
-      <div className={styles.name}>{info.name}</div>
+      <div className={styles.name} style={{ fontFamily }}>{info.name}</div>
       <div className={styles.content}>
         <div>
-          <div className={styles.text}>
+          <div className={styles.text} style={{ fontFamily }}>
             <PhoneFilled /> {info.phone}
           </div>
-          <div className={styles.text}>
+          <div className={styles.text} style={{ fontFamily }}>
             <HomeFilled /> {info.address}
           </div>
-          <div className={styles.text}>
+          <div className={styles.text} style={{ fontFamily }}>
             <GithubOutlined /> {info.gitHubLink}
           </div>
         </div>
         <div>
-          <div className={styles.text}>
+          <div className={styles.text} style={{ fontFamily }}>
             <MailFilled />
             {info.email}
           </div>
-          <div className={styles.text}>
+          <div className={styles.text} style={{ fontFamily }}>
             <HomeFilled /> {info.role}
           </div>
           {info.website && (
-            <div className={styles.text}>
+            <div className={styles.text} style={{ fontFamily }}>
               <GlobalOutlined /> {info.website}
             </div>
           )}

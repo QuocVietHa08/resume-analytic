@@ -15,11 +15,23 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  padding: 10px 62px; 
+  padding: 10px 62px;
 
   @media screen and (max-width: 768px) {
     padding: 10px 20px;
   }
+}
+
+.buttonStar {
+  background-color: #eee;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #fcfcfc), to(#eee));
+  background-repeat: no-repeat;
+  border: 1px solid #d5d5d5;
+  color: black;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 0 5px;
 }
 
 .buttonLogin {
@@ -28,6 +40,24 @@
   font-size: 16px;
   font-weight: 600;
   cursor: pointer;
-  transition: 0.3s; 
+  transition: 0.3s;
   font-family: 'Baloo Da';
+}
+
+.logoWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  font-family: 'Baloo Da';
+  color: #493ea8;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+
+  img {
+    width: auto;
+    height: 25px;
+  }
 }
