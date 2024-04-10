@@ -2,11 +2,13 @@ import React, { useState } from 'react';
 import { Form, Input, Button, Modal } from 'antd';
 import { EditOutlined, MinusCircleOutlined, PlusOutlined, CompressOutlined } from '@ant-design/icons';
 import { Draggable } from 'react-beautiful-dnd';
-// import DraggableComponent from './DraggableComp';
 import styles from './styles.module.scss';
+import { useResumeBuilderStore } from '@/pages/resume-builder';
 
 const Education = ({ info, onChangeInfo, index }) => {
   const [open, setOpen] = useState(false);
+  const themeColor = useResumeBuilderStore((state) => state.themeColor);
+  const fontFamily = useResumeBuilderStore((state) => state.fontFamily);
 
   const handleOpenModal = () => {
     setOpen(true);
@@ -35,7 +37,15 @@ const Education = ({ info, onChangeInfo, index }) => {
             </div>
           </div>
           <div className={styles.title}>
-            <div className={styles.text}>Education</div>
+            <div
+              className={styles.text}
+              style={{
+                color: themeColor,
+                fontFamily,
+              }}
+            >
+              Education
+            </div>
             <div className={styles.line}></div>
           </div>
           <div>
@@ -51,20 +61,20 @@ const Education = ({ info, onChangeInfo, index }) => {
   );
 };
 
-
 export default Education;
 
 const EducationItem = ({ info }) => {
+  const fontFamily = useResumeBuilderStore((state) => state.fontFamily);
   return (
     <li>
       <div className="flex items-center justify-between">
-        <div>{info.school}</div>
-        <div className="text-bold">
+        <div style={{ fontFamily }}>{info.school}</div>
+        <div className="text-bold" style={{ fontFamily }}>
           {info.startDate}-{info.endDate}
         </div>
       </div>
       <div>
-        <span>Major: {info.major}</span>
+        <span style={{ fontFamily }}>Major: {info.major}</span>
       </div>
     </li>
   );

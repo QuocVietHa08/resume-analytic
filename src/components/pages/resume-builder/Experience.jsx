@@ -2,11 +2,13 @@ import React, { useState } from 'react';
 import { Form, Input, Button, Modal, Row, Col } from 'antd';
 import { EditOutlined, MinusCircleOutlined, PlusOutlined, CompressOutlined } from '@ant-design/icons';
 import { Draggable } from 'react-beautiful-dnd';
-
+import { useResumeBuilderStore } from '@/pages/resume-builder';
 import styles from './styles.module.scss';
 
 const Experience = ({ info, onChangeInfo, index }) => {
   const [open, setOpen] = useState(false);
+  const themeColor = useResumeBuilderStore((state) => state.themeColor);
+  const fontFamily = useResumeBuilderStore((state) => state.fontFamily);
 
   const handleOpenModal = () => {
     setOpen(true);
@@ -35,7 +37,12 @@ const Experience = ({ info, onChangeInfo, index }) => {
             </div>
           </div>
           <div className={styles.title}>
-            <div className={styles.text}>Experience</div>
+            <div className={styles.text} 
+              style={{
+                fontFamily,
+                color: themeColor,
+              }}
+            >Experience</div>
             <div className={styles.line}></div>
           </div>
           <div className="flex flex-column gap-10">
@@ -52,33 +59,39 @@ const Experience = ({ info, onChangeInfo, index }) => {
 export default Experience;
 
 const ExperienceItem = ({ info }) => {
+  const fontFamily = useResumeBuilderStore((state) => state.fontFamily);
+
   return (
     <div className={styles.item}>
       <Row>
-        <Col span={8} className="text-bold">
-          {info.role}
+        <Col span={8}>
+          <span className="text-bold" style={{
+            fontFamily,
+          }}>
+            {info.role}
+          </span>
         </Col>
         <Col span={8} className="text-bold text-center flex-i justify-center">
-          <div className="text-bold text-center border-bottom-1 no-wrap w-min-content">{info.company}</div>
+          <div className="text-bold text-center border-bottom-1 no-wrap w-min-content" style={{ fontFamily }}>{info.company}</div>
         </Col>
-        <Col span={8} className="text-bold text-right">
+        <Col span={8} className="text-bold text-right" style={{ fontFamily }}>
           {info.location}, {info.startDate} - {info.endDate}
         </Col>
       </Row>
       <div>
-        <ul>
+        <ul style={{ fontFamily }}>
           {info.description.map((item) => (
             <li key={item}>{item}</li>
           ))}
         </ul>
       </div>
       <div className="ml-25">
-        <div className="text-bold">Projects: </div>
+        <div className="text-bold" style={{ fontFamily }}>Projects: </div>
         <ul>
           {info.projects.map((project) => (
             <li key={project.id}>
-              <span className="text-bold">{project.name}: </span>
-              <span>{project.description}</span>
+              <span className="text-bold" style={{ fontFamily }}>{project.name}: </span>
+              <span style={{ fontFamily }}>{project.description}</span>
             </li>
           ))}
         </ul>

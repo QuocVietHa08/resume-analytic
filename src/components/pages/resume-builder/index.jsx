@@ -1,5 +1,5 @@
 import React from 'react';
-import { DownloadOutlined } from '@ant-design/icons';
+import { DownloadOutlined, CheckOutlined } from '@ant-design/icons';
 import { jsPDF } from 'jspdf';
 import { toPng } from 'html-to-image';
 import { DragDropContext, Droppable } from 'react-beautiful-dnd';
@@ -11,120 +11,24 @@ import Introduction from './Introduction';
 import Experience from './Experience';
 import PersonalProject from './PersonalProject';
 import Achivement from './Achivement';
-
-const DEFAULT_INFO = {
-  header: {
-    name: 'Ha Quoc Viet',
-    email: 'quocvietha08@gmail.com',
-    phone: '0123456789',
-    address: 'My Dinh, Ha Noi, Viet Nam',
-    avatar: 'https://avatars.githubusercontent.com/u/56016006?v=4',
-    role: 'Frontend Developer',
-    gitHubLink: 'https://github.com/QuocVietHa08',
-    website: 'https://haquocviet.hashnode.dev/',
-  },
-  education: [
-    {
-      school: 'Hanoi University of Science and Technology',
-      major: 'Information Technology',
-      startDate: '2016',
-      endDate: '2021',
-    },
-  ],
-  introduction: `Experienced Frontend Engineer with three years of hands-on experience building user-friendly websites and web apps. Skilled in HTML, CSS, and JavaScript frameworks like React and Angular. I'm good at turning design ideas into working code that looks great and runs smoothly. I enjoy solving problems and making sure websites work well on different devices and browsers. I love learning new things and keeping up with the latest trends in frontend development. As a team player, I enjoy collaborating with others to create awesome digital experiences.`,
-  experience: [
-    {
-      id: 1,
-      company: 'Company A',
-      location: 'Hanoi, Vietnam',
-      role: 'Frontend Developer',
-      startDate: '2019',
-      endDate: '2021',
-      description: [
-        `Developed and maintained the company's website using React.`,
-        `Worked closely with the design team to turn mockups into responsive web pages.`,
-        `Optimized website performance and improved user experience.`,
-      ],
-      projects: [
-        {
-          id: 1,
-          name: 'Project A',
-          description: `A web app that helps users track their daily water intake. Built with React and styled with CSS. Users can log in, set daily water intake goals, and track their progress.`,
-        },
-        {
-          id: 2,
-          name: 'Project B',
-          description: `A portfolio website showcasing my work as a frontend developer. Built with HTML, CSS, and JavaScript. Includes a gallery of projects, contact form, and resume.`,
-        },
-      ],
-    },
-    {
-      id: 2,
-      company: 'Company B',
-      location: 'Hanoi, Vietnam',
-      role: 'Web Developer',
-      startDate: '2017',
-      endDate: '2019',
-      description: [
-        `Built and maintained websites for clients using HTML, CSS, and JavaScript.`,
-        `Collaborated with the design team to create visually appealing websites.`,
-        ` Ensured websites were responsive and worked well on different devices.`,
-      ],
-      projects: [
-        {
-          id: 1,
-          name: 'Project A',
-          description: `A web app that helps users track their daily water intake. Built with React and styled with CSS. Users can log in, set daily water intake goals, and track their progress.`,
-        },
-        {
-          id: 2,
-          name: 'Project B',
-          description: `A portfolio website showcasing my work as a frontend developer. Built with HTML, CSS, and JavaScript. Includes a gallery of projects, contact form, and resume.`,
-        },
-      ],
-    },
-  ],
-  personalProject: [
-    {
-      id: 1,
-      name: 'Project A',
-      description: `A web app that helps users track their daily water intake. Built with React and styled with CSS. Users can log in, set daily water intake goals, and track their progress.`,
-    },
-    {
-      id: 2,
-      name: 'Project B',
-      description: `A portfolio website showcasing my work as a frontend developer. Built with HTML, CSS, and JavaScript. Includes a gallery of projects, contact form, and resume.`,
-    },
-  ],
-  achivement: [
-    {
-      id: 1,
-      name: 'Best Employee of the Year',
-      description: 'Awarded for outstanding performance and dedication to the company.',
-      startDate: '2020',
-      endDate: '2021',
-    },
-    {
-      id: 2,
-      name: 'Top Performer',
-      description: 'Recognized for exceeding performance goals and delivering high-quality work.',
-      startDate: '2019',
-      endDate: '2020',
-    },
-  ],
-};
+import { DEFAULT_INFO, FONT_FAMILY, THEME_COLORS } from './constant';
+import { useResumeBuilderStore } from '@/pages/resume-builder';
 
 const RESUME_POSITION = [
-  { id: 'education'},
-  { id: 'introduction'},
-  { id: 'experience'},
-  { id: 'personalProject'},
-  { id: 'achivement'}
-]
+  { id: 'education' },
+  { id: 'introduction' },
+  { id: 'experience' },
+  { id: 'personalProject' },
+  { id: 'achivement' },
+];
 const ResumeBuilder = () => {
   const [info, setInfo] = React.useState(DEFAULT_INFO);
   const [loading, setLoading] = React.useState(false);
   const [resumePosition, setResumePosition] = React.useState(RESUME_POSITION);
+  const themeColor = useResumeBuilderStore((state) => state.themeColor);
+  const fontFamily = useResumeBuilderStore((state) => state.fontFamily);
+  const setThemeColor = useResumeBuilderStore((state) => state.setThemeColor);
+  const setFontFamily = useResumeBuilderStore((state) => state.setFontFamily);
 
   const handleChangeInfo = (newInfo, key) => {
     const updateValue = { ...info, [key]: newInfo };
@@ -173,7 +77,14 @@ const ResumeBuilder = () => {
           return null;
       }
     });
-  }
+  };
+
+  const handleChangeSettingResume = (key, value) => {
+    if (key === 'themeColor') {
+      return setThemeColor(value);
+    }
+    return setFontFamily(value);
+  };
 
   return (
     <div className={styles.container}>
@@ -197,8 +108,9 @@ const ResumeBuilder = () => {
             </Droppable>
           </DragDropContext>
         </div>
-        <ul className={styles.functionButton}>
-          <li>
+
+        <div className={styles.settingResumeWrapper}>
+          <div className={styles.functionButton}>
             <button loading={loading} onClick={handleDonwloadPDF} type="button">
               {loading ? (
                 'Downloading...'
@@ -208,8 +120,77 @@ const ResumeBuilder = () => {
                 </>
               )}
             </button>
-          </li>
-        </ul>
+          </div>
+          <div className={styles.settingForm}>
+            <p className="font-size-20 text-bold text-font-family" style={{ color: '#493EA8' }}>
+              Resume Setting
+            </p>
+            <div>
+              <div className="font-size-16 text-weight-500">Theme Color</div>
+              <div className="flex items-center gap-10 flex-wrap mt-5">
+                {THEME_COLORS.map((item) => (
+                  <button
+                    type="button"
+                    onClick={() => handleChangeSettingResume('themeColor', item)}
+                    key={item}
+                    className={styles.themeBlock}
+                    style={{ backgroundColor: item }}
+                    aria-label="color"
+                  >
+                    {themeColor === item && <CheckOutlined />}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            <div className="mt-30">
+              <div className="font-size-16 text-weight-500">Font Family</div>
+              <div className="flex items-center gap-10 flex-wrap mt-5">
+                {FONT_FAMILY.map((item) => {
+                  const isActive = fontFamily === item.value;
+                  return (
+                    <button
+                      className={styles.buttonOption}
+                      style={{
+                        backgroundColor: isActive ? themeColor : 'white',
+                        color: isActive ? 'white' : 'black',
+                      }}
+                      type="button"
+                      onClick={() => handleChangeSettingResume('fontFamily', item.value)}
+                      key={item.value}
+                    >
+                      {item.label}
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* <div className="mt-30">
+              <div className="font-size-16 text-weight-500">Font Size (pt)</div>
+              <div className="flex items-center gap-10 flex-wrap mt-5">
+                {FONT_SIZE.map((item) => {
+                  const isActive = resumetSetting.fontSize === item;
+
+                  return (
+                    <button
+                      className={styles.buttonOption}
+                      style={{
+                        backgroundColor: isActive ? resumetSetting.themeColor : 'white',
+                        color: isActive ? 'white' : 'black',
+                      }}
+                      type="button"
+                      onClick={() => console.log('hello')}
+                      key={item}
+                    >
+                      {item}
+                    </button>
+                  );
+                })}
+              </div>
+            </div> */}
+          </div>
+        </div>
       </div>
     </div>
   );

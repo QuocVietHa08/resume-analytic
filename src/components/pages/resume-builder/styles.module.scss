@@ -6,7 +6,7 @@
 }
 
 .wrapper {
-  width: 80%;
+  width: 85%;
   height: 100%;
   max-width: 1200px;
   display: flex;
@@ -15,53 +15,14 @@
   margin: 0px auto;
   padding-top: 20px;
   position: relative;
-
-  .functionButton {
-    position: absolute;
-    right: -40px;
-    top: 20px;
-    width: 200px;
-    height: 100px;
-    z-index: 99;
-
-    li {
-      list-style: none;
-
-      button {
-        all: unset;
-        display: flex;
-        justify-content: center;
-        gap: 10px;
-        padding: 5px 15px;
-        list-style: none;
-        color: #1155cc;
-        background-color: white;
-        border: 1px solid #1155cc;
-        border-radius: 5px;
-        cursor: pointer;
-
-        &:hover {
-          background-color: #1155cc;
-          color: white;
-        }
-      }
-    }
-  }
 }
 
 .resume {
-  width: 100%;
-  max-width: 900px;
+  width: 70%;
+  max-width: 1000px;
   height: 100%;
   padding: 25px;
-  background-color: white;
-
-  div,
-  span,
-  li {
-    font-family: 'Nunito', sans-serif;
-    // word-spacing: 0px;
-  }
+  background-color: white; 
 }
 
 .header {
@@ -300,4 +261,72 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
+}
+
+.settingResumeWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 20px;
+  width: 30%;
+
+  .functionButton {
+    display: flex;
+    align-items: flex-start;
+    
+    justify-content: flex-start;
+    button {
+      all: unset;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      padding: 5px 15px;
+      list-style: none;
+      color: #1155cc;
+      background-color: white;
+      border: 1px solid #1155cc;
+      border-radius: 5px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #1155cc;
+        color: white;
+      }
+    }
+  }
+
+  .settingForm {
+    background-color: white;
+    width: 100%;
+    border-radius: 10px;
+    padding: 20px;
+
+    .themeBlock {
+      all: unset;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 10px;
+      cursor: pointer;
+
+      span {
+        color: white;
+      }
+    }
+
+    .buttonOption {
+      all: unset;
+      width: 90px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: white;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+  }
 }

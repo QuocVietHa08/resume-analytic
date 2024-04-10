@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
 import { Form, Input, Button, Modal } from 'antd';
 import { EditOutlined, MinusCircleOutlined, PlusOutlined, CompressOutlined } from '@ant-design/icons';
-
 import { Draggable } from 'react-beautiful-dnd';
+import { useResumeBuilderStore } from '@/pages/resume-builder';
 
 import styles from './styles.module.scss';
 
 const PersonalProject = ({ info, onChangeInfo, index }) => {
   const [open, setOpen] = useState(false);
+  const themeColor = useResumeBuilderStore((state) => state.themeColor);
+  const fontFamily = useResumeBuilderStore((state) => state.fontFamily);
 
   const handleOpenModal = () => {
     setOpen(true);
@@ -36,7 +38,15 @@ const PersonalProject = ({ info, onChangeInfo, index }) => {
             </div>
           </div>
           <div className={styles.title}>
-            <div className={styles.text}>Personal Projects</div>
+            <div
+              className={styles.text}
+              style={{
+                fontFamily,
+                color: themeColor,
+              }}
+            >
+              Personal Projects
+            </div>
             <div className={styles.line}></div>
           </div>
           <div className="flex flex-column gap-10">
@@ -53,10 +63,12 @@ const PersonalProject = ({ info, onChangeInfo, index }) => {
 export default PersonalProject;
 
 const PersonalProjectItem = ({ info }) => {
+  const fontFamily = useResumeBuilderStore((state) => state.fontFamily);
+
   return (
     <div className={styles.item}>
-      <span className="text-bold">{info.name}: </span>
-      <span className={styles.description}>{info.description}</span>
+      <span className="text-bold" style={{ fontFamily }}>{info.name}: </span>
+      <span className={styles.description} style={{ fontFamily }}>{info.description}</span>
     </div>
   );
 };
