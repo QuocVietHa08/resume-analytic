@@ -51,12 +51,13 @@ We use the power of AI to analyze your CV so you can be more prepared for your f
 
 ## Tech Stack
 
-1. React (NextJS) => Build FE
-2. AWS-sdk => Analyze Resume
-3. Zustand => State management
-4. Scss => Styling
-5. Antd => Build UI Form
-6. ThreeJS => Have Fun
+1. React (NextJS) => Build FE.
+2. AWS-sdk => Analyze Resume.
+3. Zustand => State management.
+4. Scss => Styling.
+5. Antd => Build UI Form.
+6. ThreeJS => Have Fun.
+7. React Beautify Dnd => Build Resume Layout.
 
 ## Development
 
