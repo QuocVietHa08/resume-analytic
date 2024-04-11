@@ -9,6 +9,7 @@ const Education = ({ info, onChangeInfo, index }) => {
   const [open, setOpen] = useState(false);
   const themeColor = useResumeBuilderStore((state) => state.themeColor);
   const fontFamily = useResumeBuilderStore((state) => state.fontFamily);
+  const layout = useResumeBuilderStore((state) => state.layout);
 
   const handleOpenModal = () => {
     setOpen(true);
@@ -19,6 +20,41 @@ const Education = ({ info, onChangeInfo, index }) => {
   };
 
   if (info?.length === 0) return null;
+
+  if (layout === 'Basic') {
+    return (
+      <div className={styles.education}>
+        <div className={styles.buttonEditWrap}>
+          <ModalEditEducation
+            info={info}
+            onSubmit={onChangeInfo}
+            open={open}
+            onOpenModal={handleOpenModal}
+            onCloseModal={handleCloseModal}
+          />
+        </div>
+        <div className={styles.title}>
+          <div
+            className={styles.text}
+            style={{
+              color: themeColor,
+              fontFamily,
+            }}
+          >
+            Education
+          </div>
+          <div className={styles.line}></div>
+        </div>
+        <div>
+          <div className="flex flex-column gap-5">
+            {info.map((item) => (
+              <EducationItem key={item.id} info={item} />
+            ))}
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <Draggable draggableId="education" index={index} key="education">
@@ -65,6 +101,22 @@ export default Education;
 
 const EducationItem = ({ info }) => {
   const fontFamily = useResumeBuilderStore((state) => state.fontFamily);
+  const layout = useResumeBuilderStore((state) => state.layout);
+  if (layout === 'Basic') {
+    return (
+      <div>
+        <div className="flex items-center justify-between">
+          <div style={{ fontFamily }}>{info.school}</div>
+          <div className="text-bold" style={{ fontFamily, whiteSpace: 'nowrap' }}>
+            {info.startDate}-{info.endDate}
+          </div>
+        </div>
+        <div>
+          <span style={{ fontFamily }}>Major: {info.major}</span>
+        </div>
+      </div>
+    );
+  }
   return (
     <li>
       <div className="flex items-center justify-between">

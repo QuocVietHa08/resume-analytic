@@ -10,6 +10,7 @@ const Introduction = ({ info, onChangeInfo, index }) => {
   const [open, setOpen] = useState(false);
   const themeColor = useResumeBuilderStore((state) => state.themeColor);
   const fontFamily = useResumeBuilderStore((state) => state.fontFamily);
+  const layout = useResumeBuilderStore((state) => state.layout);
 
   const handleOpenModal = () => {
     setOpen(true);
@@ -20,6 +21,34 @@ const Introduction = ({ info, onChangeInfo, index }) => {
   };
 
   if (!info) return null;
+  if (layout === 'Basic') {
+    return (
+      <div className={styles.introduction}>
+        <div className={styles.buttonEditWrap}>
+          <ModalEditIntroduction
+            info={info}
+            onSubmit={onChangeInfo}
+            onOpenModal={handleOpenModal}
+            onCloseModal={handleCloseModal}
+            open={open}
+          />
+        </div>
+        <div className={styles.title}>
+          <div
+            className={styles.text}
+            style={{
+              fontFamily,
+              color: themeColor,
+            }}
+          >
+            Introduction
+          </div>
+          <div className={styles.line}></div>
+        </div>
+        <div style={{ fontFamily }}>{info}</div>
+      </div>
+    );
+  }
 
   return (
     <Draggable draggableId="introduction" index={index} key="introduction">

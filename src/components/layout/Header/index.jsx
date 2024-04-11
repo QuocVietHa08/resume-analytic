@@ -13,9 +13,9 @@ const Header = () => {
           </div>
         </Link>
         <div className="flex items-center gap-20">
-          <Link href="/" className={styles.buttonLogin} rel="noreferrer">
+          {/* <Link href="/" className={styles.buttonLogin} rel="noreferrer">
             Home
-          </Link>
+          </Link> */}
           <Link href="/resume-builder" className={styles.buttonLogin} rel="noreferrer">
             Resume Builder
           </Link>

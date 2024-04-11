@@ -1,7 +1,6 @@
 .container {
-  margin-top: 50px;
   width: 100%;
-  height: auto;
+  height: 100%;
   padding-bottom: 50px;
 }
 
@@ -22,158 +21,406 @@
   max-width: 1000px;
   height: 100%;
   padding: 25px;
-  background-color: white; 
-}
+  background-color: white;
 
-.header {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  justify-content: center;
-  border: 1px solid transparent;
-  padding: 10px;
-  position: relative;
-
-  .buttonEdit {
-    all: unset;
-    display: none;
-    cursor: pointer;
-    position: absolute;
-    top: 0px;
-    right: 0px;
-    color: #ccc;
-    border: 1px dashed #ccc;
-    background-color: white;
-    transform: translate(50%, -50%);
-    cursor: pointer;
-    width: 25px;
-    height: 25px;
-    z-index: 2;
-    border-radius: 50%;
-    justify-content: center;
-    align-items: center;
-  }
-
-  &:hover {
-    border: 1px dashed #1155cc;
-
-    .buttonEdit {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      &:hover {
-        border-color: #1155cc;
-        color: #1155cc;
-      }
-    }
-  }
-
-  .name {
-    font-size: 30px;
-    font-weight: bold;
-  }
-
-  .content {
+  .header {
     display: flex;
-    justify-content: space-between;
-
-    .text {
-      display: flex;
-      align-items: center;
-      gap: 5px;
-    }
-
-    .avatar {
-      width: auto;
-      height: 70px;
-
-      img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        border-radius: 50%;
-      }
-    }
-  }
-}
-
-.education,
-.introduction,
-.experience,
-.personalProject,
-.achivement {
-  margin-top: 5px;
-  position: relative;
-  padding: 5px;
-  border: 1px solid transparent;
-
-  &:hover {
-    border: 1px dashed #1155cc;
-
-    .buttonEdit {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      &:hover {
-        border-color: #1155cc;
-        color: #1155cc;
-      }
-    }
-  }
-
-  .buttonEditWrap {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
     gap: 10px;
-    position: absolute;
-    top: 0px;
-    right: 0px;
-    transform: translate(20%, -50%);
-  }
-
-  .buttonEdit {
-    all: unset;
-    display: none;
-    cursor: pointer;
-    color: #ccc;
-    border: 1px dashed #ccc;
-    background-color: white;
-    width: 25px;
-    height: 25px;
-    z-index: 2;
-    border-radius: 50%;
     justify-content: center;
-    align-items: center;
-  }
-
-  .title {
+    border: 1px solid transparent;
+    padding: 10px;
     position: relative;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 20px;
-    margin-bottom: 5px;
 
-    .text {
-      font-size: 18px;
-      color: #1155cc;
-      line-height: 20px;
-      font-weight: bold;
-      font-family: 'Nunito', sans-serif;
+    .buttonEdit {
+      all: unset;
+      display: none;
+      cursor: pointer;
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      color: #ccc;
+      border: 1px dashed #ccc;
+      background-color: white;
+      transform: translate(50%, -50%);
+      cursor: pointer;
+      width: 25px;
+      height: 25px;
       z-index: 2;
-      white-space: nowrap;
-      padding-right: 7px;
+      border-radius: 50%;
+      justify-content: center;
+      align-items: center;
     }
 
-    .line {
-      display: block;
-      width: 100%;
-      height: 1px;
-      z-index: 1;
-      background-color: black;
+    &:hover {
+      border: 1px dashed #1155cc;
+
+      .buttonEdit {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &:hover {
+          border-color: #1155cc;
+          color: #1155cc;
+        }
+      }
+    }
+
+    .name {
+      font-size: 30px;
+      font-weight: bold;
+    }
+
+    .content {
+      display: flex;
+      justify-content: space-between;
+
+      .text {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+      }
+
+      .avatar {
+        width: auto;
+        height: 70px;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          border-radius: 50%;
+        }
+      }
+    }
+  }
+
+  .education,
+  .introduction,
+  .experience,
+  .personalProject,
+  .achivement {
+    margin-top: 5px;
+    position: relative;
+    padding: 5px;
+    border: 1px solid transparent;
+
+    &:hover {
+      border: 1px dashed #1155cc;
+
+      .buttonEdit {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &:hover {
+          border-color: #1155cc;
+          color: #1155cc;
+        }
+      }
+    }
+
+    .buttonEditWrap {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      transform: translate(20%, -50%);
+    }
+
+    .buttonEdit {
+      all: unset;
+      display: none;
+      cursor: pointer;
+      color: #ccc;
+      border: 1px dashed #ccc;
+      background-color: white;
+      width: 25px;
+      height: 25px;
+      z-index: 2;
+      border-radius: 50%;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .title {
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 20px;
+      margin-bottom: 5px;
+
+      .text {
+        font-size: 18px;
+        color: #1155cc;
+        line-height: 20px;
+        font-weight: bold;
+        font-family: 'Nunito', sans-serif;
+        z-index: 2;
+        white-space: nowrap;
+        padding-right: 7px;
+      }
+
+      .line {
+        display: block;
+        width: 100%;
+        height: 1px;
+        z-index: 1;
+        background-color: black;
+      }
+    }
+  }
+}
+
+.resumeBasicLayout {
+  display: flex;
+  width: 100%;
+  background-color: white;
+
+  .resumeLeft {
+    width: 35%;
+    padding: 20px;
+
+    .header {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      justify-content: center;
+      border: 1px solid transparent;
+      padding: 10px;
+      position: relative;
+
+      .buttonEdit {
+        all: unset;
+        display: none;
+        cursor: pointer;
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        color: #ccc;
+        border: 1px dashed #ccc;
+        background-color: white;
+        transform: translate(50%, -50%);
+        cursor: pointer;
+        width: 25px;
+        height: 25px;
+        z-index: 2;
+        border-radius: 50%;
+        justify-content: center;
+        align-items: center;
+      }
+
+      &:hover {
+        border: 1px dashed #1155cc;
+
+        .buttonEdit {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          &:hover {
+            border-color: #1155cc;
+            color: #1155cc;
+          }
+        }
+      }
+
+      .name {
+        font-size: 30px;
+        font-weight: bold;
+      }
+
+      .content {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        .text {
+          display: flex;
+          align-items: center;
+          gap: 5px;
+        }
+      }
+
+      .avatar {
+        width: 80px;
+        height: auto;
+        margin: 10px auto;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          border-radius: 50%;
+        }
+      }
+    }
+
+    .introduction,
+    .education {
+      margin-top: 5px;
+      position: relative;
+      padding: 5px;
+      border: 1px solid transparent;
+
+      &:hover {
+        border: 1px dashed #1155cc;
+
+        .buttonEdit {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          &:hover {
+            border-color: #1155cc;
+            color: #1155cc;
+          }
+        }
+      }
+
+      .buttonEditWrap {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        transform: translate(20%, -50%);
+      }
+
+      .buttonEdit {
+        all: unset;
+        display: none;
+        cursor: pointer;
+        color: #ccc;
+        border: 1px dashed #ccc;
+        background-color: white;
+        width: 25px;
+        height: 25px;
+        z-index: 2;
+        border-radius: 50%;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .title {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 20px;
+        margin-bottom: 5px;
+
+        .text {
+          font-size: 18px;
+          color: #1155cc;
+          line-height: 20px;
+          font-weight: bold;
+          font-family: 'Nunito', sans-serif;
+          z-index: 2;
+          white-space: nowrap;
+          padding-right: 7px;
+        }
+
+        .line {
+          display: block;
+          width: 100%;
+          height: 1px;
+          z-index: 1;
+          background-color: black;
+        }
+      }
+    }
+  }
+
+  .resumeRight {
+    display: flex;
+    flex-direction: column;
+    width: 65%;
+    padding: 20px 20px 20px 0px;
+
+    .experience,
+    .personalProject,
+    .achivement {
+      margin-top: 5px;
+      position: relative;
+      padding: 5px;
+      border: 1px solid transparent;
+
+      &:hover {
+        border: 1px dashed #1155cc;
+
+        .buttonEdit {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          &:hover {
+            border-color: #1155cc;
+            color: #1155cc;
+          }
+        }
+      }
+
+      .buttonEditWrap {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        transform: translate(20%, -50%);
+      }
+
+      .buttonEdit {
+        all: unset;
+        display: none;
+        cursor: pointer;
+        color: #ccc;
+        border: 1px dashed #ccc;
+        background-color: white;
+        width: 25px;
+        height: 25px;
+        z-index: 2;
+        border-radius: 50%;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .title {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 20px;
+        margin-bottom: 5px;
+
+        .text {
+          font-size: 18px;
+          color: #1155cc;
+          line-height: 20px;
+          font-weight: bold;
+          font-family: 'Nunito', sans-serif;
+          z-index: 2;
+          white-space: nowrap;
+          padding-right: 7px;
+        }
+
+        .line {
+          display: block;
+          width: 100%;
+          height: 1px;
+          z-index: 1;
+          background-color: black;
+        }
+      }
     }
   }
 }
@@ -274,7 +521,7 @@
   .functionButton {
     display: flex;
     align-items: flex-start;
-    
+
     justify-content: flex-start;
     button {
       all: unset;

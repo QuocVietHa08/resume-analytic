@@ -11,8 +11,10 @@ const StoreProvider = ({ children }) => {
     storeRef.current = createStore((set) => ({
       themeColor: '#1255CC',
       fontFamily: 'Nunito',
+      layout: 'Basic',
       setThemeColor: (value) => set(() => ({ themeColor: value })),
       setFontFamily: (value) => set(() => ({ fontFamily: value })),
+      setLayout: (value) => set(() => ({ layout: value })),
     }))
   }
   return (
@@ -24,9 +26,12 @@ const StoreProvider = ({ children }) => {
 
 const ResumeBuilder = () => {
   return (
+    <div style={{ minHeight: 'calc(100vh - 45px)', overflow: 'auto'}}>
+
     <StoreProvider>
       <ResumeBuilderComp />
     </StoreProvider>
+    </div>
   );
 };
 
