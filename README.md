@@ -30,6 +30,7 @@ Create and download your resume based on a professional template.
 ## Features
 - Analyze your CV.
 - Suggestion about the improvement in the future.
+- Build your resume base on current layout.
 
 ## How it works
 
@@ -48,6 +49,16 @@ We use the power of AI to analyze your CV so you can be more prepared for your f
 2. AWs bedrock model.
 3. Convertapi Key.
 
+## Tech Stack
+
+1. React (NextJS) => Build FE.
+2. AWS-sdk => Analyze Resume.
+3. Zustand => State management.
+4. Scss => Styling.
+5. Antd => Build UI Form.
+6. ThreeJS => Have Fun.
+7. React Beautify Dnd => Build Resume Layout.
+
 ## Development
 
 ```bash
@@ -56,12 +67,3 @@ cd resume-analytic
 yarn
 yarn dev
 ```
-## Tech Stack
-
-1. React
-2. Next
-3. AWS-sdk
-4. Zustand
-5. Scss
-6. Antd
-7. ThreeJS

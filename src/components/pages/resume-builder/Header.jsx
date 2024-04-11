@@ -9,6 +9,7 @@ import { useResumeBuilderStore } from '@/pages/resume-builder';
 const Header = ({ info, onChangeInfo }) => {
   const [open, setOpen] = useState(false);
   const fontFamily = useResumeBuilderStore((state) => state.fontFamily);
+  const layout = useResumeBuilderStore((state) => state.layout);
 
   const handleOpenModal = () => {
     setOpen(true);
@@ -21,7 +22,14 @@ const Header = ({ info, onChangeInfo }) => {
   return (
     <div className={`${styles.header}`}>
       <ModalEditHeader info={info} onSubmit={onChangeInfo} open={open} onOpenModal={handleOpenModal} onCloseModal={handleCloseModal} />
-      <div className={styles.name} style={{ fontFamily }}>{info.name}</div>
+      {layout === 'Basic' && (
+        <div className={styles.avatar}>
+          <img src={info.avatar} alt="avatar" />
+        </div>
+      )}
+      <div className={styles.name} style={{ fontFamily }}>
+        {info.name}
+      </div>
       <div className={styles.content}>
         <div>
           <div className={styles.text} style={{ fontFamily }}>
@@ -48,9 +56,11 @@ const Header = ({ info, onChangeInfo }) => {
             </div>
           )}
         </div>
-        <div className={styles.avatar}>
-          <img src={info.avatar} alt="avatar" />
-        </div>
+        {layout === 'Advanced' && (
+          <div className={styles.avatar}>
+            <img src={info.avatar} alt="avatar" />
+          </div>
+        )}
       </div>
     </div>
   );

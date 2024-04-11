@@ -2,38 +2,20 @@ import React from 'react';
 import { DownloadOutlined, CheckOutlined } from '@ant-design/icons';
 import { jsPDF } from 'jspdf';
 import { toPng } from 'html-to-image';
-import { DragDropContext, Droppable } from 'react-beautiful-dnd';
-
-import Header from './Header';
-import styles from './styles.module.scss';
-import Education from './Education';
-import Introduction from './Introduction';
-import Experience from './Experience';
-import PersonalProject from './PersonalProject';
-import Achivement from './Achivement';
-import { DEFAULT_INFO, FONT_FAMILY, THEME_COLORS } from './constant';
+import { FONT_FAMILY, RESUME_LAYOUTS, THEME_COLORS } from './constant';
 import { useResumeBuilderStore } from '@/pages/resume-builder';
+import Resume from './Resume';
+import styles from './styles.module.scss';
 
-const RESUME_POSITION = [
-  { id: 'education' },
-  { id: 'introduction' },
-  { id: 'experience' },
-  { id: 'personalProject' },
-  { id: 'achivement' },
-];
 const ResumeBuilder = () => {
-  const [info, setInfo] = React.useState(DEFAULT_INFO);
   const [loading, setLoading] = React.useState(false);
-  const [resumePosition, setResumePosition] = React.useState(RESUME_POSITION);
+
   const themeColor = useResumeBuilderStore((state) => state.themeColor);
   const fontFamily = useResumeBuilderStore((state) => state.fontFamily);
+  const layout = useResumeBuilderStore((state) => state.layout);
   const setThemeColor = useResumeBuilderStore((state) => state.setThemeColor);
   const setFontFamily = useResumeBuilderStore((state) => state.setFontFamily);
-
-  const handleChangeInfo = (newInfo, key) => {
-    const updateValue = { ...info, [key]: newInfo };
-    setInfo(updateValue);
-  };
+  const setLayout = useResumeBuilderStore((state) => state.setLayout);
 
   const handleDonwloadPDF = () => {
     const resume = document.querySelector('#resume');
@@ -52,62 +34,20 @@ const ResumeBuilder = () => {
     setLoading(false);
   };
 
-  const onDragEnd = (result) => {
-    if (!result.destination) return;
-    const items = Array.from(resumePosition);
-    const [reorderedItem] = items.splice(result.source.index, 1);
-    items.splice(result.destination.index, 0, reorderedItem);
-    setResumePosition(items);
-  };
-
-  const handleRenderResumePosition = () => {
-    return resumePosition.map((item, index) => {
-      switch (item.id) {
-        case 'education':
-          return <Education key={item.id} index={index} info={info.education} onChangeInfo={handleChangeInfo} />;
-        case 'introduction':
-          return <Introduction key={item.id} index={index} info={info.introduction} onChangeInfo={handleChangeInfo} />;
-        case 'experience':
-          return <Experience key={item.id} index={index} info={info.experience} onChangeInfo={handleChangeInfo} />;
-        case 'personalProject':
-          return <PersonalProject key={item.id} index={index} info={info.personalProject} onChangeInfo={handleChangeInfo} />;
-        case 'achivement':
-          return <Achivement key={item.id} index={index} info={info.achivement} onChangeInfo={handleChangeInfo} />;
-        default:
-          return null;
-      }
-    });
-  };
-
   const handleChangeSettingResume = (key, value) => {
     if (key === 'themeColor') {
       return setThemeColor(value);
     }
-    return setFontFamily(value);
+    if (key === 'fontFamily') {
+      return setFontFamily(value);
+    }
+    return setLayout(value);
   };
 
   return (
     <div className={styles.container}>
       <div className={styles.wrapper}>
-        <div id="resume" className={styles.resume}>
-          <Header info={info.header} onChangeInfo={handleChangeInfo} />
-          <DragDropContext onDragEnd={onDragEnd}>
-            <Droppable droppableId="board">
-              {(provided, snapshot) => (
-                <div
-                  style={{
-                    backgroundColor: snapshot.isDraggingOver ? 'white' : 'white',
-                  }}
-                  ref={provided.innerRef}
-                  {...provided.droppableProps}
-                >
-                  {handleRenderResumePosition()}
-                  {provided.placeholder}
-                </div>
-              )}
-            </Droppable>
-          </DragDropContext>
-        </div>
+        <Resume />
 
         <div className={styles.settingResumeWrapper}>
           <div className={styles.functionButton}>
@@ -166,29 +106,28 @@ const ResumeBuilder = () => {
               </div>
             </div>
 
-            {/* <div className="mt-30">
-              <div className="font-size-16 text-weight-500">Font Size (pt)</div>
+            <div className="mt-30">
+              <div className="font-size-16 text-weight-500">Layout</div>
               <div className="flex items-center gap-10 flex-wrap mt-5">
-                {FONT_SIZE.map((item) => {
-                  const isActive = resumetSetting.fontSize === item;
-
+                {RESUME_LAYOUTS.map((item) => {
+                  const isActive = layout === item.label;
                   return (
                     <button
                       className={styles.buttonOption}
                       style={{
-                        backgroundColor: isActive ? resumetSetting.themeColor : 'white',
+                        backgroundColor: isActive ? themeColor : 'white',
                         color: isActive ? 'white' : 'black',
                       }}
+                      onClick={() => handleChangeSettingResume('layout', item.label)}
                       type="button"
-                      onClick={() => console.log('hello')}
-                      key={item}
+                      key={item.label}
                     >
-                      {item}
+                      {item.label}
                     </button>
                   );
                 })}
               </div>
-            </div> */}
+            </div>
           </div>
         </div>
       </div>

@@ -147,3 +147,12 @@ export const FONT_SIZE = [
   'Standard',
   'Large',
 ]
+
+export const RESUME_LAYOUTS = [
+  {
+    label: 'Basic'
+  },
+  {
+    label: 'Advanced'
+  }
+]
