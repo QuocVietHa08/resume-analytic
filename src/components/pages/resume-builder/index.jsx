@@ -17,10 +17,10 @@ const ResumeBuilder = () => {
   const setFontFamily = useResumeBuilderStore((state) => state.setFontFamily);
   const setLayout = useResumeBuilderStore((state) => state.setLayout);
 
-  const handleDonwloadPDF = () => {
+  const handleDonwloadPDF = async () => {
     const resume = document.querySelector('#resume');
     setLoading(true);
-    setTimeout(() => {
+    await setTimeout(() => {
       toPng(resume).then((dataUrl) => {
         // eslint-disable-next-line new-cap
         const pdf = new jsPDF('p', 'mm', 'a4');
@@ -31,7 +31,6 @@ const ResumeBuilder = () => {
         pdf.save('resume.pdf');
       });
     }, 1000);
-    setLoading(false);
   };
 
   const handleChangeSettingResume = (key, value) => {
@@ -71,6 +70,7 @@ const ResumeBuilder = () => {
                 {THEME_COLORS.map((item) => (
                   <button
                     type="button"
+                    disabled={loading}
                     onClick={() => handleChangeSettingResume('themeColor', item)}
                     key={item}
                     className={styles.themeBlock}
@@ -91,6 +91,7 @@ const ResumeBuilder = () => {
                   return (
                     <button
                       className={styles.buttonOption}
+                      disabled={loading}
                       style={{
                         backgroundColor: isActive ? themeColor : 'white',
                         color: isActive ? 'white' : 'black',
@@ -114,6 +115,7 @@ const ResumeBuilder = () => {
                   return (
                     <button
                       className={styles.buttonOption}
+                      disabled={loading}
                       style={{
                         backgroundColor: isActive ? themeColor : 'white',
                         color: isActive ? 'white' : 'black',
