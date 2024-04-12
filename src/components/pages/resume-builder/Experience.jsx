@@ -64,24 +64,22 @@ const ExperienceItem = ({ info }) => {
   return (
     <div className={styles.item}>
       <Row>
-        <Col span={8}>
-          <span className="text-bold" style={{
+        <Col span={12}>
+          <span className="text-bold flex items-center" style={{
             fontFamily,
           }}>
-            {info.role}
+            {info.role}, {' '}
+            {info.company}
           </span>
         </Col>
-        <Col span={8} className="text-bold text-center flex-i justify-center">
-          <div className="text-bold text-center border-bottom-1 no-wrap w-min-content" style={{ fontFamily }}>{info.company}</div>
-        </Col>
-        <Col span={8} className="text-bold text-right" style={{ fontFamily }}>
+        <Col span={12} className="text-bold text-right" style={{ fontFamily }}>
           {info.location}, {info.startDate} - {info.endDate}
         </Col>
       </Row>
       <div>
-        <ul style={{ fontFamily }}>
+        <ul>
           {info.description.map((item) => (
-            <li key={item}>{item}</li>
+            <li key={item} style={{ fontFamily}}>{item}</li>
           ))}
         </ul>
       </div>
